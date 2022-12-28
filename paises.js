@@ -6,7 +6,7 @@ export class Paises {
         }
     }
 
-    'Venezuela' = 
+    //'Venezuela' = 
     
 
     '#Estados Unidos' = {
@@ -1799,7 +1799,7 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         'Trinidad y Tobago': {
-            continente: '',
+            continente: 'América del sur',
             codigoPais: '815',
             abreviatura: '',
             ciudades: {
@@ -1923,7 +1923,7 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Uruguay: {
-            continente: '',
+            continente: 'América del sur',
             codigoPais: '845',
             abreviatura: '',
             ciudades: {
@@ -2095,7 +2095,7 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Venezuela: {
-            continente: '',
+            continente: 'América del sur',
             codigoPais: '850',
             abreviatura: '',
             ciudades: {
