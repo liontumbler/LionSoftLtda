@@ -6,11 +6,7 @@ export class Paises {
         }
     }
 
-    'Trinidad y Tobago' =  {
-        Kabul: {
-            codigoPostal: ''
-        }
-    }
+    'Venezuela' = 
     
 
     '#Estados Unidos' = {
@@ -31,55 +27,55 @@ export class Paises {
             continente: '',
             codigoPais: '013',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Albania: {
             continente: '',
             codigoPais: '017',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Alemania: {
             continente: '',
             codigoPais: '023',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Andorra: {
             continente: '',
             codigoPais: '037',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Angola: {
             continente: '',
             codigoPais: '040',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Antigua y Barbuda': {
             continente: '',
             codigoPais: '043',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Arabia Saudita': {
             continente: '',
             codigoPais: '053',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Argelia: {
             continente: '',
             codigoPais: '059',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Argentina: {
             continente: 'América del sur',
             codigoPais: '063',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 'Buenos Aires': {
                     codigoPostal: 'B1406'
                 },
@@ -190,6 +186,54 @@ export class Paises {
                 },
                 'Virrey del Pino': {
                     codigoPostal: 'B1067'
+                },
+                'Ciudad de Santiago del Estero': {
+                    codigoPostal: ''
+                },
+                Trelew: {
+                    codigoPostal: ''
+                },
+                'Bell Ville': {
+                    codigoPostal: ''
+                },
+                Tandil: {
+                    codigoPostal: ''
+                },
+                'San Francisco': {
+                    codigoPostal: ''
+                },
+                Pinamar: {
+                    codigoPostal: ''
+                },
+                Azul: {
+                    codigoPostal: ''
+                },
+                'Ciudad de Santa Rosa': {
+                    codigoPostal: ''
+                },
+                Balcarce: {
+                    codigoPostal: ''
+                },
+                'San Antonio de Areco': {
+                    codigoPostal: ''
+                },
+                Rawson: {
+                    codigoPostal: ''
+                },
+                'Río Gallegos': {
+                    codigoPostal: ''
+                },
+                'San Carlos de Bariloche': {
+                    codigoPostal: ''
+                },
+                Ushuaia: {
+                    codigoPostal: ''
+                },
+                Mendoza: {
+                    codigoPostal: ''
+                },
+                'San Juan': {
+                    codigoPostal: ''
                 }
             }
         },
@@ -197,85 +241,85 @@ export class Paises {
             continente: '',
             codigoPais: '026',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Australia: {
             continente: '',
             codigoPais: '069',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Austria: {
             continente: '',
             codigoPais: '072',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Azerbaiyán: {
             continente: '',
             codigoPais: '074',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bahamas: {
             continente: '',
             codigoPais: '077',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bangladesh: {
             continente: '',
             codigoPais: '081',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Barbados: {
             continente: '',
             codigoPais: '083',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Bahréin (Baréin)': {
             continente: '',
             codigoPais: '080',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bélgica: {
             continente: '',
             codigoPais: '087',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Belice: {
             continente: '',
             codigoPais: '088',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Benín: {
             continente: '',
             codigoPais: '229',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bielorrusia: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Birmania/Myanmar': {
             continente: '',
             codigoPais: '093',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bolivia: {
             continente: 'América del sur',
             codigoPais: '097',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Trinidad: {
                     codigoPostal: '853010'
                 },
@@ -309,19 +353,19 @@ export class Paises {
             continente: '',
             codigoPais: '029',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Botsuana: {
             continente: '',
             codigoPais: '101',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Brasil: {
             continente: 'América del sur',
             codigoPais: '105',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 'Río Branco': {
                     codigoPostal: '69900'
                 },
@@ -409,73 +453,73 @@ export class Paises {
             continente: '',
             codigoPais: '108',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bulgaria: {
             continente: '',
             codigoPais: '111',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Burkina Faso': {
             continente: '',
             codigoPais: '031',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Burundi: {
             continente: '',
             codigoPais: '115',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Bután: {
             continente: '',
             codigoPais: '119',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Cabo Verde': {
             continente: '',
             codigoPais: '127',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Camboya: {
             continente: '',
             codigoPais: '141',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Camerún: {
             continente: '',
             codigoPais: '145',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Canadá: {
             continente: '',
             codigoPais: '149',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Catar: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Chad: {
             continente: '',
             codigoPais: '203',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Chile: {
             continente: 'América del sur',
             codigoPais: '211',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Arica: {
                     codigoPostal: '1000000'
                 },
@@ -527,26 +571,26 @@ export class Paises {
             continente: '',
             codigoPais: '215',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Chipre: {
             continente: '',
             codigoPais: '221',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Ciudad del Vaticano': {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Colombia: {
             continente: 'América del sur',
             codigoPais: '169',
             abreviatura: 'CO',
             prefijo: '+57',
-            capitales: {
+            ciudades: {
                 Arauca: {
                     codigoPostal: '810001'
                 },
@@ -649,61 +693,61 @@ export class Paises {
             continente: '',
             codigoPais: '173',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Corea del Norte': {
             continente: '',
             codigoPais: '187',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Corea del Sur': {
             continente: '',
             codigoPais: '190',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Costa de Marfil': {
             continente: '',
             codigoPais: '193',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Costa Rica': {
             continente: '',
             codigoPais: '196',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Croacia: {
             continente: '',
             codigoPais: '198',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Cuba: {
             continente: '',
             codigoPais: '199',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Dinamarca: {
             continente: '',
             codigoPais: '232',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Dominica: {
             continente: '',
             codigoPais: '235',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Ecuador: {
             continente: 'América del sur',
             codigoPais: '239',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Cuenca: {
                     codigoPostal: '010101'
                 },
@@ -782,133 +826,133 @@ export class Paises {
             continente: '',
             codigoPais: '240',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'El Salvador': {
             continente: '',
             codigoPais: '242',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Emiratos Árabes Unidos': {
             continente: '',
             codigoPais: '244',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Eritrea: {
             continente: '',
             codigoPais: '243',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Eslovaquia: {
             continente: '',
             codigoPais: '246',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Eslovenia: {
             continente: '',
             codigoPais: '247',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         España: {
             continente: '',
             codigoPais: '245',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Estados Unidos': {
             continente: '',
             codigoPais: '249',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Estonia: {
             continente: '',
             codigoPais: '251',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Etiopía: {
             continente: '',
             codigoPais: '253',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Filipinas: {
             continente: '',
             codigoPais: '267',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Finlandia: {
             continente: '',
             codigoPais: '271',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Fiyi: {
             continente: '',
             codigoPais: '870',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Francia: {
             continente: '',
             codigoPais: '275',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Gabón: {
             continente: '',
             codigoPais: '281',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Gambia: {
             continente: '',
             codigoPais: '285',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Georgia: {
             continente: '',
             codigoPais: '287',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Ghana: {
             continente: '',
             codigoPais: '289',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Granada: {
             continente: '',
             codigoPais: '297',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Grecia: {
             continente: '',
             codigoPais: '301',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Guatemala: {
             continente: '',
             codigoPais: '317',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Guyana: {
             continente: 'América del sur',
             codigoPais: '337',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 'Georgetown / Capital': {
                     codigoPostal: ''
                 },
@@ -957,391 +1001,391 @@ export class Paises {
             continente: '',
             codigoPais: '329',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Guinea ecuatorial': {
             continente: '',
             codigoPais: '331',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Guinea-Bisáu': {
             continente: '',
             codigoPais: '334',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Haití: {
             continente: '',
             codigoPais: '341',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Honduras: {
             continente: '',
             codigoPais: '345',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Hungría: {
             continente: '',
             codigoPais: '355',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         India: {
             continente: '',
             codigoPais: '361',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Indonesia: {
             continente: '',
             codigoPais: '365',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Irak: {
             continente: '',
             codigoPais: '369',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Irán: {
             continente: '',
             codigoPais: '372',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Irlanda: {
             continente: '',
             codigoPais: '375',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Islandia: {
             continente: '',
             codigoPais: '379',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Islas Marshall': {
             continente: '',
             codigoPais: '472',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Islas Salomón': {
             continente: '',
             codigoPais: '677',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Israel: {
             continente: '',
             codigoPais: '383',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Italia: {
             continente: '',
             codigoPais: '386',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Jamaica: {
             continente: '',
             codigoPais: '391',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Japón: {
             continente: '',
             codigoPais: '399',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Jordania: {
             continente: '',
             codigoPais: '403',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Kazajistán: {
             continente: '',
             codigoPais: '406',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Kenia: {
             continente: '',
             codigoPais: '410',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Kirguistán: {
             continente: '',
             codigoPais: '412',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Kiribati: {
             continente: '',
             codigoPais: '411',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Kuwait: {
             continente: '',
             codigoPais: '413',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Laos: {
             continente: '',
             codigoPais: '420',//weed man
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Lesoto: {
             continente: '',
             codigoPais: '426',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Letonia: {
             continente: '',
             codigoPais: '429',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Líbano: {
             continente: '',
             codigoPais: '431',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Liberia: {
             continente: '',
             codigoPais: '434',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Libia: {
             continente: '',
             codigoPais: '438',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Liechtenstein: {
             continente: '',
             codigoPais: '440',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Lituania: {
             continente: '',
             codigoPais: '443',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Luxemburgo: {
             continente: '',
             codigoPais: '445',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Macedonia del Norte': {
             continente: '',
             codigoPais: '448',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Madagascar: {
             continente: '',
             codigoPais: '450',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Malasia: {
             continente: '',
             codigoPais: '455',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Malaui: {
             continente: '',
             codigoPais: '458',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Maldivas: {
             continente: '',
             codigoPais: '461',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Malí: {
             continente: '',
             codigoPais: '464',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Malta: {
             continente: '',
             codigoPais: '467',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Marruecos: {
             continente: '',
             codigoPais: '474',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Mauricio: {
             continente: '',
             codigoPais: '485',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Mauritania: {
             continente: '',
             codigoPais: '488',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         México: {
             continente: '',
             codigoPais: '493',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Micronesia: {
             continente: '',
             codigoPais: '494',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Moldavia: {
             continente: '',
             codigoPais: '496',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Mónaco: {
             continente: '',
             codigoPais: '498',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Mongolia: {
             continente: '',
             codigoPais: '497',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Montenegro: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Mozambique: {
             continente: '',
             codigoPais: '505',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Namibia: {
             continente: '',
             codigoPais: '507',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Nauru: {
             continente: '',
             codigoPais: '508',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Nepal: {
             continente: '',
             codigoPais: '517',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Nicaragua: {
             continente: '',
             codigoPais: '521',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Níger: {
             continente: '',
             codigoPais: '525',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Nigeria: {
             continente: '',
             codigoPais: '528',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Noruega: {
             continente: '',
             codigoPais: '538',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Nueva Zelanda': {
             continente: '',
             codigoPais: '548',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Omán: {
             continente: '',
             codigoPais: '556',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Países Bajos': {
             continente: '',
             codigoPais: '573',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Pakistán: {
             continente: '',
             codigoPais: '576',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Palaos: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Panamá: {
             continente: '',
             codigoPais: '580',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Papúa Nueva Guinea': {
             continente: '',
             codigoPais: '545',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Paraguay: {
             continente: 'América del sur',
             codigoPais: '586',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Asunción: {
                     codigoPostal: 'xxxxxx'
                 },
@@ -1402,7 +1446,7 @@ export class Paises {
             continente: 'América del sur',
             codigoPais: '589',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Chachapoyas: {
                     codigoPostal: '01000'
                 },
@@ -1484,193 +1528,193 @@ export class Paises {
             continente: '',
             codigoPais: '603',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Portugal: {
             continente: '',
             codigoPais: '607',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Reino Unido': {
             continente: '',
             codigoPais: '628',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República Centroafricana': {
             continente: '',
             codigoPais: '640',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República Checa': {
             continente: '',
             codigoPais: '644',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República del Congo': {
             continente: '',
             codigoPais: '177',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República Democrática del Congo': {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República Dominicana': {
             continente: '',
             codigoPais: '647',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'República Sudafricana': {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Ruanda: {
             continente: '',
             codigoPais: '675',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Rumanía: {
             continente: '',
             codigoPais: '670',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Rusia: {
             continente: '',
             codigoPais: '676',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Samoa: {
             continente: '',
             codigoPais: '687',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'San Cristóbal y Nieves': {
             continente: '',
             codigoPais: '695',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'San Marino': {
             continente: '',
             codigoPais: '697',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'San Vicente y las Granadinas': {
             continente: '',
             codigoPais: '705',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Santa Lucía': {
             continente: '',
             codigoPais: '715',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Santo Tomé y Príncipe': {
             continente: '',
             codigoPais: '720',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Senegal: {
             continente: '',
             codigoPais: '728',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Serbia: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Seychelles: {
             continente: '',
             codigoPais: '731',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Sierra Leona': {
             continente: '',
             codigoPais: '735',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Singapur: {
             continente: '',
             codigoPais: '741',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Siria: {
             continente: '',
             codigoPais: '744',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Somalia: {
             continente: '',
             codigoPais: '748',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Sri Lanka': {
             continente: '',
             codigoPais: '750',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Suazilandia: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Sudán: {
             continente: '',
             codigoPais: '759',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Sudán del Sur': {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Suecia: {
             continente: '',
             codigoPais: '764',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Suiza: {
             continente: '',
             codigoPais: '767',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Surinam: {
             continente: 'América del sur',
             codigoPais: '770',
             abreviatura: '',
-            capitales: {
+            ciudades: {
                 Paramaribo: {
                     codigoPostal: ''
                 },
@@ -1722,133 +1766,523 @@ export class Paises {
             continente: '',
             codigoPais: '776',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Tanzania: {
             continente: '',
             codigoPais: '780',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Tayikistán: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Timor Oriental (Timor-Leste)': {
             continente: '',
             codigoPais: '788',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Togo: {
             continente: '',
             codigoPais: '800',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Tonga: {
             continente: '',
             codigoPais: '810',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Trinidad y Tobago': {
             continente: '',
             codigoPais: '815',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: {
+                'Puerto España': {
+                    codigoPostal: ''
+                },
+                Scarborough: {
+                    codigoPostal: ''
+                },
+                'San Fernando': {
+                    codigoPostal: ''
+                },
+                'Chaguanas': {
+                    codigoPostal: ''
+                },
+                Arima: {
+                    codigoPostal: ''
+                },
+                'Sangre Grande': {
+                    codigoPostal: ''
+                },
+                Tunapuna: {
+                    codigoPostal: ''
+                },
+                'Point Fortin': {
+                    codigoPostal: ''
+                },
+                Couva: {
+                    codigoPostal: ''
+                },
+                'Princess Town': {
+                    codigoPostal: ''
+                },
+                Siparia: {
+                    codigoPostal: ''
+                },
+                'San Juan': {
+                    codigoPostal: ''
+                },
+                Mayaro: {
+                    codigoPostal: ''
+                },
+                Penal: {
+                    codigoPostal: ''
+                },
+                Marabella: {
+                    codigoPostal: ''
+                },
+                'Río Claro': {
+                    codigoPostal: ''
+                },
+                Laventille: {
+                    codigoPostal: ''
+                },
+                Arouca: {
+                    codigoPostal: ''
+                },
+                Tabaquite: {
+                    codigoPostal: ''
+                },
+                Castara: {
+                    codigoPostal: ''
+                },
+                'San José': {
+                    codigoPostal: ''
+                },
+                Carnbee: {
+                    codigoPostal: ''
+                },
+                Tacarigua: {
+                    codigoPostal: ''
+                },
+                Gasparillo: {
+                    codigoPostal: ''
+                },
+                Morvant: {
+                    codigoPostal: ''
+                },
+                Piarco: {
+                    codigoPostal: ''
+                },
+                'Diego Martin': {
+                    codigoPostal: ''
+                }
+            }
         },
         Túnez: {//TODO: mirar este no tiene codigo
             continente: '',
             codigoPais: '',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Turkmenistán: {
             continente: '',
             codigoPais: '825',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Turquía: {
             continente: '',
             codigoPais: '827',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Tuvalu: {
             continente: '',
             codigoPais: '828',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Ucrania: {
             continente: '',
             codigoPais: '830',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Uganda: {
             continente: '',
             codigoPais: '833',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Uruguay: {
             continente: '',
             codigoPais: '845',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: {
+                Montevideo: {
+                    codigoPostal: ''
+                },
+                Artigas: {
+                    codigoPostal: ''
+                },
+                'Treinta y Tres': {
+                    codigoPostal: ''
+                },
+                Rocha: {
+                    codigoPostal: ''
+                },
+                Paysandú: {
+                    codigoPostal: ''
+                },
+                Florida: {
+                    codigoPostal: ''
+                },
+                Maldonado: {
+                    codigoPostal: ''
+                },
+                Young: {
+                    codigoPostal: ''
+                },
+                'Bella Unión': {
+                    codigoPostal: ''
+                },
+                Rivera: {
+                    codigoPostal: ''
+                },
+                Dolores: {
+                    codigoPostal: ''
+                },
+                'Río Branco': {
+                    codigoPostal: ''
+                },
+                Guichón: {
+                    codigoPostal: ''
+                },
+                'San Ramón': {
+                    codigoPostal: ''
+                },
+                'José Pedro Varela': {
+                    codigoPostal: ''
+                },
+                'Nueva Palmira': {
+                    codigoPostal: ''
+                },
+                Salto: {
+                    codigoPostal: ''
+                },
+                'Punta del Este': {
+                    codigoPostal: ''
+                },
+                'Ciudad de la Costa': {
+                    codigoPostal: ''
+                },
+                Tacuarembó: {
+                    codigoPostal: ''
+                },
+                Rosario: {
+                    codigoPostal: ''
+                },
+                Pando: {
+                    codigoPostal: ''
+                },
+                Piriápolis: {
+                    codigoPostal: ''
+                },
+                'Colonia del Sacramento': {
+                    codigoPostal: ''
+                },
+                Carmelo: {
+                    codigoPostal: ''
+                },
+                'Las Piedras': {
+                    codigoPostal: ''
+                },
+                Minas: {
+                    codigoPostal: ''
+                },
+                Melo: {
+                    codigoPostal: ''
+                },
+                Canelones: {
+                    codigoPostal: ''
+                },
+                'Parque del Plata': {
+                    codigoPostal: ''
+                },
+                'San José de Mayo': {
+                    codigoPostal: ''
+                },
+                Mercedes: {
+                    codigoPostal: ''
+                },
+                'Departamento de Rocha': {
+                    codigoPostal: ''
+                },
+                Durazno: {
+                    codigoPostal: ''
+                },
+                'Fray Bentos': {
+                    codigoPostal: ''
+                },
+                Trinidad: {
+                    codigoPostal: ''
+                },
+                'La Paloma': {
+                    codigoPostal: ''
+                },
+                'Ciudad del Plata': {
+                    codigoPostal: ''
+                },
+                Chuy: {
+                    codigoPostal: ''
+                },
+                'Paso de los Toros': {
+                    codigoPostal: ''
+                },
+                'San Carlos': {
+                    codigoPostal: ''
+                },
+                'Nueva Helvecia': {
+                    codigoPostal: ''
+                },
+                Tranqueras: {
+                    codigoPostal: ''
+                },
+                Castillos: {
+                    codigoPostal: ''
+                },
+                'Paso de Carrasco': {
+                    codigoPostal: ''
+                },
+                Toledo: {
+                    codigoPostal: ''
+                },
+                'Pan de Azúcar': {
+                    codigoPostal: ''
+                },
+                'La Paz': {
+                    codigoPostal: ''
+                },
+                Tarariras: {
+                    codigoPostal: ''
+                },
+                'Sarandí del Yí': {
+                    codigoPostal: ''
+                },
+                Libertad: {
+                    codigoPostal: ''
+                }
+            }
         },
         Uzbekistán: {
             continente: '',
             codigoPais: '847',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Vanuatu: {
             continente: '',
             codigoPais: '551',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Venezuela: {
             continente: '',
             codigoPais: '850',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: {
+                Caracas: {
+                    codigoPostal: ''
+                },
+                'Ciudad Bolívar': {
+                    codigoPostal: ''
+                },
+                'Ciudad Guayana': {
+                    codigoPostal: ''
+                },
+                Maracaibo: {
+                    codigoPostal: ''
+                },
+                Valencia: {
+                    codigoPostal: ''
+                },
+                Barcelona: {
+                    codigoPostal: ''
+                },
+                Coro: {
+                    codigoPostal: ''
+                },
+                Barquisimeto: {
+                    codigoPostal: ''
+                },
+                Mérida: {
+                    codigoPostal: ''
+                },
+                Maracay: {
+                    codigoPostal: ''
+                },
+                'San Cristóbal': {
+                    codigoPostal: ''
+                },
+                Barinas: {
+                    codigoPostal: ''
+                },
+                Acarigua: {
+                    codigoPostal: ''
+                },
+                'Puerto la Cruz': {
+                    codigoPostal: ''
+                },
+                Cumaná: {
+                    codigoPostal: ''
+                },
+                Maturín: {
+                    codigoPostal: ''
+                },
+                Porlamar: {
+                    codigoPostal: ''
+                },
+                Lechería: {
+                    codigoPostal: ''
+                },
+                'San Fernando de Apure': {
+                    codigoPostal: ''
+                },
+                Guanare: {
+                    codigoPostal: ''
+                },
+                'Puerto Ayacucho': {
+                    codigoPostal: ''
+                },
+                Tucupita: {
+                    codigoPostal: ''
+                },
+                Carora: {
+                    codigoPostal: ''
+                },
+                'San Juan de Los Morros': {
+                    codigoPostal: ''
+                },
+                'Puerto Cabello': {
+                    codigoPostal: ''
+                },
+                'San Carlos': {
+                    codigoPostal: ''
+                },
+                'San Felipe': {
+                    codigoPostal: ''
+                },
+                Valera: {
+                    codigoPostal: ''
+                },
+                Calabozo: {
+                    codigoPostal: ''
+                },
+                Tinaquillo: {
+                    codigoPostal: ''
+                },
+                'Punto Fijo': {
+                    codigoPostal: ''
+                },
+                'La Victoria': {
+                    codigoPostal: ''
+                },
+                Boconó: {
+                    codigoPostal: ''
+                },
+                'Valle de la Pascua': {
+                    codigoPostal: ''
+                },
+                'El Vigía': {
+                    codigoPostal: ''
+                },
+                Anaco: {
+                    codigoPostal: ''
+                },
+                Upata: {
+                    codigoPostal: ''
+                },
+                Guasdualito: {
+                    codigoPostal: ''
+                },
+                Machiques: {
+                    codigoPostal: ''
+                },
+                Carúpano: {
+                    codigoPostal: ''
+                },
+                'Santa Bárbara de Zulia': {
+                    codigoPostal: ''
+                },
+                'El Tigre': {
+                    codigoPostal: ''
+                },
+                'Los Teques': {
+                    codigoPostal: ''
+                },
+                Cabimas: {
+                    codigoPostal: ''
+                },
+                'El Tocuyo': {
+                    codigoPostal: ''
+                },
+                Turmero: {
+                    codigoPostal: ''
+                },
+                Trujillo: {
+                    codigoPostal: ''
+                },
+                'La Guaira': {
+                    codigoPostal: ''
+                },
+                'Ciudad Ojeda': {
+                    codigoPostal: ''
+                },
+                'La Asunción': {
+                    codigoPostal: ''
+                },
+                'Ocumare del Tuy': {
+                    codigoPostal: ''
+                }
+            }
         },
         Vietnam: {
             continente: '',
             codigoPais: '855',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Yemen: {
             continente: '',
             codigoPais: '880',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         'Yibuti (Djibouti)': {
             continente: '',
             codigoPais: '783',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Zambia: {
             continente: '',
             codigoPais: '890',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         },
         Zimbabue: {
             continente: '',
             codigoPais: '665',
             abreviatura: '',
-            capitales: this.#Afganistán
+            ciudades: this.#Afganistán
         }
     }
 
@@ -1917,7 +2351,7 @@ export class Paises {
     obtenerCiudades(pais) {
         let ciudades = [];
         try {
-            for (const i in this.#paises[pais].capitales) {
+            for (const i in this.#paises[pais].ciudades) {
                 ciudades.push(i);
             }
 
@@ -1925,7 +2359,7 @@ export class Paises {
         } catch (error) {
             for (const i in this.#paises) {
                 if(this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0){
-                    for (const e in this.#paises[i].capitales) {
+                    for (const e in this.#paises[i].ciudades) {
                         ciudades.push(e);
                     }
 
@@ -1939,13 +2373,13 @@ export class Paises {
 
     obtenerCiudadObj(pais, ciudad) {
         try {
-            return this.#paises[pais].capitales[ciudad]
+            return this.#paises[pais].ciudades[ciudad]
         } catch (error) {
             for (const i in this.#paises) {
                 if(this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0){
-                    for (const e in this.#paises[i].capitales) {
+                    for (const e in this.#paises[i].ciudades) {
                         if(this.normalizarText(e).indexOf(this.normalizarText(ciudad)) >= 0){
-                            return this.#paises[i].capitales[e];
+                            return this.#paises[i].ciudades[e];
                         }
                     }
                 }
