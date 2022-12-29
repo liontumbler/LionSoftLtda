@@ -320,32 +320,158 @@ export class Paises {
             codigoPais: '097',
             abreviatura: '',
             ciudades: {
-                Trinidad: {
-                    codigoPostal: '853010'
+                'La Paz': {
+                    codigoPostal: ''
                 },
-                Sucre: {
-                    codigoPostal: '703030'
+                'Santa Cruz de la Sierra': {
+                    codigoPostal: ''
                 },
                 Cochabamba: {
-                    codigoPostal: 'xxxxxx'
+                    codigoPostal: ''
                 },
-                'La Paz': {
-                    codigoPostal: 'xxxxxx'
+                'Villa Imperial de Potosí': {
+                    codigoPostal: ''
                 },
-                Oruro: {
-                    codigoPostal: 'xxxxxx'
+                Sucre: {
+                    codigoPostal: ''
                 },
-                Cobija: {
-                    codigoPostal: '090101'
-                },
-                Potosí: {
-                    codigoPostal: 'xxxxxx'
-                },
-                'Santa Cruz': {
-                    codigoPostal: 'xxxxxx'
+                'El Alto': {
+                    codigoPostal: ''
                 },
                 Tarija: {
-                    codigoPostal: 'xxxxxx'
+                    codigoPostal: ''
+                },
+                Oruro: {
+                    codigoPostal: ''
+                },
+                Trinidad: {
+                    codigoPostal: ''
+                },
+                Cobija: {
+                    codigoPostal: ''
+                },
+                Viacha: {
+                    codigoPostal: ''
+                },
+                Quillacollo: {
+                    codigoPostal: ''
+                },
+                Sacaba: {
+                    codigoPostal: ''
+                },
+                Colcapirhua: {
+                    codigoPostal: ''
+                },
+                'La Guardia': {
+                    codigoPostal: ''
+                },
+                Riberalta: {
+                    codigoPostal: ''
+                },
+                Montero: {
+                    codigoPostal: ''
+                },
+                Warnes: {
+                    codigoPostal: ''
+                },
+                Yacuíba: {
+                    codigoPostal: ''
+                },
+                Villazón: {
+                    codigoPostal: ''
+                },
+                Tupiza: {
+                    codigoPostal: ''
+                },
+                Llallagua: {
+                    codigoPostal: ''
+                },
+                Challapata: {
+                    codigoPostal: ''
+                },
+                Patacamaya: {
+                    codigoPostal: ''
+                },
+                Huanuni: {
+                    codigoPostal: ''
+                },
+                Vinto: {
+                    codigoPostal: ''
+                },
+                Uyuni: {
+                    codigoPostal: ''
+                },
+                Punata: {
+                    codigoPostal: ''
+                },
+                Sipesipe: {
+                    codigoPostal: ''
+                },
+                Tiquipaya: {
+                    codigoPostal: ''
+                },
+                Guayaramerin: {
+                    codigoPostal: ''
+                },
+                Caranavi: {
+                    codigoPostal: ''
+                },
+                'San José de Chiquitos': {
+                    codigoPostal: ''
+                },
+                Achacachi: {
+                    codigoPostal: ''
+                },
+                'San Ignacio': {
+                    codigoPostal: ''
+                },
+                Camiri: {
+                    codigoPostal: ''
+                },
+                'Villa Yapacaní': {
+                    codigoPostal: ''
+                },
+                Rurrenabaque: {
+                    codigoPostal: ''
+                },
+                Cliza: {
+                    codigoPostal: ''
+                },
+                Vallegrande: {
+                    codigoPostal: ''
+                },
+                'Departamento de Oruro': {
+                    codigoPostal: ''
+                },
+                'Cuatro Cañadas': {
+                    codigoPostal: ''
+                },
+                Mineros: {
+                    codigoPostal: ''
+                },
+                Concepción: {
+                    codigoPostal: ''
+                },
+                'Puerto Suárez': {
+                    codigoPostal: ''
+                },
+                'Ascensión de Guarayos': {
+                    codigoPostal: ''
+                },
+                Roboré: {
+                    codigoPostal: ''
+                },
+                Portachuelo: {
+                    codigoPostal: ''
+                },
+                Chimore: {
+                    codigoPostal: ''
+                },
+                'Santa Ana del Yacuma': {
+                    codigoPostal: ''
+                },
+                'San Ignacio de Moxos': {
+                    codigoPostal: ''
                 }
             } 
         },
@@ -366,86 +492,158 @@ export class Paises {
             codigoPais: '105',
             abreviatura: '',
             ciudades: {
-                'Río Branco': {
-                    codigoPostal: '69900'
-                },
-                Maceió: {
-                    codigoPostal: '57000-000'
-                },
-                Macapá: {
-                    codigoPostal: '68900'
-                },
-                Manaus: {
-                    codigoPostal: '27949-316'
-                },
-                Salvador: {
-                    codigoPostal: '41405-000'
-                },
-                Fortaleza: {
-                    codigoPostal: '06806-440'
-                },
-                Brasília: {
-                    codigoPostal: '55641-715'
-                },
-                Vitória: {
-                    codigoPostal: '29010'
-                },
-                Goiânia: {
-                    codigoPostal: '74000-000'
-                },
-                'São Luís': {
-                    codigoPostal: '07601-115'
-                },
-                Cuiabá: {
-                    codigoPostal: '38705-828'
-                },
-                'Campo Grande': {
-                    codigoPostal: '13471-410'
-                },
-                'Belo Horizonte': {
-                    codigoPostal: '30160-000'
-                },
-                Belém: {
-                    codigoPostal: '47806-421'
-                },
-                'João Pessoa': {
-                    codigoPostal: '58010'
-                },
-                Curitiba: {
-                    codigoPostal: '06542-089'
-                },
-                Recife: {
-                    codigoPostal: '23812-310'
-                },
-                Teresina: {
-                    codigoPostal: '04757-120'
-                },
                 'Río de Janeiro': {
-                    codigoPostal: '22050-000'
+                    codigoPostal: ''
                 },
-                Natal: {
-                    codigoPostal: '59010'
-                },
-                'Porto Alegre': {
-                    codigoPostal: '04870-470'
-                },
-                'Porto Velho': {
-                    codigoPostal: '55641-726'
-                },
-                'Boa Vista': {
-                    codigoPostal: '39300-000'
-                },
-                Florianópolis: {
-                    codigoPostal: '35182-016'
+                Brasilia: {
+                    codigoPostal: ''
                 },
                 'São Paulo': {
-                    codigoPostal: '01000-000'
+                    codigoPostal: ''
                 },
-                Aracaju: {
-                    codigoPostal: '36906-306'
+                'Salvador de Bahía': {
+                    codigoPostal: ''
+                },
+                Fortaleza: {
+                    codigoPostal: ''
+                },
+                Manaos: {
+                    codigoPostal: ''
+                },
+                'Belo Horizonte': {
+                    codigoPostal: ''
+                },
+                Recife: {
+                    codigoPostal: ''
+                },
+                Curitiba: {
+                    codigoPostal: ''
+                },
+                'Porto Alegre': {
+                    codigoPostal: ''
+                },
+                Natal: {
+                    codigoPostal: ''
+                },
+                Goiânia: {
+                    codigoPostal: ''
+                },
+                Florianópolis: {
+                    codigoPostal: ''
+                },
+                'São Luís': {
+                    codigoPostal: ''
+                },
+                Belén: {
+                    codigoPostal: ''
+                },
+                Cuiabá: {
+                    codigoPostal: ''
+                },
+                Guarulhos: {
+                    codigoPostal: ''
+                },
+                Maceió: {
+                    codigoPostal: ''
+                },
+                'Campo Grande': {
+                    codigoPostal: ''
+                },
+                Belém: {
+                    codigoPostal: ''
+                },
+                'João Pessoa': {
+                    codigoPostal: ''
+                },
+                Aracajú: {
+                    codigoPostal: ''
+                },
+                Teresina: {
+                    codigoPostal: ''
+                },
+                'Boa Vista': {
+                    codigoPostal: ''
+                },
+                Macapá: {
+                    codigoPostal: ''
+                },
+                Campinas: {
+                    codigoPostal: ''
+                },
+                Vitória: {
+                    codigoPostal: ''
+                },
+                'Porto Velho': {
+                    codigoPostal: ''
                 },
                 Palmas: {
-                    codigoPostal: '77001'
+                    codigoPostal: ''
+                },
+                'Rio Branco': {
+                    codigoPostal: ''
+                },
+                Búzios: {
+                    codigoPostal: ''
+                },
+                'Duque de Caxias': {
+                    codigoPostal: ''
+                },
+                Gramado: {
+                    codigoPostal: ''
+                },
+                Jericoacoara: {
+                    codigoPostal: ''
+                },
+                'São Gonçalo': {
+                    codigoPostal: ''
+                },
+                'Morro de Sao Paulo': {
+                    codigoPostal: ''
+                },
+                Barcelos: {
+                    codigoPostal: ''
+                },
+                'Atalaia do Norte': {
+                    codigoPostal: ''
+                },
+                Jutaí: {
+                    codigoPostal: ''
+                },
+                Tapauá: {
+                    codigoPostal: ''
+                },
+                Almeirim: {
+                    codigoPostal: ''
+                },
+                'Nova Iguaçu': {
+                    codigoPostal: ''
+                },
+                'São José dos Campos': {
+                    codigoPostal: ''
+                },
+                Altamira: {
+                    codigoPostal: ''
+                },
+                Oriximiná: {
+                    codigoPostal: ''
+                },
+                'São Gabriel da Cachoeira': {
+                    codigoPostal: ''
+                },
+                Lábrea: {
+                    codigoPostal: ''
+                },
+                'Foz do Iguaçu': {
+                    codigoPostal: ''
+                },
+                'Ribeirão Preto': {
+                    codigoPostal: ''
+                },
+                'Ouro Preto': {
+                    codigoPostal: ''
+                },
+                Paranaguá: {
+                    codigoPostal: ''
                 }
             }
         },
@@ -520,50 +718,158 @@ export class Paises {
             codigoPais: '211',
             abreviatura: '',
             ciudades: {
-                Arica: {
-                    codigoPostal: '1000000'
+                'Santiago de Chile': {
+                    codigoPostal: ''
                 },
                 Iquique: {
-                    codigoPostal: '1100334'
-                },
-                Antofagasta: {
-                    codigoPostal: '1200000'
-                },
-                Copiapó: {
-                    codigoPostal: '1530000'
-                },
-                'La Serena': {
-                    codigoPostal: '1700000'
-                },
-                Valparaíso: {
-                    codigoPostal: '2340000'
-                },
-                Santiago: {
-                    codigoPostal: '1030000'
-                },
-                Rancagua: {
-                    codigoPostal: '2820639'
-                },
-                Talca: {
-                    codigoPostal: '3480094'
-                },
-                Concepción: {
-                    codigoPostal: '4030555'
-                },
-                Temuco: {
-                    codigoPostal: '4780000'
-                },
-                Valdivia: {
-                    codigoPostal: '5090000'
-                },
-                'Puerto Montt': {
-                    codigoPostal: '5480000'
-                },
-                Coyhaique: {
-                    codigoPostal: '5950000'
+                    codigoPostal: ''
                 },
                 'Punta Arenas': {
-                    codigoPostal: '6200000'
+                    codigoPostal: ''
+                },
+                'Puerto Montt': {
+                    codigoPostal: ''
+                },
+                'Viña del Mar': {
+                    codigoPostal: ''
+                },
+                Antofagasta: {
+                    codigoPostal: ''
+                },
+                Arica: {
+                    codigoPostal: ''
+                },
+                'Puerto Varas': {
+                    codigoPostal: ''
+                },
+                Valparaíso: {
+                    codigoPostal: ''
+                },
+                Rancagua: {
+                    codigoPostal: ''
+                },
+                Concepción: {
+                    codigoPostal: ''
+                },
+                Coyhaique: {
+                    codigoPostal: ''
+                },
+                'La Serena': {
+                    codigoPostal: ''
+                },
+                Ovalle: {
+                    codigoPostal: ''
+                },
+                Valdivia: {
+                    codigoPostal: ''
+                },
+                'Puerto Natales': {
+                    codigoPostal: ''
+                },
+                Copiapó: {
+                    codigoPostal: ''
+                },
+                Temuco: {
+                    codigoPostal: ''
+                },
+                Vallenar: {
+                    codigoPostal: ''
+                },
+                Taltal: {
+                    codigoPostal: ''
+                },
+                Talca: {
+                    codigoPostal: ''
+                },
+                'Gran Valparaíso': {
+                    codigoPostal: ''
+                },
+                Calama: {
+                    codigoPostal: ''
+                },
+                Coquimbo: {
+                    codigoPostal: ''
+                },
+                'San Antonio': {
+                    codigoPostal: ''
+                },
+                Pucon: {
+                    codigoPostal: ''
+                },
+                Vicuña: {
+                    codigoPostal: ''
+                },
+                'San Felipe': {
+                    codigoPostal: ''
+                },
+                Curicó: {
+                    codigoPostal: ''
+                },
+                Pumanque: {
+                    codigoPostal: ''
+                },
+                'Pozo Almonte': {
+                    codigoPostal: ''
+                },
+                'San Fernando': {
+                    codigoPostal: ''
+                },
+                'Santa Cruz': {
+                    codigoPostal: ''
+                },
+                'Santo Domingo': {
+                    codigoPostal: ''
+                },
+                'Los Angeles': {
+                    codigoPostal: ''
+                },
+                Quillota: {
+                    codigoPostal: ''
+                },
+                Quintero: {
+                    codigoPostal: ''
+                },
+                Rengo: {
+                    codigoPostal: ''
+                },
+                Chillán: {
+                    codigoPostal: ''
+                },
+                Quilpué: {
+                    codigoPostal: ''
+                },
+                'Villa Alemana': {
+                    codigoPostal: ''
+                },
+                Palmilla: {
+                    codigoPostal: ''
+                },
+                'Tierra Amarilla': {
+                    codigoPostal: ''
+                },
+                'San Esteban': {
+                    codigoPostal: ''
+                },
+                Linares: {
+                    codigoPostal: ''
+                },
+                Putaendo: {
+                    codigoPostal: ''
+                },
+                'San Pedro de Atacama': {
+                    codigoPostal: ''
+                },
+                Puchuncavi: {
+                    codigoPostal: ''
+                },
+                Talcahuano: {
+                    codigoPostal: ''
+                },
+                Valdivia: {
+                    codigoPostal: ''
+                },
+                Castro: {
+                    codigoPostal: ''
                 }
             }
         },
@@ -597,8 +903,17 @@ export class Paises {
                 Armenia: {
                     codigoPostal: '630001'
                 },
+                Apartadó: {
+                    codigoPostal: ''
+                },
+                Aguachica: {
+                    codigoPostal: ''
+                },
                 Bucaramanga: {
                     codigoPostal: '680001'
+                },
+                Barrancabermeja: {
+                    codigoPostal: ''
                 },
                 Barranquilla: {
                     codigoPostal: '080001'
@@ -606,8 +921,23 @@ export class Paises {
                 Bogotá: {
                     codigoPostal: '110110'
                 },
+                Buga: {
+                    codigoPostal: ''
+                },
+                Buenaventura: {
+                    codigoPostal: ''
+                },
+                Cartago: {
+                    codigoPostal: ''
+                },
+                Caucasia: {
+                    codigoPostal: ''
+                },
                 Cali: {
                     codigoPostal: '760000'
+                },
+                Ciénaga: {
+                    codigoPostal: ''
                 },
                 Cúcuta: {
                     codigoPostal: '540001'
@@ -615,14 +945,47 @@ export class Paises {
                 Cartagena: {
                     codigoPostal: '130001'
                 },
+                Duitama: {
+                    codigoPostal: ''
+                },
+                'El Espinal': {
+                    codigoPostal: ''
+                },
+                'El Carmen de Bolívar': {
+                    codigoPostal: ''
+                },
+                Facatativá: {
+                    codigoPostal: ''
+                },
+                Fusagasugá: {
+                    codigoPostal: ''
+                },
                 Florencia: {
                     codigoPostal: '180001'
+                },
+                Girardot: {
+                    codigoPostal: ''
+                },
+                Inírida: {
+                    codigoPostal: ''
+                },
+                Ipiales: {
+                    codigoPostal: ''
                 },
                 Ibagué: {
                     codigoPostal: '730001'
                 },
                 Leticia: {
                     codigoPostal: '910001'
+                },
+                Lorica: {
+                    codigoPostal: ''
+                },
+                Magangué: {
+                    codigoPostal: ''
+                },
+                Maicao: {
+                    codigoPostal: ''
                 },
                 Manizales: {
                     codigoPostal: '170001'
@@ -639,8 +1002,20 @@ export class Paises {
                 Montería: {
                     codigoPostal: '230001'
                 },
+                Montelíbano: {
+                    codigoPostal: ''
+                },
                 Neiva: {
                     codigoPostal: '410001'
+                },
+                Ocaña: {
+                    codigoPostal: ''
+                },
+                Palmira: {
+                    codigoPostal: ''
+                },
+                Pamplona: {
+                    codigoPostal: ''
                 },
                 Pasto: {
                     codigoPostal: '520001'
@@ -648,14 +1023,17 @@ export class Paises {
                 Pereira: {
                     codigoPostal: '660000'
                 },
+                Pitalito: {
+                    codigoPostal: ''
+                },
                 Popayán: {
                     codigoPostal: '190001'
                 },
                 'Puerto Carreño': {
                     codigoPostal: '990001'
                 },
-                'Puerto Inírida': {
-                    codigoPostal: '940001'
+                'Puerto Asís': {
+                    codigoPostal: ''
                 },
                 Quibdó: {
                     codigoPostal: '270001'
@@ -663,8 +1041,23 @@ export class Paises {
                 Riohacha: {
                     codigoPostal: '440001'
                 },
+                Rionegro: {
+                    codigoPostal: ''
+                },
+                Sabanalarga: {
+                    codigoPostal: ''
+                },
+                'Santander de Quilichao': {
+                    codigoPostal: ''
+                },
+                'San Andrés Isla': {
+                    codigoPostal: ''
+                },
                 'San Andrés': {
                     codigoPostal: '880001'
+                },
+                'San Gil': {
+                    codigoPostal: ''
                 },
                 'San José del Guaviare': {
                     codigoPostal: '950001'
@@ -675,8 +1068,20 @@ export class Paises {
                 Sincelejo: {
                     codigoPostal: '250251'
                 },
+                Sogamoso: {
+                    codigoPostal: ''
+                },
                 Tunja: {
                     codigoPostal: '150001'
+                },
+                Tumaco: {
+                    codigoPostal: ''
+                },
+                Tuluá: {
+                    codigoPostal: ''
+                },
+                Turbo: {
+                    codigoPostal: ''
                 },
                 Valledupar: {
                     codigoPostal: '200001'
@@ -686,6 +1091,9 @@ export class Paises {
                 },
                 Yopal: {
                     codigoPostal: '850001'
+                },
+                Zipaquirá: {
+                    codigoPostal: ''
                 }
             }
         },
@@ -748,77 +1156,158 @@ export class Paises {
             codigoPais: '239',
             abreviatura: '',
             ciudades: {
-                Cuenca: {
-                    codigoPostal: '010101'
-                },
-                Guaranda: {
-                    codigoPostal: '020105'
-                },
-                Azogues: {
-                    codigoPostal: '030102'
-                },
-                Tulcán: {
-                    codigoPostal: '040102'
-                },
-                Riobamba: {
-                    codigoPostal: '060104'
-                },
-                Latacunga: {
-                    codigoPostal: '050108'
-                },
-                Machala: {
-                    codigoPostal: '070205'
-                },
-                Esmeraldas: {
-                    codigoPostal: '080103'
-                },
-                'Puerto Baquerizo Moreno': {
-                    codigoPostal: '200101'
+                Quito: {
+                    codigoPostal: ''
                 },
                 Guayaquil: {
-                    codigoPostal: '200101'
+                    codigoPostal: ''
                 },
-                Ibarra: {
-                    codigoPostal: '100102'
-                },
-                Loja: {
-                    codigoPostal: '110102'
-                },
-                Babahoyo: {
-                    codigoPostal: '120102'
-                },
-                Portoviejo: {
-                    codigoPostal: '130101'
-                },
-                Macas: {
-                    codigoPostal: '140101'
-                },
-                Tena: {
-                    codigoPostal: '150102'
-                },
-                'Puerto Francisco de Orellana': {
-                    codigoPostal: '220202'
-                },
-                Puyo: {
-                    codigoPostal: '160150'
-                },
-                Quito: {
-                    codigoPostal: '170102'
-                },
-                'Santa Elena': {
-                    codigoPostal: '240102'
-                },
-                'Santo Domingo de los Colorados': {
-                    codigoPostal: '230101'
-                },
-                'Nueva Loja': {
-                    codigoPostal: '210150'
+                Cuenca: {
+                    codigoPostal: ''
                 },
                 Ambato: {
-                    codigoPostal: '180101'
+                    codigoPostal: ''
+                },
+                Manta: {
+                    codigoPostal: ''
+                },
+                Ibarra: {
+                    codigoPostal: ''
+                },
+                Machala: {
+                    codigoPostal: ''
+                },
+                Loja: {
+                    codigoPostal: ''
+                },
+                Latacunga: {
+                    codigoPostal: ''
+                },
+                Portoviejo: {
+                    codigoPostal: ''
+                },
+                Tulcán: {
+                    codigoPostal: ''
+                },
+                'Santo Domingo': {
+                    codigoPostal: ''
+                },
+                Quevedo: {
+                    codigoPostal: ''
+                },
+                Babahoyo: {
+                    codigoPostal: ''
+                },
+                Esmeraldas: {
+                    codigoPostal: ''
+                },
+                Duran: {
+                    codigoPostal: ''
+                },
+                Tena: {
+                    codigoPostal: ''
+                },
+                Otavalo: {
+                    codigoPostal: ''
+                },
+                'Baños de Agua Santa': {
+                    codigoPostal: ''
+                },
+                'Nueva Loja': {
+                    codigoPostal: ''
+                },
+                'La Libertad': {
+                    codigoPostal: ''
+                },
+                Puyo: {
+                    codigoPostal: ''
+                },
+                Milagro: {
+                    codigoPostal: ''
+                },
+                Chimborazo: {
+                    codigoPostal: ''
+                },
+                Huaquillas: {
+                    codigoPostal: ''
+                },
+                Guaranda: {
+                    codigoPostal: ''
+                },
+                'Francisco de Orellana': {
+                    codigoPostal: ''
+                },
+                Daule: {
+                    codigoPostal: ''
+                },
+                Sangolquí: {
+                    codigoPostal: ''
+                },
+                Samborondón: {
+                    codigoPostal: ''
+                },
+                Sucumbíos: {
+                    codigoPostal: ''
+                },
+                Montecristi: {
+                    codigoPostal: ''
+                },
+                Chone: {
+                    codigoPostal: ''
+                },
+                'El Carmen': {
+                    codigoPostal: ''
+                },
+                'Santa Rosa': {
+                    codigoPostal: ''
+                },
+                'Morona-Santiago': {
+                    codigoPostal: ''
+                },
+                'Los Ríos': {
+                    codigoPostal: ''
+                },
+                Huigra: {
+                    codigoPostal: ''
+                },
+                Pastaza: {
+                    codigoPostal: ''
+                },
+                Pasaje: {
+                    codigoPostal: ''
+                },
+                'Caja bamba': {
+                    codigoPostal: ''
+                },
+                Cañar: {
+                    codigoPostal: ''
+                },
+                Mocha: {
+                    codigoPostal: ''
+                },
+                Tisaleo: {
+                    codigoPostal: ''
                 },
                 Zamora: {
-                    codigoPostal: '190151'
+                    codigoPostal: ''
+                },
+                Azogues: {
+                    codigoPostal: ''
+                },
+                'Santo Domingo de los Tsáchilas': {
+                    codigoPostal: ''
+                },
+                Quinindé: {
+                    codigoPostal: ''
+                },
+                Macas: {
+                    codigoPostal: ''
+                },
+                Yantzaza: {
+                    codigoPostal: ''
+                },
+                Vilcabamba: {
+                    codigoPostal: ''
                 }
             }
         },
@@ -953,13 +1442,13 @@ export class Paises {
             codigoPais: '337',
             abreviatura: '',
             ciudades: {
-                'Georgetown / Capital': {
+                'Georgetown': {
                     codigoPostal: ''
                 },
                 Linden: {
                     codigoPostal: ''
                 },
-                'New Amsterdam': {
+                'Nueva Ámsterdam': {
                     codigoPostal: ''
                 },
                 'Anna Regina': {
@@ -974,7 +1463,91 @@ export class Paises {
                 Rosignol: {
                     codigoPostal: ''
                 },
-                'Mahaica Village': {
+                'Rose Hall': {
+                    codigoPostal: ''
+                },
+                Ituni: {
+                    codigoPostal: ''
+                },
+                'Fort Wellington': {
+                    codigoPostal: ''
+                },
+                Paradise: {
+                    codigoPostal: ''
+                },
+                Caridad: {
+                    codigoPostal: ''
+                },
+                Kumaka: {
+                    codigoPostal: ''
+                },
+                'Vreed en Hoop': {
+                    codigoPostal: ''
+                },
+                Corriverton: {
+                    codigoPostal: ''
+                },
+                Paramahatoi: {
+                    codigoPostal: ''
+                },
+                'Den Amstel': {
+                    codigoPostal: ''
+                },
+                Achiwib: {
+                    codigoPostal: ''
+                },
+                'Golden Grove': {
+                    codigoPostal: ''
+                },
+                Enterprise: {
+                    codigoPostal: ''
+                },
+                Hosororo: {
+                    codigoPostal: ''
+                },
+                Suddie: {
+                    codigoPostal: ''
+                },
+                Waterloo: {
+                    codigoPostal: ''
+                },
+                'Better Hope': {
+                    codigoPostal: ''
+                },
+                Paruima: {
+                    codigoPostal: ''
+                },
+                'Cane Grove': {
+                    codigoPostal: ''
+                },
+                Soesdyke: {
+                    codigoPostal: ''
+                },
+                Enmore: {
+                    codigoPostal: ''
+                },
+                Kwakwani: {
+                    codigoPostal: ''
+                },
+                Annandale: {
+                    codigoPostal: ''
+                },
+                Whitewater: {
+                    codigoPostal: ''
+                },
+                'Unity Village': {
+                    codigoPostal: ''
+                },
+                Zeeburg: {
+                    codigoPostal: ''
+                },
+                Agatash: {
+                    codigoPostal: ''
+                },
+                Apatou: {
+                    codigoPostal: ''
+                },
+                'Mahaica': {
                     codigoPostal: ''
                 },
                 Mahdia: {
@@ -986,7 +1559,7 @@ export class Paises {
                 'Vreed-en-Hoop': {
                     codigoPostal: ''
                 },
-                'Mahaicony Village': {
+                'Mahaicony': {
                     codigoPostal: ''
                 },
                 Mabaruma: {
@@ -1386,59 +1959,158 @@ export class Paises {
             codigoPais: '586',
             abreviatura: '',
             ciudades: {
+                'Ciudad del Este': {
+                    codigoPostal: ''
+                },
                 Asunción: {
-                    codigoPostal: 'xxxxxx'
-                },
-                Concepción: {
-                    codigoPostal: '010105'
-                },
-                'San Pedro de Ycuamandiyú': {
-                    codigoPostal: '020101'
-                },
-                Caacupé: {
-                    codigoPostal: '030106'
-                },
-                Villarrica: {
-                    codigoPostal: '040108'
-                },
-                'Coronel Oviedo': {
-                    codigoPostal: '050111'
-                },
-                Caazapá: {
-                    codigoPostal: '060303'
+                    codigoPostal: ''
                 },
                 Encarnación: {
-                    codigoPostal: '070105'
-                },
-                'San Juan Bautista': {
-                    codigoPostal: '032004'
-                },
-                Paraguarí: {
-                    codigoPostal: '090107'
-                },
-                'Ciudad del Este': {
-                    codigoPostal: 'xxxxxx'
-                },
-                Areguá: {
-                    codigoPostal: 'xxxxxx'
-                },
-                Pilar: {
-                    codigoPostal: 'xxxxxx'
+                    codigoPostal: ''
                 },
                 'Pedro Juan Caballero': {
-                    codigoPostal: '79904-150?'
+                    codigoPostal: ''
                 },
-                'Salto del Guairá': {
-                    codigoPostal: 'xxxxxx'
+                'San Bernardino': {
+                    codigoPostal: ''
                 },
-                'Villa Hayes': {
-                    codigoPostal: 'xxxxxx'
+                Villarrica: {
+                    codigoPostal: ''
                 },
-                Filadelfia: {
-                    codigoPostal: '160401'
+                Concepción: {
+                    codigoPostal: ''
+                },
+                Areguá: {
+                    codigoPostal: ''
                 },
                 'Fuerte Olimpo': {
-                    codigoPostal: '170101'
+                    codigoPostal: ''
+                },
+                'San Cosme y Damián': {
+                    codigoPostal: ''
+                },
+                'San Lorenzo': {
+                    codigoPostal: ''
+                },
+                Paraguarí: {
+                    codigoPostal: ''
+                },
+                Caacupé: {
+                    codigoPostal: ''
+                },
+                'Coronel Oviedo': {
+                    codigoPostal: ''
+                },
+                'San Juan Bautista': {
+                    codigoPostal: ''
+                },
+                'San Pedro del Ycuamandiyú': {
+                    codigoPostal: ''
+                },
+                Filadelfia: {
+                    codigoPostal: ''
+                },
+                Itá: {
+                    codigoPostal: ''
+                },
+                Luque: {
+                    codigoPostal: ''
+                },
+                'Salto del Guairá': {
+                    codigoPostal: ''
+                },
+                Caazapá: {
+                    codigoPostal: ''
+                },
+                Caaguazú: {
+                    codigoPostal: ''
+                },
+                Lambaré: {
+                    codigoPostal: ''
+                },
+                'Villa Hayes': {
+                    codigoPostal: ''
+                },
+                'Presidente Franco': {
+                    codigoPostal: ''
+                },
+                'Capitán Bado': {
+                    codigoPostal: ''
+                },
+                Hernandarias: {
+                    codigoPostal: ''
+                },
+                Capiatá: {
+                    codigoPostal: ''
+                },
+                Pilar: {
+                    codigoPostal: ''
+                },
+                Ypacaraí: {
+                    codigoPostal: ''
+                },
+                'Gran Asunción': {
+                    codigoPostal: ''
+                },
+                Itauguá: {
+                    codigoPostal: ''
+                },
+                'San Ignacio': {
+                    codigoPostal: ''
+                },
+                Curuguaty: {
+                    codigoPostal: ''
+                },
+                Ñemby: {
+                    codigoPostal: ''
+                },
+                'Mariano Roque Alonso': {
+                    codigoPostal: ''
+                },
+                'Benjamín Aceval': {
+                    codigoPostal: ''
+                },
+                'San Antonio': {
+                    codigoPostal: ''
+                },
+                Piribebuy: {
+                    codigoPostal: ''
+                },
+                Horqueta: {
+                    codigoPostal: ''
+                },
+                Alberdi: {
+                    codigoPostal: ''
+                },
+                Yegros: {
+                    codigoPostal: ''
+                },
+                Valenzuela: {
+                    codigoPostal: ''
+                },
+                Atyrá: {
+                    codigoPostal: ''
+                },
+                'Villa Elisa': {
+                    codigoPostal: ''
+                },
+                Villeta: {
+                    codigoPostal: ''
+                },
+                'Nueva Londres': {
+                    codigoPostal: ''
+                },
+                'Nueva Italia': {
+                    codigoPostal: ''
+                },
+                Ypané: {
+                    codigoPostal: ''
+                },
+                Ybycuí: {
+                    codigoPostal: ''
+                },
+                Belén: {
+                    codigoPostal: ''
                 }
             }
         },
@@ -1447,80 +2119,158 @@ export class Paises {
             codigoPais: '589',
             abreviatura: '',
             ciudades: {
-                Chachapoyas: {
-                    codigoPostal: '01000'
-                },
-                Huaraz: {
-                    codigoPostal: '02001'
-                },
-                Abancay: {
-                    codigoPostal: '03001'
-                },
-                Arequipa: {
-                    codigoPostal: '04001'
-                },
-                Ayacucho: {
-                    codigoPostal: '05000'
-                },
-                Cajamarca: {
-                    codigoPostal: '06001'
-                },
-                Callao: {
-                    codigoPostal: '07001'
-                },
-                Cuzco: {
-                    codigoPostal: '00800'
-                },
-                Huancavelica: {
-                    codigoPostal: '09001'
-                },
-                Huánuco: {
-                    codigoPostal: '10000'
-                },
-                Ica: {
-                    codigoPostal: '11000'
-                },
-                Huancayo: {
-                    codigoPostal: '12001'
-                },
-                Trujillo: {
-                    codigoPostal: '13001'
-                },
-                Chiclayo: {
-                    codigoPostal: '14000'
-                },
                 Lima: {
                     codigoPostal: '02002'
                 },
+                Arequipa: {
+                    codigoPostal: '02002'
+                },
+                Cusco: {
+                    codigoPostal: '02002'
+                },
+                Trujillo: {
+                    codigoPostal: '02002'
+                },
+                Chiclayo: {
+                    codigoPostal: '02002'
+                },
+                Huancayo: {
+                    codigoPostal: '02002'
+                },
                 Iquitos: {
-                    codigoPostal: '16001'
-                },
-                'Puerto Maldonado': {
-                    codigoPostal: '17001'
-                },
-                Moquegua: {
-                    codigoPostal: '18001'
-                },
-                'Cerro de Pasco': {
-                    codigoPostal: '19001'
+                    codigoPostal: '02002'
                 },
                 Piura: {
-                    codigoPostal: '20000'
+                    codigoPostal: '02002'
+                },
+                Cajamarca: {
+                    codigoPostal: '02002'
+                },
+                Ayacucho: {
+                    codigoPostal: '02002'
+                },
+                Huaraz: {
+                    codigoPostal: '02002'
                 },
                 Puno: {
-                    codigoPostal: '21001'
-                },
-                Moyobamba: {
-                    codigoPostal: '22001'
+                    codigoPostal: '02002'
                 },
                 Tacna: {
-                    codigoPostal: '23001'
+                    codigoPostal: '02002'
+                },
+                Juliaca: {
+                    codigoPostal: '02002'
+                },
+                Ica: {
+                    codigoPostal: '02002'
+                },
+                Callao: {
+                    codigoPostal: '02002'
+                },
+                Huánuco: {
+                    codigoPostal: '02002'
                 },
                 Tumbes: {
-                    codigoPostal: '24000'
+                    codigoPostal: '02002'
+                },
+                Chimbote: {
+                    codigoPostal: '02002'
+                },
+                Sullana: {
+                    codigoPostal: '02002'
+                },
+                'Puerto Maldonado': {
+                    codigoPostal: '02002'
+                },
+                Huacho: {
+                    codigoPostal: '02002'
+                },
+                Tarapoto: {
+                    codigoPostal: '02002'
                 },
                 Pucallpa: {
-                    codigoPostal: '25000'
+                    codigoPostal: '02002'
+                },
+                Huancavelica: {
+                    codigoPostal: '02002'
+                },
+                'Chincha Alta': {
+                    codigoPostal: '02002'
+                },
+                Talara: {
+                    codigoPostal: '02002'
+                },
+                Guadalupe: {
+                    codigoPostal: '02002'
+                },
+                Jaén: {
+                    codigoPostal: '02002'
+                },
+                Rioja: {
+                    codigoPostal: '02002'
+                },
+                Chachapoyas: {
+                    codigoPostal: '02002'
+                },
+                Yunguyo: {
+                    codigoPostal: '02002'
+                },
+                Paita: {
+                    codigoPostal: '02002'
+                },
+                Yauyos: {
+                    codigoPostal: '02002'
+                },
+                Ilo: {
+                    codigoPostal: '02002'
+                },
+                Barranca: {
+                    codigoPostal: '02002'
+                },
+                Jequetepeque: {
+                    codigoPostal: '02002'
+                },
+                Cajabamba: {
+                    codigoPostal: '02002'
+                },
+                Desaguadero: {
+                    codigoPostal: '02002'
+                },
+                Jauja: {
+                    codigoPostal: '02002'
+                },
+                Otuzco: {
+                    codigoPostal: '02002'
+                },
+                Requena: {
+                    codigoPostal: '02002'
+                },
+                Ferreñafe: {
+                    codigoPostal: '02002'
+                },
+                Virú: {
+                    codigoPostal: '02002'
+                },
+                Quillabamba: {
+                    codigoPostal: '02002'
+                },
+                Zarumilla: {
+                    codigoPostal: '02002'
+                },
+                'San Lorenzo': {
+                    codigoPostal: '02002'
+                },
+                'La Rinconada': {
+                    codigoPostal: '02002'
+                },
+                Pisco: {
+                    codigoPostal: '02002'
+                },
+                Abancay: {
+                    codigoPostal: '02002'
+                },
+                Moyobamba: {
+                    codigoPostal: '02002'
                 }
             }
         },
@@ -1724,40 +2474,148 @@ export class Paises {
                 Brokopondo: {
                     codigoPostal: ''
                 },
+                Albina: {
+                    codigoPostal: ''
+                },
+                'Nieuw Amsterdam': {
+                    codigoPostal: ''
+                },
                 'Nieuw Nickerie': {
                     codigoPostal: ''
                 },
                 Moengo: {
                     codigoPostal: ''
                 },
-                Meerzorg: {
-                    codigoPostal: ''
-                },
-                Domburg: {
-                    codigoPostal: ''
-                },
-                Mariënburg: {
-                    codigoPostal: ''
-                },
-                'Nieuw Amsterdam': {
-                    codigoPostal: ''
-                },
                 Wageningen: {
-                    codigoPostal: ''
-                },
-                Albina: {
-                    codigoPostal: ''
-                },
-                Groningen: {
-                    codigoPostal: ''
-                },
-                Brownsweg: {
                     codigoPostal: ''
                 },
                 Onverwacht: {
                     codigoPostal: ''
                 },
+                Groningen: {
+                    codigoPostal: ''
+                },
                 Totness: {
+                    codigoPostal: ''
+                },
+                Brownsweg: {
+                    codigoPostal: ''
+                },
+                Marienburg: {
+                    codigoPostal: ''
+                },
+                Meerzorg: {
+                    codigoPostal: ''
+                },
+                'Nieuw Jacobkondre': {
+                    codigoPostal: ''
+                },
+                Cotticadorp: {
+                    codigoPostal: ''
+                },
+                Goddo: {
+                    codigoPostal: ''
+                },
+                'Distrito de Commewijne': {
+                    codigoPostal: ''
+                },
+                Benzdorp: {
+                    codigoPostal: ''
+                },
+                Peleloetepu: {
+                    codigoPostal: ''
+                },
+                Kwamalasamutu: {
+                    codigoPostal: ''
+                },
+                Aurora: {
+                    codigoPostal: ''
+                },
+                Kajana: {
+                    codigoPostal: ''
+                },
+                Anapaike: {
+                    codigoPostal: ''
+                },
+                Botopasi: {
+                    codigoPostal: ''
+                },
+                Pokigron: {
+                    codigoPostal: ''
+                },
+                Bitagron: {
+                    codigoPostal: ''
+                },
+                Apoera: {
+                    codigoPostal: ''
+                },
+                Pontoetoe: {
+                    codigoPostal: ''
+                },
+                Apetina: {
+                    codigoPostal: ''
+                },
+                Djumu: {
+                    codigoPostal: ''
+                },
+                'Distrito de Paramaribo': {
+                    codigoPostal: ''
+                },
+                Bakhuis: {
+                    codigoPostal: ''
+                },
+                Abenaston: {
+                    codigoPostal: ''
+                },
+                Heidoti: {
+                    codigoPostal: ''
+                },
+                Alliance: {
+                    codigoPostal: ''
+                },
+                Jenny: {
+                    codigoPostal: ''
+                },
+                Warnakomoponafaja: {
+                    codigoPostal: ''
+                },
+                'Tjakkatjakka Ston': {
+                    codigoPostal: ''
+                },
+                'South Drain': {
+                    codigoPostal: ''
+                },
+                Lebidoti: {
+                    codigoPostal: ''
+                },
+                Friendship: {
+                    codigoPostal: ''
+                },
+                'Bigi Poika': {
+                    codigoPostal: ''
+                },
+                Wanhatti: {
+                    codigoPostal: ''
+                },
+                Coeroeni: {
+                    codigoPostal: ''
+                },
+                Corneliskondre: {
+                    codigoPostal: ''
+                },
+                Kwakoegron: {
+                    codigoPostal: ''
+                },
+                Zanderij: {
+                    codigoPostal: ''
+                },
+                Galibi: {
+                    codigoPostal: ''
+                },
+                Boskamp: {
+                    codigoPostal: ''
+                },
+                'Kampong Baroe': {
                     codigoPostal: ''
                 }
             }
