@@ -6,17 +6,10 @@ export class Paises {
         }
     }
 
-    //'Venezuela' = 
-    
-
-    '#Estados Unidos' = {
-        asd: {
-            codigoPostal: ''
-        }
-    }
-
     //ASIA
-    //AMÉRICA Sur norte
+    //América del norte
+    //América central
+    //América del sur
     //ÁFRICA
     //ANTÁRTIDA
     //EUROPA
