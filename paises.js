@@ -285,10 +285,80 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Belice: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '088',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                'Ciudad de Belice': {
+                    codigoPostal: ''
+                },
+                Belmopán: {
+                    codigoPostal: ''
+                },
+                'San Ignacio': {
+                    codigoPostal: ''
+                },
+                Dangriga: {
+                    codigoPostal: ''
+                },
+                'Orange Walk': {
+                    codigoPostal: ''
+                },
+                'Punta Gorda': {
+                    codigoPostal: ''
+                },
+                'San Pedro': {
+                    codigoPostal: ''
+                },
+                Corozal: {
+                    codigoPostal: ''
+                },
+                Placencia: {
+                    codigoPostal: ''
+                },
+                'Rock Stone Pond': {
+                    codigoPostal: ''
+                },
+                'Benque Viejo del Carmen': {
+                    codigoPostal: ''
+                },
+                'Valley of Peace': {
+                    codigoPostal: ''
+                },
+                'San Pedro Columbia': {
+                    codigoPostal: ''
+                },
+                Shipyard: {
+                    codigoPostal: ''
+                },
+                Hopkins: {
+                    codigoPostal: ''
+                },
+                'Crooked Tree': {
+                    codigoPostal: ''
+                },
+                Ladyville: {
+                    codigoPostal: ''
+                },
+                Hattieville: {
+                    codigoPostal: ''
+                },
+                'Bermudian Landing': {
+                    codigoPostal: ''
+                },
+                'Gales Point': {
+                    codigoPostal: ''
+                },
+                'Mango Creek': {
+                    codigoPostal: ''
+                },
+                Lemonal: {
+                    codigoPostal: ''
+                },
+                'La Democracia': {
+                    codigoPostal: ''
+                }
+            }
         },
         Benín: {
             continente: '',
@@ -1115,10 +1185,107 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         'Costa Rica': {
-            continente: '',
+            continente: 'América central',
             codigoPais: '196',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                'San José': {
+                    codigoPostal: ''
+                },
+                Cartago: {
+                    codigoPostal: ''
+                },
+                Puntarenas: {
+                    codigoPostal: ''
+                },
+                Liberia: {
+                    codigoPostal: ''
+                },
+                Heredia: {
+                    codigoPostal: ''
+                },
+                Limón: {
+                    codigoPostal: ''
+                },
+                Alajuela: {
+                    codigoPostal: ''
+                },
+                Golfito: {
+                    codigoPostal: ''
+                },
+                Quepos: {
+                    codigoPostal: ''
+                },
+                Zarcero: {
+                    codigoPostal: ''
+                },
+                Atenas: {
+                    codigoPostal: ''
+                },
+                'Playa Montezuma': {
+                    codigoPostal: ''
+                },
+                'Puerto Viejo': {
+                    codigoPostal: ''
+                },
+                Escazú: {
+                    codigoPostal: ''
+                },
+                Turrialba: {
+                    codigoPostal: ''
+                },
+                'San José': {
+                    codigoPostal: ''
+                },
+                Tortuguero: {
+                    codigoPostal: ''
+                },
+                'Ciudad Quesada': {
+                    codigoPostal: ''
+                },
+                Cahuita: {
+                    codigoPostal: ''
+                },
+                Nicoya: {
+                    codigoPostal: ''
+                },
+                Curridabat: {
+                    codigoPostal: ''
+                },
+                'San Vicente': {
+                    codigoPostal: ''
+                },
+                Monteverde: {
+                    codigoPostal: ''
+                },
+                'San Pedro': {
+                    codigoPostal: ''
+                },
+                Cabuya: {
+                    codigoPostal: ''
+                },
+                Barva: {
+                    codigoPostal: ''
+                },
+                'Dos Brazos': {
+                    codigoPostal: ''
+                },
+                Curridabat: {
+                    codigoPostal: ''
+                },
+                'Cantón de Buenos Aires': {
+                    codigoPostal: ''
+                },
+                'Las Catalinas': {
+                    codigoPostal: ''
+                },
+                Jacó: {
+                    codigoPostal: ''
+                },
+                Carrillos: {
+                    codigoPostal: ''
+                }
+            }
         },
         Croacia: {
             continente: '',
@@ -1311,10 +1478,164 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         'El Salvador': {
-            continente: '',
+            continente: 'América central',
             codigoPais: '242',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                'San Salvador': {
+                    codigoPostal: ''
+                },
+                'Santa Ana': {
+                    codigoPostal: ''
+                },
+                'San Miguel': {
+                    codigoPostal: ''
+                },
+                Ahuachapán: {
+                    codigoPostal: ''
+                },
+                Sonsonate: {
+                    codigoPostal: ''
+                },
+                'San Vicente': {
+                    codigoPostal: ''
+                },
+                'La Unión': {
+                    codigoPostal: ''
+                },
+                'Santa Tecla': {
+                    codigoPostal: ''
+                },
+                Soyapango: {
+                    codigoPostal: ''
+                },
+                Mejicanos: {
+                    codigoPostal: ''
+                },
+                Apopa: {
+                    codigoPostal: ''
+                },
+                Usulután: {
+                    codigoPostal: ''
+                },
+                Chalatenango: {
+                    codigoPostal: ''
+                },
+                Delgado: {
+                    codigoPostal: ''
+                },
+                Suchitoto: {
+                    codigoPostal: ''
+                },
+                Jujutla: {
+                    codigoPostal: ''
+                },
+                Ilopango: {
+                    codigoPostal: ''
+                },
+                'San Marcos': {
+                    codigoPostal: ''
+                },
+                'Antiguo Cuscatlán': {
+                    codigoPostal: ''
+                },
+                Zacatecoluca: {
+                    codigoPostal: ''
+                },
+                Cojutepeque: {
+                    codigoPostal: ''
+                },
+                Apaneca: {
+                    codigoPostal: ''
+                },
+                'San Martín': {
+                    codigoPostal: ''
+                },
+                Jiquilisco: {
+                    codigoPostal: ''
+                },
+                'Ciudad Arce': {
+                    codigoPostal: ''
+                },
+                Metapán: {
+                    codigoPostal: ''
+                },
+                Cuscatancingo: {
+                    codigoPostal: ''
+                },
+                Tamanique: {
+                    codigoPostal: ''
+                },
+                Tonacatepeque: {
+                    codigoPostal: ''
+                },
+                Tacuba: {
+                    codigoPostal: ''
+                },
+                Cinquera: {
+                    codigoPostal: ''
+                },
+                Chalchuapa: {
+                    codigoPostal: ''
+                },
+                Quezaltepeque: {
+                    codigoPostal: ''
+                },
+                'San Bartolomé Perulapía': {
+                    codigoPostal: ''
+                },
+                Izalco: {
+                    codigoPostal: ''
+                },
+                Acajutla: {
+                    codigoPostal: ''
+                },
+                'Santiago Nonualco': {
+                    codigoPostal: ''
+                },
+                Polorós: {
+                    codigoPostal: ''
+                },
+                'Ojos de Agua': {
+                    codigoPostal: ''
+                },
+                Sensuntepeque: {
+                    codigoPostal: ''
+                },
+                'San Ignacio': {
+                    codigoPostal: ''
+                },
+                'San Juan Opico': {
+                    codigoPostal: ''
+                },
+                'Ciudad Barrios': {
+                    codigoPostal: ''
+                },
+                Nahuizalco: {
+                    codigoPostal: ''
+                },
+                Ayutuxtepeque: {
+                    codigoPostal: ''
+                },
+                'La Libertad': {
+                    codigoPostal: ''
+                },
+                'San Antonio de La Cruz': {
+                    codigoPostal: ''
+                },
+                Chirilagua: {
+                    codigoPostal: ''
+                },
+                Conchagua: {
+                    codigoPostal: ''
+                },
+                'Concepción de Ataco': {
+                    codigoPostal: ''
+                },
+                Atiquizaya: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Emiratos Árabes Unidos': {
             continente: '',
@@ -1425,10 +1746,164 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Guatemala: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '317',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                'Ciudad de Guatemala': {
+                    codigoPostal: ''
+                },
+                Quezaltenango: {
+                    codigoPostal: ''
+                },
+                Antigua : {
+                    codigoPostal: ''
+                },
+                'Villa Nueva': {
+                    codigoPostal: ''
+                },
+                Mixco: {
+                    codigoPostal: ''
+                },
+                Escuintla: {
+                    codigoPostal: ''
+                },
+                Amatitlán: {
+                    codigoPostal: ''
+                },
+                'Puerto Barrios': {
+                    codigoPostal: ''
+                },
+                Cobán: {
+                    codigoPostal: ''
+                },
+                Retalhuleu: {
+                    codigoPostal: ''
+                },
+                'Santa Catarina Pinula': {
+                    codigoPostal: ''
+                },
+                'San Raymundo': {
+                    codigoPostal: ''
+                },
+                Fraijanes: {
+                    codigoPostal: ''
+                },
+                Flores: {
+                    codigoPostal: ''
+                },
+                Jalapa: {
+                    codigoPostal: ''
+                },
+                Totonicapán: {
+                    codigoPostal: ''
+                },
+                Mazatenango: {
+                    codigoPostal: ''
+                },
+                Huehuetenango: {
+                    codigoPostal: ''
+                },
+                Salcajá: {
+                    codigoPostal: ''
+                },
+                Jocotenango: {
+                    codigoPostal: ''
+                },
+                'San Bartolomé Milpas Altas': {
+                    codigoPostal: ''
+                },
+                'Santa Lucía Milpas Altas': {
+                    codigoPostal: ''
+                },
+                Chichicastenango: {
+                    codigoPostal: ''
+                },
+                Chimaltenango: {
+                    codigoPostal: ''
+                },
+                'San Marcos': {
+                    codigoPostal: ''
+                },
+                Quetzaltenango: {
+                    codigoPostal: ''
+                },
+                Momostenango: {
+                    codigoPostal: ''
+                },
+                'San Pedro Carchá': {
+                    codigoPostal: ''
+                },
+                'Alta Verapaz': {
+                    codigoPostal: ''
+                },
+                Chiquimula: {
+                    codigoPostal: ''
+                },
+                Jutiapa: {
+                    codigoPostal: ''
+                },
+                Quiché: {
+                    codigoPostal: ''
+                },
+                Sololá: {
+                    codigoPostal: ''
+                },
+                Petén: {
+                    codigoPostal: ''
+                },
+                Izabal: {
+                    codigoPostal: ''
+                },
+                Zacapa: {
+                    codigoPostal: ''
+                },
+                'Santa Cruz del Quiché': {
+                    codigoPostal: ''
+                },
+                Barillas: {
+                    codigoPostal: ''
+                },
+                Ixcán: {
+                    codigoPostal: ''
+                },
+                Senahú: {
+                    codigoPostal: ''
+                },
+                Chisec: {
+                    codigoPostal: ''
+                },
+                Joyabaj: {
+                    codigoPostal: ''
+                },
+                Tecpán: {
+                    codigoPostal: ''
+                },
+                Sayaxché: {
+                    codigoPostal: ''
+                },
+                Escuintla: {
+                    codigoPostal: ''
+                },
+                Chiantla: {
+                    codigoPostal: ''
+                },
+                Palencia: {
+                    codigoPostal: ''
+                },
+                'San Pedro Ayampuc': {
+                    codigoPostal: ''
+                },
+                'Santa Rosa': {
+                    codigoPostal: ''
+                },
+                Huehuetenango: {
+                    codigoPostal: ''
+                },
+                Salamá: {
+                    codigoPostal: ''
+                }
+            }
         },
         Guyana: {
             continente: 'América del sur',
