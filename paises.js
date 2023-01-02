@@ -1,4 +1,52 @@
-export class Paises {
+class LionAyudas {
+    #regexCorreo = /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g;
+    #regexSoloLetras = /^[a-zA-ZÑñ]+/g;
+
+    validarCorreo(value) {
+        let valido = false;
+        if(this.#regexCorreo.test(value))
+            valido = true;
+
+        return valido;
+    }
+
+    validarSoloLetras(value) {
+        let valido = false;
+        if(this.#regexSoloLetras.test(value))
+            valido = true;
+
+        return valido;
+    }
+
+    validarCadenaAlfaNumerica(value) {
+        let valido = false;
+        if(value && isNaN(value))
+            valido = true;
+
+        return valido;
+    }
+
+    validarSoloNumeros(value) {
+        let valido = false;
+        if(!isNaN(value))
+            valido = true;
+
+        return valido;
+    }
+
+    normalizarText(cadena) {
+        let cadenaRetorno = cadena.toLowerCase().replace(/[á|à|â|ä|ã|å]/g, 'a');
+        cadenaRetorno = cadenaRetorno.replace(/[é|è|ê|ë]/g, 'e');
+        cadenaRetorno = cadenaRetorno.replace(/[í|ì|î|ï]/g, 'i');
+        cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö]/g, 'o');
+        cadenaRetorno = cadenaRetorno.replace(/[ú|ù|û|ü]/g, 'u');
+        cadenaRetorno = cadenaRetorno.replace(/[ý|ÿ]/g, 'y');
+
+        return cadenaRetorno;
+    }
+}
+
+export class Paises extends LionAyudas {
 
     #Afganistán = {
         Kabul: {
@@ -928,9 +976,6 @@ export class Paises {
                 Talcahuano: {
                     codigoPostal: ''
                 },
-                Valdivia: {
-                    codigoPostal: ''
-                },
                 Castro: {
                     codigoPostal: ''
                 }
@@ -1234,9 +1279,6 @@ export class Paises {
                 Turrialba: {
                     codigoPostal: ''
                 },
-                'San José': {
-                    codigoPostal: ''
-                },
                 Tortuguero: {
                     codigoPostal: ''
                 },
@@ -1268,9 +1310,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Dos Brazos': {
-                    codigoPostal: ''
-                },
-                Curridabat: {
                     codigoPostal: ''
                 },
                 'Cantón de Buenos Aires': {
@@ -1882,9 +1921,6 @@ export class Paises {
                 Sayaxché: {
                     codigoPostal: ''
                 },
-                Escuintla: {
-                    codigoPostal: ''
-                },
                 Chiantla: {
                     codigoPostal: ''
                 },
@@ -1895,9 +1931,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Santa Rosa': {
-                    codigoPostal: ''
-                },
-                Huehuetenango: {
                     codigoPostal: ''
                 },
                 Salamá: {
@@ -2063,10 +2096,152 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Honduras: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '345',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                Tegucigalpa: {
+                    codigoPostal: ''
+                },
+                'San Pedro Sula': {
+                    codigoPostal: ''
+                },
+                Comayagua: {
+                    codigoPostal: ''
+                },
+                'El Progreso': {
+                    codigoPostal: ''
+                },
+                Choluteca: {
+                    codigoPostal: ''
+                },
+                'La Ceiba': {
+                    codigoPostal: ''
+                },
+                Choloma: {
+                    codigoPostal: ''
+                },
+                'Puerto Cortés': {
+                    codigoPostal: ''
+                },
+                Tela: {
+                    codigoPostal: ''
+                },
+                Danlí: {
+                    codigoPostal: ''
+                },
+                Catacamas: {
+                    codigoPostal: ''
+                },
+                'La Lima': {
+                    codigoPostal: ''
+                },
+                'Distrito Central': {
+                    codigoPostal: ''
+                },
+                Juticalpa: {
+                    codigoPostal: ''
+                },
+                Siguatepeque: {
+                    codigoPostal: ''
+                },
+                Tocoa: {
+                    codigoPostal: ''
+                },
+                Olanchito: {
+                    codigoPostal: ''
+                },
+                Nacaome: {
+                    codigoPostal: ''
+                },
+                Gracias: {
+                    codigoPostal: ''
+                },
+                'Santa Rosa de Copán': {
+                    codigoPostal: ''
+                },
+                Yoro: {
+                    codigoPostal: ''
+                },
+                'Santa Bárbara': {
+                    codigoPostal: ''
+                },
+                'La Paz': {
+                    codigoPostal: ''
+                },
+                Ocotepeque: {
+                    codigoPostal: ''
+                },
+                'Puerto Lempira': {
+                    codigoPostal: ''
+                },
+                Talanga: {
+                    codigoPostal: ''
+                },
+                Marcala: {
+                    codigoPostal: ''
+                },
+                'La Entrada': {
+                    codigoPostal: ''
+                },
+                'Santa Cruz de Yojoa': {
+                    codigoPostal: ''
+                },
+                Amapala: {
+                    codigoPostal: ''
+                },
+                'La Campa': {
+                    codigoPostal: ''
+                },
+                'La Esperanza': {
+                    codigoPostal: ''
+                },
+                Comayagüela: {
+                    codigoPostal: ''
+                },
+                'San José': {
+                    codigoPostal: ''
+                },
+                'San José de Colinas': {
+                    codigoPostal: ''
+                },
+                Trujillo: {
+                    codigoPostal: ''
+                },
+                Yuscarán: {
+                    codigoPostal: ''
+                },
+                Roatán: {
+                    codigoPostal: ''
+                },
+                'San Juan': {
+                    codigoPostal: ''
+                },
+                Veracruz: {
+                    codigoPostal: ''
+                },
+                Guaimaca: {
+                    codigoPostal: ''
+                },
+                Sonaguera: {
+                    codigoPostal: ''
+                },
+                Potrerillos: {
+                    codigoPostal: ''
+                },
+                'Santa Rita': {
+                    codigoPostal: ''
+                },
+                'Nueva Ocotepeque': {
+                    codigoPostal: ''
+                },
+                'San Antonio de Oriente': {
+                    codigoPostal: ''
+                },
+                Sinuapa: {
+                    codigoPostal: ''
+                }
+            }
         },
         Hungría: {
             continente: '',
@@ -2297,10 +2472,164 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         México: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '493',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                'Ciudad de México': {
+                    codigoPostal: ''
+                },
+                Guadalajara: {
+                    codigoPostal: ''
+                },
+                'Puebla de Zaragoza': {
+                    codigoPostal: ''
+                },
+                'Oaxaca de Juárez': {
+                    codigoPostal: ''
+                },
+                Monterrey: {
+                    codigoPostal: ''
+                },
+                Mérida: {
+                    codigoPostal: ''
+                },
+                Cancún: {
+                    codigoPostal: ''
+                },
+                'Santiago de Querétaro': {
+                    codigoPostal: ''
+                },
+                'San Luis Potosí': {
+                    codigoPostal: ''
+                },
+                'Ciudad Juárez': {
+                    codigoPostal: ''
+                },
+                'Xalapa-Enríquez': {
+                    codigoPostal: ''
+                },
+                Cuernavaca: {
+                    codigoPostal: ''
+                },
+                Aguascalientes: {
+                    codigoPostal: ''
+                },
+                Zacatecas: {
+                    codigoPostal: ''
+                },
+                Veracruz: {
+                    codigoPostal: ''
+                },
+                Morelia: {
+                    codigoPostal: ''
+                },
+                Saltillo: {
+                    codigoPostal: ''
+                },
+                'Toluca de Lerdo': {
+                    codigoPostal: ''
+                },
+                Culiacán: {
+                    codigoPostal: ''
+                },
+                'Victoria de Durango': {
+                    codigoPostal: ''
+                },
+                Mexicali: {
+                    codigoPostal: ''
+                },
+                Hermosillo: {
+                    codigoPostal: ''
+                },
+                'Tuxtla Gutiérrez': {
+                    codigoPostal: ''
+                },
+                'Puerto Vallarta': {
+                    codigoPostal: ''
+                },
+                'Pachuca de Soto': {
+                    codigoPostal: ''
+                },
+                Campeche: {
+                    codigoPostal: ''
+                },
+                Villahermosa: {
+                    codigoPostal: ''
+                },
+                Tijuana: {
+                    codigoPostal: ''
+                },
+                León: {
+                    codigoPostal: ''
+                },
+                Guanajuato: {
+                    codigoPostal: ''
+                },
+                'Ecatepec de Morelos': {
+                    codigoPostal: ''
+                },
+                Acapulco: {
+                    codigoPostal: ''
+                },
+                Tampico: {
+                    codigoPostal: ''
+                },
+                Chihuahua: {
+                    codigoPostal: ''
+                },
+                'Naucalpan de Juárez': {
+                    codigoPostal: ''
+                },
+                Reynosa: {
+                    codigoPostal: ''
+                },
+                'Cabo San Lucas': {
+                    codigoPostal: ''
+                },
+                Torreón: {
+                    codigoPostal: ''
+                },
+                Ensenada: {
+                    codigoPostal: ''
+                },
+                'Playa del Carmen': {
+                    codigoPostal: ''
+                },
+                'La Paz': {
+                    codigoPostal: ''
+                },
+                Tepic: {
+                    codigoPostal: ''
+                },
+                'San Miguel de Allende': {
+                    codigoPostal: ''
+                },
+                'Chilpancingo de los Bravo': {
+                    codigoPostal: ''
+                },
+                Fresnillo: {
+                    codigoPostal: ''
+                },
+                Nezahualcóyotl: {
+                    codigoPostal: ''
+                },
+                'San Pedro Garza García': {
+                    codigoPostal: ''
+                },
+                Colima: {
+                    codigoPostal: ''
+                },
+                Chetumal: {
+                    codigoPostal: ''
+                },
+                'Tlalnepantla de Baz': {
+                    codigoPostal: ''
+                },
+                Irapuato: {
+                    codigoPostal: ''
+                }
+            }
         },
         Micronesia: {
             continente: '',
@@ -2357,10 +2686,164 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Nicaragua: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '521',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                Managua: {
+                    codigoPostal: ''
+                },
+                León: {
+                    codigoPostal: ''
+                },
+                Granada: {
+                    codigoPostal: ''
+                },
+                Chinandega: {
+                    codigoPostal: ''
+                },
+                Masaya: {
+                    codigoPostal: ''
+                },
+                Matagalpa: {
+                    codigoPostal: ''
+                },
+                Estelí: {
+                    codigoPostal: ''
+                },
+                Jinotega: {
+                    codigoPostal: ''
+                },
+                Tipitapa: {
+                    codigoPostal: ''
+                },
+                'El Viejo': {
+                    codigoPostal: ''
+                },
+                Rivas: {
+                    codigoPostal: ''
+                },
+                'San Juan del Sur': {
+                    codigoPostal: ''
+                },
+                Juigalpa: {
+                    codigoPostal: ''
+                },
+                Boaco: {
+                    codigoPostal: ''
+                },
+                'Ciudad Darío': {
+                    codigoPostal: ''
+                },
+                Jinotepe: {
+                    codigoPostal: ''
+                },
+                Bluefields: {
+                    codigoPostal: ''
+                },
+                Nandaime: {
+                    codigoPostal: ''
+                },
+                Niquinohomo: {
+                    codigoPostal: ''
+                },
+                'San Rafael del Norte': {
+                    codigoPostal: ''
+                },
+                Ocotal: {
+                    codigoPostal: ''
+                },
+                Somoto: {
+                    codigoPostal: ''
+                },
+                'San Juan de Limay': {
+                    codigoPostal: ''
+                },
+                Bilwi: {
+                    codigoPostal: ''
+                },
+                'Ciudad Antigua': {
+                    codigoPostal: ''
+                },
+                Diriamba: {
+                    codigoPostal: ''
+                },
+                Quezalguaque: {
+                    codigoPostal: ''
+                },
+                Tonalá: {
+                    codigoPostal: ''
+                },
+                'San Carlos': {
+                    codigoPostal: ''
+                },
+                'El Almendro': {
+                    codigoPostal: ''
+                },
+                'Río Blanco': {
+                    codigoPostal: ''
+                },
+                Masatepe: {
+                    codigoPostal: ''
+                },
+                Chichigalpa: {
+                    codigoPostal: ''
+                },
+                Siuna: {
+                    codigoPostal: ''
+                },
+                Nagarote: {
+                    codigoPostal: ''
+                },
+                Camoapa: {
+                    codigoPostal: ''
+                },
+                'Nueva Guinea': {
+                    codigoPostal: ''
+                },
+                'San Juan de Oriente': {
+                    codigoPostal: ''
+                },
+                'Villa El Carmen': {
+                    codigoPostal: ''
+                },
+                'Ruinas de León Viejo': {
+                    codigoPostal: ''
+                },
+                Altagracia: {
+                    codigoPostal: ''
+                },
+                'Muy Muy': {
+                    codigoPostal: ''
+                },
+                'San Rafael del Sur': {
+                    codigoPostal: ''
+                },
+                Nandasmo: {
+                    codigoPostal: ''
+                },
+                Somotillo: {
+                    codigoPostal: ''
+                },
+                Mateare: {
+                    codigoPostal: ''
+                },
+                Nindirí: {
+                    codigoPostal: ''
+                },
+                Corinto: {
+                    codigoPostal: ''
+                },
+                Acoyapa: {
+                    codigoPostal: ''
+                },
+                'Bocana de Paiwás': {
+                    codigoPostal: ''
+                },
+                'La Paz Centro': {
+                    codigoPostal: ''
+                }
+            }
         },
         Níger: {
             continente: '',
@@ -2411,10 +2894,158 @@ export class Paises {
             ciudades: this.#Afganistán
         },
         Panamá: {
-            continente: '',
+            continente: 'América central',
             codigoPais: '580',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            ciudades: {
+                Panamá: {
+                    codigoPostal: ''
+                },
+                Colón: {
+                    codigoPostal: ''
+                },
+                David: {
+                    codigoPostal: ''
+                },
+                Santiago: {
+                    codigoPostal: ''
+                },
+                Chitré: {
+                    codigoPostal: ''
+                },
+                Penonomé: {
+                    codigoPostal: ''
+                },
+                'Las Cumbres': {
+                    codigoPostal: ''
+                },
+                Changuinola: {
+                    codigoPostal: ''
+                },
+                'Las Tablas': {
+                    codigoPostal: ''
+                },
+                'Bocas del Toro': {
+                    codigoPostal: ''
+                },
+                'Bajo Boquete': {
+                    codigoPostal: ''
+                },
+                Aguadulce: {
+                    codigoPostal: ''
+                },
+                Antón: {
+                    codigoPostal: ''
+                },
+                Arraiján: {
+                    codigoPostal: ''
+                },
+                Chepo: {
+                    codigoPostal: ''
+                },
+                Chame: {
+                    codigoPostal: ''
+                },
+                Natá: {
+                    codigoPostal: ''
+                },
+                'Río Sereno': {
+                    codigoPostal: ''
+                },
+                Tocumen: {
+                    codigoPostal: ''
+                },
+                Macaracas: {
+                    codigoPostal: ''
+                },
+                'Los Pozos': {
+                    codigoPostal: ''
+                },
+                Tolé: {
+                    codigoPostal: ''
+                },
+                Pesé: {
+                    codigoPostal: ''
+                },
+                Alanje: {
+                    codigoPostal: ''
+                },
+                'Santa Isabel': {
+                    codigoPostal: ''
+                },
+                Parita: {
+                    codigoPostal: ''
+                },
+                Chimán: {
+                    codigoPostal: ''
+                },
+                'Chiriquí Grande': {
+                    codigoPostal: ''
+                },
+                Donoso: {
+                    codigoPostal: ''
+                },
+                'Las Minas': {
+                    codigoPostal: ''
+                },
+                Chepigana: {
+                    codigoPostal: ''
+                },
+                Pinogana: {
+                    codigoPostal: ''
+                },
+                Ocú: {
+                    codigoPostal: ''
+                },
+                'Puerto Armuelles': {
+                    codigoPostal: ''
+                },
+                Cañazas: {
+                    codigoPostal: ''
+                },
+                Capira: {
+                    codigoPostal: ''
+                },
+                Pocrí: {
+                    codigoPostal: ''
+                },
+                Mariato: {
+                    codigoPostal: ''
+                },
+                'La Pintada': {
+                    codigoPostal: ''
+                },
+                'Río de Jesús': {
+                    codigoPostal: ''
+                },
+                'Distrito de David': {
+                    codigoPostal: ''
+                },
+                Calobre: {
+                    codigoPostal: ''
+                },
+                Boquerón: {
+                    codigoPostal: ''
+                },
+                Gualaca: {
+                    codigoPostal: ''
+                },
+                Tonosí: {
+                    codigoPostal: ''
+                },
+                Guararé: {
+                    codigoPostal: ''
+                },
+                'Nombre de Dios': {
+                    codigoPostal: ''
+                },
+                'La Palma': {
+                    codigoPostal: ''
+                },
+                'El Porvenir': {
+                    codigoPostal: ''
+                }
+            }
         },
         'Papúa Nueva Guinea': {
             continente: '',
@@ -3713,17 +4344,6 @@ export class Paises {
 
             return 'no existe datos asociados';
         }
-    }
-
-    normalizarText(cadena) {
-        let cadenaRetorno = cadena.toLowerCase().replace(/[á|à|â|ä|ã|å]/g, 'a');
-        cadenaRetorno = cadenaRetorno.replace(/[é|è|ê|ë]/g, 'e');
-        cadenaRetorno = cadenaRetorno.replace(/[í|ì|î|ï]/g, 'i');
-        cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö]/g, 'o');
-        cadenaRetorno = cadenaRetorno.replace(/[ú|ù|û|ü]/g, 'u');
-        cadenaRetorno = cadenaRetorno.replace(/[ý|ÿ]/g, 'y');
-
-        return cadenaRetorno;
     }
 }
 
