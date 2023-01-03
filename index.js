@@ -15,13 +15,6 @@ import {Paises} from './paises.js';
         });
     }
 
-    let email = document.querySelectorAll('[type="email"]');//document.getElementsByClassName('Numerico');
-    for (const i of email) {
-        i.addEventListener('keyup', function (e){
-            this.value = this.value.replace(/^((^(([a-zA-Z0-9]{1,15}[\_\-\.]{0,1}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})@([a-zA-Z0-9]{1,15}[\_\-\.]{0,1}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50}\.[a-zA-Z]{2,5}){1,1})/g, '');
-        });
-    }
-
     console.log('se ejecuta', alfaNum);
 })();
 
