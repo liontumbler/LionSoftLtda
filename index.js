@@ -1,23 +1,5 @@
 import {Paises} from './paises.js';
-(function () {
-    
-    let alfaNum = document.querySelectorAll('[type="text"]');//document.getElementsByClassName('alfaNumerico');
-    for (const i of alfaNum) {
-        i.addEventListener('keyup', function (e){
-            this.value = this.value.replace(/[^0-9A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
-        });
-    }
-
-    let num = document.querySelectorAll('[type="number"]');//document.getElementsByClassName('Numerico');
-    for (const i of num) {
-        i.addEventListener('keyup', function (e){
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-    }
-
-    console.log('se ejecuta', alfaNum);
-})();
-
+import * as onload from './onload.js';
 
 /** como utilizar paises 'descomentar'*/
 
