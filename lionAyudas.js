@@ -44,4 +44,45 @@ export class LionAyudas {
 
         return cadenaRetorno;
     }
+
+    /**
+    function validadorCamposExpert($this, campos) {
+    let valido = true;
+    for (const i in campos) {
+        if($("#"+campos[i]).attr('type') == 'email'){
+            if(validarEmail($("#"+campos[i]).val()) == false && $("#"+campos[i]).val() != ''){
+                valido = false;
+                msgCorreoFormato($this, i);
+                break;
+            }
+        }else{
+            if ($("#"+campos[i]).attr('maxlength') && $("#"+campos[i]).val().length > $("#"+campos[i]).attr('maxlength')) {
+                valido = false;
+                msgCampoVacio($this, i + ', no puede pasar de '+ $("#"+campos[i]).attr('maxlength') + ' caracteres');
+                break;
+            }
+
+            if ($("#"+campos[i]).attr('minlength') && $("#"+campos[i]).val().length < $("#"+campos[i]).attr('minlength')) {
+                valido = false;
+                msgCampoVacio($this, i + ', de ser mayor a '+ $("#"+campos[i]).attr('minlength') + ' caracteres');
+                break;
+            }
+
+            if ($("#"+campos[i]).attr('regex') && !$("#"+campos[i]).val().test($("#"+campos[i]).attr('regex'))) {
+                valido = false;
+                msgCampoVacio($this, i + ', de ser mayor a '+ $("#"+campos[i]).attr('minlength') + 'caracteres');
+                break;
+            }
+        }
+        
+        if(($("#"+campos[i]).val() == '' && campos[i] != 'img') || ($('#' + campos[i]).attr('src') == '' && campos[i] == 'img')){
+            valido = false;
+            msgCampoVacio($this, i);
+            break;
+        }
+    }
+
+    return valido;
+}
+     */
 }

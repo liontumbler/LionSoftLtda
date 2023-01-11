@@ -1,28 +1,38 @@
 window.onload = function (e) {
     //ojo del los campo password class pw
     let style = document.createElement('style');
+
+    let paddingRight = '28px';
     style.innerHTML = `
     .pw svg{
         position: absolute;
         top: 0;
-        right: 4px;
+        right: 0;
         cursor: pointer;
-        width: 24px;
+        width: 29px;
         height: 100%;
         text-align: center;
         writing-mode: vertical-rl;
+        padding-right: 7px;
+        padding-left: 7px;
     }
     .pw [type="password"]{
-        padding-right: 28px;
+        padding-right: `+ paddingRight +`;
     }
     .pw [type="text"]{
-        padding-right: 28px;
+        padding-right: `+ paddingRight +`;
     }
     .pw{
-        position: absolute;
+        position: relative;
+    }
+    input{
+        width: 100%;
     }
     `;
     document.getElementsByTagName('head')[0].append(style);
+
+    let eye = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>`;
 
     let botonEye = document.getElementsByClassName('pw');
     for (const i of botonEye) {
@@ -36,8 +46,7 @@ window.onload = function (e) {
         }
 
         i.innerHTML = anteshtmlCadena + `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                `+ eye +`
             </svg>`;
     }
 
@@ -55,24 +64,49 @@ window.onload = function (e) {
                     i.children[0].type = 'password';
                     this.classList.add("eye");
                     this.classList.remove("eye-s");
-                    this.innerHTML = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>`;
+                    this.innerHTML = eye;
                 }
             })
         }
     }
+
+    for (const i of document.querySelectorAll('[type="alfaSpace"]')) {
+        i.addEventListener('input', function (e){
+            this.value = this.value.replace(/[^A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
+        });
+    }
+
+    for (const i of document.querySelectorAll('[type="alfaNoSpace"]')) {
+        i.addEventListener('input', function (e){
+            this.value = this.value.replace(/[^A-Za-zñÑ]/g, '');
+        });
+    }
+
+    for (const i of document.querySelectorAll('[type="textNoSpace"]')) {
+        i.addEventListener('input', function (e){
+            this.value = this.value.replace(/[^0-9A-Za-zñÑ]/g, '');
+        });
+    }
     
     //alfanumericos mas un espacio al teclear
-    for (const i of document.querySelectorAll('[type="text"]')) {
-        i.addEventListener('keyup', function (e){
+    for (const i of document.querySelectorAll('[type="textSpace"]')) {
+        i.addEventListener('input', function (e){
             this.value = this.value.replace(/[^0-9A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
         });
     }
     
     //solo numeros al teclear
-    for (const i of document.querySelectorAll('[type="number"]')) {
-        i.addEventListener('keyup', function (e){
+    for (const i of document.querySelectorAll('[type="textNumber"]')) {
+        i.addEventListener('input', function (e){
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     }
+
+    //solo numeros con punto decimal al teclear
+    for (const i of document.querySelectorAll('[type="numberPoin"]')) {
+        i.addEventListener('input', function (e){//keyup
+            this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+        });
+    }
+
 }
