@@ -1,5 +1,13 @@
 import {Paises} from './paises.js';
 import * as onload from './onload.js';
+import {ValForm} from './lionAyudas.js';
+
+let testVal = new ValForm('formtest');
+
+setTimeout(() => {
+    testVal.validarCampos();
+}, 8000);
+
 
 /** como utilizar paises 'descomentar'*/
 

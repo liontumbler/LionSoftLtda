@@ -1,6 +1,6 @@
 window.onload = function (e) {
     //ojo del los campo password class pw
-    let style = document.createElement('style');
+    /*let style = document.createElement('style');
 
     let paddingRight = '28px';
     style.innerHTML = `
@@ -107,6 +107,6 @@ window.onload = function (e) {
         i.addEventListener('input', function (e){//keyup
             this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
         });
-    }
+    }*/
 
 }

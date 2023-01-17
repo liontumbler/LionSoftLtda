@@ -18,58 +18,579 @@ export class Paises extends LionAyudas {
 
     #paises = {
         Afganistán: {
-            continente: '',
-            codigoPais: '013',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '004/013',
+            abreviatura: 'AF',
+            prefijo: '+93',
+            ciudades: {
+                Kabul: {
+                    codigoPostal: ''
+                },
+                Herat: {
+                    codigoPostal: ''
+                },
+                'Mazar-i-Sharif': {
+                    codigoPostal: ''
+                },
+                Kandahar: {
+                    codigoPostal: ''
+                },
+                Jalalabad: {
+                    codigoPostal: ''
+                },
+                Kunduz: {
+                    codigoPostal: ''
+                },
+                Balkh: {
+                    codigoPostal: ''
+                },
+                'Puli Khumri': {
+                    codigoPostal: ''
+                },
+                Khost: {
+                    codigoPostal: ''
+                },
+                Gardez: {
+                    codigoPostal: ''
+                },
+                Feyzabad: {
+                    codigoPostal: ''
+                },
+                'Lashkar Gah': {
+                    codigoPostal: ''
+                },
+                'Mehtar Lam': {
+                    codigoPostal: ''
+                },
+                Asadabad: {
+                    codigoPostal: ''
+                },
+                Chaghcharan: {
+                    codigoPostal: ''
+                },
+                Taluqan: {
+                    codigoPostal: ''
+                },
+                Ghazni: {
+                    codigoPostal: ''
+                },
+                Sharana: {
+                    codigoPostal: ''
+                },
+                Charikar: {
+                    codigoPostal: ''
+                },
+                Zaranj: {
+                    codigoPostal: ''
+                }
+            }
         },
         Albania: {
-            continente: '',
-            codigoPais: '017',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Europa',
+            codigoPais: '008/017',
+            abreviatura: 'AL',
+            prefijo: '+355',
+            ciudades: {
+                Tirana: {
+                    codigoPostal: ''
+                },
+                Durres: {
+                    codigoPostal: ''
+                },
+                Elbasan: {
+                    codigoPostal: ''
+                },
+                Shkodra: {
+                    codigoPostal: ''
+                },
+                Vlora: {
+                    codigoPostal: ''
+                },
+                Fier: {
+                    codigoPostal: ''
+                },
+                Korça: {
+                    codigoPostal: ''
+                },
+                Berat: {
+                    codigoPostal: ''
+                },
+                Lushnja: {
+                    codigoPostal: ''
+                },
+                Kukes: {
+                    codigoPostal: ''
+                },
+                Lezha: {
+                    codigoPostal: ''
+                },
+                Saranda: {
+                    codigoPostal: ''
+                },
+                Dibra: {
+                    codigoPostal: ''
+                },
+                Gjirokastra: {
+                    codigoPostal: ''
+                },
+                Kurbin: {
+                    codigoPostal: ''
+                }
+            }
         },
         Alemania: {
-            continente: '',
-            codigoPais: '023',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Europa',
+            codigoPais: '276/023',
+            abreviatura: 'DE',
+            prefijo: '+49',
+            ciudades: {
+                Berlín: {
+                    codigoPostal: ''
+                },
+                Hamburgo: {
+                    codigoPostal: ''
+                },
+                Múnich: {
+                    codigoPostal: ''
+                },
+                Colonia: {
+                    codigoPostal: ''
+                },
+                Frankfurt: {
+                    codigoPostal: ''
+                },
+                Essen: {
+                    codigoPostal: ''
+                },
+                Dortmund: {
+                    codigoPostal: ''
+                },
+                Stuttgart: {
+                    codigoPostal: ''
+                },
+                Düsseldorf: {
+                    codigoPostal: ''
+                },
+                Bremen: {
+                    codigoPostal: ''
+                },
+                Leipzig: {
+                    codigoPostal: ''
+                },
+                Dresden: {
+                    codigoPostal: ''
+                },
+                Hanóver: {
+                    codigoPostal: ''
+                },
+                Nuremberg: {
+                    codigoPostal: ''
+                },
+                Duisburg: {
+                    codigoPostal: ''
+                },
+                Bochum: {
+                    codigoPostal: ''
+                },
+                Wuppertal: {
+                    codigoPostal: ''
+                },
+                Bielefeld: {
+                    codigoPostal: ''
+                },
+                Mannheim: {
+                    codigoPostal: ''
+                },
+                Augsburg: {
+                    codigoPostal: ''
+                },
+                Karlsruhe: {
+                    codigoPostal: ''
+                },
+                Heidelberg: {
+                    codigoPostal: ''
+                },
+                Rostock: {
+                    codigoPostal: ''
+                },
+                Mainz: {
+                    codigoPostal: ''
+                },
+                Kassel: {
+                    codigoPostal: ''
+                },
+                Halle: {
+                    codigoPostal: ''
+                },
+                Magdeburg: {
+                    codigoPostal: ''
+                }
+            }
         },
         Andorra: {
-            continente: '',
-            codigoPais: '037',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Europa',
+            codigoPais: '020/037',
+            abreviatura: 'AND',
+            prefijo: '+376',
+            ciudades: {
+                'Andorra la Vella': {
+                    codigoPostal: ''
+                },
+                'Escaldes-Engordany': {
+                    codigoPostal: ''
+                },
+                Encamp: {
+                    codigoPostal: ''
+                },
+                'Sant Julià de Lòria': {
+                    codigoPostal: ''
+                },
+                Ordino: {
+                    codigoPostal: ''
+                },
+                'La Massana': {
+                    codigoPostal: ''
+                },
+                Canillo: {
+                    codigoPostal: ''
+                },
+                'El Tarter': {
+                    codigoPostal: ''
+                },
+                Arinsal: {
+                    codigoPostal: ''
+                },
+                'Pas de la Casa': {
+                    codigoPostal: ''
+                }
+            }
         },
         Angola: {
-            continente: '',
-            codigoPais: '040',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '024/040',
+            abreviatura: 'AO',
+            prefijo: '+244',
+            ciudades: {
+                Luanda: {
+                    codigoPostal: ''
+                },
+                Benguela: {
+                    codigoPostal: ''
+                },
+                Huambo: {
+                    codigoPostal: ''
+                },
+                Lobito: {
+                    codigoPostal: ''
+                },
+                Lubango: {
+                    codigoPostal: ''
+                },
+                Namibe: {
+                    codigoPostal: ''
+                },
+                Uíge: {
+                    codigoPostal: ''
+                },
+                Cabinda: {
+                    codigoPostal: ''
+                },
+                Soyo: {
+                    codigoPostal: ''
+                },
+                Malanje: {
+                    codigoPostal: ''
+                },
+                Caxito: {
+                    codigoPostal: ''
+                },
+                Sumbe: {
+                    codigoPostal: ''
+                },
+                Kuito: {
+                    codigoPostal: ''
+                },
+                Lubango: {
+                    codigoPostal: ''
+                },
+                Menongue: {
+                    codigoPostal: ''
+                },
+                Ndalatando: {
+                    codigoPostal: ''
+                },
+                Saurimo: {
+                    codigoPostal: ''
+                },
+                Lucapa: {
+                    codigoPostal: ''
+                },
+                Caluquembe: {
+                    codigoPostal: ''
+                },
+                Chitato: {
+                    codigoPostal: ''
+                },
+                Cacolo: {
+                    codigoPostal: ''
+                },
+                'Mbanza Congo': {
+                    codigoPostal: ''
+                },
+                Luau: {
+                    codigoPostal: ''
+                },
+                'Cuito Cuanavale': {
+                    codigoPostal: ''
+                },
+                "N'zeto": {
+                    codigoPostal: ''
+                },
+                Ondjiva: {
+                    codigoPostal: ''
+                },
+                Catumbela: {
+                    codigoPostal: ''
+                },
+                Luena: {
+                    codigoPostal: ''
+                },
+                Mavinga: {
+                    codigoPostal: ''
+                },
+                Xangongo: {
+                    codigoPostal: ''
+                },
+                Luanda: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Antigua y Barbuda': {
-            continente: '',
-            codigoPais: '043',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'América del Norte',
+            codigoPais: '28/043',
+            abreviatura: 'ATG',
+            prefijo: '+1',
+            ciudades: {
+                "St. John's": {
+                    codigoPostal: ''
+                },
+                'All Saints': {
+                    codigoPostal: ''
+                },
+                Bolans: {
+                    codigoPostal: ''
+                },
+                Codrington: {
+                    codigoPostal: ''
+                },
+                'Five Islands': {
+                    codigoPostal: ''
+                },
+                Liberta: {
+                    codigoPostal: ''
+                },
+                'Potters Village': {
+                    codigoPostal: ''
+                },
+                'Seaview Farm': {
+                    codigoPostal: ''
+                },
+                Willikies: {
+                    codigoPostal: ''
+                },
+                Barbuda: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Arabia Saudita': {
-            continente: '',
-            codigoPais: '053',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '682/053',
+            abreviatura: 'SA',
+            prefijo: '+966',
+            ciudades: {
+                Riad: {
+                    codigoPostal: ''
+                },
+                Jeddah: {
+                    codigoPostal: ''
+                },
+                Mekkah: {
+                    codigoPostal: ''
+                },
+                Medinah: {
+                    codigoPostal: ''
+                },
+                Dammam: {
+                    codigoPostal: ''
+                },
+                Abha: {
+                    codigoPostal: ''
+                },
+                Taif: {
+                    codigoPostal: ''
+                },
+                Buraidah: {
+                    codigoPostal: ''
+                },
+                Jizan: {
+                    codigoPostal: ''
+                },
+                Najran: {
+                    codigoPostal: ''
+                }
+            }
         },
         Argelia: {
-            continente: '',
-            codigoPais: '059',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '012/059',
+            abreviatura: 'DZ',
+            prefijo: '+213',
+            ciudades: {
+                Algiers: {
+                    codigoPostal: ''
+                },
+                Oran: {
+                    codigoPostal: ''
+                },
+                Constantine: {
+                    codigoPostal: ''
+                },
+                Annaba: {
+                    codigoPostal: ''
+                },
+                Batna: {
+                    codigoPostal: ''
+                },
+                Tlemcen: {
+                    codigoPostal: ''
+                },
+                Setif: {
+                    codigoPostal: ''
+                },
+                Bejaia: {
+                    codigoPostal: ''
+                },
+                Blida: {
+                    codigoPostal: ''
+                },
+                Bouira: {
+                    codigoPostal: ''
+                },
+                Chlef: {
+                    codigoPostal: ''
+                },
+                Djelfa: {
+                    codigoPostal: ''
+                },
+                Jijel: {
+                    codigoPostal: ''
+                },
+                Sétif: {
+                    codigoPostal: ''
+                },
+                'Sidi Bel Abbes': {
+                    codigoPostal: ''
+                },
+                Skikda: {
+                    codigoPostal: ''
+                },
+                'Tizi Ouzou': {
+                    codigoPostal: ''
+                },
+                Tissemsilt: {
+                    codigoPostal: ''
+                },
+                Tiaret: {
+                    codigoPostal: ''
+                },
+                Tamanrasset: {
+                    codigoPostal: ''
+                },
+                Tebessa: {
+                    codigoPostal: ''
+                }
+            }
         },
         Argentina: {
-            continente: 'América del sur',
-            codigoPais: '063',
-            abreviatura: '',
+            continente: 'América del Sur',
+            codigoPais: '32/063',
+            abreviatura: 'ARG',
+            prefijo: '+54',
             ciudades: {
+                Tucumán: {
+                    codigoPostal: ''
+                },
+                Chajarí: {
+                    codigoPostal: ''
+                },
+                Catamarca: {
+                    codigoPostal: ''
+                },
+                'San Nicolás de los Arroyos': {
+                    codigoPostal: ''
+                },
+                'San Rafael': {
+                    codigoPostal: ''
+                },
+                Junin: {
+                    codigoPostal: ''
+                },
+                Bariloche: {
+                    codigoPostal: ''
+                },
+                Concordia: {
+                    codigoPostal: ''
+                },
+                'El Calafate': {
+                    codigoPostal: ''
+                },
+                'El Palomar': {
+                    codigoPostal: ''
+                },
+                Gualeguaychú: {
+                    codigoPostal: ''
+                },
+                'La Falda': {
+                    codigoPostal: ''
+                },
+                'La Paz': {
+                    codigoPostal: ''
+                },
+                Malargüe: {
+                    codigoPostal: ''
+                },
+                Necochea: {
+                    codigoPostal: ''
+                },
+                Oberá: {
+                    codigoPostal: ''
+                },
+                Pilar: {
+                    codigoPostal: ''
+                },
+                'Río Grande': {
+                    codigoPostal: ''
+                },
+                'Río Tercero': {
+                    codigoPostal: ''
+                },
+                'San Martín de los Andes': {
+                    codigoPostal: ''
+                },
+                'Tres Arroyos': {
+                    codigoPostal: ''
+                },
+                'Villa Carlos Paz': {
+                    codigoPostal: ''
+                },
+                'Villa Gesell': {
+                    codigoPostal: ''
+                },
+                'Villa La Angostura': {
+                    codigoPostal: ''
+                },
                 'Buenos Aires': {
                     codigoPostal: 'B1406'
                 },
@@ -202,7 +723,7 @@ export class Paises extends LionAyudas {
                 Azul: {
                     codigoPostal: ''
                 },
-                'Ciudad de Santa Rosa': {
+                'Santa Rosa': {
                     codigoPostal: ''
                 },
                 Balcarce: {
@@ -232,52 +753,782 @@ export class Paises extends LionAyudas {
             }
         },
         Armenia: {
-            continente: '',
-            codigoPais: '026',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '051/026',
+            abreviatura: 'ARM',
+            prefijo: '+374',
+            ciudades: {
+                Erevan: {
+                    codigoPostal: ''
+                },
+                Gjumri: {
+                    codigoPostal: ''
+                },
+                Vanadzor: {
+                    codigoPostal: ''
+                },
+                Hrazdan: {
+                    codigoPostal: ''
+                },
+                Abovyan: {
+                    codigoPostal: ''
+                },
+                Armavir: {
+                    codigoPostal: ''
+                },
+                Vagharshapat: {
+                    codigoPostal: ''
+                },
+                Gyumri: {
+                    codigoPostal: ''
+                },
+                Kapan: {
+                    codigoPostal: ''
+                },
+                Artashat: {
+                    codigoPostal: ''
+                },
+                Goris: {
+                    codigoPostal: ''
+                },
+                Ashtarak: {
+                    codigoPostal: ''
+                },
+                Ijevan: {
+                    codigoPostal: ''
+                },
+                Alaverdi: {
+                    codigoPostal: ''
+                },
+                Martuni: {
+                    codigoPostal: ''
+                },
+                Sevan: {
+                    codigoPostal: ''
+                },
+                Dilijan: {
+                    codigoPostal: ''
+                },
+                Charentsavan: {
+                    codigoPostal: ''
+                },
+                Spitak: {
+                    codigoPostal: ''
+                },
+                Sisian: {
+                    codigoPostal: ''
+                },
+                Masis: {
+                    codigoPostal: ''
+                }
+            }
         },
         Australia: {
-            continente: '',
-            codigoPais: '069',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Oceanía',
+            codigoPais: '036/069',
+            abreviatura: 'AUS',
+            prefijo: '+61',
+            ciudades: {
+                Sydney: {
+                    codigoPostal: ''
+                },
+                Melbourne: {
+                    codigoPostal: ''
+                },
+                Brisbane: {
+                    codigoPostal: ''
+                },
+                Perth: {
+                    codigoPostal: ''
+                },
+                Adelaide: {
+                    codigoPostal: ''
+                },
+                'Gold Coast': {
+                    codigoPostal: ''
+                },
+                Canberra: {
+                    codigoPostal: ''
+                },
+                Hobart: {
+                    codigoPostal: ''
+                },
+                Darwin: {
+                    codigoPostal: ''
+                },
+                Newcastle: {
+                    codigoPostal: ''
+                },
+                Wollongong: {
+                    codigoPostal: ''
+                },
+                Cairns: {
+                    codigoPostal: ''
+                },
+                Townsville: {
+                    codigoPostal: ''
+                },
+                Toowoomba: {
+                    codigoPostal: ''
+                },
+                Rockhampton: {
+                    codigoPostal: ''
+                },
+                Launceston: {
+                    codigoPostal: ''
+                },
+                Bendigo: {
+                    codigoPostal: ''
+                },
+                Albury: {
+                    codigoPostal: ''
+                },
+                Ballarat: {
+                    codigoPostal: ''
+                },
+                Mackay: {
+                    codigoPostal: ''
+                },
+                Bundaberg: {
+                    codigoPostal: ''
+                },
+                'Hervey Bay': {
+                    codigoPostal: ''
+                },
+                'Wagga Wagga': {
+                    codigoPostal: ''
+                },
+                'Coffs Harbour': {
+                    codigoPostal: ''
+                },
+                Gladstone: {
+                    codigoPostal: ''
+                },
+                Tamworth: {
+                    codigoPostal: ''
+                },
+                Orange: {
+                    codigoPostal: ''
+                },
+                Dubbo: {
+                    codigoPostal: ''
+                },
+                Kalgoorlie: {
+                    codigoPostal: ''
+                },
+                'Port Macquarie': {
+                    codigoPostal: ''
+                },
+                'Mount Gambier': {
+                    codigoPostal: ''
+                },
+                Shepparton: {
+                    codigoPostal: ''
+                },
+                Bunbury: {
+                    codigoPostal: ''
+                }
+            }
         },
         Austria: {
-            continente: '',
-            codigoPais: '072',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Europa',
+            codigoPais: '40/072',
+            abreviatura: 'AUT',
+            prefijo: '+43',
+            ciudades: {
+                Viena: {
+                    codigoPostal: '1010'
+                },
+                Salzburgo: {
+                    codigoPostal: '5020'
+                },
+                Innsbruck: {
+                    codigoPostal: '6020'
+                },
+                Graz: {
+                    codigoPostal: '8010'
+                },
+                Linz: {
+                    codigoPostal: '4020'
+                },
+                Klagenfurt: {
+                    codigoPostal: '9020'
+                },
+                Villach: {
+                    codigoPostal: '9500'
+                },
+                Wels: {
+                    codigoPostal: '4600'
+                },
+                Dornbirn: {
+                    codigoPostal: '6850'
+                },
+                Steyr: {
+                    codigoPostal: '4400'
+                },
+                Bregenz: {
+                    codigoPostal: '6900'
+                },
+                'Wiener Neustadt': {
+                    codigoPostal: '2700'
+                },
+                'St. Pölten': {
+                    codigoPostal: '3100'
+                },
+                Feldkirch: {
+                    codigoPostal: '6800'
+                },
+                Baden: {
+                    codigoPostal: '2500'
+                },
+                Leonding: {
+                    codigoPostal: '4060'
+                },
+                Amstetten: {
+                    codigoPostal: '3300'
+                },
+                Krems: {
+                    codigoPostal: '3500'
+                },
+                Traun: {
+                    codigoPostal: '4050'
+                },
+                Ried: {
+                    codigoPostal: '4910'
+                },
+                Mödling: {
+                    codigoPostal: '2340'
+                },
+                Traiskirchen: {
+                    codigoPostal: '2540'
+                },
+                Kufstein: {
+                    codigoPostal: '6330'
+                },
+                Tulln: {
+                    codigoPostal: '3430'
+                },
+                Leoben: {
+                    codigoPostal: '8700'
+                },
+                Kapfenberg: {
+                    codigoPostal: '8605'
+                },
+                Spittal: {
+                    codigoPostal: '9800'
+                },
+                Wörgl: {
+                    codigoPostal: '6300'
+                },
+                Lustenau: {
+                    codigoPostal: '6850'
+                },
+                Ansfelden: {
+                    codigoPostal: '4052'
+                },
+                Braunau: {
+                    codigoPostal: '5280'
+                },
+                Bludenz: {
+                    codigoPostal: '6700'
+                },
+                Hohenems: {
+                    codigoPostal: '6845'
+                },
+                Schwaz: {
+                    codigoPostal: '6140'
+                },
+                'Sankt Veit an der Glan': {
+                    codigoPostal: '9300'
+                },
+                Kremsmünster: {
+                    codigoPostal: '4550'
+                },
+                Korneuburg: {
+                    codigoPostal: '2100'
+                },
+                'Bruck an der Mur': {
+                    codigoPostal: '8600'
+                },
+                Eferding: {
+                    codigoPostal: '4020'
+                },
+                Perchtoldsdorf: {
+                    codigoPostal: '2380'
+                },
+                'Zell am See': {
+                    codigoPostal: '5700'
+                },
+                'Wals-Siezenheim': {
+                    codigoPostal: '5071'
+                },
+                Leibnitz: {
+                    codigoPostal: '8430'
+                },
+                Ternitz: {
+                    codigoPostal: '2630'
+                },
+                Traunstein: {
+                    codigoPostal: '4050'
+                },
+                Kitzbühel: {
+                    codigoPostal: '6370'
+                },
+                Seekirchen: {
+                    codigoPostal: '5310'
+                },
+                Enns: {
+                    codigoPostal: '4470'
+                },
+                'Bad Ischl': {
+                    codigoPostal: '4820'
+                },
+                'Ried im Innkreis': {
+                    codigoPostal: '4910'
+                },
+                Hallein: {
+                    codigoPostal: '5100'
+                },
+                Hittisau: {
+                    codigoPostal: '6861'
+                },
+                'Hall in Tirol': {
+                    codigoPostal: '6060'
+                },
+                Telfs: {
+                    codigoPostal: '6410'
+                },
+                Ternitz: {
+                    codigoPostal: '2630'
+                },
+                Hard: {
+                    codigoPostal: '6971'
+                },
+                Rankweil: {
+                    codigoPostal: '6800'
+                },
+                Imst: {
+                    codigoPostal: '6460'
+                },
+                'Waidhofen an der Ybbs': {
+                    codigoPostal: '3340'
+                },
+                Zwettl: {
+                    codigoPostal: '3910'
+                },
+                Herzogenburg: {
+                    codigoPostal: '3130'
+                },
+                'Bad Vöslau': {
+                    codigoPostal: '2500'
+                },
+                Deutschlandsberg: {
+                    codigoPostal: '8750'
+                },
+                Knittelfeld: {
+                    codigoPostal: '8720'
+                },
+                Neusiedl: {
+                    codigoPostal: '7100'
+                },
+                Mürzzuschlag: {
+                    codigoPostal: '8680'
+                },
+                Neunkirchen: {
+                    codigoPostal: '2620'
+                },
+                Kitzbühel: {
+                    codigoPostal: '6370'
+                },
+                Schwarzach: {
+                    codigoPostal: '6370'
+                }
+            }
         },
         Azerbaiyán: {
-            continente: '',
-            codigoPais: '074',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '031/074',
+            abreviatura: 'AZ',
+            prefijo: '+994',
+            ciudades: {
+                Bakú: {
+                    codigoPostal: ''
+                },
+                Gäncä: {
+                    codigoPostal: ''
+                },
+                Mingäçevir: {
+                    codigoPostal: ''
+                },
+                Sumqayit: {
+                    codigoPostal: ''
+                },
+                Naxçivan: {
+                    codigoPostal: ''
+                },
+                Xankändi: {
+                    codigoPostal: ''
+                },
+                Länkäran: {
+                    codigoPostal: ''
+                },
+                Şirvan: {
+                    codigoPostal: ''
+                },
+                Şäki: {
+                    codigoPostal: ''
+                },
+                Qäbälä: {
+                    codigoPostal: ''
+                },
+                Gädäbäy: {
+                    codigoPostal: ''
+                },
+                Yevlax: {
+                    codigoPostal: ''
+                },
+                Laçin: {
+                    codigoPostal: ''
+                },
+                Zängilan: {
+                    codigoPostal: ''
+                },
+                Şamaxi: {
+                    codigoPostal: ''
+                },
+                Xocali: {
+                    codigoPostal: ''
+                },
+                Göygöl: {
+                    codigoPostal: ''
+                },
+                Xocavänd: {
+                    codigoPostal: ''
+                },
+                Qax: {
+                    codigoPostal: ''
+                },
+                Balakän: {
+                    codigoPostal: ''
+                },
+                Qäbälä: {
+                    codigoPostal: ''
+                }
+            }
         },
         Bahamas: {
-            continente: '',
-            codigoPais: '077',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'América del Norte',
+            codigoPais: '44/077',
+            abreviatura: 'BHS',
+            prefijo: '+1242',
+            ciudades: {
+                Nassau: {
+                    codigoPostal: ''
+                },
+                Freeport: {
+                    codigoPostal: ''
+                },
+                'Marsh Harbour': {
+                    codigoPostal: ''
+                },
+                'West End': {
+                    codigoPostal: ''
+                },
+                Eleuthera: {
+                    codigoPostal: ''
+                },
+                Andros: {
+                    codigoPostal: ''
+                },
+                Exuma: {
+                    codigoPostal: ''
+                },
+                Abaco: {
+                    codigoPostal: ''
+                },
+                Bimini: {
+                    codigoPostal: ''
+                },
+                Inagua: {
+                    codigoPostal: ''
+                },
+                'Long Island': {
+                    codigoPostal: ''
+                }
+            }
         },
         Bangladesh: {
-            continente: '',
-            codigoPais: '081',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '050/081',
+            abreviatura: 'BD',
+            prefijo: '+880',
+            ciudades: {
+                Dhaka: {
+                    codigoPostal: ''
+                },
+                Chittagong: {
+                    codigoPostal: ''
+                },
+                Khulna: {
+                    codigoPostal: ''
+                },
+                Rajshahi: {
+                    codigoPostal: ''
+                },
+                Rangpur: {
+                    codigoPostal: ''
+                },
+                Sylhet: {
+                    codigoPostal: ''
+                },
+                Barisal: {
+                    codigoPostal: ''
+                },
+                Comilla: {
+                    codigoPostal: ''
+                },
+                Narayanganj: {
+                    codigoPostal: ''
+                },
+                Gazipur: {
+                    codigoPostal: ''
+                },
+                Mymensingh: {
+                    codigoPostal: ''
+                },
+                Tongi: {
+                    codigoPostal: ''
+                },
+                Narsingdi: {
+                    codigoPostal: ''
+                }
+            }
         },
         Barbados: {
-            continente: '',
-            codigoPais: '083',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'América del Norte',
+            codigoPais: '52',
+            abreviatura: 'BRB',
+            prefijo: '+1246',
+            ciudades: {
+                Bridgetown: {
+                    codigoPostal: ''
+                },
+                Holetown: {
+                    codigoPostal: ''
+                },
+                Speightstown: {
+                    codigoPostal: ''
+                },
+                Oistins: {
+                    codigoPostal: ''
+                },
+                Bathsheba: {
+                    codigoPostal: ''
+                },
+                'St. Lawrence Gap': {
+                    codigoPostal: ''
+                },
+                Rockley: {
+                    codigoPostal: ''
+                },
+                'Six Cross Roads': {
+                    codigoPostal: ''
+                },
+                Warrens: {
+                    codigoPostal: ''
+                },
+                Sunbury: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Bahréin (Baréin)': {
-            continente: '',
-            codigoPais: '080',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '048',
+            abreviatura: 'BH',
+            prefijo: '+973',
+            ciudades: {
+                Manama: {
+                    codigoPostal: ''
+                },
+                Riffa: {
+                    codigoPostal: ''
+                },
+                Muharraq: {
+                    codigoPostal: ''
+                },
+                'Hamad Town': {
+                    codigoPostal: ''
+                },
+                "A'ali": {
+                    codigoPostal: ''
+                },
+                'Isa Town': {
+                    codigoPostal: ''
+                },
+                Sitra: {
+                    codigoPostal: ''
+                },
+                Budaiya: {
+                    codigoPostal: ''
+                },
+                Jidhafs: {
+                    codigoPostal: ''
+                },
+                'Al-Malikiyah': {
+                    codigoPostal: ''
+                },
+                Sanabis: {
+                    codigoPostal: ''
+                },
+                'Al-Hidd': {
+                    codigoPostal: ''
+                },
+                'Al-Budaiya': {
+                    codigoPostal: ''
+                },
+                Jufair: {
+                    codigoPostal: ''
+                },
+                'Al-Dair': {
+                    codigoPostal: ''
+                },
+                'Al-Markh': {
+                    codigoPostal: ''
+                },
+                'Al-Riffa': {
+                    codigoPostal: ''
+                },
+                'Al-Muharraq': {
+                    codigoPostal: ''
+                },
+                'Al-Nuwaidrat': {
+                    codigoPostal: ''
+                },
+                'Al-Hamala': {
+                    codigoPostal: ''
+                },
+                'Al-Adliyah': {
+                    codigoPostal: ''
+                },
+                'Al-Diraz': {
+                    codigoPostal: ''
+                },
+                'Al-Bilad Al-Qadeem': {
+                    codigoPostal: ''
+                },
+                'Al-Fadhliyah': {
+                    codigoPostal: ''
+                },
+                'Al-Jasra': {
+                    codigoPostal: ''
+                },
+                'Al-Hoora': {
+                    codigoPostal: ''
+                },
+                'Al-Musalla': {
+                    codigoPostal: ''
+                },
+                'Al-Sakhir': {
+                    codigoPostal: ''
+                },
+                'Al-Qalali': {
+                    codigoPostal: ''
+                },
+                'Al-Malikiyah': {
+                    codigoPostal: ''
+                },
+                'Al-Dair': {
+                    codigoPostal: ''
+                },
+                'Al-Hadd': {
+                    codigoPostal: ''
+                },
+                'Al-Maqsha': {
+                    codigoPostal: ''
+                },
+                'Al-Qurayya': {
+                    codigoPostal: ''
+                },
+                'Al-Bilad Al-Qadeem': {
+                    codigoPostal: ''
+                },
+                'Al-Hoora': {
+                    codigoPostal: ''
+                },
+                'Al-Hidd': {
+                    codigoPostal: ''
+                },
+                'Al-Budaiya': {
+                    codigoPostal: ''
+                },
+                'Al-Jufair': {
+                    codigoPostal: ''
+                },
+                'Al-Dair': {
+                    codigoPostal: ''
+                },
+                'Al-Markh': {
+                    codigoPostal: ''
+                },
+                'Al-Riffa': {
+                    codigoPostal: ''
+                },
+                'Al-Muharraq': {
+                    codigoPostal: ''
+                },
+                'Al-Nuwaidrat': {
+                    codigoPostal: ''
+                },
+                'Al-Hamala': {
+                    codigoPostal: ''
+                },
+                'Al-Adliyah': {
+                    codigoPostal: ''
+                },
+                'Al-Diraz': {
+                    codigoPostal: ''
+                },
+                'Al-Fadhliyah': {
+                    codigoPostal: ''
+                },
+                'Al-Jasra': {
+                    codigoPostal: ''
+                },
+                'Al-Hoora': {
+                    codigoPostal: ''
+                },
+                'Al-Musalla': {
+                    codigoPostal: ''
+                },
+                'Al-Bilad Al-Qadeem': {
+                    codigoPostal: ''
+                },
+                'Al-Sakhir': {
+                    codigoPostal: ''
+                },
+                'Al-Qalali': {
+                    codigoPostal: ''
+                },
+                'Al-Malikiyah': {
+                    codigoPostal: ''
+                },
+                'Al-Dair': {
+                    codigoPostal: ''
+                },
+                'Al-Hadd': {
+                    codigoPostal: ''
+                },
+                'Al-Maqsha': {
+                    codigoPostal: ''
+                },
+                'Al-Bilad Al-Qadeem': {
+                    codigoPostal: ''
+                },
+                'Al-Qurayya': {
+                    codigoPostal: ''
+                }
+            }
         },
         Bélgica: {
             continente: '',
@@ -953,11 +2204,14 @@ export class Paises extends LionAyudas {
             ciudades: this.#Afganistán
         },
         Colombia: {
-            continente: 'América del sur',
-            codigoPais: '169',
-            abreviatura: 'CO',
+            continente: 'América del Sur',
+            codigoPais: '170/169',
+            abreviatura: 'COL',
             prefijo: '+57',
             ciudades: {
+                Aguazul: {
+                    codigoPostal: ''
+                },
                 Arauca: {
                     codigoPostal: '810001'
                 },
@@ -979,6 +2233,9 @@ export class Paises extends LionAyudas {
                 Barranquilla: {
                     codigoPostal: '080001'
                 },
+                Bello: {
+                    codigoPostal: ''
+                },
                 Bogotá: {
                     codigoPostal: '110110'
                 },
@@ -997,6 +2254,9 @@ export class Paises extends LionAyudas {
                 Cali: {
                     codigoPostal: '760000'
                 },
+                Chía: {
+                    codigoPostal: ''
+                },
                 Ciénaga: {
                     codigoPostal: ''
                 },
@@ -1006,13 +2266,46 @@ export class Paises extends LionAyudas {
                 Cartagena: {
                     codigoPostal: '130001'
                 },
+                Chiquinquirá: {
+                    codigoPostal: ''
+                },
+                Dosquebradas: {
+                    codigoPostal: ''
+                },
                 Duitama: {
+                    codigoPostal: ''
+                },
+                Envigado: {
+                    codigoPostal: ''
+                },
+                'El Bagre': {
+                    codigoPostal: ''
+                },
+                'El Banco': {
+                    codigoPostal: ''
+                },
+                'El Carmen': {
+                    codigoPostal: ''
+                },
+                'El Carmen de Viboral': {
+                    codigoPostal: ''
+                },
+                'El Cerrito': {
+                    codigoPostal: ''
+                },
+                'El Copey': {
+                    codigoPostal: ''
+                },
+                'El Dovio': {
                     codigoPostal: ''
                 },
                 'El Espinal': {
                     codigoPostal: ''
                 },
                 'El Carmen de Bolívar': {
+                    codigoPostal: ''
+                },
+                'El Retén': {
                     codigoPostal: ''
                 },
                 Facatativá: {
@@ -1024,7 +2317,16 @@ export class Paises extends LionAyudas {
                 Florencia: {
                     codigoPostal: '180001'
                 },
+                Floridablanca: {
+                    codigoPostal: ''
+                },
                 Girardot: {
+                    codigoPostal: ''
+                },
+                Guacarí: {
+                    codigoPostal: ''
+                },
+                Guapi: {
                     codigoPostal: ''
                 },
                 Inírida: {
@@ -1035,6 +2337,39 @@ export class Paises extends LionAyudas {
                 },
                 Ibagué: {
                     codigoPostal: '730001'
+                },
+                Itagüí: {
+                    codigoPostal: ''
+                },
+                'La Calera': {
+                    codigoPostal: ''
+                },
+                'La Dorada': {
+                    codigoPostal: ''
+                },
+                'La Estrella': {
+                    codigoPostal: ''
+                },
+                'La Jagua del Pilar': {
+                    codigoPostal: ''
+                },
+                'La Jagua de Ibirico': {
+                    codigoPostal: ''
+                },
+                'La Paz': {
+                    codigoPostal: ''
+                },
+                'La Plata': {
+                    codigoPostal: ''
+                },
+                'La Tebaida': {
+                    codigoPostal: ''
+                },
+                'La Union': {
+                    codigoPostal: ''
+                },
+                'La Virginia': {
+                    codigoPostal: ''
                 },
                 Leticia: {
                     codigoPostal: '910001'
@@ -1050,6 +2385,9 @@ export class Paises extends LionAyudas {
                 },
                 Manizales: {
                     codigoPostal: '170001'
+                },
+                Malambo: {
+                    codigoPostal: ''
                 },
                 Medellín: {
                     codigoPostal: '050001'
@@ -1084,6 +2422,9 @@ export class Paises extends LionAyudas {
                 Pereira: {
                     codigoPostal: '660000'
                 },
+                Piedecuesta: {
+                    codigoPostal: ''
+                },
                 Pitalito: {
                     codigoPostal: ''
                 },
@@ -1094,6 +2435,9 @@ export class Paises extends LionAyudas {
                     codigoPostal: '990001'
                 },
                 'Puerto Asís': {
+                    codigoPostal: ''
+                },
+                'Puerto López': {
                     codigoPostal: ''
                 },
                 Quibdó: {
@@ -1123,13 +2467,49 @@ export class Paises extends LionAyudas {
                 'San José del Guaviare': {
                     codigoPostal: '950001'
                 },
+                'San José de la Montaña': {
+                    codigoPostal: ''
+                },
+                'San Juan de Girón': {
+                    codigoPostal: ''
+                },
+                'San Juan de Urabá': {
+                    codigoPostal: ''
+                },
+                'San Juan de Pasto': {
+                    codigoPostal: ''
+                },
+                'San Juan Nepomuceno': {
+                    codigoPostal: ''
+                },
                 'Santa Marta': {
                     codigoPostal: '470001'
+                },
+                'San Rafael': {
+                    codigoPostal: ''
+                },
+                'San Vicente del Caguán': {
+                    codigoPostal: ''
                 },
                 Sincelejo: {
                     codigoPostal: '250251'
                 },
+                Soacha: {
+                    codigoPostal: ''
+                },
                 Sogamoso: {
+                    codigoPostal: ''
+                },
+                Soledad: {
+                    codigoPostal: ''
+                },
+                Tauramena: {
+                    codigoPostal: ''
+                },
+                Tierralta: {
+                    codigoPostal: ''
+                },
+                Tocaima: {
                     codigoPostal: ''
                 },
                 Tunja: {
@@ -1146,6 +2526,9 @@ export class Paises extends LionAyudas {
                 },
                 Valledupar: {
                     codigoPostal: '200001'
+                },
+                Villanueva: {
+                    codigoPostal: ''
                 },
                 Villavicencio: {
                     codigoPostal: '500001'
