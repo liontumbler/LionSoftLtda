@@ -38,12 +38,12 @@ export class LionAyudas {
         let cadenaRetorno = cadena.toLowerCase().replace(/[á|à|â|ä|ã|å]/g, 'a');
         cadenaRetorno = cadenaRetorno.replace(/[é|è|ê|ë]/g, 'e');
         cadenaRetorno = cadenaRetorno.replace(/[í|ì|î|ï]/g, 'i');
-        cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö]/g, 'o');
+        cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö|ø]/g, 'o');
         cadenaRetorno = cadenaRetorno.replace(/[ú|ù|û|ü]/g, 'u');
         cadenaRetorno = cadenaRetorno.replace(/[ý|ÿ]/g, 'y');
-        //Ș ș 
-        //Ş ş
-        //Ç ç
+        cadenaRetorno = cadenaRetorno.replace(/[ş|ș]/g, 's');
+        cadenaRetorno = cadenaRetorno.replace(/[æ]/g, 'ae');
+        cadenaRetorno = cadenaRetorno.replace(/[ç]/g, 'c');
         return cadenaRetorno;
     }
 
@@ -315,12 +315,14 @@ export class ValForm {
                 if(!valido){
                     input.reportValidity();
                     input.focus();
+                    input.select();
                 }
 
                 return valido;
             }else{
                 input.reportValidity();
                 input.focus();
+                input.select();
                 console.warn('no tiene value el campo requerido con id '+ inputReal.id);
                 return false;
             }
