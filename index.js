@@ -15,8 +15,8 @@ console.log(paises.obtenerPaises()); //.continente('america')
 console.log(paises.obtenerPaisObj('colombia'));//.continente(continente)
 console.log(paises.obtenerCiudadObj('colombia', 'bogota'));
 
-console.warn('america del sur');
-console.log(paises.obtenerPaisesXcontinente('america del sur'));
+console.warn('América del sur');
+console.log(paises.obtenerPaisesXcontinente('América del sur'));
 
 //console.log(paises.obtenerCiudades('Argentina'));
 //console.log(paises.obtenerCiudades('Bolivia'));

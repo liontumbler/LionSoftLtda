@@ -41,7 +41,7 @@ export class LionAyudas {
         cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö|ø]/g, 'o');
         cadenaRetorno = cadenaRetorno.replace(/[ú|ù|û|ü]/g, 'u');
         cadenaRetorno = cadenaRetorno.replace(/[ý|ÿ]/g, 'y');
-        cadenaRetorno = cadenaRetorno.replace(/[ş|ș]/g, 's');
+        cadenaRetorno = cadenaRetorno.replace(/[ş|ș|š]/g, 's');
         cadenaRetorno = cadenaRetorno.replace(/[æ]/g, 'ae');
         cadenaRetorno = cadenaRetorno.replace(/[ç]/g, 'c');
         return cadenaRetorno;
@@ -78,6 +78,7 @@ export class LionAyudas {
     }
 
     //let form2 = form.cloneNode(true);
+    //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
 }
 
 export class ValForm {
