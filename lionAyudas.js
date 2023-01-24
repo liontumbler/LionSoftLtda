@@ -167,7 +167,7 @@ export class ValForm {
             //console.log(this.#form2, i, this.#form[i]);
         //}
 
-        for (const i of document.querySelectorAll('[typeForm="alfa"]')) {
+        for (const i of this.#form.querySelectorAll('[typeForm="alfa"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(/[^A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
             });
@@ -185,19 +185,19 @@ export class ValForm {
             });
         }
 
-        for (const i of document.querySelectorAll('[typeForm="text"]')) {
+        for (const i of this.#form.querySelectorAll('[typeForm="text"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(/[^0-9A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
             });
         }
 
-        for (const i of document.querySelectorAll('[typeForm="number"]')) {
+        for (const i of this.#form.querySelectorAll('[typeForm="number"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(/[^0-9]/g, '');
             });
         }
 
-        for (const i of document.querySelectorAll('[typeForm="numberP"]')) {
+        for (const i of this.#form.querySelectorAll('[typeForm="numberP"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
             });
