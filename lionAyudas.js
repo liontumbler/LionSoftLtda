@@ -92,6 +92,8 @@ export class ValForm {
             console.log('el formulario nombrado no existe');
         }
 
+        this.#form2 = this.#form.cloneNode(true);
+
         let style = document.createElement('style');
 
         let paddingRight = '28px';
@@ -130,6 +132,7 @@ export class ValForm {
         for (const i of botonEye) {
             let anteshtml;
             let anteshtmlCadena = '';
+
             if (i.children[0]) {
                 anteshtml = i.children[0];
                 anteshtmlCadena = anteshtml.outerHTML
@@ -140,9 +143,7 @@ export class ValForm {
             i.innerHTML = anteshtmlCadena + `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye eye" viewBox="0 0 16 16">
                     `+ eye +`
                 </svg>`;
-        }
 
-        for (const i of botonEye) {
             if (i.children[1]) {
                 i.children[1].addEventListener('click', function (e) {
                     if(this.classList.contains('eye')){
@@ -162,11 +163,45 @@ export class ValForm {
             }
         }
 
-        this.#form2 = this.#form.cloneNode(true);
-
         //for (let i = 0; i < this.#form2.length; i++) {
             //console.log(this.#form2, i, this.#form[i]);
         //}
+
+        for (const i of document.querySelectorAll('[typeForm="alfa"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[typeForm="alfaNS"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^A-Za-zñÑ]/g, '');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[typeForm="textNS"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^0-9A-Za-zñÑ]/g, '');
+            });
+        }
+
+        for (const i of document.querySelectorAll('[typeForm="text"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^0-9A-Za-zñÑ ]/g, '').replace(/\s+/g, ' ');
+            });
+        }
+
+        for (const i of document.querySelectorAll('[typeForm="number"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
+
+        for (const i of document.querySelectorAll('[typeForm="numberP"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+            });
+        }
     }
 
     getId(id) {

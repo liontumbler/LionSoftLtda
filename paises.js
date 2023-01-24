@@ -1,5 +1,5 @@
-import {LionAyudas} from './lionAyudas.js';
-export class Paises extends LionAyudas {
+
+export class Paises {
 
     #Afganistán = {
         Kabul: {
@@ -2218,7 +2218,7 @@ export class Paises extends LionAyudas {
                 'San Ignacio de Moxos': {
                     codigoPostal: ''
                 }
-            } 
+            }
         },
         'Bosnia y Herzegovina': {
             continente: 'Europa',
@@ -8581,7 +8581,7 @@ export class Paises extends LionAyudas {
                 Quezaltenango: {
                     codigoPostal: ''
                 },
-                Antigua : {
+                Antigua: {
                     codigoPostal: ''
                 },
                 'Villa Nueva': {
@@ -17752,23 +17752,23 @@ export class Paises extends LionAyudas {
     }*/
 
     obtenerPaises(nombre) {
-        
+
         let paises = [];
-        
+
         if (nombre) {
             for (const i in this.#paises) {
                 if (this.normalizarText(i).indexOf(this.normalizarText(nombre)) >= 0) {
                     paises.push(i);
                 }
             }
-        }else{
+        } else {
             for (const i in this.#paises) {
                 paises.push(i);
             }
         }
 
         return paises;
-        
+
         /*return {
                 paises, 
                 continente: (continente) => {
@@ -17789,7 +17789,7 @@ export class Paises extends LionAyudas {
     obtenerPaisesXcontinente(continente) {
         let paises = [];
         for (const i in this.#paises) {
-            if(this.normalizarText(this.#paises[i].continente).indexOf(this.normalizarText(continente)) >= 0) {
+            if (this.normalizarText(this.#paises[i].continente).indexOf(this.normalizarText(continente)) >= 0) {
                 paises.push(i);
             }
         }
@@ -17819,7 +17819,7 @@ export class Paises extends LionAyudas {
             return ciudades;
         } catch (error) {
             for (const i in this.#paises) {
-                if(this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0){
+                if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0) {
                     for (const e in this.#paises[i].ciudades) {
                         ciudades.push(e);
                     }
@@ -17837,9 +17837,9 @@ export class Paises extends LionAyudas {
             return this.#paises[pais].ciudades[ciudad]
         } catch (error) {
             for (const i in this.#paises) {
-                if(this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0){
+                if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0) {
                     for (const e in this.#paises[i].ciudades) {
-                        if(this.normalizarText(e).indexOf(this.normalizarText(ciudad)) >= 0){
+                        if (this.normalizarText(e).indexOf(this.normalizarText(ciudad)) >= 0) {
                             return this.#paises[i].ciudades[e];
                         }
                     }
@@ -17849,5 +17849,17 @@ export class Paises extends LionAyudas {
             return 'no existe datos asociados';
         }
     }
+
+    normalizarText(cadena) {
+        let cadenaRetorno = cadena.toLowerCase().replace(/[á|à|â|ä|ã|å]/g, 'a');
+        cadenaRetorno = cadenaRetorno.replace(/[é|è|ê|ë]/g, 'e');
+        cadenaRetorno = cadenaRetorno.replace(/[í|ì|î|ï]/g, 'i');
+        cadenaRetorno = cadenaRetorno.replace(/[ó|ò|ô|õ|ö|ø]/g, 'o');
+        cadenaRetorno = cadenaRetorno.replace(/[ú|ù|û|ü]/g, 'u');
+        cadenaRetorno = cadenaRetorno.replace(/[ý|ÿ]/g, 'y');
+        cadenaRetorno = cadenaRetorno.replace(/[ş|ș|š]/g, 's');
+        cadenaRetorno = cadenaRetorno.replace(/[æ]/g, 'ae');
+        cadenaRetorno = cadenaRetorno.replace(/[ç]/g, 'c');
+        return cadenaRetorno;
+    }
 }
-//export {Paises as default};
