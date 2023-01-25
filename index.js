@@ -1,6 +1,5 @@
 import {Paises} from './paises.js';
-import * as onload from './onload.js';
-import {ValForm} from './lionAyudas.js';
+import {ValidForm} from './ValidForm.js';
 
 
 
@@ -65,8 +64,10 @@ console.timeEnd();
 
 ////
 
-let testVal = new ValForm('formtest');
+let testVal = new ValidForm('formtest');
 
 setTimeout(() => {
-    testVal.validarCampos();
+    console.log(testVal.validarCampos());
+    console.log(testVal.crearObjetoJson());
+    console.log(testVal.crearFormData());
 }, 8000);
