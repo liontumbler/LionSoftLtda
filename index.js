@@ -66,8 +66,9 @@ console.timeEnd();
 
 let testVal = new ValidForm('formtest');
 
-setTimeout(() => {
+document.getElementById('clicktest').addEventListener('click', function(e) {
+    e.preventDefault();
     console.log(testVal.validarCampos());
     console.log(testVal.crearObjetoJson());
     console.log(testVal.crearFormData());
-}, 8000);
+});

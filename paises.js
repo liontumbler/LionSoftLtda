@@ -2863,9 +2863,6 @@ export class Paises {
                 Koulpélogo: {
                     codigoPostal: ''
                 },
-                Koupéla: {
-                    codigoPostal: ''
-                },
                 Kourwéogo: {
                     codigoPostal: ''
                 },
@@ -2879,9 +2876,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Nassoumbou: {
-                    codigoPostal: ''
-                },
-                Pouytenga: {
                     codigoPostal: ''
                 },
                 Rambo: {
@@ -3385,9 +3379,6 @@ export class Paises {
                 'Chatham-Kent': {
                     codigoPostal: ''
                 },
-                Kamloops: {
-                    codigoPostal: ''
-                },
                 'Saint-Eustache': {
                     codigoPostal: ''
                 },
@@ -3419,9 +3410,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Prince Albert': {
-                    codigoPostal: ''
-                },
-                'Trois-Rivières': {
                     codigoPostal: ''
                 },
                 'Saint-Laurent': {
@@ -3457,9 +3445,6 @@ export class Paises {
                 Ajax: {
                     codigoPostal: ''
                 },
-                Kelowna: {
-                    codigoPostal: ''
-                },
                 'Richmond Hill': {
                     codigoPostal: ''
                 },
@@ -3470,9 +3455,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Saint-Bruno-de-Montarville': {
-                    codigoPostal: ''
-                },
-                'Thunder Bay': {
                     codigoPostal: ''
                 },
                 Gatineau: {
@@ -3487,13 +3469,7 @@ export class Paises {
                 Richmond: {
                     codigoPostal: ''
                 },
-                Abbotsford: {
-                    codigoPostal: ''
-                },
                 'Sherwood Park': {
-                    codigoPostal: ''
-                },
-                'Saint-Jérôme': {
                     codigoPostal: ''
                 },
                 Dartmouth: {
@@ -3502,34 +3478,10 @@ export class Paises {
                 Blainville: {
                     codigoPostal: ''
                 },
-                'Trois-Rivières': {
-                    codigoPostal: ''
-                },
                 "Saint-John's": {
                     codigoPostal: ''
                 },
-                Repentigny: {
-                    codigoPostal: ''
-                },
-                'Saint-Eustache': {
-                    codigoPostal: ''
-                },
-                Peterborough: {
-                    codigoPostal: ''
-                },
-                Chilliwack: {
-                    codigoPostal: ''
-                },
                 Newmarket: {
-                    codigoPostal: ''
-                },
-                'Trois-Rivières': {
-                    codigoPostal: ''
-                },
-                Sarnia: {
-                    codigoPostal: ''
-                },
-                'Grande Prairie': {
                     codigoPostal: ''
                 }
             }
@@ -13269,18 +13221,6 @@ export class Paises {
                 Niquinohomo: {
                     codigoPostal: ''
                 },
-                'San Rafael del Norte': {
-                    codigoPostal: ''
-                },
-                Ocotal: {
-                    codigoPostal: ''
-                },
-                Somoto: {
-                    codigoPostal: ''
-                },
-                'San Juan de Limay': {
-                    codigoPostal: ''
-                },
                 Bilwi: {
                     codigoPostal: ''
                 },
@@ -13296,9 +13236,6 @@ export class Paises {
                 Tonalá: {
                     codigoPostal: ''
                 },
-                'San Carlos': {
-                    codigoPostal: ''
-                },
                 'El Almendro': {
                     codigoPostal: ''
                 },
@@ -13311,16 +13248,10 @@ export class Paises {
                 Chichigalpa: {
                     codigoPostal: ''
                 },
-                Siuna: {
-                    codigoPostal: ''
-                },
                 Nagarote: {
                     codigoPostal: ''
                 },
                 Camoapa: {
-                    codigoPostal: ''
-                },
-                'Nueva Guinea': {
                     codigoPostal: ''
                 },
                 'San Juan de Oriente': {
@@ -13338,19 +13269,10 @@ export class Paises {
                 'Muy Muy': {
                     codigoPostal: ''
                 },
-                'San Rafael del Sur': {
-                    codigoPostal: ''
-                },
                 Nandasmo: {
                     codigoPostal: ''
                 },
-                Somotillo: {
-                    codigoPostal: ''
-                },
                 Mateare: {
-                    codigoPostal: ''
-                },
-                Nindirí: {
                     codigoPostal: ''
                 },
                 Corinto: {
@@ -13434,9 +13356,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Tanout: {
-                    codigoPostal: ''
-                },
-                Tessaoua: {
                     codigoPostal: ''
                 },
                 Tondikiwindi: {
@@ -13527,9 +13446,6 @@ export class Paises {
                 Porsgrunn: {
                     codigoPostal: ''
                 },
-                Drammen: {
-                    codigoPostal: ''
-                },
                 Bodø: {
                     codigoPostal: ''
                 },
@@ -13576,9 +13492,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Steinkjer: {
-                    codigoPostal: ''
-                },
-                Drammen: {
                     codigoPostal: ''
                 },
                 Kristiansund: {
@@ -13763,12 +13676,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Shinas: {
-                    codigoPostal: ''
-                },
-                Shinas: {
-                    codigoPostal: ''
-                },
-                Sohar: {
                     codigoPostal: ''
                 },
                 'Wadi Kabir': {
@@ -14065,9 +13972,6 @@ export class Paises {
                 Ngatpang: {
                     codigoPostal: ''
                 },
-                Ngchesar: {
-                    codigoPostal: ''
-                },
                 Ngeremlengui: {
                     codigoPostal: ''
                 },
@@ -14121,28 +14025,10 @@ export class Paises {
                 Panamá: {
                     codigoPostal: ''
                 },
-                Colón: {
-                    codigoPostal: ''
-                },
-                David: {
-                    codigoPostal: ''
-                },
-                Santiago: {
-                    codigoPostal: ''
-                },
-                Chitré: {
-                    codigoPostal: ''
-                },
-                Penonomé: {
-                    codigoPostal: ''
-                },
                 'Las Cumbres': {
                     codigoPostal: ''
                 },
                 Changuinola: {
-                    codigoPostal: ''
-                },
-                'Las Tablas': {
                     codigoPostal: ''
                 },
                 'Bocas del Toro': {
@@ -14157,9 +14043,6 @@ export class Paises {
                 Antón: {
                     codigoPostal: ''
                 },
-                Arraiján: {
-                    codigoPostal: ''
-                },
                 Chepo: {
                     codigoPostal: ''
                 },
@@ -14170,9 +14053,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Río Sereno': {
-                    codigoPostal: ''
-                },
-                Tocumen: {
                     codigoPostal: ''
                 },
                 Macaracas: {
@@ -14404,9 +14284,6 @@ export class Paises {
                 Pilar: {
                     codigoPostal: ''
                 },
-                Encarnación: {
-                    codigoPostal: ''
-                },
                 'General Eugenio Alejandrino Garay': {
                     codigoPostal: ''
                 },
@@ -14431,28 +14308,7 @@ export class Paises {
                 Yaguarón: {
                     codigoPostal: ''
                 },
-                Itauguá: {
-                    codigoPostal: ''
-                },
-                'Ciudad del Este': {
-                    codigoPostal: ''
-                },
-                Asunción: {
-                    codigoPostal: ''
-                },
-                Encarnación: {
-                    codigoPostal: ''
-                },
-                'Pedro Juan Caballero': {
-                    codigoPostal: ''
-                },
                 'San Bernardino': {
-                    codigoPostal: ''
-                },
-                Villarrica: {
-                    codigoPostal: ''
-                },
-                Concepción: {
                     codigoPostal: ''
                 },
                 Areguá: {
@@ -14464,49 +14320,13 @@ export class Paises {
                 'San Cosme y Damián': {
                     codigoPostal: ''
                 },
-                'San Lorenzo': {
-                    codigoPostal: ''
-                },
-                Paraguarí: {
-                    codigoPostal: ''
-                },
-                Caacupé: {
-                    codigoPostal: ''
-                },
-                'Coronel Oviedo': {
-                    codigoPostal: ''
-                },
-                'San Juan Bautista': {
-                    codigoPostal: ''
-                },
                 'San Pedro del Ycuamandiyú': {
                     codigoPostal: ''
                 },
                 Filadelfia: {
                     codigoPostal: ''
                 },
-                Itá: {
-                    codigoPostal: ''
-                },
-                Luque: {
-                    codigoPostal: ''
-                },
-                'Salto del Guairá': {
-                    codigoPostal: ''
-                },
-                Caazapá: {
-                    codigoPostal: ''
-                },
-                Caaguazú: {
-                    codigoPostal: ''
-                },
-                Lambaré: {
-                    codigoPostal: ''
-                },
                 'Villa Hayes': {
-                    codigoPostal: ''
-                },
-                'Presidente Franco': {
                     codigoPostal: ''
                 },
                 'Capitán Bado': {
@@ -14515,28 +14335,13 @@ export class Paises {
                 Hernandarias: {
                     codigoPostal: ''
                 },
-                Capiatá: {
-                    codigoPostal: ''
-                },
-                Pilar: {
-                    codigoPostal: ''
-                },
                 Ypacaraí: {
                     codigoPostal: ''
                 },
                 'Gran Asunción': {
                     codigoPostal: ''
                 },
-                Itauguá: {
-                    codigoPostal: ''
-                },
                 'San Ignacio': {
-                    codigoPostal: ''
-                },
-                Curuguaty: {
-                    codigoPostal: ''
-                },
-                Ñemby: {
                     codigoPostal: ''
                 },
                 'Mariano Roque Alonso': {
@@ -14564,9 +14369,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Atyrá: {
-                    codigoPostal: ''
-                },
-                'Villa Elisa': {
                     codigoPostal: ''
                 },
                 Villeta: {
@@ -14643,61 +14445,16 @@ export class Paises {
                 Ica: {
                     codigoPostal: ''
                 },
-                Lima: {
-                    codigoPostal: ''
-                },
-                Arequipa: {
-                    codigoPostal: ''
-                },
-                Cusco: {
-                    codigoPostal: ''
-                },
-                Trujillo: {
-                    codigoPostal: ''
-                },
-                Chiclayo: {
-                    codigoPostal: ''
-                },
-                Huancayo: {
-                    codigoPostal: ''
-                },
-                Iquitos: {
-                    codigoPostal: ''
-                },
-                Piura: {
-                    codigoPostal: ''
-                },
                 Cajamarca: {
-                    codigoPostal: ''
-                },
-                Ayacucho: {
                     codigoPostal: ''
                 },
                 Huaraz: {
                     codigoPostal: ''
                 },
-                Puno: {
-                    codigoPostal: ''
-                },
-                Tacna: {
-                    codigoPostal: ''
-                },
-                Juliaca: {
-                    codigoPostal: ''
-                },
-                Ica: {
-                    codigoPostal: ''
-                },
                 Callao: {
                     codigoPostal: ''
                 },
-                Huánuco: {
-                    codigoPostal: ''
-                },
                 Tumbes: {
-                    codigoPostal: ''
-                },
-                Chimbote: {
                     codigoPostal: ''
                 },
                 Sullana: {
@@ -14710,9 +14467,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Tarapoto: {
-                    codigoPostal: ''
-                },
-                Pucallpa: {
                     codigoPostal: ''
                 },
                 Huancavelica: {
@@ -15170,9 +14924,6 @@ export class Paises {
                 Kalemie: {
                     codigoPostal: ''
                 },
-                Bukavu: {
-                    codigoPostal: ''
-                },
                 Butembo: {
                     codigoPostal: ''
                 },
@@ -15183,9 +14934,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Isiro: {
-                    codigoPostal: ''
-                },
-                Tshikapa: {
                     codigoPostal: ''
                 }
             }
@@ -15333,9 +15081,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Ruhengeri: {
-                    codigoPostal: ''
-                },
-                Kibungo: {
                     codigoPostal: ''
                 },
                 Kibungo: {
@@ -15493,9 +15238,6 @@ export class Paises {
                 'Tarnava Mare': {
                     codigoPostal: ''
                 },
-                Braila: {
-                    codigoPostal: ''
-                },
                 'Targu Carbunesti': {
                     codigoPostal: ''
                 },
@@ -15509,9 +15251,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Pascani: {
-                    codigoPostal: ''
-                },
-                Slobozia: {
                     codigoPostal: ''
                 },
                 'Miercurea Ciuc': {
@@ -15547,9 +15286,6 @@ export class Paises {
                 Dej: {
                     codigoPostal: ''
                 },
-                Calarasi: {
-                    codigoPostal: ''
-                },
                 'Campulung Moldovenesc': {
                     codigoPostal: ''
                 },
@@ -15569,12 +15305,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Oltenita: {
-                    codigoPostal: ''
-                },
-                Bailesti: {
-                    codigoPostal: ''
-                },
-                Borsa: {
                     codigoPostal: ''
                 },
                 Navodari: {
@@ -15604,9 +15334,6 @@ export class Paises {
                 Moinesti: {
                     codigoPostal: ''
                 },
-                Bacau: {
-                    codigoPostal: ''
-                },
                 Bistrita: {
                     codigoPostal: ''
                 },
@@ -15628,9 +15355,6 @@ export class Paises {
                 Caracal: {
                     codigoPostal: ''
                 },
-                Fagaras: {
-                    codigoPostal: ''
-                },
                 Cisnadie: {
                     codigoPostal: ''
                 },
@@ -15647,12 +15371,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 Calan: {
-                    codigoPostal: ''
-                },
-                'Sighetu Marmatiei': {
-                    codigoPostal: ''
-                },
-                Turda: {
                     codigoPostal: ''
                 },
                 Pucioasa: {
@@ -15673,22 +15391,7 @@ export class Paises {
                 Campulung: {
                     codigoPostal: ''
                 },
-                Tarnaveni: {
-                    codigoPostal: ''
-                },
                 Bicaz: {
-                    codigoPostal: ''
-                },
-                Vurpar: {
-                    codigoPostal: ''
-                },
-                'Tg.Jiu': {
-                    codigoPostal: ''
-                },
-                Lipova: {
-                    codigoPostal: ''
-                },
-                Tarnaveni: {
                     codigoPostal: ''
                 },
                 Vurpar: {
@@ -16118,9 +15821,6 @@ export class Paises {
                 Tambacounda: {
                     codigoPostal: ''
                 },
-                Kaolack: {
-                    codigoPostal: ''
-                },
                 Matam: {
                     codigoPostal: ''
                 },
@@ -16199,9 +15899,6 @@ export class Paises {
                     codigoPostal: ''
                 },
                 'Novi Pazar': {
-                    codigoPostal: ''
-                },
-                Kraljevo: {
                     codigoPostal: ''
                 }
             }
@@ -16880,9 +16577,6 @@ export class Paises {
                 Wil: {
                     codigoPostal: ''
                 },
-                Winterthur: {
-                    codigoPostal: ''
-                },
                 Adliswil: {
                     codigoPostal: ''
                 },
@@ -16961,9 +16655,6 @@ export class Paises {
                 Sarnen: {
                     codigoPostal: ''
                 },
-                Schaffhausen: {
-                    codigoPostal: ''
-                },
                 Rheinfelden: {
                     codigoPostal: ''
                 },
@@ -16985,34 +16676,16 @@ export class Paises {
                 Monthey: {
                     codigoPostal: ''
                 },
-                Montreux: {
-                    codigoPostal: ''
-                },
                 Meilen: {
                     codigoPostal: ''
                 },
                 Langenthal: {
                     codigoPostal: ''
                 },
-                Köniz: {
-                    codigoPostal: ''
-                },
-                Kloten: {
-                    codigoPostal: ''
-                },
                 Kesswil: {
                     codigoPostal: ''
                 },
-                Kriens: {
-                    codigoPostal: ''
-                },
                 Koniz: {
-                    codigoPostal: ''
-                },
-                Köniz: {
-                    codigoPostal: ''
-                },
-                Kloten: {
                     codigoPostal: ''
                 }
             }
@@ -17068,43 +16741,16 @@ export class Paises {
                 Wanica: {
                     codigoPostal: ''
                 },
-                Paramaribo: {
-                    codigoPostal: ''
-                },
-                Lelydorp: {
-                    codigoPostal: ''
-                },
-                Brokopondo: {
-                    codigoPostal: ''
-                },
-                Albina: {
-                    codigoPostal: ''
-                },
-                'Nieuw Amsterdam': {
-                    codigoPostal: ''
-                },
-                'Nieuw Nickerie': {
-                    codigoPostal: ''
-                },
-                Moengo: {
-                    codigoPostal: ''
-                },
                 Wageningen: {
                     codigoPostal: ''
                 },
                 Onverwacht: {
                     codigoPostal: ''
                 },
-                Groningen: {
-                    codigoPostal: ''
-                },
                 Totness: {
                     codigoPostal: ''
                 },
                 Brownsweg: {
-                    codigoPostal: ''
-                },
-                Marienburg: {
                     codigoPostal: ''
                 },
                 Meerzorg: {
