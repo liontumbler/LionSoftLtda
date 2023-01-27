@@ -1,8 +1,6 @@
 import {Paises} from './paises.js';
 import {ValidForm} from './ValidForm.js';
 
-
-
 /** como utilizar paises 'descomentar'*/
 console.time();
 console.log('empiesa');

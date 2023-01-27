@@ -1,4 +1,4 @@
-export class ValidForm {
+class ValidForm {
     //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
     #form = null;
     #form2 = null;
@@ -611,3 +611,5 @@ export class ValidForm {
         }
     }
 }
+
+export {ValidForm};
