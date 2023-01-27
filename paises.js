@@ -1,5 +1,5 @@
 
-export class Paises {
+class Paises {
 
     #Afganistán = {
         Kabul: {
@@ -17509,3 +17509,5 @@ export class Paises {
         return cadenaRetorno;
     }
 }
+
+export {Paises};
