@@ -1,11 +1,13 @@
-Se creo un objeto paises para obtener los paises y ciudades del mundo sin necesidad de tener o implementar una Api o base de datos, la idea con esta libreria es poderla mejorar en comunidad por el momento yo la estoy arreglando, por que la idea es que sirba para todos los paises, pero por el momento esta solo para latino america
-
-- Abrir archivo index para entender como implementar paises.js
+- Abrir archivo index para entender como implementar paises.js y ValidForm.js
 
     `<script src="index.js" type="module"></script>`
-- Amplementar archivo paises.js para el manejo de los paises 
+- Amplementar archivo paises.js para obtener los datos, manejo de los paises y ciudades segun desee
 
     `<script src="paises.js" type="module"></script>`
+- Amplementar archivo ValidForm.js para el manejo de los de validacion de formularios, vasicamente valida un formulario creando una mascara del mismo para que no se pueda inmutar despues de que cargue la vista, gracias a esto el cliente podra inpeccionar pero al editar algun dato del formulario pero no va ser vaidado despues, una gran herramienta
+
+    `<script src="ValidForm.js" type="module"></script>`
 
 - Por el momento se tiene el objeto con algunos datos vacios que mas adelante se hiran poniendo para dejar la libreria completa
-- si depronto no hay una capital o un pais etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
+- Si depronto no hay una capital o un pais etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
+- Si se encutra algun tipo de Bug reportarlo por ese medio en algun comentario
