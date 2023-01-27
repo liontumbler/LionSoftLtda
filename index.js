@@ -1,4 +1,4 @@
-import {Paises} from './paises.js';
+import {Paises} from './Paises.js';
 import {ValidForm} from './ValidForm.js';
 
 /** como utilizar paises 'descomentar'*/
