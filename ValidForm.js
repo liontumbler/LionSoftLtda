@@ -19,7 +19,7 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         if (document[elemt]) {
             this.#form = document[elemt]
         } else if (!document.getElementById(elemt)) {
-            console.log('el formulario nombrado no existe');
+            console.error('el formulario nombrado no existe');
         }
 
         this.#form2 = this.#form.cloneNode(true);
@@ -93,10 +93,6 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
             }
         }
 
-        //for (let i = 0; i < this.#form2.length; i++) {
-            //console.log(this.#form2, i, this.#form[i]);
-        //}
-
         for (const i of this.#form.querySelectorAll('[input="alfaNS"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(ValidForm.#alfaNS, '');
@@ -136,10 +132,6 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
     getId(id) {
         return this.#form.querySelectorAll('[id="'+id+'"]')[0];
-    }
-
-    #getId(id) {
-        return this.#form2.querySelectorAll('[id="'+id+'"]')[0];
     }
 
     validarCampoCorreo(value) {
@@ -193,7 +185,6 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset'){
-                console.log(input);
                 if(input.type == 'file' && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == 'checkbox'){
@@ -280,28 +271,12 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         return formData;
     }
 
-    validarFormExpert(campos = {}) {
+    validarCamposExpert(campos = {}) {
         let valido = false;
         for (const i in campos) {
             let input = this.getId(campos[i]);
 
             valido = this.#validarCampoForm(input.id, false);
-            if(!valido){
-                valido = input.validationMessage;
-                input.focus();
-                input.select();
-                break;
-            }
-        }
-
-        return valido;
-    }
-
-    static validarCamposExpert(campos = {}) {
-        let valido = false;
-        for (const i in campos) {
-            let input = document.getElementById(campos[i]);
-            valido = ValidForm.validarCampo(input.id, false);
             if(!valido){
                 valido = input.validationMessage;
                 input.focus();
@@ -326,6 +301,10 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         }
 
         return valido;
+    }
+
+    #getId(id) {
+        return this.#form2.querySelectorAll('[id="'+id+'"]')[0];
     }
 
     #validarInput(input) {
@@ -481,8 +460,6 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         inputReal.name = input.name;
         inputReal.files = input.files;
 
-        console.log(id, input, inputReal);
-
         if (inputReal.required) {
             if(inputReal.value){
                 let valido = this.#validarInput(inputReal);
@@ -506,18 +483,18 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 if (conMsg) {
                     input.setCustomValidity(inputReal.validationMessage);
                     input.reportValidity();
+
+                    let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                    if (label) {
+                        console.warn('no tiene value el campo '+ label);
+                    }else{
+                        console.warn('no tiene value el campo requerido con id '+ inputReal.id);
+                    }
                 }
                 
                 input.focus();
                 input.select();
-                
-                let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                if (label) {
-                    console.warn('no tiene value el campo '+ label);
-                }else{
-                    console.warn('no tiene value el campo requerido con id '+ inputReal.id);
-                }
-                
+
                 return false;
             }
         }else{
@@ -525,10 +502,24 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         }
     }
 
+    static validarCamposExpert(campos = {}) {
+        let valido = false;
+        for (const i in campos) {
+            let input = document.getElementById(campos[i]);
+            valido = ValidForm.validarCampo(input.id, false);
+            if(!valido){
+                valido = input.validationMessage;
+                input.focus();
+                input.select();
+                break;
+            }
+        }
+
+        return valido;
+    }
+
     static validarCampo(id, conMsg = true){
         let inputReal = document.getElementById(id);
-
-        console.log(id, input, inputReal);
 
         if (inputReal.required) {
             if(inputReal.value){
@@ -554,17 +545,18 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 if (conMsg) {
                     inputReal.setCustomValidity(inputReal.validationMessage);
                     inputReal.reportValidity();
+
+                    let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                    if (label) {
+                        console.warn('no tiene value el campo '+ label);
+                    }else{
+                        console.warn('no tiene value el campo requerido con id '+ inputReal.id);
+                    }
                 }
 
                 inputReal.focus();
                 inputReal.select();
 
-                let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                if (label) {
-                    console.warn('no tiene value el campo '+ label);
-                }else{
-                    console.warn('no tiene value el campo requerido con id '+ inputReal.id);
-                }
                 return false;
             }
         }else{
