@@ -134,6 +134,14 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         }
     }
 
+    getId(id) {
+        return this.#form.querySelectorAll('[id="'+id+'"]')[0];
+    }
+
+    #getId(id) {
+        return this.#form2.querySelectorAll('[id="'+id+'"]')[0];
+    }
+
     validarCampoCorreo(value) {
         let valido = false;
         if(this.regexCorreo.test(value))
@@ -178,201 +186,14 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         return valido;
     }
 
-    getId(id) {
-        return this.#form.querySelectorAll('[id="'+id+'"]')[0];
-    }
-
-    #getId(id) {
-        return this.#form2.querySelectorAll('[id="'+id+'"]')[0];
-    }
-
-    #validarCampoForm(id){
-        let input = this.getId(id);
-        let inputReal = this.#getId(id);
-
-        inputReal.value = input.value;
-        inputReal.cheked = input.cheked;
-        inputReal.name = input.name;
-        inputReal.files = input.files;
-
-        console.log(id, input, inputReal);
-
-        if (inputReal.required) {
-            if(inputReal.value){
-
-                const validityState = inputReal.validity;
-                let value = inputReal.value;
-                let valido = true;
-
-                switch (inputReal.type) {
-                    case 'email':
-                        if(!this.validarCampoCorreo(value)){
-                            valido = false;
-                            break;
-                        }
-
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'url':
-                        if(!this.url.test(value)){
-                            valido = false;
-                            break;
-                        }
-
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'password':
-                    case 'search':
-                    case 'tel':
-                    case 'text':
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'date':
-                    case 'datetime-local':
-                    case 'month':
-                    case 'time':
-                    case 'week':
-                        if (validityState.rangeOverflow) {
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.rangeUnderflow) {
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.stepMismatch) {
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'range':
-                    case 'number':
-                        if(!this.validarMaxMin(value, inputReal.getAttribute('max'), inputReal.getAttribute('min'))){
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.stepMismatch) {
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'file':
-                        let file;
-                        for (const i in inputReal.files) {
-                            file = inputReal.files[i];
-                            if(file.size > 0) {
-
-                                let arrExten = file.name.split('.');
-                                inputReal.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)]
-
-                                let accept = inputReal.getAttribute('accept');
-                                if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
-                                    valido = false;
-                                    break;
-                                }else if (!this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
-                                    valido = false;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        let arrExten = file.name.split('.');
-                        if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
-                            const image = document.createElement('img');
-                            //image.src = URL.createObjectURL(file);
-                            inputReal.parentNode.append(image);
-
-                            let reader = new FileReader();
-                            reader.readAsDataURL(file);
-                            reader.onload = function(e) {
-                                image.src = e.target.result;
-                            }
-                        }
-
-                        break;
-                    case 'color':
-                        break;
-                    case 'hidden':
-                        break;
-                    case 'image':
-                        break;
-                    case 'checkbox':
-                        if (!inputReal.cheked) {
-                            valido = false;
-                            break;
-                        }
-                        break;
-                    case 'radio':
-                        if(inputReal.name){
-                            if (!this.#form2.querySelector('input[name="' + inputReal.name + '"]:checked')) {
-                                valido = false;
-                                break;
-                            }
-                        }else{
-                            console.warn('el radio buton requerido no tiene un name asociado');
-                            valido = false;
-                            break;
-                        }
-                        
-                        break;
-                    default:
-                        console.warn('tipo indefinido');
-                        break;
-                }
-
-                if (validityState.patternMismatch)
-                    valido = false;
-
-                if(!valido){
-                    input.setCustomValidity(inputReal.validationMessage);
-                    input.reportValidity();
-                    input.focus();
-                    input.select();
-
-                    if (input.type == 'file') {
-                        input.value = '';
-                        input.files = [];
-                    }
-                }
-
-                return valido;
-            }else{
-                input.reportValidity();
-                input.focus();
-                input.select();
-                console.warn('no tiene value el campo requerido con id '+ inputReal.id);
-                return false;
-            }
-        }else{
-            return true;
-        }
-    }
-
-    crearObjetoJson() {
+    crearObjetoJson(conVacios = false) {
         let data = {};
         let inputs = this.#form.getElementsByTagName('INPUT');
 
-        for (const i in inputs) {
+        for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset'){
-                
+                console.log(input);
                 if(input.type == 'file' && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == 'checkbox'){
@@ -393,6 +214,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                     if (radioEscogido) {
                         formData.append(input.name, value);
                         data[input.name] = value;
+                    }else if(conVacios){
+                        data[input.name] = 0;
                     }
                 }else{
                     let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
@@ -400,6 +223,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
                     if(input.value){
                         data[title] = input.value;
+                    }else if(conVacios){
+                        data[title] = null;
                     }
                 }
             }
@@ -408,11 +233,11 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         return data;
     }
 
-    crearFormData() {
+    crearFormData(conVacios = false) {
         let formData = new FormData();
         let inputs = this.#form.getElementsByTagName('INPUT');
 
-        for (const i in inputs) {
+        for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset'){
                 if(input.type == 'file' && input.files.length > 0){
@@ -436,6 +261,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
                     if (radioEscogido) {
                         formData.append(input.name, value);
+                    }else if(conVacios){
+                        formData.append(input.name, 0);
                     }
                 }else{
                     let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
@@ -443,6 +270,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
                     if(input.value){
                         formData.append(title, input.value);
+                    }else if(conVacios){
+                        formData.append(title, null);
                     }
                 }
             }
@@ -451,157 +280,266 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         return formData;
     }
 
-    static validarCampo(id){
+    validarFormExpert(campos = {}) {
+        let valido = false;
+        for (const i in campos) {
+            let input = this.getId(campos[i]);
 
-        let inputReal = document.getElementById(id);
-        console.log(inputReal.required, inputReal.type, inputReal.value);
+            valido = this.#validarCampoForm(input.id, false);
+            if(!valido){
+                valido = input.validationMessage;
+                input.focus();
+                input.select();
+                break;
+            }
+        }
+
+        return valido;
+    }
+
+    static validarCamposExpert(campos = {}) {
+        let valido = false;
+        for (const i in campos) {
+            let input = document.getElementById(campos[i]);
+            valido = ValidForm.validarCampo(input.id, false);
+            if(!valido){
+                valido = input.validationMessage;
+                input.focus();
+                input.select();
+                break;
+            }
+        }
+
+        return valido;
+    }
+
+    validarCampos(conMsg = true) {
+        let inputs = this.#form.getElementsByTagName('INPUT');
+        let valido = false;
+        for (const i in inputs) {
+            if(inputs[i].type != 'button' && inputs[i].type != 'submit' && inputs[i].type != 'reset'){
+                valido = this.#validarCampoForm(inputs[i].id, conMsg);
+                if(!valido){
+                    break;
+                }
+            }
+        }
+
+        return valido;
+    }
+
+    #validarInput(input) {
+        const validityState = input.validity;
+        let value = input.value;
+        let valido = true;
+
+        switch (input.type) {
+            case 'email':
+                if(!this.validarCampoCorreo(value)){
+                    valido = false;
+                    break;
+                }
+
+                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    valido = false;
+                    break;
+                }
+
+                break;
+            case 'url':
+                if(!this.url.test(value)){
+                    valido = false;
+                    break;
+                }
+
+                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    valido = false;
+                    break;
+                }
+
+                break;
+            case 'password':
+            case 'search':
+            case 'tel':
+            case 'text':
+                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    valido = false;
+                    break;
+                }
+
+                break;
+            case 'range':
+            case 'date':
+            case 'datetime-local':
+            case 'month':
+            case 'time':
+            case 'week':
+                if (validityState.rangeOverflow) {
+                    valido = false;
+                    break;
+                }
+
+                if (validityState.rangeUnderflow) {
+                    valido = false;
+                    break;
+                }
+
+                if (validityState.stepMismatch) {
+                    valido = false;
+                    break;
+                }
+
+                break;
+            case 'number':
+                if(!this.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min'))){
+                    valido = false;
+                    break;
+                }
+
+                if (validityState.stepMismatch) {
+                    valido = false;
+                    break;
+                }
+
+                break;
+            case 'file':
+                let file;
+                for (const i in input.files) {
+                    file = input.files[i];
+                    if(file.size > 0) {
+
+                        let arrExten = file.name.split('.');
+                        input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)]
+
+                        let accept = input.getAttribute('accept');
+                        if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
+                            valido = false;
+                            break;
+                        }else if (!this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
+                            valido = false;
+                            break;
+                        }
+                    }
+                }
+                
+                let arrExten = file.name.split('.');
+                if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
+                    const image = document.createElement('img');
+                    //image.src = URL.createObjectURL(file);
+                    input.parentNode.append(image);
+
+                    let reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function(e) {
+                        image.src = e.target.result;
+                    }
+                }
+
+                break;
+            case 'checkbox':
+                if (!input.cheked) {
+                    valido = false;
+                    break;
+                }
+                break;
+            case 'radio':
+                if(input.name){
+                    if (!this.#form2.querySelector('input[name="' + input.name + '"]:checked')) {
+                        valido = false;
+                        break;
+                    }
+                }else{
+                    console.warn('el radio buton requerido no tiene un name asociado');
+                    valido = false;
+                    break;
+                }
+                
+                break;
+            case 'color':
+                break;
+            case 'hidden':
+                break;
+            case 'image':
+                break;
+            default:
+                console.warn('tipo indefinido');
+                break;
+        }
+
+        if (validityState.patternMismatch)
+            valido = false;
+
+        return valido;
+    }
+
+    #validarCampoForm(id, conMsg = true){
+        let input = this.getId(id);
+        let inputReal = this.#getId(id);
+
+        inputReal.value = input.value;
+        inputReal.cheked = input.cheked;
+        inputReal.name = input.name;
+        inputReal.files = input.files;
+
+        console.log(id, input, inputReal);
 
         if (inputReal.required) {
             if(inputReal.value){
-
-                const validityState = inputReal.validity;
-                let value = inputReal.value;
-                let valido = true;
-
-                switch (inputReal.type) {
-                    case 'email':
-                        if(!this.validarCampoCorreo(value)){
-                            valido = false;
-                            break;
-                        }
-
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'url':
-                        if(!this.url.test(value)){
-                            valido = false;
-                            break;
-                        }
-
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'password':
-                    case 'search':
-                    case 'tel':
-                    case 'text':
-                        if(!this.validarNumCaracteres(value, inputReal.getAttribute('maxlength'), inputReal.getAttribute('minlength'))){
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'date':
-                    case 'datetime-local':
-                    case 'month':
-                    case 'time':
-                    case 'week':
-                        if (validityState.rangeOverflow) {
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.rangeUnderflow) {
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.stepMismatch) {
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'range':
-                    case 'number':
-                        if(!this.validarMaxMin(value, inputReal.getAttribute('max'), inputReal.getAttribute('min'))){
-                            valido = false;
-                            break;
-                        }
-
-                        if (validityState.stepMismatch) {
-                            valido = false;
-                            break;
-                        }
-
-                        break;
-                    case 'file':
-                        let file;
-                        for (const i in inputReal.files) {
-                            file = inputReal.files[i];
-                            if(file.size > 0) {
-
-                                let arrExten = file.name.split('.');
-                                inputReal.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)]
-
-                                let accept = inputReal.getAttribute('accept');
-                                if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
-                                    valido = false;
-                                    break;
-                                }else if (!this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
-                                    valido = false;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        let arrExten = file.name.split('.');
-                        if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
-                            const image = document.createElement('img');
-                            //image.src = URL.createObjectURL(file);
-                            inputReal.parentNode.append(image);
-
-                            let reader = new FileReader();
-                            reader.readAsDataURL(file);
-                            reader.onload = function(e) {
-                                image.src = e.target.result;
-                            }
-                        }
-
-                        break;
-                    case 'color':
-                        break;
-                    case 'hidden':
-                        break;
-                    case 'image':
-                        break;
-                    case 'checkbox':
-                        if (!inputReal.cheked) {
-                            valido = false;
-                            break;
-                        }
-                        break;
-                    case 'radio':
-                        if(inputReal.name){
-                            if (!this.#form2.querySelector('input[name="' + inputReal.name + '"]:checked')) {
-                                valido = false;
-                                break;
-                            }
-                        }else{
-                            console.warn('el radio buton requerido no tiene un name asociado');
-                            valido = false;
-                            break;
-                        }
-                        
-                        break;
-                    default:
-                        console.warn('tipo indefinido');
-                        break;
-                }
-
-                if (validityState.patternMismatch)
-                    valido = false;
+                let valido = this.#validarInput(inputReal);
 
                 if(!valido){
-                    inputReal.setCustomValidity(inputReal.validationMessage);
-                    inputReal.reportValidity();
+                    if (conMsg) {
+                        input.setCustomValidity(inputReal.validationMessage);
+                        input.reportValidity();
+                    }
+                    input.focus();
+                    input.select();
+
+                    if (input.type == 'file') {
+                        input.value = '';
+                        input.files = [];
+                    }
+                }
+
+                return valido;
+            }else{
+                if (conMsg) {
+                    input.setCustomValidity(inputReal.validationMessage);
+                    input.reportValidity();
+                }
+                
+                input.focus();
+                input.select();
+                
+                let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                if (label) {
+                    console.warn('no tiene value el campo '+ label);
+                }else{
+                    console.warn('no tiene value el campo requerido con id '+ inputReal.id);
+                }
+                
+                return false;
+            }
+        }else{
+            return true;
+        }
+    }
+
+    static validarCampo(id, conMsg = true){
+        let inputReal = document.getElementById(id);
+
+        console.log(id, input, inputReal);
+
+        if (inputReal.required) {
+            if(inputReal.value){
+                let valido = this.#validarInput(inputReal);
+
+                if(!valido){
+                    if (conMsg) {
+                        inputReal.setCustomValidity(inputReal.validationMessage);
+                        inputReal.reportValidity();
+                    }
+
                     inputReal.focus();
                     inputReal.select();
 
@@ -613,10 +551,20 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
                 return valido;
             }else{
-                inputReal.reportValidity();
+                if (conMsg) {
+                    inputReal.setCustomValidity(inputReal.validationMessage);
+                    inputReal.reportValidity();
+                }
+
                 inputReal.focus();
                 inputReal.select();
-                console.warn('no tiene value el campo requerido con id '+ inputReal.id);
+
+                let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                if (label) {
+                    console.warn('no tiene value el campo '+ label);
+                }else{
+                    console.warn('no tiene value el campo requerido con id '+ inputReal.id);
+                }
                 return false;
             }
         }else{
@@ -652,20 +600,5 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         } else {
             console.warn('no es un input');
         }
-    }
-
-    validarCampos() {
-        let inputs = this.#form.getElementsByTagName('INPUT');
-        let valido = true;
-
-        for (const i in inputs) {
-            if(inputs[i].type != 'button' && inputs[i].type != 'submit' && inputs[i].type != 'reset'){
-                valido = this.#validarCampoForm(inputs[i].id);
-                if(!valido){
-                    break;
-                }
-            }
-        }
-        return valido;
     }
 }
