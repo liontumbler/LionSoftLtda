@@ -413,8 +413,11 @@ export class ValidForm {
                 break;
         }
 
-        if (validityState.patternMismatch)
+        if (validityState.patternMismatch){
+            input.setCustomValidity('');
+            input.setCustomValidity(input.validationMessage +' '+ input.pattern);
             valido = false;
+        }
 
         if (!value)
             valido = false;
