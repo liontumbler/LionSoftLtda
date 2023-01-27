@@ -1,7 +1,7 @@
 export class ValidForm {
     //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
-    #form = undefined;
-    #form2 = undefined;
+    #form = null;
+    #form2 = null;
 
     static #alfa = /[^A-Za-zñÑ ]/g;
     static #alfaNS = /[^A-Za-zñÑ]/g;
@@ -16,9 +16,9 @@ export class ValidForm {
     formatoFile= /jpg|jpeg|png|gif/g;
 
     constructor(elemt){
-        this.#form = document.getElementById(elemt)
+        this.#form = document.getElementById(elemt);
         if (document[elemt])
-            this.#form = document[elemt]
+            this.#form = document[elemt];
         else if (!document.getElementById(elemt))
             console.error('El formulario nombrado no existe');
 
@@ -65,9 +65,9 @@ export class ValidForm {
 
             if (i.children[0]) {
                 anteshtml = i.children[0];
-                anteshtmlCadena = anteshtml.outerHTML
+                anteshtmlCadena = anteshtml.outerHTML;
             }else{
-                anteshtmlCadena = '<input type="password" id="pw'+i+'">'
+                anteshtmlCadena = '<input type="password" id="pw'+ i +'">';
             }
 
             i.innerHTML = anteshtmlCadena + `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye eye" viewBox="0 0 16 16">
@@ -132,50 +132,6 @@ export class ValidForm {
 
     getId(id) {
         return this.#form.querySelectorAll('[id="'+id+'"]')[0];
-    }
-
-    validarCampoCorreo(value) {
-        let valido = false;
-        if(this.regexCorreo.test(value))
-            valido = true;
-
-        return valido;
-    }
-
-    validarNumCaracteres(value, maxlength, minlength) {
-        let valido = true;
-
-        if (maxlength && value.length > maxlength)
-            valido = false;
-
-        if (minlength && value.length < minlength)
-            valido = false;
-
-        if (!value)
-            valido = false;
-
-        return valido;
-    }
-
-    validarMaxMin(value, max, min) {
-        let valido = true;
-
-        if(min && isNaN(min))
-            valido = false;
-
-        if(max && isNaN(max))
-            valido = false;
-
-        if (max && value > max)
-            valido = false;
-
-        if (min && value < min)
-            valido = false;
-
-        if (!value)
-            valido = false;
-
-        return valido;
     }
 
     crearObjetoJson(conVacios = false, cabeceras = []) {
@@ -287,11 +243,11 @@ export class ValidForm {
     validarCamposExpert(campos = {}) {
         let valido = false;
         for (const i in campos) {
-            let input = this.getId(campos[i]);
-
-            valido = this.#validarCampoForm(input.id, false);
+            valido = this.#validarCampoForm(campos[i], false);
             if(!valido){
-                valido = input.validationMessage;
+                let input = this.getId(campos[i]);
+                let inputPr = this.#getId(campos[i]);
+                valido = [inputPr.validationMessage, 'El campo ' + i + 'es inválido'];
                 input.focus();
                 input.select();
                 break;
@@ -326,12 +282,12 @@ export class ValidForm {
 
         switch (input.type) {
             case 'email':
-                if(!this.validarCampoCorreo(value)){
+                if(!ValidForm.validarCampoCorreo(value)){
                     valido = false;
                     break;
                 }
 
-                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                     valido = false;
                     break;
                 }
@@ -343,7 +299,7 @@ export class ValidForm {
                     break;
                 }
 
-                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                     valido = false;
                     break;
                 }
@@ -353,7 +309,7 @@ export class ValidForm {
             case 'search':
             case 'tel':
             case 'text':
-                if(!this.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                     valido = false;
                     break;
                 }
@@ -382,7 +338,7 @@ export class ValidForm {
 
                 break;
             case 'number':
-                if(!this.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min'))){
+                if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min'))){
                     valido = false;
                     break;
                 }
@@ -400,7 +356,7 @@ export class ValidForm {
                     if(file.size > 0) {
 
                         let arrExten = file.name.split('.');
-                        input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)]
+                        input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
 
                         let accept = input.getAttribute('accept');
                         if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
@@ -460,66 +416,111 @@ export class ValidForm {
         if (validityState.patternMismatch)
             valido = false;
 
+        if (!value)
+            valido = false;
+
         return valido;
     }
 
     #validarCampoForm(id, conMsg = true){
         let input = this.getId(id);
-        let inputReal = this.#getId(id);
+        if(input){
+            let inputReal = this.#getId(id);
 
-        inputReal.value = input.value;
-        inputReal.cheked = input.cheked;
-        inputReal.name = input.name;
-        inputReal.files = input.files;
+            inputReal.value = input.value;
+            inputReal.cheked = input.cheked;
+            inputReal.name = input.name;
+            inputReal.files = input.files;
 
-        if (inputReal.required) {
-            if(inputReal.value){
-                let valido = this.#validarInput(inputReal);
+            if (inputReal.required) {
+                if(inputReal.value){
+                    let valido = this.#validarInput(inputReal);
 
-                if(!valido){
+                    if(!valido){
+                        if (conMsg) {
+                            input.setCustomValidity(inputReal.validationMessage);
+                            input.reportValidity();
+                        }
+                        input.focus();
+                        input.select();
+
+                        if (input.type == 'file') {
+                            input.value = '';
+                            input.files = [];
+                        }
+                    }
+
+                    return valido;
+                }else{
                     if (conMsg) {
                         input.setCustomValidity(inputReal.validationMessage);
                         input.reportValidity();
+
+                        let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                        if (label)
+                            console.warn('No tiene valor el campo '+ label);
+                        else
+                            console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
+                    
                     input.focus();
                     input.select();
 
-                    if (input.type == 'file') {
-                        input.value = '';
-                        input.files = [];
-                    }
+                    return false;
                 }
-
-                return valido;
             }else{
-                if (conMsg) {
-                    input.setCustomValidity(inputReal.validationMessage);
-                    input.reportValidity();
-
-                    let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                    if (label)
-                        console.warn('No tiene valor el campo '+ label);
-                    else
-                        console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
-                }
-                
-                input.focus();
-                input.select();
-
-                return false;
+                return true;
             }
         }else{
-            return true;
+            return false;
         }
+    }
+
+    static validarCampoCorreo(value) {
+        let valido = false;
+        if(this.regexCorreo.test(value))
+            valido = true;
+
+        return valido;
+    }
+
+    static validarNumCaracteres(value, maxlength, minlength) {
+        let valido = true;
+
+        if (maxlength && value.length > maxlength)
+            valido = false;
+
+        if (minlength && value.length < minlength)
+            valido = false;
+
+        return valido;
+    }
+
+    static validarMaxMin(value, max, min) {
+        let valido = true;
+
+        if(min && isNaN(min))
+            valido = false;
+
+        if(max && isNaN(max))
+            valido = false;
+
+        if (max && value > max)
+            valido = false;
+
+        if (min && value < min)
+            valido = false;
+
+        return valido;
     }
 
     static validarCamposExpert(campos = {}) {
         let valido = false;
         for (const i in campos) {
-            let input = document.getElementById(campos[i]);
-            valido = ValidForm.validarCampo(input.id, false);
+            valido = ValidForm.validarCampo(campos[i], false);
             if(!valido){
-                valido = input.validationMessage;
+                let input = document.getElementById(campos[i]);
+                valido = [input.validationMessage, 'El campo ' + i + 'es inválido'];
                 input.focus();
                 input.select();
                 break;
@@ -532,58 +533,62 @@ export class ValidForm {
     static validarCampo(id, conMsg = true){
         let inputReal = document.getElementById(id);
 
-        if (inputReal.required) {
-            if(inputReal.value){
-                let valido = this.#validarInput(inputReal);
+        if (inputReal) {
+            if (inputReal.required) {
+                if(inputReal.value){
+                    let valido = this.#validarInput(inputReal);
 
-                if(!valido){
+                    if(!valido){
+                        if (conMsg) {
+                            inputReal.setCustomValidity(inputReal.validationMessage);
+                            inputReal.reportValidity();
+                        }
+
+                        inputReal.focus();
+                        inputReal.select();
+
+                        if (inputReal.type == 'file') {
+                            inputReal.value = '';
+                            inputReal.files = [];
+                        }
+                    }
+
+                    return valido;
+                }else{
                     if (conMsg) {
                         inputReal.setCustomValidity(inputReal.validationMessage);
                         inputReal.reportValidity();
+
+                        let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                        if (label)
+                            console.warn('No tiene valor el campo '+ label);
+                        else
+                            console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
 
                     inputReal.focus();
                     inputReal.select();
 
-                    if (inputReal.type == 'file') {
-                        inputReal.value = '';
-                        inputReal.files = [];
-                    }
+                    return false;
                 }
-
-                return valido;
             }else{
-                if (conMsg) {
-                    inputReal.setCustomValidity(inputReal.validationMessage);
-                    inputReal.reportValidity();
-
-                    let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                    if (label)
-                        console.warn('No tiene valor el campo '+ label);
-                    else
-                        console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
-                }
-
-                inputReal.focus();
-                inputReal.select();
-
-                return false;
+                return true;
             }
         }else{
-            return true;
+            return false;
         }
     }
 
     static addList(input, data) {
         if(input.tagName == 'INPUT') {
             if (!input.getAttribute('list'))
-                input.setAttribute('list', input.id +'List')
+                input.setAttribute('list', input.id +'List');
 
             let list = document.getElementById(input.id +'List');
             if(!list){
-                list = document.createElement('datalist')
+                list = document.createElement('datalist');
                 list.id = input.id +'List';
-                input.parentNode.append(list)
+                input.parentNode.append(list);
             }
 
             if (Array.isArray(data)) {
