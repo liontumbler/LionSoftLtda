@@ -1,4 +1,5 @@
-export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
+export class ValidForm {
+    //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
     #form = undefined;
     #form2 = undefined;
 
@@ -16,11 +17,10 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
     constructor(elemt){
         this.#form = document.getElementById(elemt)
-        if (document[elemt]) {
+        if (document[elemt])
             this.#form = document[elemt]
-        } else if (!document.getElementById(elemt)) {
-            console.error('el formulario nombrado no existe');
-        }
+        else if (!document.getElementById(elemt))
+            console.error('El formulario nombrado no existe');
 
         this.#form2 = this.#form.cloneNode(true);
 
@@ -178,9 +178,10 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         return valido;
     }
 
-    crearObjetoJson(conVacios = false) {
+    crearObjetoJson(conVacios = false, cabeceras = []) {
         let data = {};
         let inputs = this.#form.getElementsByTagName('INPUT');
+        let f = 0;
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -188,9 +189,11 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 if(input.type == 'file' && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == 'checkbox'){
-                    let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
                     let value = input.value ? input.value : 0;
-                    let title = input.id;//label ? label.textContent : input.id;
+                    let title = input.id;
+
+                    if(cabeceras[f])
+                        title = cabeceras[f];
 
                     if (input.cheked) {
                         value = value == 0 ? 1 : value;
@@ -201,32 +204,37 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 }else if(input.type == 'radio'){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
                     let value = radioEscogido.value ? radioEscogido.value : 1;
+                    let title = input.name;
 
-                    if (radioEscogido) {
-                        formData.append(input.name, value);
-                        data[input.name] = value;
-                    }else if(conVacios){
-                        data[input.name] = 0;
-                    }
-                }else{
-                    let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
-                    let title = input.id;//label ? label.textContent : input.id;
+                    if(cabeceras[f])
+                        title = cabeceras[f];
 
-                    if(input.value){
-                        data[title] = input.value;
-                    }else if(conVacios){
+                    if (radioEscogido) 
+                        data[title] = value;
+                    else if(conVacios)
                         data[title] = null;
-                    }
+                }else{
+                    let title = input.id;
+                    if(cabeceras[f])
+                        title = cabeceras[f];
+
+                    if(input.value)
+                        data[title] = input.value;
+                    else if(conVacios)
+                        data[title] = null;
                 }
+
+                f++;
             }
         }
 
         return data;
     }
 
-    crearFormData(conVacios = false) {
+    crearFormData(conVacios = false, cabeceras = []) {
         let formData = new FormData();
         let inputs = this.#form.getElementsByTagName('INPUT');
+        let f = 0;
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -236,9 +244,11 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                         formData.append(input.id + '[]', input.files[i]);
                     }
                 }else if(input.type == 'checkbox'){
-                    let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
                     let value = input.value ? input.value : 0;
-                    let title = input.id;//label ? label.textContent : input.id;
+                    let title = input.id;
+
+                    if(cabeceras[f])
+                        title = cabeceras[f];
 
                     if (input.cheked) {
                         value = value == 0 ? 1 : value;
@@ -249,21 +259,24 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 }else if(input.type == 'radio'){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
                     let value = radioEscogido.value ? radioEscogido.value : 1;
+                    let title = input.name;
+                    
+                    if(cabeceras[f])
+                        title = cabeceras[f];
 
-                    if (radioEscogido) {
-                        formData.append(input.name, value);
-                    }else if(conVacios){
-                        formData.append(input.name, 0);
-                    }
-                }else{
-                    let label = this.#form.querySelectorAll('[for="'+ input.id +'"]')[0];
-                    let title = input.id;//label ? label.textContent : input.id;
-
-                    if(input.value){
-                        formData.append(title, input.value);
-                    }else if(conVacios){
+                    if (radioEscogido)
+                        formData.append(title, value);
+                    else if(conVacios)
                         formData.append(title, null);
-                    }
+                }else{
+                    let title = input.id;
+                    if(cabeceras[f])
+                        title = cabeceras[f];
+
+                    if(input.value)
+                        formData.append(title, input.value);
+                    else if(conVacios)
+                        formData.append(title, null);
                 }
             }
         }
@@ -294,9 +307,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
         for (const i in inputs) {
             if(inputs[i].type != 'button' && inputs[i].type != 'submit' && inputs[i].type != 'reset'){
                 valido = this.#validarCampoForm(inputs[i].id, conMsg);
-                if(!valido){
+                if(!valido)
                     break;
-                }
             }
         }
 
@@ -428,7 +440,7 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                         break;
                     }
                 }else{
-                    console.warn('el radio buton requerido no tiene un name asociado');
+                    console.warn('El radio botón requerido no tiene un atributo "name" asociado');
                     valido = false;
                     break;
                 }
@@ -441,7 +453,7 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
             case 'image':
                 break;
             default:
-                console.warn('tipo indefinido');
+                console.warn('Tipo indefinido');
                 break;
         }
 
@@ -485,11 +497,10 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                     input.reportValidity();
 
                     let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                    if (label) {
-                        console.warn('no tiene value el campo '+ label);
-                    }else{
-                        console.warn('no tiene value el campo requerido con id '+ inputReal.id);
-                    }
+                    if (label)
+                        console.warn('No tiene valor el campo '+ label);
+                    else
+                        console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                 }
                 
                 input.focus();
@@ -547,11 +558,10 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                     inputReal.reportValidity();
 
                     let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                    if (label) {
-                        console.warn('no tiene value el campo '+ label);
-                    }else{
-                        console.warn('no tiene value el campo requerido con id '+ inputReal.id);
-                    }
+                    if (label)
+                        console.warn('No tiene valor el campo '+ label);
+                    else
+                        console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                 }
 
                 inputReal.focus();
@@ -566,9 +576,8 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
 
     static addList(input, data) {
         if(input.tagName == 'INPUT') {
-            if (!input.getAttribute('list')) {
+            if (!input.getAttribute('list'))
                 input.setAttribute('list', input.id +'List')
-            }
 
             let list = document.getElementById(input.id +'List');
             if(!list){
@@ -590,7 +599,7 @@ export class ValidForm {//response.sort((x, y) => x.Title.localeCompare(y.Title)
                 list.append(option);
             }
         } else {
-            console.warn('no es un input');
+            console.warn('No es un input');
         }
     }
 }
