@@ -17781,6 +17781,30 @@ class Paises {
                     codigoPostal: ''
                 }
             }
+        },
+        Ushuaia: {
+            continente: 'Antártida',
+            codigoPais: '',
+            abreviatura: '',
+            prefijo: '',
+            ciudades: {
+            }
+        },
+        Antártica: {
+            continente: 'Antártida',
+            codigoPais: '',
+            abreviatura: '',
+            prefijo: '',
+            ciudades: {
+            }
+        },
+        'Villa Las Estrellas': {
+            continente: 'Antártida',
+            codigoPais: '',
+            abreviatura: '',
+            prefijo: '',
+            ciudades: {
+            }
         }
     }
 
