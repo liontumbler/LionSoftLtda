@@ -189,7 +189,7 @@ class ValidForm {
                 if(input.type == 'file' && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == 'checkbox'){
-                    let value = input.value ? input.value : 0;
+                    let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
                     if(cabeceras[f])
@@ -203,7 +203,7 @@ class ValidForm {
                     }
                 }else if(input.type == 'radio'){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
-                    let value = radioEscogido.value ? radioEscogido.value : 1;
+                    let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
                     let title = input.name;
 
                     if(cabeceras[f])
@@ -244,7 +244,7 @@ class ValidForm {
                         formData.append(input.id + '[]', input.files[i]);
                     }
                 }else if(input.type == 'checkbox'){
-                    let value = input.value ? input.value : 0;
+                    let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
                     if(cabeceras[f])
@@ -258,7 +258,7 @@ class ValidForm {
                     }
                 }else if(input.type == 'radio'){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
-                    let value = radioEscogido.value ? radioEscogido.value : 1;
+                    let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
                     let title = input.name;
                     
                     if(cabeceras[f])
