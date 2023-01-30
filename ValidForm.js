@@ -7,6 +7,7 @@ class ValidForm {
     static #alfaNS = /[^A-Za-zñÑ]/g;
     static #textNS = /[^0-9A-Za-zñÑ]/g;
     static #text = /[^0-9A-Za-zñÑ ]/g;
+    static #textTilde = /[^0-9A-Za-zñÑÁáÉéÍíÓóÚú ]/g;
     static #number = /[^0-9]/g;
     static #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
     static #space = /\s+/g;
@@ -123,7 +124,13 @@ class ValidForm {
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="numberP"]')) {
+        for (const i of this.#form.querySelectorAll('[input="textTilde"]')) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(ValidForm.#textTilde, '').replace(ValidForm.#space, ' ');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[input="numberPoin"]')) {
             i.addEventListener('input', function (e){
                 this.value = this.value.replace(ValidForm.#number, '').replace(ValidForm.#numberP, '$1.');
             });
@@ -134,6 +141,43 @@ class ValidForm {
         return this.#form.querySelectorAll('[id="'+id+'"]')[0];
     }
 
+    limpiarForm() {
+        let inputs = this.#form.getElementsByTagName('INPUT');
+
+        for (let i = 0; i < inputs.length; i++) {
+            let input = inputs[i];
+            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
+                this.limpiarCampo(input);
+            }
+        }
+    }
+
+    limpiarCampoId(id) {
+        let input = this.getId(id);
+        limpiarCampo(input);
+    }
+
+    limpiarCampo(input) {
+        if(input.type == 'color'){
+            if(input.getAttribute('different')){
+                input.value = input.getAttribute('different');
+            }else{
+                input.value = '#000000';
+            }
+        }else if (input.type == 'file') {
+            let img = input.parentNode.getElementsByTagName('IMG')[0];
+            if(img){
+                this.#form.removeChild(img);
+            }
+            input.files = []
+            input.value = '';
+        }else if(input.type == 'checkbox' && input.type == 'radio'){
+            input.checked = false;
+        }else {
+            input.value = ''
+        }
+    }
+
     crearObjetoJson(conVacios = false, cabeceras = []) {
         let data = {};
         let inputs = this.#form.getElementsByTagName('INPUT');
@@ -141,7 +185,7 @@ class ValidForm {
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset'){
+            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
                 if(input.type == 'file' && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == 'checkbox'){
@@ -151,7 +195,7 @@ class ValidForm {
                     if(cabeceras[f])
                         title = cabeceras[f];
 
-                    if (input.cheked) {
+                    if (input.checked) {
                         value = value == 0 ? 1 : value;
                         data[title] = value;
                     }else{
@@ -194,7 +238,7 @@ class ValidForm {
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset'){
+            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
                 if(input.type == 'file' && input.files.length > 0){
                     for (const i in input.files.length) {
                         formData.append(input.id + '[]', input.files[i]);
@@ -206,7 +250,7 @@ class ValidForm {
                     if(cabeceras[f])
                         title = cabeceras[f];
 
-                    if (input.cheked) {
+                    if (input.checked) {
                         value = value == 0 ? 1 : value;
                         formData.append(title, value);
                     }else{
@@ -243,9 +287,9 @@ class ValidForm {
     validarCamposExpert(campos = {}) {
         let valido = false;
         for (const i in campos) {
-            valido = this.#validarCampoForm(campos[i], false);
+            let input = this.getId(campos[i]);
+            valido = this.#validarCampoForm(input, false);
             if(!valido){
-                let input = this.getId(campos[i]);
                 let inputPr = this.#getId(campos[i]);
                 valido = [inputPr.validationMessage, 'El campo ' + i + 'es inválido'];
                 input.focus();
@@ -260,9 +304,10 @@ class ValidForm {
     validarCampos(conMsg = true) {
         let inputs = this.#form.getElementsByTagName('INPUT');
         let valido = false;
-        for (const i in inputs) {
-            if(inputs[i].type != 'button' && inputs[i].type != 'submit' && inputs[i].type != 'reset'){
-                valido = this.#validarCampoForm(inputs[i].id, conMsg);
+        for (let i = 0; i < inputs.length; i++) {
+            let input = inputs[i];
+            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
+                valido = this.#validarCampoForm(input, conMsg);
                 if(!valido)
                     break;
             }
@@ -384,7 +429,7 @@ class ValidForm {
 
                 break;
             case 'checkbox':
-                if (!input.cheked) {
+                if (!input.checked) {
                     valido = false;
                     break;
                 }
@@ -403,10 +448,19 @@ class ValidForm {
                 
                 break;
             case 'color':
+                if (input.getAttribute('different') && (value && value == input.getAttribute('different'))) {
+                    input.setCustomValidity('');
+                    input.setCustomValidity('Definir un color diferente a ' + input.getAttribute('different'));
+                    valido = false;
+                    break;
+                }else if(value && value == '#000000'){
+                    input.setCustomValidity('');
+                    input.setCustomValidity('Definir un color diferente');
+                    valido = false;
+                    break;
+                }
                 break;
             case 'hidden':
-                break;
-            case 'image':
                 break;
             default:
                 console.warn('Tipo indefinido');
@@ -425,13 +479,12 @@ class ValidForm {
         return valido;
     }
 
-    #validarCampoForm(id, conMsg = true){
-        let input = this.getId(id);
+    #validarCampoForm(input, conMsg = true){
         if(input){
-            let inputReal = this.#getId(id);
+            let inputReal = this.#getId(input.id);
 
             inputReal.value = input.value;
-            inputReal.cheked = input.cheked;
+            inputReal.checked = input.checked;
             inputReal.name = input.name;
             inputReal.files = input.files;
 

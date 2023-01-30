@@ -1,4 +1,3 @@
-
 class Paises {
 
     #Afganistán = {
@@ -16870,45 +16869,178 @@ class Paises {
             }
         },
         Tailandia: {
-            continente: '',
-            codigoPais: '776',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '764',
+            abreviatura: 'TH',
+            prefijo: '+66',
+            ciudades: {
+                Bangkok: {
+                    codigoPostal: ''
+                },
+                'Chiang Mai': {
+                    codigoPostal: ''
+                },
+                Pattaya: {
+                    codigoPostal: ''
+                },
+                Phuket: {
+                    codigoPostal: ''
+                },
+                Chonburi: {
+                    codigoPostal: ''
+                },
+                'Hua Hin': {
+                    codigoPostal: ''
+                },
+                'Udon Thani': {
+                    codigoPostal: ''
+                }
+            }
         },
         Tanzania: {
-            continente: '',
-            codigoPais: '780',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '255',
+            abreviatura: 'TZ',
+            prefijo: '+255',
+            ciudades: {
+                'Dar es Salaam': {
+                    codigoPostal: ''
+                },
+                Mwanza: {
+                    codigoPostal: ''
+                },
+                Arusha: {
+                    codigoPostal: ''
+                },
+                Tanga: {
+                    codigoPostal: ''
+                },
+                Mbeya: {
+                    codigoPostal: ''
+                },
+                Morogoro: {
+                    codigoPostal: ''
+                }
+            }
         },
-        Tayikistán: {//TODO: mirar este no tiene codigo
-            continente: '',
-            codigoPais: '',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+        Tayikistán: {
+            continente: 'Asia',
+            codigoPais: '762',
+            abreviatura: 'TJ',
+            prefijo: '+992',
+            ciudades: {
+                Dushanbe: {
+                    codigoPostal: ''
+                },
+                Khujand: {
+                    codigoPostal: ''
+                },
+                Istaravshan: {
+                    codigoPostal: ''
+                },
+                Konibodom: {
+                    codigoPostal: ''
+                },
+                Panjakent: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Timor Oriental (Timor-Leste)': {
-            continente: '',
-            codigoPais: '788',
+            continente: 'Asia',
+            codigoPais: '626',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            prefijo: '+670',
+            ciudades: {
+                Dili: {
+                    codigoPostal: ''
+                },
+                Baucau: {
+                    codigoPostal: ''
+                },
+                Bobonaro: {
+                    codigoPostal: ''
+                },
+                'Cova Lima': {
+                    codigoPostal: ''
+                },
+                Ermera: {
+                    codigoPostal: ''
+                },
+                Lautem: {
+                    codigoPostal: ''
+                },
+                Liquica: {
+                    codigoPostal: ''
+                },
+                Manatuto: {
+                    codigoPostal: ''
+                },
+                Manufahi: {
+                    codigoPostal: ''
+                },
+                Oecusse: {
+                    codigoPostal: ''
+                },
+                Viqueque: {
+                    codigoPostal: ''
+                }
+            }
         },
         Togo: {
-            continente: '',
-            codigoPais: '800',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '768',
+            abreviatura: 'TG',
+            prefijo: '+228',
+            ciudades: {
+                Lomé: {
+                    codigoPostal: ''
+                },
+                Sokodé: {
+                    codigoPostal: ''
+                },
+                Kara: {
+                    codigoPostal: ''
+                },
+                Atakpamé: {
+                    codigoPostal: ''
+                },
+                Bassar: {
+                    codigoPostal: ''
+                },
+                Kpalimé: {
+                    codigoPostal: ''
+                }
+            }
         },
         Tonga: {
-            continente: '',
-            codigoPais: '810',
+            continente: 'Oceanía',
+            codigoPais: '776',
             abreviatura: '',
-            ciudades: this.#Afganistán
+            prefijo: '+676',
+            ciudades: {
+                "Ha'apai": {
+                    codigoPostal: ''
+                },
+                Tongatapu: {
+                    codigoPostal: ''
+                },
+                "Vava'u": {
+                    codigoPostal: ''
+                },
+                Eua: {
+                    codigoPostal: ''
+                },
+                Niuas: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Trinidad y Tobago': {
-            continente: 'América del sur',
-            codigoPais: '815',
-            abreviatura: '',
+            continente: 'América del Sur',
+            codigoPais: '780',
+            abreviatura: 'TT',
+            prefijo: '+1868',
             ciudades: {
                 'Puerto España': {
                     codigoPostal: ''
@@ -16993,46 +17125,161 @@ class Paises {
                 }
             }
         },
-        Túnez: {//TODO: mirar este no tiene codigo
-            continente: '',
-            codigoPais: '',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+        Túnez: {
+            continente: 'África',
+            codigoPais: '788',
+            abreviatura: 'TN',
+            prefijo: '+216',
+            ciudades: {
+                Tunis: {
+                    codigoPostal: ''
+                },
+                Sousse: {
+                    codigoPostal: ''
+                },
+                Sfax: {
+                    codigoPostal: ''
+                },
+                Bizerte: {
+                    codigoPostal: ''
+                },
+                Gabès: {
+                    codigoPostal: ''
+                },
+                Ariana: {
+                    codigoPostal: ''
+                }
+            }
         },
         Turkmenistán: {
-            continente: '',
-            codigoPais: '825',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '796',
+            abreviatura: 'TM',
+            prefijo: '+993',
+            ciudades: {
+                Ashgabat: {
+                    codigoPostal: ''
+                },
+                Mary: {
+                    codigoPostal: ''
+                }
+            }
         },
         Turquía: {
-            continente: '',
-            codigoPais: '827',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia y Europa',
+            codigoPais: '792',
+            abreviatura: 'TR',
+            prefijo: '+90',
+            ciudades: {
+                Estambul: {
+                    codigoPostal: ''
+                },
+                Ankara: {
+                    codigoPostal: ''
+                },
+                Izmir: {
+                    codigoPostal: ''
+                },
+                Bursa: {
+                    codigoPostal: ''
+                },
+                Adana: {
+                    codigoPostal: ''
+                },
+                Gaziantep: {
+                    codigoPostal: ''
+                },
+                Konya: {
+                    codigoPostal: ''
+                },
+                Antalya: {
+                    codigoPostal: ''
+                },
+                Mersin: {
+                    codigoPostal: ''
+                }
+            }
         },
         Tuvalu: {
-            continente: '',
-            codigoPais: '828',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Oceanía',
+            codigoPais: '798',
+            abreviatura: 'TV',
+            prefijo: '+688',
+            ciudades: {
+                Funafuti: {
+                    codigoPostal: ''
+                },
+                Vaiaku: {
+                    codigoPostal: ''
+                }
+            }
         },
         Ucrania: {
-            continente: '',
-            codigoPais: '830',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Europa',
+            codigoPais: '804',
+            abreviatura: 'UA',
+            prefijo: '+380',
+            ciudades: {
+                Kiev: {
+                    codigoPostal: ''
+                },
+                Odesa: {
+                    codigoPostal: ''
+                },
+                Lviv: {
+                    codigoPostal: ''
+                },
+                Kharkiv: {
+                    codigoPostal: ''
+                },
+                Dnipro: {
+                    codigoPostal: ''
+                },
+                Chernivtsi: {
+                    codigoPostal: ''
+                },
+                Zaporizhia: {
+                    codigoPostal: ''
+                },
+                Lutsk: {
+                    codigoPostal: ''
+                },
+                Ternopil: {
+                    codigoPostal: ''
+                },
+                'Ivano-Frankivsk': {
+                    codigoPostal: ''
+                }
+            }
         },
         Uganda: {
-            continente: '',
-            codigoPais: '833',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '800',
+            abreviatura: 'UG',
+            prefijo: '+256',
+            ciudades: {
+                Kampala: {
+                    codigoPostal: ''
+                },
+                Jinja: {
+                    codigoPostal: ''
+                },
+                Gulu: {
+                    codigoPostal: ''
+                },
+                Mbarara: {
+                    codigoPostal: ''
+                },
+                Entebbe: {
+                    codigoPostal: ''
+                }
+            }
         },
         Uruguay: {
-            continente: 'América del sur',
-            codigoPais: '845',
-            abreviatura: '',
+            continente: 'América del Sur',
+            codigoPais: '858',
+            abreviatura: 'UY',
+            prefijo: '+598',
             ciudades: {
                 Montevideo: {
                     codigoPostal: ''
@@ -17190,21 +17437,59 @@ class Paises {
             }
         },
         Uzbekistán: {
-            continente: '',
-            codigoPais: '847',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia Central',
+            codigoPais: '860',
+            abreviatura: 'UZB',
+            prefijo: '+998',
+            ciudades: {
+                Tashkent: {
+                    codigoPostal: ''
+                },
+                Namangan: {
+                    codigoPostal: ''
+                },
+                Samarkand: {
+                    codigoPostal: ''
+                },
+                Bukhara: {
+                    codigoPostal: ''
+                },
+                Andijan: {
+                    codigoPostal: ''
+                },
+                Nukus: {
+                    codigoPostal: ''
+                }
+            }
         },
         Vanuatu: {
-            continente: '',
-            codigoPais: '551',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Oceanía',
+            codigoPais: '548',
+            abreviatura: 'VUT',
+            prefijo: '+678',
+            ciudades: {
+                'Port Vila': {
+                    codigoPostal: ''
+                },
+                Luganville: {
+                    codigoPostal: ''
+                },
+                Isangel: {
+                    codigoPostal: ''
+                },
+                Saratamata: {
+                    codigoPostal: ''
+                },
+                Lenakel: {
+                    codigoPostal: ''
+                }
+            }
         },
         Venezuela: {
-            continente: 'América del sur',
-            codigoPais: '850',
-            abreviatura: '',
+            continente: 'América del Sur',
+            codigoPais: '218',
+            abreviatura: 'VEN',
+            prefijo: '+58',
             ciudades: {
                 Caracas: {
                     codigoPostal: ''
@@ -17362,34 +17647,140 @@ class Paises {
             }
         },
         Vietnam: {
-            continente: '',
-            codigoPais: '855',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '704',
+            abreviatura: 'VN',
+            prefijo: '+84',
+            ciudades: {
+                Hanoi: {
+                    codigoPostal: ''
+                },
+                'Ho Chi Minh City': {
+                    codigoPostal: ''
+                },
+                'Da Nang': {
+                    codigoPostal: ''
+                },
+                'Hai Phong': {
+                    codigoPostal: ''
+                },
+                'Can Tho': {
+                    codigoPostal: ''
+                },
+                'Nha Trang': {
+                    codigoPostal: ''
+                },
+                'Bac Ninh': {
+                    codigoPostal: ''
+                },
+                Hue: {
+                    codigoPostal: ''
+                },
+                'Quy Nhon': {
+                    codigoPostal: ''
+                }
+            }
         },
         Yemen: {
-            continente: '',
-            codigoPais: '880',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'Asia',
+            codigoPais: '887',
+            abreviatura: 'YE',
+            prefijo: '+967',
+            ciudades: {
+                Saná: {
+                    codigoPostal: ''
+                },
+                Adén: {
+                    codigoPostal: ''
+                },
+                Taiz: {
+                    codigoPostal: ''
+                },
+                Mukalla: {
+                    codigoPostal: ''
+                },
+                Hodeida: {
+                    codigoPostal: ''
+                },
+                Ibb: {
+                    codigoPostal: ''
+                }
+            }
         },
         'Yibuti (Djibouti)': {
-            continente: '',
-            codigoPais: '783',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '262',
+            abreviatura: 'DJ',
+            prefijo: '+253',
+            ciudades: {
+                Djibouti: {
+                    codigoPostal: ''
+                },
+                'Ali Sabieh': {
+                    codigoPostal: ''
+                },
+                Obock: {
+                    codigoPostal: ''
+                },
+                Tadjoura: {
+                    codigoPostal: ''
+                },
+                Arta: {
+                    codigoPostal: ''
+                }
+            }
         },
         Zambia: {
-            continente: '',
-            codigoPais: '890',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '894',
+            abreviatura: 'ZM',
+            prefijo: '+260',
+            ciudades: {
+                Lusaka: {
+                    codigoPostal: ''
+                },
+                Kitwe: {
+                    codigoPostal: ''
+                },
+                Ndola: {
+                    codigoPostal: ''
+                },
+                Kabwe: {
+                    codigoPostal: ''
+                },
+                Chingola: {
+                    codigoPostal: ''
+                },
+                Mufulira: {
+                    codigoPostal: ''
+                }
+            }
         },
         Zimbabue: {
-            continente: '',
-            codigoPais: '665',
-            abreviatura: '',
-            ciudades: this.#Afganistán
+            continente: 'África',
+            codigoPais: '716',
+            abreviatura: 'ZW',
+            prefijo: '+263',
+            ciudades: {
+                Harare: {
+                    codigoPostal: ''
+                },
+                Bulawayo: {
+                    codigoPostal: ''
+                },
+                Chitungwiza: {
+                    codigoPostal: ''
+                },
+                Mutare: {
+                    codigoPostal: ''
+                },
+                Gweru: {
+                    codigoPostal: ''
+                },
+                Kwekwe: {
+                    codigoPostal: ''
+                }
+            }
         }
     }
 
@@ -17414,22 +17805,6 @@ class Paises {
         }
 
         return paises;
-
-        /*return {
-                paises, 
-                continente: (continente) => {
-                    let p = []
-                    for (const i in this.#paises) {
-                        for (const e in paises) {
-                            if(paises[e] == i && (this.normalizarText(this.#paises[i].continente).indexOf(this.normalizarText(continente)) >= 0)){
-                                p.push(i);
-                            }
-                        }
-                    }
-
-                    return p;
-                }
-        };*/
     }
 
     obtenerPaisesXcontinente(continente) {
