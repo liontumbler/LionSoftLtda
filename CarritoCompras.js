@@ -78,12 +78,12 @@ class CarritoCompras {
                 cambio: this.#formatearPresio((valor - this.#carrito.allValue))
             };
 
-            this.#carrito = {};
+            this.deleteCarrito();
             return res;
         }else{
             console.warn('El monto es inferior a la compra');
         }
-        return false;
+        return {};
     }
 
     cantidadDproductos(){

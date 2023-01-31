@@ -513,7 +513,7 @@ class ValidForm {
 
                         let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
                         if (label)
-                            console.warn('No tiene valor el campo '+ label);
+                            console.warn('No tiene valor el campo '+ label.textContent);
                         else
                             console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
@@ -616,7 +616,7 @@ class ValidForm {
 
                         let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
                         if (label)
-                            console.warn('No tiene valor el campo '+ label);
+                            console.warn('No tiene valor el campo '+ label.textContent);
                         else
                             console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
