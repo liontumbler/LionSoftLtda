@@ -1,5 +1,6 @@
 import {Paises} from './Paises.js';
 import {ValidForm} from './ValidForm.js';
+import {CarritoCompras} from './CarritoCompras.js';
 
 /** como utilizar paises 'descomentar'*/
 console.time();
@@ -50,6 +51,9 @@ console.log(paises.obtenerPaisesXcontinente('África'));
 console.warn('Europa');
 console.log(paises.obtenerPaisesXcontinente('Europa'));
 
+console.warn('Asia');
+console.log(paises.obtenerPaisesXcontinente('Asia'));
+
 console.warn('Oceanía');
 console.log(paises.obtenerPaisesXcontinente('Oceanía'));
 
@@ -60,8 +64,8 @@ console.log(paises.obtenerPaisesXcontinente('Antártida'));
 console.log('termina');
 console.timeEnd();
 
-////
 
+//validador de formularios
 let testVal = new ValidForm('formtest');
 
 document.getElementById('clicktest').addEventListener('click', function(e) {
@@ -70,3 +74,16 @@ document.getElementById('clicktest').addEventListener('click', function(e) {
     console.log(testVal.crearObjetoJson());
     console.log(testVal.crearFormData());
 });
+
+
+//carrito de compras
+let carrito = new CarritoCompras();
+carrito.addCarrito(1200, 12, {id:1, name:'name'})
+carrito.addCarrito(1200, 11, {id:2, name:'name'})
+carrito.addCarrito(1200, 10, {id:3, name:'name'})
+carrito.addCarrito(1200, 9, {id:4, name:'name'})
+console.log(carrito.getCarrito());
+carrito.deleteCarrito(3);
+console.log(carrito.getCarrito(), carrito.cantidadDproductos());
+console.log(carrito.total);
+console.log(carrito.comprar(100000));
