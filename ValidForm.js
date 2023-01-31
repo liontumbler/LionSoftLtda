@@ -417,7 +417,6 @@ class ValidForm {
                 let arrExten = file.name.split('.');
                 if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
                     const image = document.createElement('img');
-                    //image.src = URL.createObjectURL(file);
                     input.parentNode.append(image);
 
                     let reader = new FileReader();

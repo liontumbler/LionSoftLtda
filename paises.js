@@ -1,11 +1,4 @@
 class Paises {
-
-    #Afganistán = {
-        Kabul: {
-            codigoPostal: ''
-        }
-    }
-
     //Asia
     //América del norte
     //América central
@@ -3768,16 +3761,7 @@ class Paises {
                 Peñaflor: {
                     codigoPostal: ''
                 },
-                'Puente Alto': {
-                    codigoPostal: ''
-                },
-                'San Bernardo': {
-                    codigoPostal: ''
-                },
                 'San Pedro': {
-                    codigoPostal: ''
-                },
-                'San José de Maipo': {
                     codigoPostal: ''
                 },
                 Talagante: {
@@ -3786,55 +3770,13 @@ class Paises {
                 'Santiago de Chile': {
                     codigoPostal: ''
                 },
-                Iquique: {
-                    codigoPostal: ''
-                },
-                'Punta Arenas': {
-                    codigoPostal: ''
-                },
-                'Puerto Montt': {
-                    codigoPostal: ''
-                },
-                'Viña del Mar': {
-                    codigoPostal: ''
-                },
-                Antofagasta: {
-                    codigoPostal: ''
-                },
-                Arica: {
-                    codigoPostal: ''
-                },
-                'Puerto Varas': {
-                    codigoPostal: ''
-                },
-                Valparaíso: {
-                    codigoPostal: ''
-                },
-                Rancagua: {
-                    codigoPostal: ''
-                },
-                Concepción: {
-                    codigoPostal: ''
-                },
                 Coyhaique: {
-                    codigoPostal: ''
-                },
-                'La Serena': {
                     codigoPostal: ''
                 },
                 Ovalle: {
                     codigoPostal: ''
                 },
-                Valdivia: {
-                    codigoPostal: ''
-                },
                 'Puerto Natales': {
-                    codigoPostal: ''
-                },
-                Copiapó: {
-                    codigoPostal: ''
-                },
-                Temuco: {
                     codigoPostal: ''
                 },
                 Vallenar: {
@@ -3843,16 +3785,7 @@ class Paises {
                 Taltal: {
                     codigoPostal: ''
                 },
-                Talca: {
-                    codigoPostal: ''
-                },
                 'Gran Valparaíso': {
-                    codigoPostal: ''
-                },
-                Calama: {
-                    codigoPostal: ''
-                },
-                Coquimbo: {
                     codigoPostal: ''
                 },
                 'San Antonio': {
@@ -3867,16 +3800,10 @@ class Paises {
                 'San Felipe': {
                     codigoPostal: ''
                 },
-                Curicó: {
-                    codigoPostal: ''
-                },
                 Pumanque: {
                     codigoPostal: ''
                 },
                 'Pozo Almonte': {
-                    codigoPostal: ''
-                },
-                'San Fernando': {
                     codigoPostal: ''
                 },
                 'Santa Cruz': {
@@ -3888,16 +3815,10 @@ class Paises {
                 'Los Angeles': {
                     codigoPostal: ''
                 },
-                Quillota: {
-                    codigoPostal: ''
-                },
                 Quintero: {
                     codigoPostal: ''
                 },
                 Rengo: {
-                    codigoPostal: ''
-                },
-                Chillán: {
                     codigoPostal: ''
                 },
                 Quilpué: {
@@ -3915,9 +3836,6 @@ class Paises {
                 'San Esteban': {
                     codigoPostal: ''
                 },
-                Linares: {
-                    codigoPostal: ''
-                },
                 Putaendo: {
                     codigoPostal: ''
                 },
@@ -3925,9 +3843,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Puchuncavi: {
-                    codigoPostal: ''
-                },
-                Talcahuano: {
                     codigoPostal: ''
                 },
                 Castro: {
@@ -4044,9 +3959,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Lijiang: {
-                    codigoPostal: ''
-                },
-                Kunming: {
                     codigoPostal: ''
                 },
                 Guiyang: {
@@ -5069,25 +4981,7 @@ class Paises {
                 'Santa Rosa': {
                     codigoPostal: ''
                 },
-                Nicoya: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
-                    codigoPostal: ''
-                },
                 Nandayure: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
                     codigoPostal: ''
                 },
                 Osa: {
@@ -5106,9 +5000,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'San Isidro': {
-                    codigoPostal: ''
-                },
-                'San Rafael': {
                     codigoPostal: ''
                 },
                 Sierpe: {
@@ -5141,13 +5032,7 @@ class Paises {
                 'Tierras Morenas': {
                     codigoPostal: ''
                 },
-                'Buenos Aires': {
-                    codigoPostal: ''
-                },
                 Cajón: {
-                    codigoPostal: ''
-                },
-                Cañas: {
                     codigoPostal: ''
                 },
                 Corralillo: {
@@ -5174,9 +5059,6 @@ class Paises {
                 'San Juan': {
                     codigoPostal: ''
                 },
-                'San Rafael': {
-                    codigoPostal: ''
-                },
                 Santiago: {
                     codigoPostal: ''
                 },
@@ -5195,49 +5077,16 @@ class Paises {
                 Rivas: {
                     codigoPostal: ''
                 },
-                'San José': {
-                    codigoPostal: ''
-                },
-                Cartago: {
-                    codigoPostal: ''
-                },
-                Puntarenas: {
-                    codigoPostal: ''
-                },
-                Liberia: {
-                    codigoPostal: ''
-                },
-                Heredia: {
-                    codigoPostal: ''
-                },
-                Limón: {
-                    codigoPostal: ''
-                },
-                Alajuela: {
-                    codigoPostal: ''
-                },
                 Golfito: {
                     codigoPostal: ''
                 },
-                Quepos: {
-                    codigoPostal: ''
-                },
                 Zarcero: {
-                    codigoPostal: ''
-                },
-                Atenas: {
                     codigoPostal: ''
                 },
                 'Playa Montezuma': {
                     codigoPostal: ''
                 },
                 'Puerto Viejo': {
-                    codigoPostal: ''
-                },
-                Escazú: {
-                    codigoPostal: ''
-                },
-                Turrialba: {
                     codigoPostal: ''
                 },
                 Tortuguero: {
@@ -5247,12 +5096,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Cahuita: {
-                    codigoPostal: ''
-                },
-                Nicoya: {
-                    codigoPostal: ''
-                },
-                Curridabat: {
                     codigoPostal: ''
                 },
                 'San Vicente': {
@@ -5267,9 +5110,6 @@ class Paises {
                 Cabuya: {
                     codigoPostal: ''
                 },
-                Barva: {
-                    codigoPostal: ''
-                },
                 'Dos Brazos': {
                     codigoPostal: ''
                 },
@@ -5277,9 +5117,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'Las Catalinas': {
-                    codigoPostal: ''
-                },
-                Jacó: {
                     codigoPostal: ''
                 },
                 Carrillos: {
@@ -5516,9 +5353,6 @@ class Paises {
                 Ringsted: {
                     codigoPostal: ''
                 },
-                Roskilde: {
-                    codigoPostal: ''
-                },
                 Albertslund: {
                     codigoPostal: ''
                 },
@@ -5615,12 +5449,6 @@ class Paises {
                 Rødby: {
                     codigoPostal: ''
                 },
-                Rønne: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
-                    codigoPostal: ''
-                },
                 Rønnede: {
                     codigoPostal: ''
                 },
@@ -5636,28 +5464,7 @@ class Paises {
                 Rødvig: {
                     codigoPostal: ''
                 },
-                Rødby: {
-                    codigoPostal: ''
-                },
                 Rødkærsbro: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
-                    codigoPostal: ''
-                },
-                Rødekro: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
-                    codigoPostal: ''
-                },
-                Rødovre: {
                     codigoPostal: ''
                 }
             }
@@ -5698,9 +5505,6 @@ class Paises {
                 Soufriere: {
                     codigoPostal: ''
                 },
-                Portsmouth: {
-                    codigoPostal: ''
-                },
                 Salisbury: {
                     codigoPostal: ''
                 },
@@ -5723,9 +5527,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Dublanc: {
-                    codigoPostal: ''
-                },
-                Mahaut: {
                     codigoPostal: ''
                 },
                 'Petite Soufriere': {
@@ -5871,9 +5672,6 @@ class Paises {
                 Azuay: {
                     codigoPostal: ''
                 },
-                Loja: {
-                    codigoPostal: ''
-                },
                 'El Oro': {
                     codigoPostal: ''
                 },
@@ -5886,82 +5684,13 @@ class Paises {
                 'Los Rios': {
                     codigoPostal: ''
                 },
-                Esmeraldas: {
-                    codigoPostal: ''
-                },
-                Quito: {
-                    codigoPostal: ''
-                },
-                Guayaquil: {
-                    codigoPostal: ''
-                },
-                Cuenca: {
-                    codigoPostal: ''
-                },
-                Ambato: {
-                    codigoPostal: ''
-                },
-                Manta: {
-                    codigoPostal: ''
-                },
-                Ibarra: {
-                    codigoPostal: ''
-                },
-                Machala: {
-                    codigoPostal: ''
-                },
-                Loja: {
-                    codigoPostal: ''
-                },
-                Latacunga: {
-                    codigoPostal: ''
-                },
-                Portoviejo: {
-                    codigoPostal: ''
-                },
-                Tulcán: {
-                    codigoPostal: ''
-                },
-                'Santo Domingo': {
-                    codigoPostal: ''
-                },
-                Quevedo: {
-                    codigoPostal: ''
-                },
-                Babahoyo: {
-                    codigoPostal: ''
-                },
-                Esmeraldas: {
-                    codigoPostal: ''
-                },
                 Duran: {
-                    codigoPostal: ''
-                },
-                Tena: {
                     codigoPostal: ''
                 },
                 Otavalo: {
                     codigoPostal: ''
                 },
                 'Baños de Agua Santa': {
-                    codigoPostal: ''
-                },
-                'Nueva Loja': {
-                    codigoPostal: ''
-                },
-                'La Libertad': {
-                    codigoPostal: ''
-                },
-                Puyo: {
-                    codigoPostal: ''
-                },
-                Milagro: {
-                    codigoPostal: ''
-                },
-                Chimborazo: {
-                    codigoPostal: ''
-                },
-                Huaquillas: {
                     codigoPostal: ''
                 },
                 Guaranda: {
@@ -5977,9 +5706,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Samborondón: {
-                    codigoPostal: ''
-                },
-                Sucumbíos: {
                     codigoPostal: ''
                 },
                 Montecristi: {
@@ -6003,16 +5729,7 @@ class Paises {
                 Huigra: {
                     codigoPostal: ''
                 },
-                Pastaza: {
-                    codigoPostal: ''
-                },
-                Pasaje: {
-                    codigoPostal: ''
-                },
                 'Caja bamba': {
-                    codigoPostal: ''
-                },
-                Cañar: {
                     codigoPostal: ''
                 },
                 Mocha: {
@@ -6031,9 +5748,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Quinindé: {
-                    codigoPostal: ''
-                },
-                Macas: {
                     codigoPostal: ''
                 },
                 Yantzaza: {
@@ -6157,43 +5871,7 @@ class Paises {
                 Ahuachapán: {
                     codigoPostal: ''
                 },
-                'San Salvador': {
-                    codigoPostal: ''
-                },
-                'Santa Ana': {
-                    codigoPostal: ''
-                },
-                'San Miguel': {
-                    codigoPostal: ''
-                },
-                Ahuachapán: {
-                    codigoPostal: ''
-                },
-                Sonsonate: {
-                    codigoPostal: ''
-                },
-                'San Vicente': {
-                    codigoPostal: ''
-                },
-                'La Unión': {
-                    codigoPostal: ''
-                },
                 'Santa Tecla': {
-                    codigoPostal: ''
-                },
-                Soyapango: {
-                    codigoPostal: ''
-                },
-                Mejicanos: {
-                    codigoPostal: ''
-                },
-                Apopa: {
-                    codigoPostal: ''
-                },
-                Usulután: {
-                    codigoPostal: ''
-                },
-                Chalatenango: {
                     codigoPostal: ''
                 },
                 Delgado: {
@@ -6203,12 +5881,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Jujutla: {
-                    codigoPostal: ''
-                },
-                Ilopango: {
-                    codigoPostal: ''
-                },
-                'San Marcos': {
                     codigoPostal: ''
                 },
                 'Antiguo Cuscatlán': {
@@ -6290,9 +5962,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Ayutuxtepeque: {
-                    codigoPostal: ''
-                },
-                'La Libertad': {
                     codigoPostal: ''
                 },
                 'San Antonio de La Cruz': {
@@ -6509,12 +6178,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'Povazska Bystrica': {
-                    codigoPostal: ''
-                },
-                'Vranov nad Toplou': {
-                    codigoPostal: ''
-                },
-                'Vranov nad Toplou': {
                     codigoPostal: ''
                 },
                 'Vranov nad Toplou': {
@@ -6945,16 +6608,10 @@ class Paises {
                 Lohja: {
                     codigoPostal: ''
                 },
-                Kotka: {
-                    codigoPostal: ''
-                },
                 Mariehamn: {
                     codigoPostal: ''
                 },
                 Pietarsaari: {
-                    codigoPostal: ''
-                },
-                Kotka: {
                     codigoPostal: ''
                 },
                 Imatra: {
@@ -6972,13 +6629,7 @@ class Paises {
                 Korsholm: {
                     codigoPostal: ''
                 },
-                Kokkola: {
-                    codigoPostal: ''
-                },
                 Kaarina: {
-                    codigoPostal: ''
-                },
-                Riihimäki: {
                     codigoPostal: ''
                 },
                 Karkkila: {
@@ -7002,9 +6653,6 @@ class Paises {
                 Nurmijärvi: {
                     codigoPostal: ''
                 },
-                Vantaa: {
-                    codigoPostal: ''
-                },
                 Varkaus: {
                     codigoPostal: ''
                 },
@@ -7012,9 +6660,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Kuusamo: {
-                    codigoPostal: ''
-                },
-                Rovaniemi: {
                     codigoPostal: ''
                 },
                 Tornio: {
@@ -7050,16 +6695,10 @@ class Paises {
                 Iisalmi: {
                     codigoPostal: ''
                 },
-                Raahe: {
-                    codigoPostal: ''
-                },
                 Ii: {
                     codigoPostal: ''
                 },
                 Laitila: {
-                    codigoPostal: ''
-                },
-                Lohja: {
                     codigoPostal: ''
                 },
                 Kokemäki: {
@@ -7069,12 +6708,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Lapua: {
-                    codigoPostal: ''
-                },
-                Rauma: {
-                    codigoPostal: ''
-                },
-                Pori: {
                     codigoPostal: ''
                 },
                 Parainen: {
@@ -7107,9 +6740,6 @@ class Paises {
                 Lemi: {
                     codigoPostal: ''
                 },
-                Lappeenranta: {
-                    codigoPostal: ''
-                },
                 Kustavi: {
                     codigoPostal: ''
                 },
@@ -7137,9 +6767,6 @@ class Paises {
                 Kankaanpää: {
                     codigoPostal: ''
                 },
-                Kajaani: {
-                    codigoPostal: ''
-                },
                 Juuka: {
                     codigoPostal: ''
                 },
@@ -7153,24 +6780,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Jämsä: {
-                    codigoPostal: ''
-                },
-                Jakobstad: {
-                    codigoPostal: ''
-                },
-                Järvenpää: {
-                    codigoPostal: ''
-                },
-                Järvenpää: {
-                    codigoPostal: ''
-                },
-                Järvenpää: {
-                    codigoPostal: ''
-                },
-                Jämsä: {
-                    codigoPostal: ''
-                },
-                Järvenpää: {
                     codigoPostal: ''
                 }
             }
@@ -7321,9 +6930,6 @@ class Paises {
                 Nancy: {
                     codigoPostal: '54000'
                 },
-                'Saint-Denis': {
-                    codigoPostal: '97400'
-                },
                 'Saint-Paul': {
                     codigoPostal: '97460'
                 },
@@ -7335,12 +6941,6 @@ class Paises {
                 },
                 Angers: {
                     codigoPostal: '49000'
-                },
-                Nîmes: {
-                    codigoPostal: '30000'
-                },
-                Villeurbanne: {
-                    codigoPostal: '69100'
                 },
                 'Saint-Nazaire': {
                     codigoPostal: '44600'
@@ -7356,9 +6956,6 @@ class Paises {
                 },
                 Dunkerque: {
                     codigoPostal: '59140'
-                },
-                Rouen: {
-                    codigoPostal: '76000'
                 },
                 'Boulogne-Billancourt': {
                     codigoPostal: '92100'
@@ -7470,9 +7067,6 @@ class Paises {
                 Massengo: {
                     codigoPostal: ''
                 },
-                Mékambo: {
-                    codigoPostal: ''
-                },
                 Lopou: {
                     codigoPostal: ''
                 },
@@ -7483,30 +7077,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Kango: {
-                    codigoPostal: ''
-                },
-                Ndounga: {
-                    codigoPostal: ''
-                },
-                Ndendé: {
-                    codigoPostal: ''
-                },
-                Ndounga: {
-                    codigoPostal: ''
-                },
-                Ndoumou: {
-                    codigoPostal: ''
-                },
-                Kango: {
-                    codigoPostal: ''
-                },
-                Ndongui: {
-                    codigoPostal: ''
-                },
-                Ndounga: {
-                    codigoPostal: ''
-                },
-                Ndendé: {
                     codigoPostal: ''
                 },
                 Ndounga: {
@@ -7563,12 +7133,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Kaur: {
-                    codigoPostal: ''
-                },
-                Kerewan: {
-                    codigoPostal: ''
-                },
-                Kuntaur: {
                     codigoPostal: ''
                 },
                 'Niamina Dankunku': {
@@ -7812,9 +7376,6 @@ class Paises {
                 Keta: {
                     codigoPostal: ''
                 },
-                Salaga: {
-                    codigoPostal: ''
-                },
                 Nkonya: {
                     codigoPostal: ''
                 },
@@ -7824,12 +7385,6 @@ class Paises {
                 Banda: {
                     codigoPostal: ''
                 },
-                Bawku: {
-                    codigoPostal: ''
-                },
-                Nkawkaw: {
-                    codigoPostal: ''
-                },
                 Begoro: {
                     codigoPostal: ''
                 },
@@ -7837,15 +7392,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Kade: {
-                    codigoPostal: ''
-                },
-                Bawku: {
-                    codigoPostal: ''
-                },
-                Tarkwa: {
-                    codigoPostal: ''
-                },
-                Bawku: {
                     codigoPostal: ''
                 }
             }
@@ -8105,12 +7651,6 @@ class Paises {
                 Montefrío: {
                     codigoPostal: ''
                 },
-                Motril: {
-                    codigoPostal: ''
-                },
-                Murtas: {
-                    codigoPostal: ''
-                },
                 Nigüelas: {
                     codigoPostal: ''
                 },
@@ -8129,16 +7669,7 @@ class Paises {
                 Otívar: {
                     codigoPostal: ''
                 },
-                Padul: {
-                    codigoPostal: ''
-                },
                 Pampaneira: {
-                    codigoPostal: ''
-                },
-                'Pinos-Genil': {
-                    codigoPostal: ''
-                },
-                Pórtugos: {
                     codigoPostal: ''
                 },
                 'Puebla-de-Don-Fadrique': {
@@ -8156,9 +7687,6 @@ class Paises {
                 Salar: {
                     codigoPostal: ''
                 },
-                Salobreña: {
-                    codigoPostal: ''
-                },
                 'Santa-Fe': {
                     codigoPostal: ''
                 },
@@ -8171,9 +7699,6 @@ class Paises {
                 'Santa-Cruz-del-Comercio': {
                     codigoPostal: ''
                 },
-                Sorvilán: {
-                    codigoPostal: ''
-                },
                 Tózar: {
                     codigoPostal: ''
                 },
@@ -8181,12 +7706,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Turón: {
-                    codigoPostal: ''
-                },
-                Ugíjar: {
-                    codigoPostal: ''
-                },
-                Valderrubio: {
                     codigoPostal: ''
                 },
                 Valor: {
@@ -8198,19 +7717,10 @@ class Paises {
                 'Ventas-de-Huelma': {
                     codigoPostal: ''
                 },
-                Villamena: {
-                    codigoPostal: ''
-                },
-                'Villanueva-Mesía': {
-                    codigoPostal: ''
-                },
                 'Villanueva-del-Río-and-Mina': {
                     codigoPostal: ''
                 },
                 Víznar: {
-                    codigoPostal: ''
-                },
-                Zafarraya: {
                     codigoPostal: ''
                 },
                 Zagra: {
@@ -8409,9 +7919,6 @@ class Paises {
                 Zacapa: {
                     codigoPostal: ''
                 },
-                Escuintla: {
-                    codigoPostal: ''
-                },
                 Jocotenango: {
                     codigoPostal: ''
                 },
@@ -8425,9 +7932,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'San Francisco El Alto': {
-                    codigoPostal: ''
-                },
-                Chichicastenango: {
                     codigoPostal: ''
                 },
                 'San Juan La Laguna': {
@@ -8467,9 +7971,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'San José El Idolo': {
-                    codigoPostal: ''
-                },
-                'San Juan Sacatepéquez': {
                     codigoPostal: ''
                 },
                 'San Gabriel': {
@@ -8535,27 +8036,6 @@ class Paises {
                 Antigua: {
                     codigoPostal: ''
                 },
-                'Villa Nueva': {
-                    codigoPostal: ''
-                },
-                Mixco: {
-                    codigoPostal: ''
-                },
-                Escuintla: {
-                    codigoPostal: ''
-                },
-                Amatitlán: {
-                    codigoPostal: ''
-                },
-                'Puerto Barrios': {
-                    codigoPostal: ''
-                },
-                Cobán: {
-                    codigoPostal: ''
-                },
-                Retalhuleu: {
-                    codigoPostal: ''
-                },
                 'Santa Catarina Pinula': {
                     codigoPostal: ''
                 },
@@ -8571,37 +8051,10 @@ class Paises {
                 Jalapa: {
                     codigoPostal: ''
                 },
-                Totonicapán: {
-                    codigoPostal: ''
-                },
-                Mazatenango: {
-                    codigoPostal: ''
-                },
-                Huehuetenango: {
-                    codigoPostal: ''
-                },
                 Salcajá: {
                     codigoPostal: ''
                 },
-                Jocotenango: {
-                    codigoPostal: ''
-                },
-                'San Bartolomé Milpas Altas': {
-                    codigoPostal: ''
-                },
                 'Santa Lucía Milpas Altas': {
-                    codigoPostal: ''
-                },
-                Chichicastenango: {
-                    codigoPostal: ''
-                },
-                Chimaltenango: {
-                    codigoPostal: ''
-                },
-                'San Marcos': {
-                    codigoPostal: ''
-                },
-                Quetzaltenango: {
                     codigoPostal: ''
                 },
                 Momostenango: {
@@ -8616,25 +8069,10 @@ class Paises {
                 Chiquimula: {
                     codigoPostal: ''
                 },
-                Jutiapa: {
-                    codigoPostal: ''
-                },
-                Quiché: {
-                    codigoPostal: ''
-                },
-                Sololá: {
-                    codigoPostal: ''
-                },
                 Petén: {
                     codigoPostal: ''
                 },
                 Izabal: {
-                    codigoPostal: ''
-                },
-                Zacapa: {
-                    codigoPostal: ''
-                },
-                'Santa Cruz del Quiché': {
                     codigoPostal: ''
                 },
                 Barillas: {
@@ -8708,22 +8146,13 @@ class Paises {
                 Georgetown: {
                     codigoPostal: ''
                 },
-                Linden: {
-                    codigoPostal: ''
-                },
                 'Nueva Ámsterdam': {
                     codigoPostal: ''
                 },
                 'Anna Regina': {
                     codigoPostal: ''
                 },
-                Bartica: {
-                    codigoPostal: ''
-                },
                 Skeldon: {
-                    codigoPostal: ''
-                },
-                Rosignol: {
                     codigoPostal: ''
                 },
                 'Rose Hall': {
@@ -8813,22 +8242,10 @@ class Paises {
                 'Mahaica': {
                     codigoPostal: ''
                 },
-                Mahdia: {
-                    codigoPostal: ''
-                },
-                Parika: {
-                    codigoPostal: ''
-                },
                 'Vreed-en-Hoop': {
                     codigoPostal: ''
                 },
                 'Mahaicony': {
-                    codigoPostal: ''
-                },
-                Mabaruma: {
-                    codigoPostal: ''
-                },
-                Lethem: {
                     codigoPostal: ''
                 }
             }
@@ -9162,9 +8579,6 @@ class Paises {
                 Tocoa: {
                     codigoPostal: ''
                 },
-                Trujillo: {
-                    codigoPostal: ''
-                },
                 Tocojimalpa: {
                     codigoPostal: ''
                 },
@@ -9192,9 +8606,6 @@ class Paises {
                 'San Francisco de Opalaca': {
                     codigoPostal: ''
                 },
-                'San Francisco de Yojoa': {
-                    codigoPostal: ''
-                },
                 'San Francisco de Asís': {
                     codigoPostal: ''
                 },
@@ -9219,76 +8630,19 @@ class Paises {
                 'San Francisco de Conchagua': {
                     codigoPostal: ''
                 },
-                Tegucigalpa: {
-                    codigoPostal: ''
-                },
-                'San Pedro Sula': {
-                    codigoPostal: ''
-                },
-                Comayagua: {
-                    codigoPostal: ''
-                },
-                'El Progreso': {
-                    codigoPostal: ''
-                },
-                Choluteca: {
-                    codigoPostal: ''
-                },
-                'La Ceiba': {
-                    codigoPostal: ''
-                },
                 Choloma: {
                     codigoPostal: ''
                 },
                 'Puerto Cortés': {
                     codigoPostal: ''
                 },
-                Tela: {
-                    codigoPostal: ''
-                },
-                Danlí: {
-                    codigoPostal: ''
-                },
-                Catacamas: {
-                    codigoPostal: ''
-                },
-                'La Lima': {
-                    codigoPostal: ''
-                },
                 'Distrito Central': {
-                    codigoPostal: ''
-                },
-                Juticalpa: {
-                    codigoPostal: ''
-                },
-                Siguatepeque: {
-                    codigoPostal: ''
-                },
-                Tocoa: {
-                    codigoPostal: ''
-                },
-                Olanchito: {
                     codigoPostal: ''
                 },
                 Nacaome: {
                     codigoPostal: ''
                 },
                 Gracias: {
-                    codigoPostal: ''
-                },
-                'Santa Rosa de Copán': {
-                    codigoPostal: ''
-                },
-                Yoro: {
-                    codigoPostal: ''
-                },
-                'Santa Bárbara': {
-                    codigoPostal: ''
-                },
-                'La Paz': {
-                    codigoPostal: ''
-                },
-                Ocotepeque: {
                     codigoPostal: ''
                 },
                 'Puerto Lempira': {
@@ -9300,9 +8654,6 @@ class Paises {
                 Marcala: {
                     codigoPostal: ''
                 },
-                'La Entrada': {
-                    codigoPostal: ''
-                },
                 'Santa Cruz de Yojoa': {
                     codigoPostal: ''
                 },
@@ -9312,9 +8663,6 @@ class Paises {
                 'La Campa': {
                     codigoPostal: ''
                 },
-                'La Esperanza': {
-                    codigoPostal: ''
-                },
                 Comayagüela: {
                     codigoPostal: ''
                 },
@@ -9322,9 +8670,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'San José de Colinas': {
-                    codigoPostal: ''
-                },
-                Trujillo: {
                     codigoPostal: ''
                 },
                 Yuscarán: {
@@ -9343,9 +8688,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Sonaguera: {
-                    codigoPostal: ''
-                },
-                Potrerillos: {
                     codigoPostal: ''
                 },
                 'Santa Rita': {
@@ -9425,13 +8767,7 @@ class Paises {
                 Szekszárd: {
                     codigoPostal: ''
                 },
-                Szombathely: {
-                    codigoPostal: ''
-                },
                 Szigetszentmiklós: {
-                    codigoPostal: ''
-                },
-                Szeged: {
                     codigoPostal: ''
                 }
             }
@@ -9559,9 +8895,6 @@ class Paises {
                 Chandigarh: {
                     codigoPostal: ''
                 },
-                Nashik: {
-                    codigoPostal: ''
-                },
                 Vijayawada: {
                     codigoPostal: ''
                 },
@@ -9631,9 +8964,6 @@ class Paises {
                 Ambattur: {
                     codigoPostal: ''
                 },
-                Ranchi: {
-                    codigoPostal: ''
-                },
                 Guntur: {
                     codigoPostal: ''
                 },
@@ -9673,9 +9003,6 @@ class Paises {
                 Bhavnagar: {
                     codigoPostal: ''
                 },
-                Dehradun: {
-                    codigoPostal: ''
-                },
                 Durgapur: {
                     codigoPostal: ''
                 },
@@ -9688,13 +9015,7 @@ class Paises {
                 Kolhapur: {
                     codigoPostal: ''
                 },
-                Ajmer: {
-                    codigoPostal: ''
-                },
                 Gulbarga: {
-                    codigoPostal: ''
-                },
-                Jamnagar: {
                     codigoPostal: ''
                 },
                 Ujjain: {
@@ -9997,9 +9318,6 @@ class Paises {
                 Qazvín: {
                     codigoPostal: ''
                 },
-                Qom: {
-                    codigoPostal: ''
-                },
                 Semnán: {
                     codigoPostal: ''
                 },
@@ -10007,9 +9325,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 Tehran: {
-                    codigoPostal: ''
-                },
-                Yazd: {
                     codigoPostal: ''
                 },
                 Zanjan: {
@@ -10210,12 +9525,6 @@ class Paises {
                 Jemo: {
                     codigoPostal: ''
                 },
-                Wotje: {
-                    codigoPostal: ''
-                },
-                Kwajalein: {
-                    codigoPostal: ''
-                },
                 Ailuk: {
                     codigoPostal: ''
                 },
@@ -10402,9 +9711,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'Annotto Bay': {
-                    codigoPostal: ''
-                },
-                'May Pen': {
                     codigoPostal: ''
                 },
                 Yallahs: {
@@ -10952,9 +10258,6 @@ class Paises {
                 Bauska: {
                     codigoPostal: 'LV-3901'
                 },
-                Kuldiga: {
-                    codigoPostal: 'LV-3301'
-                },
                 Aluksne: {
                     codigoPostal: 'LV-4301'
                 },
@@ -11454,9 +10757,6 @@ class Paises {
                 Ankazoabo: {
                     codigoPostal: ''
                 },
-                Ankazobe: {
-                    codigoPostal: ''
-                },
                 Ankazomanga: {
                     codigoPostal: ''
                 },
@@ -11593,13 +10893,7 @@ class Paises {
                 Chiromo: {
                     codigoPostal: ''
                 },
-                Chiradzulu: {
-                    codigoPostal: ''
-                },
                 Balaka: {
-                    codigoPostal: ''
-                },
-                Rumphi: {
                     codigoPostal: ''
                 }
             }
@@ -11996,9 +11290,6 @@ class Paises {
                 },
                 Tiztoutine: {
                     codigoPostal: ''
-                },
-                Tiznit: {
-                    codigoPostal: ''
                 }
             }
         },
@@ -12121,28 +11412,13 @@ class Paises {
                 Timbuktu: {
                     codigoPostal: ''
                 },
-                Kaedi: {
-                    codigoPostal: ''
-                },
                 Akjoujt: {
                     codigoPostal: ''
                 },
                 Akla: {
                     codigoPostal: ''
                 },
-                Kiffa: {
-                    codigoPostal: ''
-                },
-                Aleg: {
-                    codigoPostal: ''
-                },
-                Atar: {
-                    codigoPostal: ''
-                },
                 'Ayoun el Atrous': {
-                    codigoPostal: ''
-                },
-                Boutilimit: {
                     codigoPostal: ''
                 },
                 Chegga: {
@@ -12154,39 +11430,6 @@ class Paises {
                 'El Aaiun': {
                     codigoPostal: ''
                 },
-                Kaédi: {
-                    codigoPostal: ''
-                },
-                Kaedi: {
-                    codigoPostal: ''
-                },
-                Maghama: {
-                    codigoPostal: ''
-                },
-                Nema: {
-                    codigoPostal: ''
-                },
-                Nouadhibou: {
-                    codigoPostal: ''
-                },
-                Nouakchott: {
-                    codigoPostal: ''
-                },
-                Oualata: {
-                    codigoPostal: ''
-                },
-                Ouadane: {
-                    codigoPostal: ''
-                },
-                Rosso: {
-                    codigoPostal: ''
-                },
-                Selibabi: {
-                    codigoPostal: ''
-                },
-                Tichit: {
-                    codigoPostal: ''
-                },
                 Tidjikja: {
                     codigoPostal: ''
                 },
@@ -12194,9 +11437,6 @@ class Paises {
                     codigoPostal: ''
                 },
                 'Tiris Zemmour': {
-                    codigoPostal: ''
-                },
-                Zouerat: {
                     codigoPostal: ''
                 }
             }
@@ -12697,165 +11937,6 @@ class Paises {
                 },
                 Okahao: {
                     codigoPostal: ''
-                },
-                Okakarara: {
-                    codigoPostal: ''
-                },
-                Okakarumba: {
-                    codigoPostal: ''
-                },
-                Okondjato: {
-                    codigoPostal: ''
-                },
-                Ondangwa: {
-                    codigoPostal: ''
-                },
-                Ompundja: {
-                    codigoPostal: ''
-                },
-                Ombalantu: {
-                    codigoPostal: ''
-                },
-                Ondjiva: {
-                    codigoPostal: ''
-                },
-                Oniipa: {
-                    codigoPostal: ''
-                },
-                Ombike: {
-                    codigoPostal: ''
-                },
-                Oshikango: {
-                    codigoPostal: ''
-                },
-                Okatope: {
-                    codigoPostal: ''
-                },
-                Okongo: {
-                    codigoPostal: ''
-                },
-                Okahao: {
-                    codigoPostal: ''
-                },
-                Okakarara: {
-                    codigoPostal: ''
-                },
-                Okakarumba: {
-                    codigoPostal: ''
-                },
-                Okondjato: {
-                    codigoPostal: ''
-                },
-                Ondangwa: {
-                    codigoPostal: ''
-                },
-                Ompundja: {
-                    codigoPostal: ''
-                },
-                Ombalantu: {
-                    codigoPostal: ''
-                },
-                Ondjiva: {
-                    codigoPostal: ''
-                },
-                Oniipa: {
-                    codigoPostal: ''
-                },
-                Ombike: {
-                    codigoPostal: ''
-                },
-                Oshikango: {
-                    codigoPostal: ''
-                },
-                Okatope: {
-                    codigoPostal: ''
-                },
-                Okongo: {
-                    codigoPostal: ''
-                },
-                Okahao: {
-                    codigoPostal: ''
-                },
-                Okakarara: {
-                    codigoPostal: ''
-                },
-                Okakarumba: {
-                    codigoPostal: ''
-                },
-                Okondjato: {
-                    codigoPostal: ''
-                },
-                Ondangwa: {
-                    codigoPostal: ''
-                },
-                Ompundja: {
-                    codigoPostal: ''
-                },
-                Ombalantu: {
-                    codigoPostal: ''
-                },
-                Ondjiva: {
-                    codigoPostal: ''
-                },
-                Oniipa: {
-                    codigoPostal: ''
-                },
-                Ombike: {
-                    codigoPostal: ''
-                },
-                Oshikango: {
-                    codigoPostal: ''
-                },
-                Okatope: {
-                    codigoPostal: ''
-                },
-                Okongo: {
-                    codigoPostal: ''
-                },
-                Okahao: {
-                    codigoPostal: ''
-                },
-                Okakarara: {
-                    codigoPostal: ''
-                },
-                Okakarara: {
-                    codigoPostal: ''
-                },
-                Okakarumba: {
-                    codigoPostal: ''
-                },
-                Okondjato: {
-                    codigoPostal: ''
-                },
-                Ondangwa: {
-                    codigoPostal: ''
-                },
-                Ompundja: {
-                    codigoPostal: ''
-                },
-                Ombalantu: {
-                    codigoPostal: ''
-                },
-                Ondjiva: {
-                    codigoPostal: ''
-                },
-                Oniipa: {
-                    codigoPostal: ''
-                },
-                Ombike: {
-                    codigoPostal: ''
-                },
-                Oshikango: {
-                    codigoPostal: ''
-                },
-                Okatope: {
-                    codigoPostal: ''
-                },
-                Okongo: {
-                    codigoPostal: ''
-                },
-                Okahao: {
-                    codigoPostal: ''
                 }
             }
         },
@@ -13142,49 +12223,10 @@ class Paises {
                 'San José de Cusmapa': {
                     codigoPostal: ''
                 },
-                'San Rafael del Sur': {
-                    codigoPostal: ''
-                },
                 'San Rafael Oriente': {
                     codigoPostal: ''
                 },
-                'San Francisco de Cuapa': {
-                    codigoPostal: ''
-                },
-                'San Juan del Río Coco': {
-                    codigoPostal: ''
-                },
-                'San Francisco de Paula': {
-                    codigoPostal: ''
-                },
-                'San Francisco de Asís': {
-                    codigoPostal: ''
-                },
-                'San Francisco de la Paz': {
-                    codigoPostal: ''
-                },
                 Managua: {
-                    codigoPostal: ''
-                },
-                León: {
-                    codigoPostal: ''
-                },
-                Granada: {
-                    codigoPostal: ''
-                },
-                Chinandega: {
-                    codigoPostal: ''
-                },
-                Masaya: {
-                    codigoPostal: ''
-                },
-                Matagalpa: {
-                    codigoPostal: ''
-                },
-                Estelí: {
-                    codigoPostal: ''
-                },
-                Jinotega: {
                     codigoPostal: ''
                 },
                 Tipitapa: {
@@ -13193,25 +12235,10 @@ class Paises {
                 'El Viejo': {
                     codigoPostal: ''
                 },
-                Rivas: {
-                    codigoPostal: ''
-                },
                 'San Juan del Sur': {
                     codigoPostal: ''
                 },
-                Juigalpa: {
-                    codigoPostal: ''
-                },
-                Boaco: {
-                    codigoPostal: ''
-                },
                 'Ciudad Darío': {
-                    codigoPostal: ''
-                },
-                Jinotepe: {
-                    codigoPostal: ''
-                },
-                Bluefields: {
                     codigoPostal: ''
                 },
                 Nandaime: {
