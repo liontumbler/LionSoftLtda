@@ -34,10 +34,6 @@ class ValidForm {
 
         let paddingRight = '28px';
         style.innerHTML = `
-        input:required {
-            border: 1px solid #000000;
-        }
-
         .pw svg{
             position: absolute;
             top: 0;
@@ -65,7 +61,7 @@ class ValidForm {
         `;
         document.getElementsByTagName('head')[0].append(style);
 
-        let eye = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+        const eye = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>`;
 
         let botonEye = this.#form.getElementsByClassName('pw');
@@ -144,10 +140,6 @@ class ValidForm {
                 this.value = this.value.replace(ValidForm.#number, '').replace(ValidForm.#numberP, '$1.');
             });
         }
-
-        this.#mascara.addEventListener('invalid', function (e) {
-            this.style.cssText = 'border: 1px solid #6a6a6a;';
-        });
     }
 
     getId(id) {
@@ -178,10 +170,10 @@ class ValidForm {
                 input.value = '#000000';
             }
         }else if (input.type == 'file') {
-            let img = input.parentNode.getElementsByTagName('IMG')[0];
-            if(img){
+            const img = input.parentNode.getElementsByTagName('IMG')[0];
+            if(img)
                 this.#form.removeChild(img);
-            }
+            
             input.files = []
             input.value = '';
         }else if(input.type == 'checkbox' && input.type == 'radio'){
@@ -297,18 +289,13 @@ class ValidForm {
         return formData;
     }
 
-    validarCamposExpert(campos = {}) {
+    validarCamposExpert(campos = {}, conMsg = false) {
         let valido = false;
         for (const i in campos) {
             let input = this.getId(campos[i]);
-            valido = this.#validarCampoForm(input, false);
-            if(!valido){
-                let inputPr = this.#getId(campos[i]);
-                valido = [inputPr.validationMessage, 'El campo ' + i + 'es inválido'];
-                input.focus();
-                input.select();
-                break;
-            }
+            valido = this.#validarCampoForm(input, conMsg);
+            if(!valido)
+                return input;
         }
 
         return valido;
@@ -322,7 +309,7 @@ class ValidForm {
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
                 valido = this.#validarCampoForm(input, conMsg);
                 if(!valido)
-                    break;
+                    return input;
             }
         }
 
@@ -413,10 +400,10 @@ class ValidForm {
                     file = input.files[i];
                     if(file.size > 0) {
 
-                        let arrExten = file.name.split('.');
+                        const arrExten = file.name.split('.');
                         input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
 
-                        let accept = input.getAttribute('accept');
+                        const accept = input.getAttribute('accept');
                         if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
                             valido = false;
                             break;
@@ -427,7 +414,7 @@ class ValidForm {
                     }
                 }
                 
-                let arrExten = file.name.split('.');
+                const arrExten = file.name.split('.');
                 if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
                     const image = document.createElement('img');
                     input.parentNode.append(image);
@@ -489,10 +476,10 @@ class ValidForm {
             valido = false;
         else if(input.getAttribute('same')){
             let same = input.parentNode.parentNode.querySelector('#'+ input.getAttribute('same'));
-            let valueSame = same.value;
+            const valueSame = same.value;
             if (value != valueSame) {
                 input.setCustomValidity('');
-                let label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
+                const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
                 if (label)
                     input.setCustomValidity('El campo no es igual a '+ label.textContent);
                 else
@@ -539,13 +526,12 @@ class ValidForm {
                         input.setCustomValidity(inputReal.validationMessage);
                         input.reportValidity();
 
-                        let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                        const label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
                         if (label)
                             console.warn('No tiene valor el campo '+ label.textContent);
                         else
                             console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
-                    
                     input.focus();
                     input.select();
 
@@ -601,13 +587,8 @@ class ValidForm {
         let valido = false;
         for (const i in campos) {
             valido = ValidForm.validarCampo(campos[i], false);
-            if(!valido){
-                let input = document.getElementById(campos[i]);
-                valido = [input.validationMessage, 'El campo ' + i + 'es inválido'];
-                input.focus();
-                input.select();
-                break;
-            }
+            if(!valido)
+                return document.getElementById(campos[i]);
         }
 
         return valido;
@@ -615,7 +596,6 @@ class ValidForm {
 
     static validarCampo(id, conMsg = true){
         let inputReal = document.getElementById(id);
-
         if (inputReal) {
             if (inputReal.required) {
                 if(inputReal.value){
@@ -626,7 +606,6 @@ class ValidForm {
                             inputReal.setCustomValidity(inputReal.validationMessage);
                             inputReal.reportValidity();
                         }
-
                         inputReal.focus();
                         inputReal.select();
 
@@ -642,13 +621,12 @@ class ValidForm {
                         inputReal.setCustomValidity(inputReal.validationMessage);
                         inputReal.reportValidity();
 
-                        let label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
+                        const label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
                         if (label)
                             console.warn('No tiene valor el campo '+ label.textContent);
                         else
                             console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
                     }
-
                     inputReal.focus();
                     inputReal.select();
 
