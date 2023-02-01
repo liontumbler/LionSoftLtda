@@ -16840,19 +16840,12 @@ class Paises {
         }
     }
 
-    //resivir datos de un servidor para llenar datos
-    /*constructor() {
-    }*/
-
     obtenerPaises(nombre) {
-
         let paises = [];
-
         if (nombre) {
             for (const i in this.#paises) {
-                if (this.normalizarText(i).indexOf(this.normalizarText(nombre)) >= 0) {
+                if (this.normalizarText(i).indexOf(this.normalizarText(nombre)) >= 0)
                     paises.push(i);
-                }
             }
         } else {
             for (const i in this.#paises) {
@@ -16866,9 +16859,8 @@ class Paises {
     obtenerPaisesXcontinente(continente) {
         let paises = [];
         for (const i in this.#paises) {
-            if (this.normalizarText(this.#paises[i].continente).indexOf(this.normalizarText(continente)) >= 0) {
+            if (this.normalizarText(this.#paises[i].continente).indexOf(this.normalizarText(continente)) >= 0)
                 paises.push(i);
-            }
         }
 
         return paises.sort();
@@ -16877,9 +16869,8 @@ class Paises {
     obtenerPaisObj(pais) {
         try {
             for (const i in this.#paises) {
-                if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0) {
+                if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0)
                     return this.#paises[i];
-                }
             }
         } catch (error) {
             return ['hay un error en la busqueda'];
@@ -16916,9 +16907,8 @@ class Paises {
             for (const i in this.#paises) {
                 if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0) {
                     for (const e in this.#paises[i].ciudades) {
-                        if (this.normalizarText(e).indexOf(this.normalizarText(ciudad)) >= 0) {
+                        if (this.normalizarText(e).indexOf(this.normalizarText(ciudad)) >= 0)
                             return this.#paises[i].ciudades[e];
-                        }
                     }
                 }
             }

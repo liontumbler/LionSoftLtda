@@ -19,7 +19,7 @@ class EjecutadorJs {
     }
 
     horaActual() {
-        let fechaActual = new Date();
+        const fechaActual = new Date();
         let hora = fechaActual.getHours();
         let minuto = fechaActual.getMinutes();
         let segundo = fechaActual.getSeconds();
@@ -37,7 +37,7 @@ class EjecutadorJs {
     }
 
     horaActualSinSeg() {
-        let fechaActual = new Date();
+        const fechaActual = new Date();
         let hora = fechaActual.getHours();
         let minuto = fechaActual.getMinutes();
     
@@ -50,13 +50,13 @@ class EjecutadorJs {
         return hora + ':' + minuto;
     }
 
-    addTareaEjecutar(metodo, tiempo = '00:00:00'){
+    addTareaEjecutar(metodo, tiempo = this.horaActual()){
         this.#ejecuciones[tiempo] = metodo;
     }
 
     comparaTiempos(hora1 = this.horaActual(), hora2 = this.horaActual()) {
-        let diviHora1 = hora1.split(':');
-        let diviHora2 = hora2.split(':');
+        const diviHora1 = hora1.split(':');
+        const diviHora2 = hora2.split(':');
 
         let largo;
         if(diviHora1.length < diviHora2.length)

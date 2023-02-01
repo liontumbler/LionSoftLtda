@@ -77,7 +77,7 @@ class CarritoCompras {
 
     comprar(valor) {
         if (valor >= this.#carrito.allValue) {
-            let res = {
+            const res = {
                 valorApagar: this.#formatearPresio(this.#carrito.allValue),
                 valor: this.#formatearPresio(valor),
                 cambio: this.#formatearPresio((valor - this.#carrito.allValue))
@@ -96,11 +96,10 @@ class CarritoCompras {
     }
 
     toStringCarrito(value = null){
-        if (value) {
+        if (value) 
             return JSON.stringify(this.#carrito[value]);
-        }else{
+        else
             return JSON.stringify(this.#carrito);
-        }
     }
 
     #formatearPresio(value, currency = this.moneda) {
