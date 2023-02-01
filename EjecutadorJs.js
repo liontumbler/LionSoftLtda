@@ -54,7 +54,7 @@ class EjecutadorJs {
         this.#ejecuciones[tiempo] = metodo;
     }
 
-    comparaTiempos(hora1 = '00:00:00', hora2 = '00:00:00') {
+    comparaTiempos(hora1 = this.horaActual(), hora2 = this.horaActual()) {
         let diviHora1 = hora1.split(':');
         let diviHora2 = hora2.split(':');
 

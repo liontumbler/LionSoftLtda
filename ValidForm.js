@@ -6,7 +6,7 @@
 class ValidForm {
     //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
     #form = null;
-    #form2 = null;
+    #mascara = null;
 
     static #alfa = /[^A-Za-zñÑ ]/g;
     static #alfaNS = /[^A-Za-zñÑ]/g;
@@ -28,12 +28,16 @@ class ValidForm {
         else if (!document.getElementById(elemt))
             console.error('El formulario nombrado no existe');
 
-        this.#form2 = this.#form.cloneNode(true);
+        this.#mascara = this.#form.cloneNode(true);
 
         let style = document.createElement('style');
 
         let paddingRight = '28px';
         style.innerHTML = `
+        input:required {
+            border: 1px solid #000000;
+        }
+
         .pw svg{
             position: absolute;
             top: 0;
@@ -140,6 +144,10 @@ class ValidForm {
                 this.value = this.value.replace(ValidForm.#number, '').replace(ValidForm.#numberP, '$1.');
             });
         }
+
+        this.#mascara.addEventListener('invalid', function (e) {
+            this.style.cssText = 'border: 1px solid #6a6a6a;';
+        });
     }
 
     getId(id) {
@@ -322,12 +330,12 @@ class ValidForm {
     }
 
     #getId(id) {
-        return this.#form2.querySelectorAll('[id="'+id+'"]')[0];
+        return this.#mascara.querySelectorAll('[id="'+id+'"]')[0];
     }
 
     #validarInput(input) {
         const validityState = input.validity;
-        let value = input.value;
+        const value = input.value;
         let valido = true;
 
         switch (input.type) {
@@ -440,7 +448,7 @@ class ValidForm {
                 break;
             case 'radio':
                 if(input.name){
-                    if (!this.#form2.querySelector('input[name="' + input.name + '"]:checked')) {
+                    if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked')) {
                         valido = false;
                         break;
                     }
@@ -479,6 +487,20 @@ class ValidForm {
 
         if (!value)
             valido = false;
+        else if(input.getAttribute('same')){
+            let same = input.parentNode.parentNode.querySelector('#'+ input.getAttribute('same'));
+            let valueSame = same.value;
+            if (value != valueSame) {
+                input.setCustomValidity('');
+                let label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
+                if (label)
+                    input.setCustomValidity('El campo no es igual a '+ label.textContent);
+                else
+                    input.setCustomValidity('El campo no es igual a '+ same.id);
+                
+                valido = false;
+            }
+        }
 
         return valido;
     }
@@ -513,6 +535,7 @@ class ValidForm {
                     return valido;
                 }else{
                     if (conMsg) {
+                        inputReal.setCustomValidity('');
                         input.setCustomValidity(inputReal.validationMessage);
                         input.reportValidity();
 
