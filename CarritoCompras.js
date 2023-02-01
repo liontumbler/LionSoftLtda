@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author    Edwin Velasquez Jimenez
+ * @copyright lionTumbler
+*/
 class CarritoCompras {
     #carrito = null;
     moneda = 'COP';

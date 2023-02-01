@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author    Edwin Velasquez Jimenez
+ * @copyright lionTumbler
+*/
 class ValidForm {
     //response.sort((x, y) => x.Title.localeCompare(y.Title)); //organisa un objeto
     #form = null;

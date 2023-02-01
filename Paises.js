@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author    Edwin Velasquez Jimenez
+ * @copyright lionTumbler
+*/
 class Paises {
     //Asia
     //América del norte
