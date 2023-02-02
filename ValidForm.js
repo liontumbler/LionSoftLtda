@@ -160,6 +160,12 @@ class ValidForm {
             let select = selects[i];
             this.limpiarCampo(select);
         }
+
+        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+        for (let i = 0; i < textAreas.length; i++) {
+            let textArea = textAreas[i];
+            this.limpiarCampo(textArea);
+        }
     }
 
     limpiarCampoId(id) {
@@ -256,6 +262,22 @@ class ValidForm {
             f++;
         }
 
+        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+        for (let i = 0; i < textAreas.length; i++) {
+            let textArea = textAreas[i];
+
+            let title = textArea.id;
+            if(cabeceras[f])
+                title = cabeceras[f];
+
+            if(textArea.value)
+                data[title] = textArea.value;
+            else if(conVacios)
+                data[title] = null;
+            
+            f++;
+        }
+
         return data;
     }
 
@@ -327,6 +349,22 @@ class ValidForm {
             f++;
         }
 
+        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+        for (let i = 0; i < textAreas.length; i++) {
+            let textArea = textAreas[i];
+
+            let title = textArea.id;
+            if(cabeceras[f])
+                title = cabeceras[f];
+
+            if(textArea.value)
+                formData.append(title, textArea.value);
+            else if(conVacios)
+                formData.append(title, null);
+            
+            f++;
+        }
+
         return formData;
     }
 
@@ -363,6 +401,16 @@ class ValidForm {
             }
         }
 
+        if (valido) {
+            let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+            for (let i = 0; i < textAreas.length; i++) {
+                let textArea = textAreas[i];
+                valido = this.#validarCampoForm(textArea, conMsg);
+                if(!valido)
+                    return textArea;
+            }
+        }
+
         return valido;
     }
 
@@ -377,36 +425,24 @@ class ValidForm {
 
         switch (input.type) {
             case 'email':
-                if(!ValidForm.validarCampoCorreo(value)){
+                if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                     valido = false;
-                    break;
-                }
-
-                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
-                    valido = false;
-                    break;
                 }
 
                 break;
             case 'url':
-                if(!this.url.test(value)){
+                if(!this.url.test(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                     valido = false;
-                    break;
-                }
-
-                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
-                    valido = false;
-                    break;
                 }
 
                 break;
+            case 'textarea':
             case 'password':
             case 'search':
             case 'tel':
             case 'text':
-                if(!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))) {
                     valido = false;
-                    break;
                 }
 
                 break;
@@ -416,31 +452,14 @@ class ValidForm {
             case 'month':
             case 'time':
             case 'week':
-                if (validityState.rangeOverflow) {
+                if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch) {
                     valido = false;
-                    break;
-                }
-
-                if (validityState.rangeUnderflow) {
-                    valido = false;
-                    break;
-                }
-
-                if (validityState.stepMismatch) {
-                    valido = false;
-                    break;
                 }
 
                 break;
             case 'number':
-                if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min'))){
+                if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch){
                     valido = false;
-                    break;
-                }
-
-                if (validityState.stepMismatch) {
-                    valido = false;
-                    break;
                 }
 
                 break;
@@ -454,10 +473,7 @@ class ValidForm {
                         input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
 
                         const accept = input.getAttribute('accept');
-                        if (accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) {
-                            valido = false;
-                            break;
-                        }else if (!this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
+                        if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
                             valido = false;
                             break;
                         }
@@ -480,32 +496,33 @@ class ValidForm {
             case 'checkbox':
                 if (!input.checked) {
                     valido = false;
-                    break;
                 }
+
                 break;
             case 'radio':
                 if(input.name){
-                    if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked')) {
+                    if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked'))
                         valido = false;
-                        break;
-                    }
                 }else{
                     console.warn('El radio botón requerido no tiene un atributo "name" asociado');
                     valido = false;
-                    break;
                 }
                 
                 break;
             case 'color':
+                let msg = '';
                 if (input.getAttribute('different') && (value && value == input.getAttribute('different'))) {
-                    input.setCustomValidity('Definir un color diferente a ' + input.getAttribute('different'));
+                    msg = 'Definir un color diferente a ' + input.getAttribute('different');
                     valido = false;
-                    break;
                 }else if(value && value == '#000000'){
-                    input.setCustomValidity('Definir un color diferente');
+                    msg = 'Definir un color diferente';
                     valido = false;
-                    break;
                 }
+
+                if (!valido) {
+                    input.setCustomValidity(msg);
+                }
+
                 break;
             case 'select-one':
                 break;
