@@ -17,9 +17,8 @@ class ValidForm {
     static #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
     static #space = /\s+/g;
 
-    url = /https:\/\/.{1,200}|http:\/\/.{1,200}/g;
-    regexCorreo = /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g;
-    formatoFile= /jpg|jpeg|png|gif/g;
+    static url = /https:\/\/.{1,200}|http:\/\/.{1,200}/g;
+    static formatoFile= /jpg|jpeg|png|gif/g;
 
     constructor(elemt){
         this.#form = document.getElementById(elemt);
@@ -423,135 +422,139 @@ class ValidForm {
         let value = input.value;
         let valido = true;
 
-        switch (input.type) {
-            case 'email':
-                if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
-                    valido = false;
-                }
+        if(value){
+            switch (input.type) {
+                case 'email':
+                    if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                        valido = false;
+                    }
 
-                break;
-            case 'url':
-                if(!this.url.test(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
-                    valido = false;
-                }
-
-                break;
-            case 'textarea':
-            case 'password':
-            case 'search':
-            case 'tel':
-            case 'text':
-                if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))) {
-                    valido = false;
-                }
-
-                break;
-            case 'range':
-            case 'date':
-            case 'datetime-local':
-            case 'month':
-            case 'time':
-            case 'week':
-                if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch) {
-                    valido = false;
-                }
-
-                break;
-            case 'number':
-                if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch){
-                    valido = false;
-                }
-
-                break;
-            case 'file':
-                let file;
-                for (const i in input.files) {
-                    file = input.files[i];
-                    if(file.size > 0) {
-
-                        const arrExten = file.name.split('.');
-                        input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
-
-                        const accept = input.getAttribute('accept');
-                        if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
-                            valido = false;
-                            break;
+                    break;
+                case 'url':
+                    if(!this.url.test(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                        valido = false;
+                    }
+    
+                    break;
+                case 'textarea':
+                case 'password':
+                case 'search':
+                case 'tel':
+                case 'text':
+                    if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))) {
+                        valido = false;
+                    }
+    
+                    break;
+                case 'range':
+                case 'date':
+                case 'datetime-local':
+                case 'month':
+                case 'time':
+                case 'week':
+                    if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch) {
+                        valido = false;
+                    }
+    
+                    break;
+                case 'number':
+                    if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch){
+                        valido = false;
+                    }
+    
+                    break;
+                case 'file':
+                    let file;
+                    for (const i in input.files) {
+                        file = input.files[i];
+                        if(file.size > 0) {
+    
+                            const arrExten = file.name.split('.');
+                            input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
+    
+                            const accept = input.getAttribute('accept');
+                            if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
+                                valido = false;
+                                break;
+                            }
                         }
                     }
-                }
-                
-                const arrExten = file.name.split('.');
-                if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
-                    const image = document.createElement('img');
-                    input.parentNode.append(image);
-
-                    let reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onload = function(e) {
-                        image.src = e.target.result;
+                    
+                    const arrExten = file.name.split('.');
+                    if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
+                        const image = document.createElement('img');
+                        input.parentNode.append(image);
+    
+                        let reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = function(e) {
+                            image.src = e.target.result;
+                        }
                     }
-                }
-
-                break;
-            case 'checkbox':
-                if (!input.checked) {
-                    valido = false;
-                }
-
-                break;
-            case 'radio':
-                if(input.name){
-                    if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked'))
+    
+                    break;
+                case 'checkbox':
+                    if (!input.checked) {
                         valido = false;
-                }else{
-                    console.warn('El radio botón requerido no tiene un atributo "name" asociado');
-                    valido = false;
-                }
-                
-                break;
-            case 'color':
-                let msg = '';
-                if (input.getAttribute('different') && (value && value == input.getAttribute('different'))) {
-                    msg = 'Definir un color diferente a ' + input.getAttribute('different');
-                    valido = false;
-                }else if(value && value == '#000000'){
-                    msg = 'Definir un color diferente';
-                    valido = false;
-                }
+                    }
+    
+                    break;
+                case 'radio':
+                    if(input.name){
+                        if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked'))
+                            valido = false;
+                    }else{
+                        console.warn('El radio botón requerido no tiene un atributo "name" asociado');
+                        valido = false;
+                    }
+                    
+                    break;
+                case 'color':
+                    let msg = '';
+                    if (input.getAttribute('different') && (value == input.getAttribute('different'))) {
+                        msg = 'Definir un color diferente a ' + input.getAttribute('different');
+                        valido = false;
+                    }else if(value == '#000000'){
+                        msg = 'Definir un color diferente';
+                        valido = false;
+                    }
+    
+                    if (!valido) {
+                        input.setCustomValidity(msg);
+                    }
+    
+                    break;
+                case 'select-one':
+                    break;
+                case 'hidden':
+                    break;
+                default:
+                    console.warn('Tipo indefinido');
+                    break;
+            }
+    
+            if (validityState.patternMismatch){
+                input.setCustomValidity(input.validationMessage +' '+ input.pattern);
+                valido = false;
+            }
 
-                if (!valido) {
+            if(input.getAttribute('same')){
+                let same = input.parentNode.parentNode.querySelector('#'+ input.getAttribute('same'));
+                let valueSame = same.value;
+                if (value != valueSame) {
+                    valido = false;
+                    const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
+                    let msg = 'El campo no es igual a '+ same.id;
+                    if (label)
+                        msg = 'El campo no es igual a '+ label.textContent;
+    
                     input.setCustomValidity(msg);
                 }
-
-                break;
-            case 'select-one':
-                break;
-            case 'hidden':
-                break;
-            default:
-                console.warn('Tipo indefinido');
-                break;
-        }
-
-        if (validityState.patternMismatch){
-            input.setCustomValidity(input.validationMessage +' '+ input.pattern);
-            valido = false;
-        }
-
-        if (!value)
-            valido = false;
-        else if(input.getAttribute('same')){
-            let same = input.parentNode.parentNode.querySelector('#'+ input.getAttribute('same'));
-            let valueSame = same.value;
-            if (value != valueSame) {
-                valido = false;
-                const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
-                let msg = 'El campo no es igual a '+ same.id;
-                if (label)
-                    msg = 'El campo no es igual a '+ label.textContent;
-
-                input.setCustomValidity(msg);
             }
+
+        }else if (!value){
+            valido = false;
+            input.setCustomValidity('');
         }
 
         return valido;
@@ -567,35 +570,26 @@ class ValidForm {
             inputReal.files = input.files;
 
             if (inputReal.required) {
-                function mostrar() {
-                    input.setCustomValidity(inputReal.validationMessage);
+                let valido = this.#validarInput(inputReal);
+
+                input.setCustomValidity(inputReal.validationMessage);
+                if(!valido){
                     if (conMsg) {
                         input.reportValidity();
                         inputReal.setCustomValidity('');
                     }
-    
+
                     input.focus();
                     if (input.type != 'select-one')
                         input.select();
-                }
-                
-                if(inputReal.value){
-                    let valido = this.#validarInput(inputReal);
-                    if(!valido){
-                        mostrar();
 
-                        if (input.type == 'file') {
-                            input.value = '';
-                            input.files = [];
-                        }
+                    if (input.type == 'file') {
+                        input.value = '';
+                        input.files = [];
                     }
-
-                    return valido;
-                }else{
-                    mostrar();
-
-                    return false;
                 }
+
+                return valido;
             }else{
                 return true;
             }
@@ -606,11 +600,7 @@ class ValidForm {
     }
 
     static validarCampoCorreo(value) {
-        let valido = false;
-        if(this.regexCorreo.test(value))
-            valido = true;
-
-        return valido;
+        return /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g.test(value);
     }
 
     static validarNumCaracteres(value, maxlength, minlength) {
