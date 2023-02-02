@@ -17,9 +17,6 @@ class ValidForm {
     static #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
     static #space = /\s+/g;
 
-    static url = /https:\/\/.{1,200}|http:\/\/.{1,200}/g;
-    static formatoFile= /jpg|jpeg|png|gif/g;
-
     constructor(elemt){
         this.#form = document.getElementById(elemt);
         if (document[elemt])
@@ -431,7 +428,7 @@ class ValidForm {
 
                     break;
                 case 'url':
-                    if(!this.url.test(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    if(!ValidForm.validarCampoUrl(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
                         valido = false;
                     }
     
@@ -473,7 +470,7 @@ class ValidForm {
                             input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
     
                             const accept = input.getAttribute('accept');
-                            if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !this.formatoFile.test(arrExten[(arrExten.length -1)].toLowerCase())) {
+                            if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !ValidForm.validarCampoFile(arrExten[(arrExten.length -1)].toLowerCase())) {
                                 valido = false;
                                 break;
                             }
@@ -599,8 +596,16 @@ class ValidForm {
         }
     }
 
-    static validarCampoCorreo(value) {
-        return /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g.test(value);
+    static validarCampoFile(value, regex = /jpg|jpeg|png|gif/g) {
+        return regex.test(value);
+    }
+
+    static validarCampoUrl(value, regex = /https:\/\/.{1,200}|http:\/\/.{1,200}/g) {
+        return regex.test(value);
+    }
+
+    static validarCampoCorreo(value, regex = /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g) {
+        return regex.test(value);
     }
 
     static validarNumCaracteres(value, maxlength, minlength) {
