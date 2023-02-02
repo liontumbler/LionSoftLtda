@@ -566,19 +566,19 @@ class ValidForm {
             inputReal.name = input.name;
             inputReal.files = input.files;
 
-            function mostrar() {
-                input.setCustomValidity(inputReal.validationMessage);
-                if (conMsg) {
-                    input.reportValidity();
-                    inputReal.setCustomValidity('');
-                }
-
-                input.focus();
-                if (input.type != 'select-one')
-                    input.select();
-            }
-
             if (inputReal.required) {
+                function mostrar() {
+                    input.setCustomValidity(inputReal.validationMessage);
+                    if (conMsg) {
+                        input.reportValidity();
+                        inputReal.setCustomValidity('');
+                    }
+    
+                    input.focus();
+                    if (input.type != 'select-one')
+                        input.select();
+                }
+                
                 if(inputReal.value){
                     let valido = this.#validarInput(inputReal);
                     if(!valido){
