@@ -600,7 +600,7 @@ class ValidForm {
                 return true;
             }
         }else{
-            console.warn('input no existe');
+            console.warn('Input no existe');
             return false;
         }
     }
