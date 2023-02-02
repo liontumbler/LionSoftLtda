@@ -148,12 +148,17 @@ class ValidForm {
 
     limpiarForm() {
         let inputs = this.#form.getElementsByTagName('INPUT');
-
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
                 this.limpiarCampo(input);
             }
+        }
+
+        let selects = this.#form.getElementsByTagName('SELECT');
+        for (let i = 0; i < selects.length; i++) {
+            let select = selects[i];
+            this.limpiarCampo(select);
         }
     }
 
@@ -178,8 +183,10 @@ class ValidForm {
             input.value = '';
         }else if(input.type == 'checkbox' && input.type == 'radio'){
             input.checked = false;
+        }else if(input.type == 'select-one'){
+            input.selectedIndex = 0;
         }else {
-            input.value = ''
+            input.value = '';
         }
     }
 
@@ -233,6 +240,22 @@ class ValidForm {
             }
         }
 
+        let selects = this.#form.getElementsByTagName('SELECT');
+        for (let i = 0; i < selects.length; i++) {
+            let select = selects[i];
+
+            let title = select.id;
+            if(cabeceras[f])
+                title = cabeceras[f];
+
+            if(select.value)
+                data[title] = select.value;
+            else if(conVacios)
+                data[title] = null;
+            
+            f++;
+        }
+
         return data;
     }
 
@@ -283,7 +306,25 @@ class ValidForm {
                     else if(conVacios)
                         formData.append(title, null);
                 }
+
+                f++;
             }
+        }
+
+        let selects = this.#form.getElementsByTagName('SELECT');
+        for (let i = 0; i < selects.length; i++) {
+            let select = selects[i];
+
+            let title = select.id;
+            if(cabeceras[f])
+                title = cabeceras[f];
+
+            if(select.value)
+                formData.append(title, select.value);
+            else if(conVacios)
+                formData.append(title, null);
+            
+            f++;
         }
 
         return formData;
@@ -292,10 +333,9 @@ class ValidForm {
     validarCamposExpert(campos = {}, conMsg = false) {
         let valido = false;
         for (const i in campos) {
-            let input = this.getId(campos[i]);
             valido = this.#validarCampoForm(input, conMsg);
             if(!valido)
-                return input;
+                return this.getId(campos[i]);
         }
 
         return valido;
@@ -313,6 +353,16 @@ class ValidForm {
             }
         }
 
+        if (valido) {
+            let selects = this.#form.getElementsByTagName('SELECT');
+            for (let i = 0; i < selects.length; i++) {
+                let select = selects[i];
+                valido = this.#validarCampoForm(select, conMsg);
+                if(!valido)
+                    return select;
+            }
+        }
+
         return valido;
     }
 
@@ -322,7 +372,7 @@ class ValidForm {
 
     #validarInput(input) {
         const validityState = input.validity;
-        const value = input.value;
+        let value = input.value;
         let valido = true;
 
         switch (input.type) {
@@ -448,16 +498,16 @@ class ValidForm {
                 break;
             case 'color':
                 if (input.getAttribute('different') && (value && value == input.getAttribute('different'))) {
-                    input.setCustomValidity('');
                     input.setCustomValidity('Definir un color diferente a ' + input.getAttribute('different'));
                     valido = false;
                     break;
                 }else if(value && value == '#000000'){
-                    input.setCustomValidity('');
                     input.setCustomValidity('Definir un color diferente');
                     valido = false;
                     break;
                 }
+                break;
+            case 'select-one':
                 break;
             case 'hidden':
                 break;
@@ -467,7 +517,6 @@ class ValidForm {
         }
 
         if (validityState.patternMismatch){
-            input.setCustomValidity('');
             input.setCustomValidity(input.validationMessage +' '+ input.pattern);
             valido = false;
         }
@@ -476,16 +525,15 @@ class ValidForm {
             valido = false;
         else if(input.getAttribute('same')){
             let same = input.parentNode.parentNode.querySelector('#'+ input.getAttribute('same'));
-            const valueSame = same.value;
+            let valueSame = same.value;
             if (value != valueSame) {
-                input.setCustomValidity('');
-                const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
-                if (label)
-                    input.setCustomValidity('El campo no es igual a '+ label.textContent);
-                else
-                    input.setCustomValidity('El campo no es igual a '+ same.id);
-                
                 valido = false;
+                const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
+                let msg = 'El campo no es igual a '+ same.id;
+                if (label)
+                    msg = 'El campo no es igual a '+ label.textContent;
+
+                input.setCustomValidity(msg);
             }
         }
 
@@ -501,17 +549,23 @@ class ValidForm {
             inputReal.name = input.name;
             inputReal.files = input.files;
 
+            function mostrar() {
+                input.setCustomValidity(inputReal.validationMessage);
+                if (conMsg) {
+                    input.reportValidity();
+                    inputReal.setCustomValidity('');
+                }
+
+                input.focus();
+                if (input.type != 'select-one')
+                    input.select();
+            }
+
             if (inputReal.required) {
                 if(inputReal.value){
                     let valido = this.#validarInput(inputReal);
-
                     if(!valido){
-                        if (conMsg) {
-                            input.setCustomValidity(inputReal.validationMessage);
-                            input.reportValidity();
-                        }
-                        input.focus();
-                        input.select();
+                        mostrar();
 
                         if (input.type == 'file') {
                             input.value = '';
@@ -521,19 +575,7 @@ class ValidForm {
 
                     return valido;
                 }else{
-                    if (conMsg) {
-                        inputReal.setCustomValidity('');
-                        input.setCustomValidity(inputReal.validationMessage);
-                        input.reportValidity();
-
-                        const label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                        if (label)
-                            console.warn('No tiene valor el campo '+ label.textContent);
-                        else
-                            console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
-                    }
-                    input.focus();
-                    input.select();
+                    mostrar();
 
                     return false;
                 }
@@ -541,6 +583,7 @@ class ValidForm {
                 return true;
             }
         }else{
+            console.warn('input no existe');
             return false;
         }
     }
@@ -598,16 +641,23 @@ class ValidForm {
         let inputReal = document.getElementById(id);
         if (inputReal) {
             if (inputReal.required) {
+                function mostrar() {
+                    inputReal.setCustomValidity(inputReal.validationMessage);
+                    if (conMsg) {
+                        inputReal.reportValidity();
+                        inputReal.setCustomValidity('');
+                    }
+
+                    inputReal.focus();
+                    if (inputReal.type != 'select-one')
+                        inputReal.select();
+                }
+
                 if(inputReal.value){
                     let valido = this.#validarInput(inputReal);
 
                     if(!valido){
-                        if (conMsg) {
-                            inputReal.setCustomValidity(inputReal.validationMessage);
-                            inputReal.reportValidity();
-                        }
-                        inputReal.focus();
-                        inputReal.select();
+                        mostrar();
 
                         if (inputReal.type == 'file') {
                             inputReal.value = '';
@@ -617,18 +667,7 @@ class ValidForm {
 
                     return valido;
                 }else{
-                    if (conMsg) {
-                        inputReal.setCustomValidity(inputReal.validationMessage);
-                        inputReal.reportValidity();
-
-                        const label = this.#form.querySelectorAll('[for="'+ inputReal.id +'"]')[0];
-                        if (label)
-                            console.warn('No tiene valor el campo '+ label.textContent);
-                        else
-                            console.warn('No tiene valor el campo requerido con ID '+ inputReal.id);
-                    }
-                    inputReal.focus();
-                    inputReal.select();
+                    mostrar();
 
                     return false;
                 }
