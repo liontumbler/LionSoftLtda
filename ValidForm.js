@@ -136,6 +136,29 @@ class ValidForm {
                 this.value = this.value.replace(ValidForm.#number, '').replace(ValidForm.#numberP, '$1.');
             });
         }
+
+        for (const i of this.#form.querySelectorAll('[type="file"]')) {
+            i.addEventListener('change', function (e){
+                if (this.value) {
+                    let file = this.files[(this.files.length -1)];
+                    const arrExten = file.name.split('.');
+                    if(/jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
+                        const image = document.createElement('img');
+                        this.parentNode.append(image);
+
+                        let reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = function(e) {
+                            image.src = e.target.result;
+                        }
+                    }
+                }else{
+                    const img = this.parentNode.getElementsByTagName('IMG')[0];
+                    if(img)
+                        img.remove();
+                }
+            });
+        }
     }
 
     getId(id) {
@@ -177,10 +200,6 @@ class ValidForm {
                 input.value = '#000000';
             }
         }else if (input.type == 'file') {
-            const img = input.parentNode.getElementsByTagName('IMG')[0];
-            if(img)
-                this.#form.removeChild(img);
-            
             input.value = '';
         }else if(input.type == 'checkbox' || input.type == 'radio'){
             input.checked = false;
@@ -478,18 +497,6 @@ class ValidForm {
                                 input.setCustomValidity('El formato requerido es ' + formato);
                                 break;
                             }
-                        }
-                    }
-                    
-                    const arrExten = file.name.split('.');
-                    if(valido && /jpg|jpeg|png|gif/g.test(arrExten[(arrExten.length -1)].toLowerCase())){
-                        const image = document.createElement('img');
-                        input.parentNode.append(image);
-    
-                        let reader = new FileReader();
-                        reader.readAsDataURL(file);
-                        reader.onload = function(e) {
-                            image.src = e.target.result;
                         }
                     }
     
