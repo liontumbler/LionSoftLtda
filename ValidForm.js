@@ -137,6 +137,11 @@ class ValidForm {
             });
         }
 
+        for (const i of this.#form.querySelectorAll('[input="color"]')) {
+            if(i.getAttribute('different'))
+                i.value = i.getAttribute('different');
+        }
+
         if (mostrarImagen) {
             for (const i of this.#form.querySelectorAll('[type="file"]')) {
                 i.addEventListener('change', function (e){
@@ -196,11 +201,10 @@ class ValidForm {
 
     limpiarCampo(input) {
         if(input.type == 'color'){
-            if(input.getAttribute('different')){
+            if(input.getAttribute('different'))
                 input.value = input.getAttribute('different');
-            }else{
+            else
                 input.value = '#000000';
-            }
         }else if (input.type == 'file') {
             const img = input.parentNode.getElementsByTagName('IMG')[0];
             if(img)
