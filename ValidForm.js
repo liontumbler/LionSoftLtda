@@ -202,6 +202,10 @@ class ValidForm {
                 input.value = '#000000';
             }
         }else if (input.type == 'file') {
+            const img = input.parentNode.getElementsByTagName('IMG')[0];
+            if(img)
+                img.remove();
+
             input.value = '';
         }else if(input.type == 'checkbox' || input.type == 'radio'){
             input.checked = false;
