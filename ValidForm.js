@@ -469,11 +469,14 @@ class ValidForm {
                         if(file.size > 0) {
     
                             const arrExten = file.name.split('.');
-                            input.files[i].name = arrExten[0] + '.' + arrExten[(arrExten.length -1)];
-    
                             const accept = input.getAttribute('accept');
-                            if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || !ValidForm.validarCampoFile(arrExten[(arrExten.length -1)].toLowerCase())) {
+                            if ((accept && accept.toLowerCase().indexOf(arrExten[(arrExten.length -1)].toLowerCase()) < 0) || (!accept && !ValidForm.validarCampoFile(arrExten[(arrExten.length -1)].toLowerCase()))) {
                                 valido = false;
+                                let formato = 'jpg | jpeg | png | gif';
+                                if (accept) 
+                                    formato = accept;
+
+                                input.setCustomValidity('El formato requerido es ' + formato);
                                 break;
                             }
                         }
@@ -563,7 +566,9 @@ class ValidForm {
         if(input){
             let inputReal = this.#getId(input.id);
 
-            inputReal.value = input.value;
+            if (input.type != 'file') 
+                inputReal.value = input.value;
+                
             inputReal.checked = input.checked;
             inputReal.name = input.name;
             inputReal.files = input.files;
@@ -581,11 +586,6 @@ class ValidForm {
                     input.focus();
                     if (input.type != 'select-one')
                         input.select();
-
-                    if (input.type == 'file') {
-                        input.value = '';
-                        input.files = [];
-                    }
                 }
 
                 return valido;
