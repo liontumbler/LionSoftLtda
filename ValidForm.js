@@ -137,7 +137,7 @@ class ValidForm {
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="color"]')) {
+        for (const i of this.#form.querySelectorAll('[type="color"]')) {
             if(i.getAttribute('different'))
                 i.value = i.getAttribute('different');
         }
