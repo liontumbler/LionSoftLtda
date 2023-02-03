@@ -216,17 +216,18 @@ class ValidForm {
                         data[title] = 0;
                     }
                 }else if(input.type == 'radio'){
-                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
-                    let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
+                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
 
                     if(cabeceras[f])
                         title = cabeceras[f];
 
-                    if (radioEscogido) 
+                    if (radioEscogido) {
+                        let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
                         data[title] = value;
-                    else if(conVacios)
+                    }else if(conVacios){
                         data[title] = null;
+                    }
                 }else{
                     let title = input.id;
                     if(cabeceras[f])
@@ -303,17 +304,18 @@ class ValidForm {
                         formData.append(title, 0);
                     }
                 }else if(input.type == 'radio'){
-                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked')[0];
-                    let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
+                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
                     
                     if(cabeceras[f])
                         title = cabeceras[f];
 
-                    if (radioEscogido)
+                    if (radioEscogido){
+                        let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
                         formData.append(title, value);
-                    else if(conVacios)
+                    }else if(conVacios){
                         formData.append(title, null);
+                    }
                 }else{
                     let title = input.id;
                     if(cabeceras[f])
