@@ -181,9 +181,8 @@ class ValidForm {
             if(img)
                 this.#form.removeChild(img);
             
-            input.files = []
             input.value = '';
-        }else if(input.type == 'checkbox' && input.type == 'radio'){
+        }else if(input.type == 'checkbox' || input.type == 'radio'){
             input.checked = false;
         }else if(input.type == 'select-one'){
             input.selectedIndex = 0;
@@ -568,7 +567,7 @@ class ValidForm {
 
             if (input.type != 'file') 
                 inputReal.value = input.value;
-                
+
             inputReal.checked = input.checked;
             inputReal.name = input.name;
             inputReal.files = input.files;
