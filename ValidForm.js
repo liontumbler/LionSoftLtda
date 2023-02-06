@@ -14,6 +14,8 @@ class ValidForm {
 
     textErrorInput = 'Input no existe';
 
+    colorDefault = '#000000';
+
     #typeInput = {
         email: 'email',
         url: 'url',
@@ -233,7 +235,7 @@ class ValidForm {
             if(input.getAttribute('different'))
                 input.value = input.getAttribute('different');
             else
-                input.value = '#000000';
+                input.value = this.colorDefault;
         }else if (input.type == this.#typeInput.file) {
             const img = input.parentNode.getElementsByTagName('IMG')[0];
             if(img)
@@ -249,10 +251,9 @@ class ValidForm {
         }
     }
 
-    crearObjetoJson(conVacios = false, cabeceras = []) {
+    crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
         let inputs = this.#form.getElementsByTagName('INPUT');
-        let f = 0;
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -263,8 +264,8 @@ class ValidForm {
                     let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if (input.checked) {
                         value = value == 0 ? 1 : value;
@@ -276,8 +277,8 @@ class ValidForm {
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
 
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if (radioEscogido) {
                         let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
@@ -287,16 +288,14 @@ class ValidForm {
                     }
                 }else{
                     let title = input.id;
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if(input.value)
                         data[title] = input.value;
                     else if(conVacios)
                         data[title] = null;
                 }
-
-                f++;
             }
         }
 
@@ -305,15 +304,13 @@ class ValidForm {
             let select = selects[i];
 
             let title = select.id;
-            if(cabeceras[f])
-                title = cabeceras[f];
+            if(cabeceras[input.id])
+                title = cabeceras[input.id];
 
             if(select.value)
                 data[title] = select.value;
             else if(conVacios)
                 data[title] = null;
-            
-            f++;
         }
 
         let textAreas = this.#form.getElementsByTagName('TEXTAREA');
@@ -321,24 +318,21 @@ class ValidForm {
             let textArea = textAreas[i];
 
             let title = textArea.id;
-            if(cabeceras[f])
-                title = cabeceras[f];
+            if(cabeceras[input.id])
+                title = cabeceras[input.id];
 
             if(textArea.value)
                 data[title] = textArea.value;
             else if(conVacios)
                 data[title] = null;
-            
-            f++;
         }
 
         return data;
     }
 
-    crearFormData(conVacios = false, cabeceras = []) {
+    crearFormData(conVacios = false, cabeceras = {}) {
         let formData = new FormData();
         let inputs = this.#form.getElementsByTagName('INPUT');
-        let f = 0;
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -351,8 +345,8 @@ class ValidForm {
                     let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if (input.checked) {
                         value = value == 0 ? 1 : value;
@@ -364,8 +358,8 @@ class ValidForm {
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
                     
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if (radioEscogido){
                         let value = (radioEscogido.value && radioEscogido.value != 'on') ? radioEscogido.value : 1;
@@ -375,16 +369,14 @@ class ValidForm {
                     }
                 }else{
                     let title = input.id;
-                    if(cabeceras[f])
-                        title = cabeceras[f];
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
 
                     if(input.value)
                         formData.append(title, input.value);
                     else if(conVacios)
                         formData.append(title, null);
                 }
-
-                f++;
             }
         }
 
@@ -393,15 +385,13 @@ class ValidForm {
             let select = selects[i];
 
             let title = select.id;
-            if(cabeceras[f])
-                title = cabeceras[f];
+            if(cabeceras[input.id])
+                title = cabeceras[input.id];
 
             if(select.value)
                 formData.append(title, select.value);
             else if(conVacios)
                 formData.append(title, null);
-            
-            f++;
         }
 
         let textAreas = this.#form.getElementsByTagName('TEXTAREA');
@@ -409,15 +399,13 @@ class ValidForm {
             let textArea = textAreas[i];
 
             let title = textArea.id;
-            if(cabeceras[f])
-                title = cabeceras[f];
+            if(cabeceras[input.id])
+                title = cabeceras[input.id];
 
             if(textArea.value)
                 formData.append(title, textArea.value);
             else if(conVacios)
                 formData.append(title, null);
-            
-            f++;
         }
 
         return formData;
@@ -579,7 +567,7 @@ class ValidForm {
                     if (input.getAttribute('different') && (value == input.getAttribute('different'))) {
                         msg = textColor + ' a ' + input.getAttribute('different');
                         valido = false;
-                    }else if(value == '#000000'){
+                    }else if(value == this.colorDefault){
                         msg = textColor;
                         valido = false;
                     }
