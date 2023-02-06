@@ -560,9 +560,8 @@ class ValidForm {
     
                     break;
                 case this.#typeInput.checkbox:
-                    if (!input.checked) {
+                    if (!input.checked) 
                         valido = false;
-                    }
     
                     break;
                 case this.#typeInput.radio:
@@ -585,9 +584,8 @@ class ValidForm {
                         valido = false;
                     }
     
-                    if (!valido) {
+                    if (!valido)
                         input.setCustomValidity(msg);
-                    }
     
                     break;
                 case this.#typeInput.select:
