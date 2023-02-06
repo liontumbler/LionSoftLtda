@@ -8,6 +8,35 @@ class ValidForm {
     #form = null;
     #mascara = null;
 
+    textFile = 'El formato requerido es ';
+    textColor = 'Definir un color diferente';
+    textSame = 'El campo no es igual a ';
+
+    textErrorInput = 'Input no existe';
+
+    #typeInput = {
+        email: 'email',
+        url: 'url',
+        textarea: 'textarea',
+        password: 'password',
+        search: 'search',
+        tel: 'tel',
+        text: 'text',
+        range: 'range',
+        date: 'date',
+        datetimeLocal: 'datetime-local',
+        month: 'month',
+        time: 'time',
+        week: 'week',
+        number: 'number',
+        file: 'file',
+        checkbox: 'checkbox',
+        radio: 'radio',
+        color: 'color',
+        select: 'select-one',
+        hidden: 'hidden'
+    }
+
     static #alfa = /[^A-Za-zñÑ ]/g;
     static #alfaNS = /[^A-Za-zñÑ]/g;
     static #textNS = /[^0-9A-Za-zñÑ]/g;
@@ -169,7 +198,7 @@ class ValidForm {
     }
 
     getId(id) {
-        return this.#form.querySelectorAll('[id="'+id+'"]')[0];
+        return this.#form.querySelector('#'+ id);
     }
 
     limpiarForm() {
@@ -200,20 +229,20 @@ class ValidForm {
     }
 
     limpiarCampo(input) {
-        if(input.type == 'color'){
+        if(input.type == this.#typeInput.color){
             if(input.getAttribute('different'))
                 input.value = input.getAttribute('different');
             else
                 input.value = '#000000';
-        }else if (input.type == 'file') {
+        }else if (input.type == this.#typeInput.file) {
             const img = input.parentNode.getElementsByTagName('IMG')[0];
             if(img)
                 img.remove();
 
             input.value = '';
-        }else if(input.type == 'checkbox' || input.type == 'radio'){
+        }else if(input.type == this.#typeInput.checkbox || input.type == this.#typeInput.radio){
             input.checked = false;
-        }else if(input.type == 'select-one'){
+        }else if(input.type == this.#typeInput.select){
             input.selectedIndex = 0;
         }else {
             input.value = '';
@@ -418,10 +447,33 @@ class ValidForm {
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
                 valido = this.#validarCampoForm(input);
                 if (conMsg && !valido) {
-                    input.reportValidity();
+                    if (input.type != 'radio' && input.type != 'checkbox') {
+                        let alerta = document.getElementById('alertFor' + input.id);
+                        if (alerta) {
+                            alerta.firstChild.textContent = input.validationMessage;
+                        }else{
+                            let div = document.createElement('div');
+                            let subDiv = document.createElement('div');
+
+                            div.id = 'alertFor' + input.id;
+                            div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;';
+                            subDiv.textContent = '';
+                            subDiv.textContent = input.validationMessage;
+                            div.append(subDiv);
+
+                            input.parentNode.append(div);
+                        }
+                    } else {
+                        input.reportValidity();
+                    }
+                    
                     return input;
                 }else if(!valido){
                     return input.validationMessage;
+                }else{
+                    let alerta = document.getElementById('alertFor' + input.id);
+                    if (alerta) 
+                        alerta.remove();
                 }
             }
         }
@@ -442,7 +494,7 @@ class ValidForm {
     }
 
     #getId(id) {
-        return this.#mascara.querySelectorAll('[id="'+id+'"]')[0];
+        return this.#mascara.querySelector('#'+ id);
     }
 
     #validarInput(input) {
@@ -452,41 +504,41 @@ class ValidForm {
 
         if(value){
             switch (input.type) {
-                case 'email':
+                case this.#typeInput.email:
                     if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
 
                     break;
-                case 'url':
+                case this.#typeInput.url:
                     if(!ValidForm.validarCampoUrl(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
     
                     break;
-                case 'textarea':
-                case 'password':
-                case 'search':
-                case 'tel':
-                case 'text':
+                case this.#typeInput.textarea:
+                case this.#typeInput.password:
+                case this.#typeInput.search:
+                case this.#typeInput.tel:
+                case this.#typeInput.text:
                     if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
     
                     break;
-                case 'range':
-                case 'date':
-                case 'datetime-local':
-                case 'month':
-                case 'time':
-                case 'week':
+                case this.#typeInput.range:
+                case this.#typeInput.date:
+                case this.#typeInput.datetimeLocal:
+                case this.#typeInput.month:
+                case this.#typeInput.time:
+                case this.#typeInput.week:
                     if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch)
                         valido = false;
     
                     break;
-                case 'number':
+                case this.#typeInput.number:
                     if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch)
                         valido = false;
     
                     break;
-                case 'file':
+                case this.#typeInput.file:
                     let file;
                     for (const i in input.files) {
                         file = input.files[i];
@@ -500,20 +552,20 @@ class ValidForm {
                                 if (accept) 
                                     formato = accept;
 
-                                input.setCustomValidity('El formato requerido es ' + formato);
+                                input.setCustomValidity(this.textFile + formato);
                                 break;
                             }
                         }
                     }
     
                     break;
-                case 'checkbox':
+                case this.#typeInput.checkbox:
                     if (!input.checked) {
                         valido = false;
                     }
     
                     break;
-                case 'radio':
+                case this.#typeInput.radio:
                     if(input.name){
                         if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked'))
                             valido = false;
@@ -523,13 +575,13 @@ class ValidForm {
                     }
                     
                     break;
-                case 'color':
+                case this.#typeInput.color:
                     let msg = '';
                     if (input.getAttribute('different') && (value == input.getAttribute('different'))) {
-                        msg = 'Definir un color diferente a ' + input.getAttribute('different');
+                        msg = textColor + ' a ' + input.getAttribute('different');
                         valido = false;
                     }else if(value == '#000000'){
-                        msg = 'Definir un color diferente';
+                        msg = textColor;
                         valido = false;
                     }
     
@@ -538,9 +590,9 @@ class ValidForm {
                     }
     
                     break;
-                case 'select-one':
+                case this.#typeInput.select:
                     break;
-                case 'hidden':
+                case this.#typeInput.hidden:
                     break;
                 default:
                     console.warn('Tipo indefinido');
@@ -558,10 +610,10 @@ class ValidForm {
                 let valueSame = same.value;
                 if (value != valueSame) {
                     valido = false;
-                    const label = this.#mascara.querySelectorAll('[for="'+ same.id +'"]')[0];
-                    let msg = 'El campo no es igual a '+ same.id;
+                    const label = this.#mascara.querySelector('[for="'+ same.id +'"]');
+                    let msg = this.textSame + same.id;
                     if (label)
-                        msg = 'El campo no es igual a '+ label.textContent;
+                        msg = this.textSame + label.textContent;
     
                     input.setCustomValidity(msg);
                 }
@@ -581,13 +633,13 @@ class ValidForm {
 
             inputReal.name = input.name;
 
-            if (input.type != 'file')
+            if (input.type != this.#typeInput.file)
                 inputReal.value = input.value;
 
-            if (input.type == 'file')
+            if (input.type == this.#typeInput.file)
                 inputReal.files = input.files;
 
-            if (input.type == 'checkbox' || input.type == 'radio')
+            if (input.type == this.#typeInput.checkbox || input.type == this.#typeInput.radio)
                 inputReal.checked = input.checked;
 
             if (inputReal.required) {
@@ -596,7 +648,7 @@ class ValidForm {
                 input.setCustomValidity(inputReal.validationMessage);
                 if(!valido){
                     input.focus();
-                    if (input.type != 'select-one')
+                    if (input.type != this.#typeInput.select)
                         input.select();
                 }else if(valido){
                     input.setCustomValidity('');
@@ -607,7 +659,7 @@ class ValidForm {
                 return true;
             }
         }else{
-            console.warn('Input no existe');
+            console.warn(textErrorInput);
             return false;
         }
     }
@@ -673,7 +725,7 @@ class ValidForm {
 
                 if(!valido){
                     inputReal.focus();
-                    if (inputReal.type != 'select-one')
+                    if (inputReal.type != this.#typeInput.select)
                         inputReal.select();
                 }else if(valido){
                     inputReal.setCustomValidity('');
@@ -684,7 +736,7 @@ class ValidForm {
                 return true;
             }
         }else{
-            console.warn('Input no existe');
+            console.warn(textErrorInput);
             return false;
         }
     }
