@@ -397,9 +397,14 @@ class ValidForm {
     validarCamposExpert(campos = {}, conMsg = false) {
         let valido = false;
         for (const i in campos) {
-            valido = this.#validarCampoForm(input, conMsg);
-            if(!valido)
-                return this.getId(campos[i]);
+            valido = this.#validarCampoForm(input);
+            let input = this.getId(campos[i]);
+            if (conMsg && !valido) {
+                input.reportValidity();
+                return input;
+            }else if(!valido){
+                return input.validationMessage;
+            }
         }
 
         return valido;
@@ -679,6 +684,7 @@ class ValidForm {
                 return true;
             }
         }else{
+            console.warn('Input no existe');
             return false;
         }
     }
