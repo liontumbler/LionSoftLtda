@@ -37,6 +37,13 @@ class ValidForm {
         hidden: 'hidden'
     }
 
+    #typeDenegados = {
+        button: 'button',
+        submit: 'submit',
+        reset: 'reset',
+        image: 'image'
+    }
+
     static #alfa = /[^A-Za-zñÑ ]/g;
     static #alfaNS = /[^A-Za-zñÑ]/g;
     static #textNS = /[^0-9A-Za-zñÑ]/g;
@@ -201,26 +208,19 @@ class ValidForm {
         return this.#form.querySelector('#'+ id);
     }
 
-    limpiarForm() {
-        let inputs = this.#form.getElementsByTagName('INPUT');
+    limpiarTagForm(TagName){
+        let inputs = this.#form.getElementsByTagName(TagName);
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
+            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image)
                 this.limpiarCampo(input);
-            }
         }
+    }
 
-        let selects = this.#form.getElementsByTagName('SELECT');
-        for (let i = 0; i < selects.length; i++) {
-            let select = selects[i];
-            this.limpiarCampo(select);
-        }
-
-        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
-        for (let i = 0; i < textAreas.length; i++) {
-            let textArea = textAreas[i];
-            this.limpiarCampo(textArea);
-        }
+    limpiarForm() {
+        this.limpiarTagForm('INPUT');
+        this.limpiarTagForm('SELECT');
+        this.limpiarTagForm('TEXTAREA');
     }
 
     limpiarCampoId(id) {
@@ -256,10 +256,10 @@ class ValidForm {
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
-                if(input.type == 'file' && input.files.length > 0){
+            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+                if(input.type == this.#typeInput.file && input.files.length > 0){
                     data['files'] = input.files;
-                }else if(input.type == 'checkbox'){
+                }else if(input.type == this.#typeInput.checkbox){
                     let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
@@ -272,7 +272,7 @@ class ValidForm {
                     }else{
                         data[title] = 0;
                     }
-                }else if(input.type == 'radio'){
+                }else if(input.type == this.#typeInput.radio){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
 
@@ -342,12 +342,12 @@ class ValidForm {
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
-                if(input.type == 'file' && input.files.length > 0){
+            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+                if(input.type == this.#typeInput.file && input.files.length > 0){
                     for (const i in input.files.length) {
                         formData.append(input.id + '[]', input.files[i]);
                     }
-                }else if(input.type == 'checkbox'){
+                }else if(input.type == this.#typeInput.checkbox){
                     let value = (input.value && input.value != 'on') ? input.value : 0;
                     let title = input.id;
 
@@ -360,7 +360,7 @@ class ValidForm {
                     }else{
                         formData.append(title, 0);
                     }
-                }else if(input.type == 'radio'){
+                }else if(input.type == this.#typeInput.radio){
                     let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
                     let title = input.name;
                     
@@ -444,10 +444,10 @@ class ValidForm {
         let valido = false;
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
+            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 valido = this.#validarCampoForm(input);
                 if (conMsg && !valido) {
-                    if (input.type != 'radio' && input.type != 'checkbox') {
+                    if (input.type != this.#typeInput.radio && input.type != this.#typeInput.checkbox) {
                         let alerta = document.getElementById('alertFor' + input.id);
                         if (alerta) {
                             alerta.firstChild.textContent = input.validationMessage;
