@@ -405,37 +405,33 @@ class ValidForm {
         return valido;
     }
 
-    validarCampos(conMsg = true) {
-        let inputs = this.#form.getElementsByTagName('INPUT');
+    validarTagCampos(TagName, conMsg) {
+        let inputs = this.#form.getElementsByTagName(TagName);
         let valido = false;
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if(input.type != 'button' && input.type != 'submit' && input.type != 'reset' && input.type != 'image'){
-                valido = this.#validarCampoForm(input, conMsg);
-                if(!valido)
+                valido = this.#validarCampoForm(input);
+                if (conMsg && !valido) {
+                    input.reportValidity();
                     return input;
+                }else if(!valido){
+                    return input.validationMessage;
+                }
             }
         }
 
-        if (valido) {
-            let selects = this.#form.getElementsByTagName('SELECT');
-            for (let i = 0; i < selects.length; i++) {
-                let select = selects[i];
-                valido = this.#validarCampoForm(select, conMsg);
-                if(!valido)
-                    return select;
-            }
-        }
+        return valido;
+    }
 
-        if (valido) {
-            let textAreas = this.#form.getElementsByTagName('TEXTAREA');
-            for (let i = 0; i < textAreas.length; i++) {
-                let textArea = textAreas[i];
-                valido = this.#validarCampoForm(textArea, conMsg);
-                if(!valido)
-                    return textArea;
-            }
-        }
+    validarCampos(conMsg = true) {
+        let valido = this.validarTagCampos('INPUT', conMsg);
+
+        if (valido == true) 
+            valido = this.validarTagCampos('SELECT', conMsg);
+        
+        if (valido == true) 
+            valido = this.validarTagCampos('TEXTAREA', conMsg);
 
         return valido;
     }
@@ -452,15 +448,13 @@ class ValidForm {
         if(value){
             switch (input.type) {
                 case 'email':
-                    if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
-                    }
 
                     break;
                 case 'url':
-                    if(!ValidForm.validarCampoUrl(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))){
+                    if(!ValidForm.validarCampoUrl(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
-                    }
     
                     break;
                 case 'textarea':
@@ -468,9 +462,8 @@ class ValidForm {
                 case 'search':
                 case 'tel':
                 case 'text':
-                    if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength'))) {
+                    if (!ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
-                    }
     
                     break;
                 case 'range':
@@ -479,15 +472,13 @@ class ValidForm {
                 case 'month':
                 case 'time':
                 case 'week':
-                    if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch) {
+                    if (validityState.rangeOverflow || validityState.rangeUnderflow || validityState.stepMismatch)
                         valido = false;
-                    }
     
                     break;
                 case 'number':
-                    if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch){
+                    if(!ValidForm.validarMaxMin(value, input.getAttribute('max'), input.getAttribute('min')) || validityState.stepMismatch)
                         valido = false;
-                    }
     
                     break;
                 case 'file':
@@ -552,6 +543,7 @@ class ValidForm {
             }
     
             if (validityState.patternMismatch){
+                input.setCustomValidity('');
                 input.setCustomValidity(input.validationMessage +' '+ input.pattern);
                 valido = false;
             }
@@ -578,30 +570,31 @@ class ValidForm {
         return valido;
     }
 
-    #validarCampoForm(input, conMsg = true){
+    #validarCampoForm(input){
         if(input){
             let inputReal = this.#getId(input.id);
 
-            if (input.type != 'file') 
+            inputReal.name = input.name;
+
+            if (input.type != 'file')
                 inputReal.value = input.value;
 
-            inputReal.checked = input.checked;
-            inputReal.name = input.name;
-            inputReal.files = input.files;
+            if (input.type == 'file')
+                inputReal.files = input.files;
+
+            if (input.type == 'checkbox' || input.type == 'radio')
+                inputReal.checked = input.checked;
 
             if (inputReal.required) {
                 let valido = this.#validarInput(inputReal);
 
                 input.setCustomValidity(inputReal.validationMessage);
                 if(!valido){
-                    if (conMsg) {
-                        input.reportValidity();
-                        inputReal.setCustomValidity('');
-                    }
-
                     input.focus();
                     if (input.type != 'select-one')
                         input.select();
+                }else if(valido){
+                    input.setCustomValidity('');
                 }
 
                 return valido;
@@ -667,40 +660,21 @@ class ValidForm {
         return valido;
     }
 
-    static validarCampo(id, conMsg = true){
+    static validarCampo(id){
         let inputReal = document.getElementById(id);
         if (inputReal) {
             if (inputReal.required) {
-                function mostrar() {
-                    inputReal.setCustomValidity(inputReal.validationMessage);
-                    if (conMsg) {
-                        inputReal.reportValidity();
-                        inputReal.setCustomValidity('');
-                    }
+                let valido = this.#validarInput(inputReal);
 
+                if(!valido){
                     inputReal.focus();
                     if (inputReal.type != 'select-one')
                         inputReal.select();
+                }else if(valido){
+                    inputReal.setCustomValidity('');
                 }
 
-                if(inputReal.value){
-                    let valido = this.#validarInput(inputReal);
-
-                    if(!valido){
-                        mostrar();
-
-                        if (inputReal.type == 'file') {
-                            inputReal.value = '';
-                            inputReal.files = [];
-                        }
-                    }
-
-                    return valido;
-                }else{
-                    mostrar();
-
-                    return false;
-                }
+                return valido;
             }else{
                 return true;
             }
@@ -723,14 +697,12 @@ class ValidForm {
 
             if (Array.isArray(data)) {
                 for (const i in data) {
-                    let option = document.createElement("option");
+                    let option = new Option(data[i], data[i]);
                     console.log(data, i, data[i]);
-                    option.setAttribute("value", data[i]);
                     list.append(option);
                 }
             }else{
-                let option = document.createElement("option");
-                option.setAttribute("value", data);
+                let option = new Option(data, data);
                 list.append(option);
             }
         } else {

@@ -81,7 +81,7 @@ document.getElementById('clicktest').addEventListener('click', function(e) {
     console.log(testVal.validarCampos());
     console.log(testVal.crearObjetoJson());
     console.log(testVal.crearFormData());
-    testVal.limpiarForm();
+    //testVal.limpiarForm();
 });
 
 
