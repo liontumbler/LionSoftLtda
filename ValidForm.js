@@ -714,7 +714,7 @@ class ValidForm {
                 return true;
             }
         }else{
-            console.warn(textErrorInput);
+            console.warn(this.textErrorInput);
             return false;
         }
     }
@@ -791,7 +791,7 @@ class ValidForm {
                 return true;
             }
         }else{
-            console.warn(textErrorInput);
+            console.warn(this.textErrorInput);
             return false;
         }
     }
