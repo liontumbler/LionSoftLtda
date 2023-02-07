@@ -8,14 +8,18 @@ class ValidForm {
     #form = null;
     #mascara = null;
 
-    textFile = 'El formato requerido es ';
-    textColor = 'Definir un color diferente';
-    textSame = 'El campo no es igual a ';
+    textFile = 'El formato requerido es $%%';
+    textColor = 'Definir un color diferente a $%%';
+    textSame = 'El campo no es igual a $%%';
 
     textErrorInput = 'Input no existe';
+    textWarRadio = 'El radio botón requerido no tiene un atributo "name" asociado';
 
-    colorDefault = '#000000';
+    validaRadio = 'input[name="$%%"]:checked';
+    type = '[type="$%%"]';
 
+    #colorDefault = '#000000';
+    
     #typeInput = {
         email: 'email',
         url: 'url',
@@ -37,14 +41,20 @@ class ValidForm {
         color: 'color',
         select: 'select-one',
         hidden: 'hidden'
-    }
+    };
 
     #typeDenegados = {
         button: 'button',
         submit: 'submit',
         reset: 'reset',
         image: 'image'
-    }
+    };
+
+    #tagPermitidos = {
+        input: 'INPUT',
+        select: 'SELECT',
+        textArea: 'TEXTAREA'
+    };
 
     static #alfa = /[^A-Za-zñÑ ]/g;
     static #alfaNS = /[^A-Za-zñÑ]/g;
@@ -80,10 +90,10 @@ class ValidForm {
             padding-right: 7px;
             padding-left: 7px;
         }
-        .pw [type="password"]{
+        .pw `+this.type.replace('$%%', 'password')+`{
             padding-right: `+ paddingRight +`;
         }
-        .pw [type="text"]{
+        .pw `+this.type.replace('$%%', 'text')+`{
             padding-right: `+ paddingRight +`;
         }
         .pw{
@@ -198,13 +208,13 @@ class ValidForm {
             this.#quitarEventCut(i);
         }
 
-        for (const i of this.#form.querySelectorAll('[type="color"]')) {
+        for (const i of this.#form.querySelectorAll(this.type.replace('$%%', this.#typeInput.color))) {
             if(i.getAttribute('different'))
                 i.value = i.getAttribute('different');
         }
 
         if (mostrarImagen) {
-            for (const i of this.#form.querySelectorAll('[type="file"]')) {
+            for (const i of this.#form.querySelectorAll(this.type.replace('$%%', this.#typeInput.file))) {
                 i.addEventListener('change', function (e){
                     if (this.value) {
                         let file = this.files[(this.files.length -1)];
@@ -243,9 +253,9 @@ class ValidForm {
     }
 
     limpiarForm() {
-        this.limpiarTagForm('INPUT');
-        this.limpiarTagForm('SELECT');
-        this.limpiarTagForm('TEXTAREA');
+        this.limpiarTagForm(this.#tagPermitidos.input);
+        this.limpiarTagForm(this.#tagPermitidos.select);
+        this.limpiarTagForm(this.#tagPermitidos.textArea);
     }
 
     limpiarCampoId(id) {
@@ -258,7 +268,7 @@ class ValidForm {
             if(input.getAttribute('different'))
                 input.value = input.getAttribute('different');
             else
-                input.value = this.colorDefault;
+                input.value = this.#colorDefault;
         }else if (input.type == this.#typeInput.file) {
             const img = input.parentNode.getElementsByTagName('IMG')[0];
             if(img)
@@ -276,7 +286,7 @@ class ValidForm {
 
     crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
-        let inputs = this.#form.getElementsByTagName('INPUT');
+        let inputs = this.#form.getElementsByTagName(this.#tagPermitidos.input);
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -297,7 +307,7 @@ class ValidForm {
                         data[title] = 0;
                     }
                 }else if(input.type == this.#typeInput.radio){
-                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
+                    let radioEscogido = this.#form.querySelector(this.validaRadio.replace('$%%', input.name));
                     let title = input.name;
 
                     if(cabeceras[input.id])
@@ -322,7 +332,7 @@ class ValidForm {
             }
         }
 
-        let selects = this.#form.getElementsByTagName('SELECT');
+        let selects = this.#form.getElementsByTagName(this.#tagPermitidos.select);
         for (let i = 0; i < selects.length; i++) {
             let select = selects[i];
 
@@ -336,7 +346,7 @@ class ValidForm {
                 data[title] = null;
         }
 
-        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+        let textAreas = this.#form.getElementsByTagName(this.#tagPermitidos.textArea);
         for (let i = 0; i < textAreas.length; i++) {
             let textArea = textAreas[i];
 
@@ -355,7 +365,7 @@ class ValidForm {
 
     crearFormData(conVacios = false, cabeceras = {}) {
         let formData = new FormData();
-        let inputs = this.#form.getElementsByTagName('INPUT');
+        let inputs = this.#form.getElementsByTagName(this.#tagPermitidos.input);
 
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
@@ -378,7 +388,7 @@ class ValidForm {
                         formData.append(title, 0);
                     }
                 }else if(input.type == this.#typeInput.radio){
-                    let radioEscogido = this.#form.querySelector('input[name="' + input.name + '"]:checked');
+                    let radioEscogido = this.#form.querySelector(this.validaRadio.replace('$%%', input.name));
                     let title = input.name;
                     
                     if(cabeceras[input.id])
@@ -403,7 +413,7 @@ class ValidForm {
             }
         }
 
-        let selects = this.#form.getElementsByTagName('SELECT');
+        let selects = this.#form.getElementsByTagName(this.#tagPermitidos.select);
         for (let i = 0; i < selects.length; i++) {
             let select = selects[i];
 
@@ -417,7 +427,7 @@ class ValidForm {
                 formData.append(title, null);
         }
 
-        let textAreas = this.#form.getElementsByTagName('TEXTAREA');
+        let textAreas = this.#form.getElementsByTagName(this.#tagPermitidos.textArea);
         for (let i = 0; i < textAreas.length; i++) {
             let textArea = textAreas[i];
 
@@ -493,13 +503,13 @@ class ValidForm {
     }
 
     validarCampos(conMsg = true) {
-        let valido = this.validarTagCampos('INPUT', conMsg);
+        let valido = this.validarTagCampos(this.#tagPermitidos.input, conMsg);
 
         if (valido == true) 
-            valido = this.validarTagCampos('SELECT', conMsg);
+            valido = this.validarTagCampos(this.#tagPermitidos.select, conMsg);
         
         if (valido == true) 
-            valido = this.validarTagCampos('TEXTAREA', conMsg);
+            valido = this.validarTagCampos(this.#tagPermitidos.textArea, conMsg);
 
         return valido;
     }
@@ -599,7 +609,7 @@ class ValidForm {
                                 if (accept) 
                                     formato = accept;
 
-                                input.setCustomValidity(this.textFile + formato);
+                                input.setCustomValidity(this.textFile.replace('$%%', formato));
                                 break;
                             }
                         }
@@ -613,10 +623,10 @@ class ValidForm {
                     break;
                 case this.#typeInput.radio:
                     if(input.name){
-                        if (!input.parentNode.parentNode.querySelector('input[name="' + input.name + '"]:checked'))
+                        if (!input.parentNode.parentNode.querySelector(this.validaRadio.replace('$%%', input.name)))
                             valido = false;
                     }else{
-                        console.warn('El radio botón requerido no tiene un atributo "name" asociado');
+                        console.warn(this.textWarRadio);
                         valido = false;
                     }
                     
@@ -624,10 +634,10 @@ class ValidForm {
                 case this.#typeInput.color:
                     let msg = '';
                     if (input.getAttribute('different') && (value == input.getAttribute('different'))) {
-                        msg = textColor + ' a ' + input.getAttribute('different');
+                        msg = this.textColor.replace('$%%', input.getAttribute('different'));
                         valido = false;
-                    }else if(value == this.colorDefault){
-                        msg = textColor;
+                    }else if(value == this.#colorDefault){
+                        msg = this.textColor.replace('$%%', this.#colorDefault);
                         valido = false;
                     }
     
@@ -656,9 +666,9 @@ class ValidForm {
                 if (value != valueSame) {
                     valido = false;
                     const label = this.#mascara.querySelector('[for="'+ same.id +'"]');
-                    let msg = this.textSame + same.id;
+                    let msg = this.textSame.replace('$%%', same.id);
                     if (label)
-                        msg = this.textSame + label.textContent;
+                        msg = this.textSame.replace('$%%', label.textContent);
     
                     input.setCustomValidity(msg);
                 }
@@ -787,7 +797,7 @@ class ValidForm {
     }
 
     static addList(input, data) {
-        if(input.tagName == 'INPUT') {
+        if(input.tagName == this.#tagPermitidos.input) {
             if (!input.getAttribute('list'))
                 input.setAttribute('list', input.id +'List');
 
