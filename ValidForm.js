@@ -175,6 +175,29 @@ class ValidForm {
             });
         }
 
+        for (const i of document.querySelectorAll('[noCopy]')) {
+            this.#quitarEventCopy(i);
+        }
+
+        for (const i of document.querySelectorAll('[noPaste]')) {
+            this.#quitarEventPaste(i);
+        }
+
+        for (const i of document.querySelectorAll('[noCut]')) {
+            this.#quitarEventCut(i);
+        }
+
+        for (const i of document.querySelectorAll('[noDrag]')) {
+            this.#quitarEventDrag(i);
+        }
+
+        for (const i of document.querySelectorAll('[protected]')) {
+            this.#quitarEventDrag(i);
+            this.#quitarEventCopy(i);
+            this.#quitarEventPaste(i);
+            this.#quitarEventCut(i);
+        }
+
         for (const i of this.#form.querySelectorAll('[type="color"]')) {
             if(i.getAttribute('different'))
                 i.value = i.getAttribute('different');
@@ -304,8 +327,8 @@ class ValidForm {
             let select = selects[i];
 
             let title = select.id;
-            if(cabeceras[input.id])
-                title = cabeceras[input.id];
+            if(cabeceras[select.id])
+                title = cabeceras[select.id];
 
             if(select.value)
                 data[title] = select.value;
@@ -318,8 +341,8 @@ class ValidForm {
             let textArea = textAreas[i];
 
             let title = textArea.id;
-            if(cabeceras[input.id])
-                title = cabeceras[input.id];
+            if(cabeceras[textArea.id])
+                title = cabeceras[textArea.id];
 
             if(textArea.value)
                 data[title] = textArea.value;
@@ -385,8 +408,8 @@ class ValidForm {
             let select = selects[i];
 
             let title = select.id;
-            if(cabeceras[input.id])
-                title = cabeceras[input.id];
+            if(cabeceras[select.id])
+                title = cabeceras[select.id];
 
             if(select.value)
                 formData.append(title, select.value);
@@ -399,8 +422,8 @@ class ValidForm {
             let textArea = textAreas[i];
 
             let title = textArea.id;
-            if(cabeceras[input.id])
-                title = cabeceras[input.id];
+            if(cabeceras[textArea.id])
+                title = cabeceras[textArea.id];
 
             if(textArea.value)
                 formData.append(title, textArea.value);
@@ -483,6 +506,42 @@ class ValidForm {
 
     #getId(id) {
         return this.#mascara.querySelector('#'+ id);
+    }
+
+    #quitarEventDrag(input) {
+        input.addEventListener('dragover', function (e){
+            e.preventDefault();
+        });
+        input.addEventListener('dragstart', function (e){
+            e.preventDefault();
+        });
+        input.addEventListener('drop', function (e){
+            e.preventDefault();
+        });
+        input.addEventListener('drag', function (e){
+            e.preventDefault();
+        });
+        input.addEventListener('dragend', function (e){
+            e.preventDefault();
+        });
+    }
+
+    #quitarEventCopy(input) {
+        input.addEventListener('copy', function (e){
+            e.preventDefault();
+        });
+    }
+
+    #quitarEventPaste(input) {
+        input.addEventListener('paste', function (e){
+            e.preventDefault();
+        });
+    }
+
+    #quitarEventCut(input) {
+        input.addEventListener('cut', function (e){
+            e.preventDefault();
+        });
     }
 
     #validarInput(input) {

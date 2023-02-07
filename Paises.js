@@ -16853,7 +16853,7 @@ class Paises {
             }
         }
 
-        return paises;
+        return paises.sort();
     }
 
     obtenerPaisesXcontinente(continente) {
@@ -16884,7 +16884,7 @@ class Paises {
                 ciudades.push(i);
             }
 
-            return ciudades;
+            return ciudades.sort();
         } catch (error) {
             for (const i in this.#paises) {
                 if (this.normalizarText(i).indexOf(this.normalizarText(pais)) >= 0) {
