@@ -243,19 +243,11 @@ class ValidForm {
         return this.#form.querySelector('#'+ id);
     }
 
-    limpiarTagForm(TagName){
-        let inputs = this.#form.getElementsByTagName(TagName);
-        for (let i = 0; i < inputs.length; i++) {
-            let input = inputs[i];
+    limpiarForm() {
+        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image)
                 this.limpiarCampo(input);
         }
-    }
-
-    limpiarForm() {
-        this.limpiarTagForm(this.#tagPermitidos.input);
-        this.limpiarTagForm(this.#tagPermitidos.select);
-        this.limpiarTagForm(this.#tagPermitidos.textArea);
     }
 
     limpiarCampoId(id) {
@@ -286,10 +278,7 @@ class ValidForm {
 
     crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
-        let inputs = this.#form.getElementsByTagName(this.#tagPermitidos.input);
-
-        for (let i = 0; i < inputs.length; i++) {
-            let input = inputs[i];
+        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     data['files'] = input.files;
@@ -332,43 +321,12 @@ class ValidForm {
             }
         }
 
-        let selects = this.#form.getElementsByTagName(this.#tagPermitidos.select);
-        for (let i = 0; i < selects.length; i++) {
-            let select = selects[i];
-
-            let title = select.id;
-            if(cabeceras[select.id])
-                title = cabeceras[select.id];
-
-            if(select.value)
-                data[title] = select.value;
-            else if(conVacios)
-                data[title] = null;
-        }
-
-        let textAreas = this.#form.getElementsByTagName(this.#tagPermitidos.textArea);
-        for (let i = 0; i < textAreas.length; i++) {
-            let textArea = textAreas[i];
-
-            let title = textArea.id;
-            if(cabeceras[textArea.id])
-                title = cabeceras[textArea.id];
-
-            if(textArea.value)
-                data[title] = textArea.value;
-            else if(conVacios)
-                data[title] = null;
-        }
-
         return data;
     }
 
     crearFormData(conVacios = false, cabeceras = {}) {
         let formData = new FormData();
-        let inputs = this.#form.getElementsByTagName(this.#tagPermitidos.input);
-
-        for (let i = 0; i < inputs.length; i++) {
-            let input = inputs[i];
+        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     for (const i in input.files.length) {
@@ -413,89 +371,23 @@ class ValidForm {
             }
         }
 
-        let selects = this.#form.getElementsByTagName(this.#tagPermitidos.select);
-        for (let i = 0; i < selects.length; i++) {
-            let select = selects[i];
-
-            let title = select.id;
-            if(cabeceras[select.id])
-                title = cabeceras[select.id];
-
-            if(select.value)
-                formData.append(title, select.value);
-            else if(conVacios)
-                formData.append(title, null);
-        }
-
-        let textAreas = this.#form.getElementsByTagName(this.#tagPermitidos.textArea);
-        for (let i = 0; i < textAreas.length; i++) {
-            let textArea = textAreas[i];
-
-            let title = textArea.id;
-            if(cabeceras[textArea.id])
-                title = cabeceras[textArea.id];
-
-            if(textArea.value)
-                formData.append(title, textArea.value);
-            else if(conVacios)
-                formData.append(title, null);
-        }
-
         return formData;
     }
 
     validarCamposExpert(campos = {}, conMsg = false) {
         let valido = false;
         for (const i in campos) {
-            valido = this.#validarCampoForm(input);
             let input = this.getId(campos[i]);
-            if (conMsg && !valido) {
-                input.reportValidity();
-                return input;
-            }else if(!valido){
-                return input.validationMessage;
-            }
-        }
-
-        return valido;
-    }
-
-    validarTagCampos(TagName, conMsg) {
-        let inputs = this.#form.getElementsByTagName(TagName);
-        let valido = false;
-        for (let i = 0; i < inputs.length; i++) {
-            let input = inputs[i];
-            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+            if(input){
                 valido = this.#validarCampoForm(input);
                 if (conMsg && !valido) {
-                    if (input.type != this.#typeInput.radio && input.type != this.#typeInput.checkbox) {
-                        let alerta = document.getElementById('alertFor' + input.id);
-                        if (alerta) {
-                            alerta.firstChild.textContent = input.validationMessage;
-                        }else{
-                            let div = document.createElement('div');
-                            let subDiv = document.createElement('div');
-
-                            div.id = 'alertFor' + input.id;
-                            div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;';
-                            subDiv.textContent = '';
-                            subDiv.textContent = input.validationMessage;
-                            div.append(subDiv);
-
-                            input.parentNode.append(div);
-                        }
-                    } else {
-                        input.reportValidity();
-                    }
-                    
+                    input.reportValidity();
                     return input;
                 }else if(!valido){
                     return input.validationMessage;
-                }else{
-                    let alerta = document.getElementById('alertFor' + input.id);
-                    if (alerta) 
-                        alerta.remove();
                 }
+            } else {
+                return 'El input no tiene id';
             }
         }
 
@@ -503,13 +395,45 @@ class ValidForm {
     }
 
     validarCampos(conMsg = true) {
-        let valido = this.validarTagCampos(this.#tagPermitidos.input, conMsg);
+        let valido = false;
+        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
+            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+                if (input.id) {
+                    valido = this.#validarCampoForm(input);
+                    if (conMsg && !valido) {
+                        if (input.type != this.#typeInput.radio && input.type != this.#typeInput.checkbox) {
+                            let alerta = document.getElementById('alertFor' + input.id);
+                            if (alerta) {
+                                alerta.firstChild.textContent = input.validationMessage;
+                            }else{
+                                let div = document.createElement('div');
+                                let subDiv = document.createElement('div');
 
-        if (valido == true) 
-            valido = this.validarTagCampos(this.#tagPermitidos.select, conMsg);
-        
-        if (valido == true) 
-            valido = this.validarTagCampos(this.#tagPermitidos.textArea, conMsg);
+                                div.id = 'alertFor' + input.id;
+                                div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;';
+                                subDiv.textContent = '';
+                                subDiv.textContent = input.validationMessage;
+                                div.append(subDiv);
+
+                                input.parentNode.append(div);
+                            }
+                        } else {
+                            input.reportValidity();
+                        }
+                        
+                        return input;
+                    }else if(!valido){
+                        return input.validationMessage;
+                    }else{
+                        let alerta = document.getElementById('alertFor' + input.id);
+                        if (alerta) 
+                            alerta.remove();
+                    }
+                } else {
+                    return 'El input no tiene id';
+                }
+            }
+        }
 
         return valido;
     }
@@ -685,33 +609,37 @@ class ValidForm {
     #validarCampoForm(input){
         if(input){
             let inputReal = this.#getId(input.id);
+            if(inputReal){
+                inputReal.name = input.name;
 
-            inputReal.name = input.name;
+                if (input.type != this.#typeInput.file)
+                    inputReal.value = input.value;
 
-            if (input.type != this.#typeInput.file)
-                inputReal.value = input.value;
+                if (input.type == this.#typeInput.file)
+                    inputReal.files = input.files;
 
-            if (input.type == this.#typeInput.file)
-                inputReal.files = input.files;
+                if (input.type == this.#typeInput.checkbox || input.type == this.#typeInput.radio)
+                    inputReal.checked = input.checked;
 
-            if (input.type == this.#typeInput.checkbox || input.type == this.#typeInput.radio)
-                inputReal.checked = input.checked;
+                if (inputReal.required) {
+                    let valido = this.#validarInput(inputReal);
 
-            if (inputReal.required) {
-                let valido = this.#validarInput(inputReal);
+                    input.setCustomValidity(inputReal.validationMessage);
+                    if(!valido){
+                        input.focus();
+                        if (input.type != this.#typeInput.select)
+                            input.select();
+                    }else if(valido){
+                        input.setCustomValidity('');
+                    }
 
-                input.setCustomValidity(inputReal.validationMessage);
-                if(!valido){
-                    input.focus();
-                    if (input.type != this.#typeInput.select)
-                        input.select();
-                }else if(valido){
-                    input.setCustomValidity('');
+                    return valido;
+                }else{
+                    return true;
                 }
-
-                return valido;
             }else{
-                return true;
+                console.warn('El formulario tiene un campo inyectado');
+                return false;
             }
         }else{
             console.warn(this.textErrorInput);
