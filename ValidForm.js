@@ -768,6 +768,22 @@ class TypeFirma {
 
     input;
     formatoImage = 'image/png';
+    iconoBtnEliminar = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+    </svg>`;
+    fontFirma = '24px "Tahoma"';
+    margirText = 10;
+    anchoPincel = 3;
+    anchoGuias = 5;
+
+    colorPincel = '#413a3a';
+    colorGuiaS = '#f1f3f4';
+    colorGuiaI = '#000';
+
+    warFirma = 'Esta vacia la firma';
+
+    msgCanvas = 'No tienes un buen navegador.';
     
     constructor(input) {
         this.input = input;
@@ -784,7 +800,7 @@ class TypeFirma {
         this.canvasP.style.cssText = 'border: 2px dashed #CCCCCC; border-radius: 5px; cursor: crosshair; position: absolute;';
         this.canvasP.width = 620;
         this.canvasP.height = 200;
-        this.canvasP.textContent = 'No tienes un buen navegador.';
+        this.canvasP.textContent = this.msgCanvas;
         this.canvasP.id = this.input.id + 'Canvas';
         this.canvasP.setAttribute('tabindex', '0');
 
@@ -801,10 +817,7 @@ class TypeFirma {
     
         let button = document.createElement('button');
         button.style.cssText = 'display: block; margin-bottom: 5px; border-radius: 5px; padding: 5px 10px; color: #fff; background-color: #dc3545; border-color: #dc3545;';
-        button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                    </svg>`;
+        button.innerHTML = this.iconoBtnEliminar;
         button.id = 'limpiar' + this.input.id;
 
         this.input.parentNode.append(this.canvasP);
@@ -812,57 +825,37 @@ class TypeFirma {
         this.input.parentNode.append(button);
 
         this.canvasP.addEventListener("mousedown", (e) => {
-            this.#dibujar = true;
-            this.#ultimaPosMouse = this.#getPosicionPuntero(e);
+            this.#empezarDibujo(e);
             this.#pintarTrazos();
         }, false);
     
         this.canvasP.addEventListener("mousemove", (e) => {
-            this.#mousePos = this.#getPosicionPuntero(e);
-            this.#pintarTrazos();
+            this.#pintar(e);
         }, false);
 
         this.canvasP.addEventListener("mouseup", (e) => {
-            if (this.#dibujar)
-                this.input.value = this.#obtenerFirma();
-    
-            this.#dibujar = false;
-            this.#pintarTrazos();
+            this.#terminarDibujo();
         }, false);
 
         this.canvasP.addEventListener("mouseleave", (e) => {
-            if (this.#dibujar)
-                this.input.value = this.#obtenerFirma();
-    
-            this.#dibujar = false;
-            this.#pintarTrazos();
+            this.#terminarDibujo();
         }, false);
 
         this.canvasP.addEventListener("touchstart", (e) => {
             e.preventDefault();
-            this.#dibujar = true;
-            this.#ultimaPosMouse = this.#getPosicionPuntero(e);
+            this.#empezarDibujo(e);
         }, false);
     
         this.canvasP.addEventListener("touchmove", (e) => {
-            this.#mousePos = this.#getPosicionPuntero(e);
-            this.#pintarTrazos();
+            this.#pintar(e);
         }, false);
     
         this.canvasP.addEventListener("touchend", (e) => {
-            if (this.#dibujar)
-                this.input.value = this.#obtenerFirma();
-    
-            this.#dibujar = false;
-            this.#pintarTrazos();
+            this.#terminarDibujo();
         }, false);
     
         this.canvasP.addEventListener("touchleave", (e) => {
-            if (this.#dibujar)
-                this.input.value = this.#obtenerFirma();
-    
-            this.#dibujar = false;
-            this.#pintarTrazos();
+            this.#terminarDibujo();
         }, false);
 
         button.addEventListener("click", (e) => {
@@ -873,14 +866,14 @@ class TypeFirma {
             this.canvasP.width = this.canvasP.width;
 
             let titleY = 167;
-            this.ctxP.font = '24px "Tahoma"';
-            this.ctxP.fillText('  ' + text, 10, titleY);
+            this.ctxP.font = this.fontFirma;
+            this.ctxP.fillText('  ' + text, this.margirText, titleY);
             this.ctxP.stroke();
     
             if (text2) {
                 titleY += 21;
-                this.ctxP.font = '24px "Tahoma"';
-                this.ctxP.fillText('   ' + text2, 10, titleY);
+                this.ctxP.font = this.fontFirma;
+                this.ctxP.fillText('   ' + text2, this.margirText, titleY);
                 this.ctxP.stroke();
             }
     
@@ -903,11 +896,29 @@ class TypeFirma {
         };
     }
 
+    #pintar(e){
+        this.#mousePos = this.#getPosicionPuntero(e);
+        this.#pintarTrazos();
+    }
+
+    #empezarDibujo(e){
+        this.#dibujar = true;
+        this.#ultimaPosMouse = this.#getPosicionPuntero(e);
+    }
+
+    #terminarDibujo() {
+        if (this.#dibujar)
+            this.input.value = this.#obtenerFirma();
+
+        this.#dibujar = false;
+        this.#pintarTrazos();
+    }
+
     #pintarTrazos() {
         if (this.#dibujar) {
             this.ctxP.beginPath();
-            this.ctxP.strokeStyle = '#413a3a';
-            this.ctxP.lineWidth = 3;
+            this.ctxP.strokeStyle = this.colorPincel;
+            this.ctxP.lineWidth = this.anchoPincel;
             this.ctxP.lineCap = "round";
             this.ctxP.moveTo(this.#ultimaPosMouse.x, this.#ultimaPosMouse.y);
             this.ctxP.lineTo(this.#mousePos.x, this.#mousePos.y);
@@ -947,17 +958,17 @@ class TypeFirma {
     #obtenerFirma() {
         if (this.#firmaValida()) {
             this.#crearLineaGuiaNegra(this.ctxP);
-            return this.canvasP.toDataURL(formatoImage, 1);
+            return this.canvasP.toDataURL(this.formatoImage, 1);
         } else {
-            console.warn('Esta vacia la firma');
+            console.warn(this.warFirma);
             return null;
         }
     }
 
     #crearLineaGuiaGris() {
         this.ctx2.beginPath();
-        this.ctx2.strokeStyle = '#f1f3f4';
-        this.ctx2.lineWidth = 5;
+        this.ctx2.strokeStyle = this.colorGuiaS;
+        this.ctx2.lineWidth = this.anchoGuias;
         this.ctx2.setLineDash([10, 5]);//linea discontinua
         this.ctx2.moveTo(10, 60);
         this.ctx2.lineTo(610, 60);
@@ -967,8 +978,8 @@ class TypeFirma {
 
     #crearLineaGuiaNegra(contexto) {
         contexto.beginPath();
-        contexto.strokeStyle = '#000';
-        contexto.lineWidth = 5;
+        contexto.strokeStyle = this.colorGuiaI;
+        contexto.lineWidth = this.anchoGuias;
         contexto.setLineDash([]);
         contexto.moveTo(10, 140);
         contexto.lineTo(610, 140);
