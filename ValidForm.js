@@ -106,7 +106,7 @@ class ValidForm {
         .pw{
             position: relative;
         }
-        input{
+        input, select, textarea{
             width: 100%;
             box-sizing: border-box;
         }
