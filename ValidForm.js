@@ -12,8 +12,13 @@ class ValidForm {
     textColor = 'Definir un color diferente a $%%';
     textSame = 'El campo no es igual a $%%';
 
+    textTagPermitidos = 'textarea, select, input';
+
     textErrorInput = 'Input no existe';
+    textErrorMascara = 'El formulario tiene un campo inyectado o no existe la mascara';
     textWarRadio = 'El radio botón requerido no tiene un atributo "name" asociado';
+    textwarInput = 'El input no tiene id';
+    textWarTipoIndefinido = 'Tipo indefinido';
 
     validaRadio = 'input[name="$%%"]:checked';
     type = '[type="$%%"]';
@@ -40,7 +45,8 @@ class ValidForm {
         radio: 'radio',
         color: 'color',
         select: 'select-one',
-        hidden: 'hidden'
+        hidden: 'hidden',
+        firma: 'signature'
     };
 
     #typeDenegados = {
@@ -69,8 +75,9 @@ class ValidForm {
         this.#form = document.getElementById(elemt);
         if (document[elemt])
             this.#form = document[elemt];
-        else if (!document.getElementById(elemt))
-            console.error('El formulario nombrado no existe');
+        else if (!document.getElementById(elemt)){
+            return console.error('El formulario nombrado no existe');
+        }
 
         this.#mascara = this.#form.cloneNode(true);
 
@@ -208,6 +215,10 @@ class ValidForm {
             this.#quitarEventCut(i);
         }
 
+        for (const i of this.#form.querySelectorAll(this.type.replace('$%%', this.#typeInput.firma))) {
+            new TypeFirma(i);
+        }
+
         for (const i of this.#form.querySelectorAll(this.type.replace('$%%', this.#typeInput.color))) {
             if(i.getAttribute('different'))
                 i.value = i.getAttribute('different');
@@ -244,7 +255,7 @@ class ValidForm {
     }
 
     limpiarForm() {
-        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
+        for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image)
                 this.limpiarCampo(input);
         }
@@ -271,6 +282,8 @@ class ValidForm {
             input.checked = false;
         }else if(input.type == this.#typeInput.select){
             input.selectedIndex = 0;
+        }else if(input.type == this.#typeInput.firma){
+            input.limiarFirma();
         }else {
             input.value = '';
         }
@@ -278,7 +291,7 @@ class ValidForm {
 
     crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
-        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
+        for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     data['files'] = input.files;
@@ -326,7 +339,7 @@ class ValidForm {
 
     crearFormData(conVacios = false, cabeceras = {}) {
         let formData = new FormData();
-        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
+        for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     for (const i in input.files.length) {
@@ -387,7 +400,7 @@ class ValidForm {
                     return input.validationMessage;
                 }
             } else {
-                return 'El input no tiene id';
+                return this.textwarInput;
             }
         }
 
@@ -396,7 +409,7 @@ class ValidForm {
 
     validarCampos(conMsg = true) {
         let valido = false;
-        for (let input of this.#form.querySelectorAll('textarea, select, input')) {
+        for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
             if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
                 if (input.id) {
                     valido = this.#validarCampoForm(input);
@@ -410,7 +423,7 @@ class ValidForm {
                                 let subDiv = document.createElement('div');
 
                                 div.id = 'alertFor' + input.id;
-                                div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;';
+                                div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;padding-left: 10px; padding-right: 10px; width: fit-content;';
                                 subDiv.textContent = '';
                                 subDiv.textContent = input.validationMessage;
                                 div.append(subDiv);
@@ -430,7 +443,7 @@ class ValidForm {
                             alerta.remove();
                     }
                 } else {
-                    return 'El input no tiene id';
+                    return this.textwarInput;
                 }
             }
         }
@@ -573,8 +586,10 @@ class ValidForm {
                     break;
                 case this.#typeInput.hidden:
                     break;
+                case this.#typeInput.firma:
+                    break;
                 default:
-                    console.warn('Tipo indefinido');
+                    console.warn(this.textWarTipoIndefinido);
                     break;
             }
     
@@ -638,7 +653,7 @@ class ValidForm {
                     return true;
                 }
             }else{
-                console.warn('El formulario tiene un campo inyectado');
+                console.warn(textErrorMascara);
                 return false;
             }
         }else{
@@ -751,5 +766,234 @@ class ValidForm {
         }
     }
 }
+
+class TypeFirma {
+
+    #mousePos = { x: 0, y: 0 };
+    #ultimaPosMouse;
+    #dibujar = false;
+    input;
+    
+    constructor(input) {
+        this.input = input;
+        this.input.setAttribute('hidden', true);
+        this.#ultimaPosMouse = this.#mousePos;
+        this.input.value = null;
+        
+        let label = document.querySelector('[for="'+ this.input.id +'"]');
+        if (label) {
+            label.style.cssText = 'display: block';
+        }
+
+        //creacion de elementos donde se pinta
+        this.canvasP = document.createElement('canvas');
+        this.canvasP.style.cssText = 'border: 2px dashed #CCCCCC; border-radius: 5px; cursor: crosshair; position: absolute;';
+        this.canvasP.width = 620;
+        this.canvasP.height = 200;
+        this.canvasP.textContent = 'No tienes un buen navegador.';
+        this.canvasP.id = this.input.id + 'Canvas';
+        this.canvasP.setAttribute('tabindex', '0');
+
+        //fonde canvas principal
+        this.fondo = document.createElement('canvas');
+        this.fondo.width = 620;
+        this.fondo.height = 200;
+        this.fondo.style.cssText = 'margin: 2px;';
+
+        this.ctxP = this.canvasP.getContext("2d");
+        this.ctx2 = this.fondo.getContext("2d");
+
+        this.#crearLineaGuiaGris();
+        this.#crearLineaGuiaNegra(this.ctx2);
+    
+        let button = document.createElement('button');
+        //button.className = 'btn btn-danger';
+        button.style.cssText = 'display: block; margin-bottom: 5px; border-radius: 5px; padding: 5px 10px; color: #fff; background-color: #dc3545; border-color: #dc3545;';
+        button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                    </svg>`;
+        button.id = 'limpiar' + this.input.id;
+
+        this.input.parentNode.append(this.canvasP);
+        this.input.parentNode.append(this.fondo);
+        this.input.parentNode.append(button);
+
+        this.canvasP.addEventListener("mousedown", (e) => {
+            this.#dibujar = true;
+            this.#ultimaPosMouse = this.#getPosicionPuntero(e);
+    
+            this.#pintarTrazos();
+        }, false);
+    
+        this.canvasP.addEventListener("mousemove", (e) => {
+            this.#mousePos = this.#getPosicionPuntero(e);
+    
+            this.#pintarTrazos();
+        }, false);
+
+        this.canvasP.addEventListener("mouseup", (e) => {
+            if (this.#dibujar)
+                this.input.value = this.#obtenerFirma();
+    
+            this.#dibujar = false;
+            this.#pintarTrazos();
+        }, false);
+
+        this.canvasP.addEventListener("mouseleave", (e) => {
+            if (this.#dibujar)
+                this.input.value = this.#obtenerFirma();
+    
+            this.#dibujar = false;
+            this.#pintarTrazos();
+        }, false);
+
+        this.canvasP.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            this.#dibujar = true;
+            this.#ultimaPosMouse = this.#getPosicionPuntero(e);
+        }, false);
+    
+        this.canvasP.addEventListener("touchmove", (e) => {
+            this.#mousePos = this.#getPosicionPuntero(e);
+    
+            this.#pintarTrazos();
+        }, false);
+    
+        this.canvasP.addEventListener("touchend", (e) => {
+            if (this.#dibujar)
+                this.input.value = this.#obtenerFirma();
+    
+            this.#dibujar = false;
+            this.#pintarTrazos();
+        }, false);
+    
+        this.canvasP.addEventListener("touchleave", (e) => {
+            if (this.#dibujar)
+                this.input.value = this.#obtenerFirma();
+    
+            this.#dibujar = false;
+            this.#pintarTrazos();
+        }, false);
+
+        button.addEventListener("click", (e) => {
+            this.#limpiarFirma();
+        }, false);
+
+        this.input.addtexts = (text, text2 = false) => {
+            this.canvasP.width = this.canvasP.width;
+
+            let titleY = 167;
+            this.ctxP.font = '24px "Tahoma"';
+            this.ctxP.fillText('  ' + text, 10, titleY);
+            this.ctxP.stroke();
+    
+            if (text2) {
+                titleY += 21;
+                this.ctxP.font = '24px "Tahoma"';
+                this.ctxP.fillText('   ' + text2, 10, titleY);
+                this.ctxP.stroke();
+            }
+    
+            this.input.value = this.canvasP.toDataURL('image/png', 1);
+        };
+
+        this.input.descargarImagenFirma = (nombreArchivo = 'Firma' + this.input.id) => {
+            let enlace = document.createElement('a');
+            // El título
+            enlace.download = nombreArchivo + '.png';
+            // Convertir la imagen a Base64 y ponerlo en el enlace
+            enlace.href = this.canvasP.toDataURL('image/png', 1);
+            // Hacer click en él
+            enlace.click();
+        };
+
+        this.input.focus = () => {
+            this.canvasP.focus();
+        };
+
+        this.input.limiarFirma = () => {
+            this.#limpiarFirma();
+        };
+    }
+
+    #pintarTrazos() {
+        if (this.#dibujar) {
+            this.ctxP.beginPath();
+            this.ctxP.strokeStyle = '#413a3a';
+            this.ctxP.lineWidth = 3;
+            this.ctxP.lineCap = "round";
+            this.ctxP.moveTo(this.#ultimaPosMouse.x, this.#ultimaPosMouse.y);
+            this.ctxP.lineTo(this.#mousePos.x, this.#mousePos.y);
+            this.ctxP.stroke();
+            this.ctxP.closePath();
+            this.#ultimaPosMouse = this.#mousePos;
+        }
+    }
+
+    #getPosicionPuntero(event) {
+        var rect = this.canvasP.getBoundingClientRect();
+        if (event.clientX) {
+            return {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top
+            };
+        }else if (event.touches[0].clientX) {
+            return {
+                x: event.touches[0].clientX - rect.left,
+                y: event.touches[0].clientY - rect.top
+            };
+        }
+    }
+
+    #firmaValida() {
+        //cuando la imagen esta en blanco
+        let imagenVacia = 'data:image/png;base64,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';
+        let dataUrl = this.canvasP.toDataURL();
+        if (imagenVacia == dataUrl)
+            return false;
+        return true;
+    }
+
+    #limpiarFirma() {
+        this.canvasP.width = this.canvasP.width;
+        this.input.value = null;
+    }
+
+    #obtenerFirma() {
+        if (this.#firmaValida()) {
+            this.#crearLineaGuiaNegra(this.ctxP);
+
+            return this.canvasP.toDataURL('image/png', 1);
+        } else {
+            console.warn('Esta vacia la firma');
+            return null;
+        }
+    }
+
+    #crearLineaGuiaGris() {
+        this.ctx2.beginPath();
+        this.ctx2.strokeStyle = '#f1f3f4';
+        this.ctx2.lineWidth = 5;
+        this.ctx2.setLineDash([10, 5]);//linea discontinua
+        this.ctx2.moveTo(10, 60);
+        this.ctx2.lineTo(610, 60);
+        this.ctx2.stroke();
+        this.ctx2.closePath();
+    }
+
+    #crearLineaGuiaNegra(contexto) {
+        contexto.beginPath();
+        contexto.strokeStyle = '#000';
+        contexto.lineWidth = 5;
+        contexto.setLineDash([]);
+        contexto.moveTo(10, 140);
+        contexto.lineTo(610, 140);
+        contexto.stroke();
+        contexto.closePath();
+    };
+}
+
+
 
 export {ValidForm};
