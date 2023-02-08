@@ -423,8 +423,8 @@ class ValidForm {
                                 let div = document.createElement('div');
                                 let subDiv = document.createElement('div');
 
-                                div.id = 'alertFor' + input.id;
-                                div.style.cssText = 'background: #ffadad; border-radius: 0px 0px 10px 10px; padding-left: 10px;padding-left: 10px; padding-right: 10px; width: fit-content;';
+                                div.id = 'alertFor' + input.id;//#ffadad
+                                div.style.cssText = 'background: #c2daff; border-radius: 0px 0px 10px 10px; padding-left: 10px;padding-left: 10px; padding-right: 10px; width: fit-content;';
                                 subDiv.textContent = '';
                                 subDiv.textContent = input.validationMessage;
                                 div.append(subDiv);
