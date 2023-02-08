@@ -284,7 +284,7 @@ class ValidForm {
         }else if(input.type == this.#typeInput.select){
             input.selectedIndex = 0;
         }else if(input.type == this.#typeInput.firma){
-            input.limiarFirma();
+            input.limpiarFirma();
         }else {
             input.value = '';
         }
@@ -892,7 +892,7 @@ class TypeFirma {
             this.canvasP.focus();
         };
 
-        this.input.limiarFirma = () => {
+        this.input.limpiarFirma = () => {
             this.#limpiarFirma();
         };
     }
