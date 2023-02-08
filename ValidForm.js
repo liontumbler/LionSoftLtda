@@ -108,6 +108,7 @@ class ValidForm {
         }
         input{
             width: 100%;
+            box-sizing: border-box;
         }
         `;
         document.getElementsByTagName('head')[0].append(style);
