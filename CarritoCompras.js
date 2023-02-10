@@ -4,46 +4,38 @@
  * @copyright lionTumbler
 */
 class CarritoCompras {
-    #carrito = null;
+    #carrito = {};
     moneda = 'COP';
 
-    constructor(carrito = {}) {
-        try{
-            if (typeof carrito == 'object') {
-                this.#carrito = carrito;
-            }else if(typeof carrito == 'string'){
-                this.#carrito = JSON.parse(carrito);
-            }
-        }catch(e){
-            console.error(e, 'debe ser formato JSON');
+    constructor() {
+        if (localStorage.carrito) {
+            this.#carrito = JSON.parse(localStorage.carrito);
         }
     }
 
     addCarrito(valor, cantidad, complemento = {}, guardar = 'id'){
         
-        if (isNaN(valor)) {
+        if (isNaN(valor))
             return console.error('El valor no es númerico');
-        } 
 
-        if (isNaN(cantidad)) {
+        if (isNaN(cantidad)) 
             return console.error('El cantidad no es númerico');
-        } 
 
         complemento.fullValue = (valor * cantidad);
         complemento.oneValue = valor;
         complemento.amount = cantidad;
 
-        if (this.#carrito.allValue) {
-            this.#carrito.allValue += complemento.fullValue;
-        }else{
-            this.#carrito.allValue = complemento.fullValue;
-        }
+        if (this.#carrito['allValue'])
+            this.#carrito['allValue'] += complemento.fullValue;
+        else
+            this.#carrito['allValue'] = complemento.fullValue;
 
-        if(complemento[guardar]){
+        if(complemento[guardar])
             this.#carrito[complemento[guardar]] = complemento;
-        }else{
+        else
             this.#carrito[this.cantidadDproductos()] = complemento;
-        }
+
+        localStorage.carrito = this.toStringCarrito();
     }
 
     get total() {
@@ -62,13 +54,45 @@ class CarritoCompras {
         }
     }
 
+    actualizarPrecioProducto(value, valor){
+        if(this.#carrito[value] && this.#carrito[value].oneValue) {
+            this.#carrito['allValue'] = this.#carrito['allValue'] - this.#carrito[value].fullValue;
+
+            this.#carrito[value].fullValue = (valor * this.#carrito[value].amount);
+            this.#carrito[value].oneValue = valor;
+
+            this.#carrito['allValue'] = this.#carrito['allValue'] + this.#carrito[value].fullValue;
+            localStorage.carrito = this.toStringCarrito();
+        } else {
+            console.warn('no se encontro el value a descontar');
+        }
+    }
+
+    deleteCatidadProducto(value, cantidad) {
+        if(this.#carrito[value] && this.#carrito[value].amount){
+            let cantidadC = this.#carrito[value].amount;
+            if (cantidad < cantidadC) {
+                let adescontar = (this.#carrito[value].oneValue * cantidad);
+
+                this.#carrito[value].fullValue = this.#carrito[value].fullValue - adescontar;
+                this.#carrito.allValue = this.#carrito.allValue - adescontar;
+                localStorage.carrito = this.toStringCarrito();
+            }else{
+                console.warn('no se pueden descontar mas toca eliminar el producto');
+            }
+        } else {
+            console.warn('no se encontro el value a descontar');
+        }
+    }
+
     deleteCarrito(value = null){
         if (value) {
             if(this.#carrito[value]){
                 this.#carrito.allValue = this.#carrito.allValue - this.#carrito[value].fullValue;
                 delete this.#carrito[value];
+                localStorage.carrito = this.toStringCarrito();
             }else{
-                return console.log('el valor a eliminarno existe');
+                return console.log('El valor a eliminar no existe');
             }
         }else{
             this.#carrito = {};
