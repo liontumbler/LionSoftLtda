@@ -70,6 +70,7 @@ class ValidForm {
     static #number = /[^0-9]/g;
     static #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
     static #space = /\s+/g;
+    static #antiInyect = /<SCRIPT>|<\/SCRIPT>|<script>|<\/script>|<\/|<|>/g;
 
     constructor(elemt, mostrarImagen = true){
         this.#form = document.getElementById(elemt);
@@ -149,6 +150,12 @@ class ValidForm {
                     }
                 })
             }
+        }
+
+        for (const i of this.#form.querySelectorAll(this.textTagPermitidos)) {
+            i.addEventListener('input', function (e){
+                this.value = this.value.replace(ValidForm.#antiInyect, '');
+            });
         }
 
         for (const i of this.#form.querySelectorAll('[input="alfaNS"]')) {
