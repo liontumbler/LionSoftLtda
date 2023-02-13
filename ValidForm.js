@@ -62,24 +62,55 @@ class ValidForm {
         textArea: 'TEXTAREA'
     };
 
-    eye = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+    #eye = `<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>`;
 
-    eyeSlash = `<path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+    #eyeSlash = `<path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
                     <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
                     <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>`;
 
-    static #alfa = /[^A-Za-zñÑ ]/g;
-    static #alfaNS = /[^A-Za-zñÑ]/g;
-    static #textNS = /[^0-9A-Za-zñÑ]/g;
-    static #text = /[^0-9A-Za-zñÑ ]/g;
-    static #textTilde = /[^0-9A-Za-zñÑÁáÉéÍíÓóÚú ]/g;
-    static #number = /[^0-9]/g;
-    static #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
-    static #space = /\s+/g;
-    static #antiInyect = /<SCRIPT>|<\/SCRIPT>|<script>|<\/script>|<\/|<|>/g;
+    #alfa = /[^A-Za-zñÑ ]/g;
+    #alfaNS = /[^A-Za-zñÑ]/g;
+    #textNS = /[^0-9A-Za-zñÑ]/g;
+    #text = /[^0-9A-Za-zñÑ ]/g;
+    #textTilde = /[^0-9A-Za-zñÑÁáÉéÍíÓóÚú.,:; ]/g;
+    #number = /[^0-9]/g;
+    #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
+    #space = /\s+/g;
+    #antiInyect = /<SCRIPT>|<\/SCRIPT>|<script>|<\/script>|<\/|<|>/g;
 
-    constructor(elemt, mostrarImagen = true){
+    constructor(elemt, espesificacion = {mostrarImagen: true}){
+
+        if (espesificacion.eye)
+            this.#eye = espesificacion.eye;
+        
+        if (espesificacion.eyeSlash)
+            this.#eyeSlash = espesificacion.eyeSlash;
+
+        if (espesificacion.alfa)
+            this.#alfa = espesificacion.alfa;
+
+        if (espesificacion.alfaNS)
+            this.#alfaNS = espesificacion.alfaNS;
+
+        if (espesificacion.textNS)
+            this.#textNS = espesificacion.textNS;
+        
+        if (espesificacion.text)
+            this.#text = espesificacion.text;
+
+        if (espesificacion.textTilde)
+            this.#textTilde = espesificacion.textTilde;
+
+        if (espesificacion.number)
+            this.#number = espesificacion.number;
+
+        if (espesificacion.numberP)
+            this.#numberP = espesificacion.numberP;
+
+        if (espesificacion.space)
+            this.#space = espesificacion.space;
+
         this.#form = document.getElementById(elemt);
         if (document[elemt])
             this.#form = document[elemt];
@@ -133,7 +164,7 @@ class ValidForm {
                 anteshtmlCadena = '<input type="password" id="pw'+ i +'">';
             }
 
-            i.innerHTML = anteshtmlCadena + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye eye" viewBox="0 0 16 16">'+ this.eyeSlash +'</svg>';
+            i.innerHTML = anteshtmlCadena + '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye eye" viewBox="0 0 16 16">'+ this.#eyeSlash +'</svg>';
 
             if (i.children[1]) {
                 i.children[1].addEventListener('click', (e) => {
@@ -141,62 +172,62 @@ class ValidForm {
                         i.children[0].type = 'text';
                         i.children[1].classList.add("eye-s");
                         i.children[1].classList.remove("eye");
-                        i.children[1].innerHTML = this.eye;
+                        i.children[1].innerHTML = this.#eye;
                     }else{
                         i.children[0].type = 'password';
                         i.children[1].classList.add("eye");
                         i.children[1].classList.remove("eye-s");
-                        i.children[1].innerHTML = this.eyeSlash;
+                        i.children[1].innerHTML = this.#eyeSlash;
                     }
                 })
             }
         }
 
         for (const i of this.#form.querySelectorAll(this.textTagPermitidos)) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#antiInyect, '');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#antiInyect, '');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="alfaNS"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#alfaNS, '');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#alfaNS, '');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="textNS"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#textNS, '');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#textNS, '');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="number"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#number, '');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#number, '');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="alfa"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#alfa, '').replace(ValidForm.#space, ' ');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#alfa, '').replace(this.#space, ' ');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="text"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#text, '').replace(ValidForm.#space, ' ');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#text, '').replace(this.#space, ' ');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="textTilde"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#textTilde, '').replace(ValidForm.#space, ' ');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#textTilde, '').replace(this.#space, ' ');
             });
         }
 
         for (const i of this.#form.querySelectorAll('[input="numberPoin"]')) {
-            i.addEventListener('input', function (e){
-                this.value = this.value.replace(ValidForm.#number, '').replace(ValidForm.#numberP, '$1.');
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#number, '').replace(this.#numberP, '$1.');
             });
         }
 
@@ -232,7 +263,7 @@ class ValidForm {
                 i.value = i.getAttribute('different');
         }
 
-        if (mostrarImagen) {
+        if (espesificacion.mostrarImagen) {
             for (const i of this.#form.querySelectorAll(this.type.replace('$%%', this.#typeInput.file))) {
                 i.addEventListener('change', function (e){
                     if (this.value) {
