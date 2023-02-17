@@ -185,8 +185,17 @@ class ValidForm {
 
         for (const i of this.#form.querySelectorAll(this.textTagPermitidos)) {
             i.addEventListener('input', (e) => {
-                i.value = i.value.replace(this.#antiInyect, '');
+                if(this.#inputValido(i))
+                    i.value = i.value.replace(this.#antiInyect, '');
             });
+
+            i.addEventsListeners = function(events, func) {
+                events = events.replace(' ', '');
+                var event = events.split(',');
+                for (const e in event) {
+                    i.addEventListener(event[e], func, false);
+                }
+            }
         }
 
         for (const i of this.#form.querySelectorAll('[input="alfaNS"]')) {
@@ -289,6 +298,26 @@ class ValidForm {
         }
     }
 
+    bloqueoInspecionar() {
+        let body = document.getElementsByTagName('body')[0];
+        body.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+        body.addEventListener('keydown', (e) => {
+            if (e.key == 'F12' || (e.ctrlKey && e.shiftKey && e.key == 'I')) 
+                e.preventDefault();
+        });
+        body.addEventListener('keyup', (e) => {
+            if (e.key == 'F12' || (e.ctrlKey && e.shiftKey && e.key == 'I'))
+                e.preventDefault();
+        });
+        body.addEventListener('keypress', (e) => {
+            if (e.key == 'F12' || (e.ctrlKey && e.shiftKey && e.key == 'I')) 
+                e.preventDefault();
+        });
+        this.bloqueoMsgConsole();
+    }
+
     bloqueoMsgConsole() {
         console.log = () => {};
         console.warn = () => {};
@@ -314,7 +343,7 @@ class ValidForm {
 
     limpiarForm() {
         for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
-            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image)
+            if(this.#inputValido(input))
                 this.limpiarCampo(input);
         }
     }
@@ -350,7 +379,7 @@ class ValidForm {
     crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
         for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
-            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+            if(this.#inputValido(input)){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     data['files'] = input.files;
                 }else if(input.type == this.#typeInput.checkbox){
@@ -398,7 +427,7 @@ class ValidForm {
     crearFormData(conVacios = false, cabeceras = {}) {
         let formData = new FormData();
         for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
-            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+            if(this.#inputValido(input)){
                 if(input.type == this.#typeInput.file && input.files.length > 0){
                     for (const i in input.files.length) {
                         formData.append(input.id + '[]', input.files[i]);
@@ -468,7 +497,7 @@ class ValidForm {
     validarCampos(conMsg = true) {
         let valido = false;
         for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
-            if(input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image){
+            if(this.#inputValido(input)){
                 if (input.id) {
                     valido = this.#validarCampoForm(input);
                     if (conMsg && !valido) {
@@ -513,20 +542,12 @@ class ValidForm {
         return this.#mascara.querySelector('#'+ id);
     }
 
+    #inputValido(input){
+        return input.type != this.#typeDenegados.button && input.type != this.#typeDenegados.submit && input.type != this.#typeDenegados.reset && input.type != this.#typeDenegados.image
+    }
+
     #quitarEventDrag(input) {
-        input.addEventListener('dragover', function (e){
-            e.preventDefault();
-        });
-        input.addEventListener('dragstart', function (e){
-            e.preventDefault();
-        });
-        input.addEventListener('drop', function (e){
-            e.preventDefault();
-        });
-        input.addEventListener('drag', function (e){
-            e.preventDefault();
-        });
-        input.addEventListener('dragend', function (e){
+        input.addEventsListeners('dragover, dragstart, drop, drag, dragend', function (e){
             e.preventDefault();
         });
     }
@@ -902,7 +923,7 @@ class TypeFirma {
         }, false);
 
         this.canvasP.addEventListener("touchstart", (e) => {
-            e.preventDefault();
+            //e.preventDefault();
             this.#empezarDibujo(e);
         }, false);
     
