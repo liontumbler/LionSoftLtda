@@ -923,7 +923,7 @@ class TypeFirma {
         }, false);
 
         this.canvasP.addEventListener("touchstart", (e) => {
-            //e.preventDefault();
+            e.preventDefault();
             this.#empezarDibujo(e);
         }, false);
     
