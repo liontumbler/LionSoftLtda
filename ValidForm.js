@@ -955,6 +955,15 @@ class TypeFirma {
             enlace.click();
         };
 
+        this.input.descargarSvgFirma = (nombreArchivo = 'Firma' + this.input.id) => {
+            //TODO: seguir mejorando
+            let svgimg = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+            svgimg.setAttribute( 'width', this.canvasP.width );
+            svgimg.setAttribute( 'height', this.canvasP.height );
+            svgimg.setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', this.canvasP.toDataURL(this.formatoImage, 1));
+            console.log(svgimg);
+        };
+
         this.input.focus = () => {
             this.canvasP.focus();
         };
