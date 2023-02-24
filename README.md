@@ -1,25 +1,14 @@
-- Abrir archivo index para entender como implementar paises.js y ValidForm.js
-
-    `<script src="index.js" type="module"></script>`
-- Amplementar archivo paises.js para obtener los datos, manejo de los paises y ciudades segun desee
-
-    `<script src="paises.js" type="module"></script>`
-- Amplementar archivo ValidForm.js para el manejo de los de validacion de formularios, vasicamente valida un formulario creando una mascara del mismo para que no se pueda inmutar despues de que cargue la vista, gracias a esto el cliente podra inpeccionar pero al editar algun dato del formulario pero no va ser vaidado despues, una gran herramienta
-
-    `<script src="ValidForm.js" type="module"></script>`
-
-- Por el momento se tiene el objeto con algunos datos vacios que mas adelante se hiran poniendo para dejar la libreria completa
-- Si depronto no hay una capital o un pais etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
-- Si se encutra algun tipo de Bug reportarlo por ese medio en algun comentario
-
 **Soluciones lionSoft**
 
 Es el nombre que se le quiso dar a un conjunto de archivos en JS, cada uno con su peculiaridad, pero con un mismo objetivo  es ayudar al desarrollador a implementar más fácil esas tareas cotidianas o no tan cotidianas. Todo basado en JavaScript full.
 Una de estas grandes y sencillas herramientas es: 
 
-Países.js este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
+**Países.js** 
 
-Validform.js 
+este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
+
+**Validform.js**
+
 Esta librería de JavaScript válida los campos 'input' que hay dentro de una etiqueta, también válida los **select** y los **text área**, este validador aparte de validar campos, lo que hace es crear una copia del formulario igual a como terminó de cargar el formulario en la vista, este formulario sombra sé válida cuando se hacen la validación de los campos, ya que el formulario del cliente es alterable, gracias a esta sombra nos podemos bazar en ella y no en la que puede ser alterada por el cliente.
 Esto es muy beneficioso por qué el cliente no va a poder alterar los valores de validación.
 
@@ -35,49 +24,44 @@ También contamos con un input creado personalizado, para firmas, aquellos formu
 
 Al hacer la instancia del objeto, él entre muchas cosas que hace es validar los inputs permitidos para quitarle posibles etiquetas de inyección de scripts o HTML, también cuenta con un método dónde cancela todas las consolas que se carguen, para evitar que se pueda ver información desde la consola
 
-Carrito.js 
+**Carrito.js**
+
 es una archivo, librería que guarda mediante **localstorage** un carrito de compras para que lo puedas usar en cualquier lado para agregar al carrito, descontar del carrito y eliminar un producto, hasta un método para hacer la compra, dónde puedes ingresar el efectivo y te devuelve cuánto cambio hay que dar, también cuenta con la posibilidad de actualizar el precio de **x** producto del carrito y te va a hacer las cuentas totales que llevas del carrito actual.
 
-Firma.js una librería que remplaza un input por un **canvas** dónde se puede firmar con mouse o táctil, puedes borrar la firma si no te gusto, y devuelve una imagen en **base64**, muy fácil de manejar
+**Firma.js** 
 
-EjecutadorJs.js
+una librería que remplaza un input por un **canvas** dónde se puede firmar con mouse o táctil, puedes borrar la firma si no te gusto, y devuelve una imagen en **base64**, muy fácil de manejar
+
+**EjecutadorJs.js**
+
 Una herramienta para ejecutar una tarea en determinado momento del día, se puede ejecutar de funciones para abajo, lo que necesite ejecutar en tiempo de ejecución del cliente
 
-posicionVar.js 
-Este detecta los click izquierdos y derechos de color azul e izquierdos de color rojo, este guarda las coordenadas más la página en que se sitúa y el click que se dio, esta librería se hace con fines de mercadeo, para que el que lo implemente pueda ver cómo se mueve su página con el tiempo,
+**posicionVar.js** 
 
-Un método es el que empieza los click
-Otro método dónde arma el canvas
-Otro método donde se pinta todo, debe tener un estilo hover dónde muestre la cantidad de click que se han hecho en el sitio en específico
-Poner un texto en la parte inferior de la pantalla poniendo la cantidad de click izquierdos y derechos 
+Este detecta los click izquierdos y derechos de color azul e izquierdos de color rojo, este guarda las coordenadas más la página en que se sitúa y el click que se dio, esta librería se hace con fines de mercadeo, para que el que lo implemente pueda ver cómo se mueve su página con el tiempo. 
 
 Estos archivos se pueden usar de dos formas, importándolas y exportándolas, o como se conoce normalmente llamando el archivo desde un HTML.
 Para poder usar esta grandiosa librería tienes que nombrar nos en tu página, que estás usando esta librería, en caso de que estés usando la librería y no nos nombres tienes que avisarnos antes, para llegar a un acuerdo, si no nos veremos en la necesidad de demandar por derechos de autor
 
-
 Estas librerías no dependen una de la otra, por lo que puedes llamar la que necesitas, no siendo más empezamos ahora a describir más técnicamente cada una de las librerías.
 
+***ValidForm.js***
 
-
-
-ValidForm.js
 Descarga el archivos o importalo desde nuestra pagina 
 1. Importar al proyecto
 Una ves lo tengas descargado lo puede consumir de la siguiente manera:
 
     `<script src="ValidForm.js" type="module"></script>`
     
-También puedes hacerlo con el link sugerido
+    También puedes hacerlo con el link sugerido
 
     `<script src="ValidForm.js" type="module"></script>`
     
 Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
 
-`
-import {ValidForm} from './ValidForm.js';
+    import {ValidForm} from './ValidForm.js';
 
-let testVal = new ValidForm('formtest');
-`
+    let testVal = new ValidForm('formtest');
 
 'formtest' es el nombre que se ledio al formulario o al div que contine los campos
 
@@ -117,21 +101,29 @@ Si se pone este atributo, estamos diciendo que el campo va a recibir solo númer
 numberPoin
 
 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
+- Abrir archivo index para entender como implementar paises.js y ValidForm.js
 
+    `<script src="index.js" type="module"></script>`
+- Amplementar archivo paises.js para obtener los datos, manejo de los paises y ciudades segun desee
 
+    `<script src="paises.js" type="module"></script>`
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Por el momento se tiene el objeto con algunos datos vacios que mas adelante se hiran poniendo para dejar la libreria completa
+- Si depronto no hay una capital o un pais etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
+- Si se encutra algun tipo de Bug reportarlo por ese medio en algun comentario

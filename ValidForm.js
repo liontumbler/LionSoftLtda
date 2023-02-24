@@ -198,43 +198,43 @@ class ValidForm {
             }
         }
 
-        for (const i of this.#form.querySelectorAll('[input="alfaNS"]')) {
+        for (const i of this.#form.querySelectorAll('[alfaNS]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#alfaNS, '');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="textNS"]')) {
+        for (const i of this.#form.querySelectorAll('[textNS]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#textNS, '');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="number"]')) {
+        for (const i of this.#form.querySelectorAll('[number]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#number, '');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="alfa"]')) {
+        for (const i of this.#form.querySelectorAll('[alfa]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#alfa, '').replace(this.#space, ' ');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="text"]')) {
+        for (const i of this.#form.querySelectorAll('[text]')) {//[input="text"]
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#text, '').replace(this.#space, ' ');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="textTilde"]')) {
+        for (const i of this.#form.querySelectorAll('[textTilde]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#textTilde, '').replace(this.#space, ' ');
             });
         }
 
-        for (const i of this.#form.querySelectorAll('[input="numberPoin"]')) {
+        for (const i of this.#form.querySelectorAll('[numberPoin]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#number, '').replace(this.#numberP, '$1.');
             });
