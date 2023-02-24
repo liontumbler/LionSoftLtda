@@ -48,15 +48,17 @@ Estas librerías no dependen una de la otra, por lo que puedes llamar la que nec
 ***ValidForm.js***
 
 Descarga el archivo o impórtalo desde nuestra página 
-1. Importar al proyecto
+
+**Importar al proyecto**
+
 Una vez lo tengas descargado lo puede consumir de la siguiente manera:
 
     `<script src="ValidForm.js" type="module"></script>`
-    
-    También puedes hacerlo con el link sugerido
+
+También puedes hacerlo con el link sugerido
 
     `<script src="ValidForm.js" type="module"></script>`
-    
+
 Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
 
     import {ValidForm} from './ValidForm.js';
@@ -67,7 +69,8 @@ Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera:
 
 Le pasamos el ID o el name del formulario HTML ya él hace el resto, que es el resto, una vez instanciado él prepara el formulario y determina quienes son input para validarlos, también tiene unos atributos que si se ponen en el input podemos agregarle ciertas capacidades al input.
 
-Estos son los atributos:
+***Estos son los atributos***:
+
 **alfaNs**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras sin espacios ej:
@@ -91,6 +94,7 @@ Si se pone este atributo, estamos diciendo que el campo va a recibir solo númer
 Si se pone este atributo, estamos diciendo que el  campo va a recibir solo letras, incluyendo un espacio por palabra
 
     `<input alfa type="" class="" id="" placeholder="" required>`
+
     
 **text**
 
@@ -140,7 +144,7 @@ Si se pone este atributo, estamos diciendo que el campo no se va a poder arrastr
 
     `<input protected type="" class="" id="" placeholder="" required>`
 
-también podemos crear un campo password con el Ojo poniéndole a la clase 'pw' de la siguiente forma
+También podemos crear un campo **password** con el Ojo poniéndole a la clase 'pw' de la siguiente forma
 
     `<div class="pw">
         <input type="password" class="" id="" placeholder="" required>
@@ -158,7 +162,7 @@ de esta forma una vez este instanciado él mira quien tiene esa clase para agreg
 
 si el input tiene el type de tipo firma 'signature' se crea un campo firma en ves del input normal, perfecto para enviar firmar en Base64, pruebalo!
 
-    `<input type="signature" class="" id="" placeholder="" required>`
+`<input type="signature" class="" id="" placeholder="" required>`
 
 
 
