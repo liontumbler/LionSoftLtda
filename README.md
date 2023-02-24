@@ -1,11 +1,11 @@
 **Soluciones lionSoft**
 
-Es el nombre que se le quiso dar a un conjunto de archivos en JS, cada uno con su peculiaridad, pero con un mismo objetivo  es ayudar al desarrollador a implementar más fácil esas tareas cotidianas o no tan cotidianas. Todo basado en JavaScript full.
+Es el nombre que se le quiso dar a un conjunto de archivos en JS, cada uno con su peculiaridad, pero con un mismo objetivo  es ayudar al desarrollador a implementar más fácil esas tareas cotidianas o no tan cotidianas. Todo basado en JavaScript full.
 Una de estas grandes y sencillas herramientas es: 
 
 **Países.js** 
 
-este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
+este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
 
 **Validform.js**
 
@@ -18,7 +18,7 @@ Esta librería tiene varios métodos como validar campos y obtener los datos en 
 
 Esta librería también puede limpiar el formulario, como limpiar solo el campo por elemento o por **ID** además podemos acceder a cada uno de los campos del formulario o de otra zona.
 
-También cuenta con pre validadores de escritura, para que el cliente no pueda hacer inyecciones de código sobre los inputs, y aparte poder dar un buen formato a  cada input.
+También cuenta con pre validadores de escritura, para que el cliente no pueda hacer inyecciones de código sobre los inputs, y aparte poder dar un buen formato a  cada input.
 
 También contamos con un input creado personalizado, para firmas, aquellos formularios que necesitan una firma previa la puede tener, esta firma se devuelve en formato **base64** para enviar o convertir y enviar, esto y mucho más se planea para que esta librería pueda ser de su agrado, al igual si no está satisfecho, o tiene alguna mejora en mente contáctanos para saber el tema que quieres incluir o mejorar.
 
@@ -47,58 +47,126 @@ Estas librerías no dependen una de la otra, por lo que puedes llamar la que nec
 
 ***ValidForm.js***
 
-Descarga el archivos o importalo desde nuestra pagina 
+Descarga el archivo o impórtalo desde nuestra página 
 1. Importar al proyecto
-Una ves lo tengas descargado lo puede consumir de la siguiente manera:
+Una vez lo tengas descargado lo puede consumir de la siguiente manera:
 
-    `<script src="ValidForm.js" type="module"></script>`
-    
-    También puedes hacerlo con el link sugerido
+    `<script src="ValidForm.js" type="module"></script>`
+    
+    También puedes hacerlo con el link sugerido
 
-    `<script src="ValidForm.js" type="module"></script>`
-    
+    `<script src="ValidForm.js" type="module"></script>`
+    
 Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
 
-    import {ValidForm} from './ValidForm.js';
+    import {ValidForm} from './ValidForm.js';
 
-    let testVal = new ValidForm('formtest');
+    let testVal = new ValidForm('formtest');
 
-'formtest' es el nombre que se ledio al formulario o al div que contine los campos
+'formtest' es el nombre que se le dio al formulario o al div que contiene los campos
 
-Le pasamos el ID o el name del formulario HTML ya el hace el resto, que es el resto, una vez instanciado él prepara el formulario y determina quienes son input para validarlos, también tiene unos atributos que si se ponen en el input podemos agregarle ciertas capacidades al input.
+Le pasamos el ID o el name del formulario HTML ya él hace el resto, que es el resto, una vez instanciado él prepara el formulario y determina quienes son input para validarlos, también tiene unos atributos que si se ponen en el input podemos agregarle ciertas capacidades al input.
 
 Estos son los atributos:
-alfaNs
+**alfaNs**
+
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras sin espacios ej:
 
-    `<input alfaNs type="" class="" id="" placeholder="" required>`
+    `<input alfaNs type="" class="" id="" placeholder="" required>`
 
-textNs
+**textNs**
+
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras y números sin espacios ej:
 
-    `<input textNs type="" class="" id="" placeholder="" required>`
+    `<input textNs type="" class="" id="" placeholder="" required>`
 
-number
+**number**
+
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo números sin espacios ej:
 
-    `<input number type="" class="" id="" placeholder="" required>`
+    `<input number type="" class="" id="" placeholder="" required>`
 
-alfa
-Si se pone este atributo, estamos diciendo que el  campo va a recibir solo letras, incluyendo un espacio por palabra
+**alfa**
 
-    `<input alfa type="" class="" id="" placeholder="" required>`
-    
-text
+Si se pone este atributo, estamos diciendo que el  campo va a recibir solo letras, incluyendo un espacio por palabra
+
+    `<input alfa type="" class="" id="" placeholder="" required>`
+    
+**text**
+
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras y números, incluyendo un espacio por palabra
 
-    `<input text type="" class="" id="" placeholder="" required>`
+    `<input text type="" class="" id="" placeholder="" required>`
 
-textTilde
+**textTilde**
+
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo números y letras, incluido un espacio por letra y las tildes: áéíóú
 
-    `<input textTilde type="" class="" id="" placeholder="" required>`
+    `<input textTilde type="" class="" id="" placeholder="" required>`
 
-numberPoin
+**numberPoin**
+
+Si se pone este atributo, estamos diciendo que el campo va a recibir solo números y mientras que se escribe se le van agregando los puntos de milésimas. 
+
+    `<input numberPoin type="" class="" id="" placeholder="" required>`
+
+**noCopy**
+
+Si se pone este atributo, estamos diciendo que el campo no se va a poder copiar. 
+
+    `<input noCopy type="" class="" id="" placeholder="" required>`
+
+**noPaste**
+
+Si se pone este atributo, estamos diciendo que el campo no se va a poder pegar. 
+
+    `<input noPaste type="" class="" id="" placeholder="" required>`
+
+**noCut**
+
+Si se pone este atributo, estamos diciendo que el campo no se va a poder cortar. 
+
+    `<input noCut type="" class="" id="" placeholder="" required>`
+
+**noDrag**
+
+Si se pone este atributo, estamos diciendo que el campo no se va a poder arrastrar y soltar valores. 
+
+    `<input noDrag type="" class="" id="" placeholder="" required>`
+
+**protected**
+
+Si se pone este atributo, estamos diciendo que el campo no se va a poder arrastrar y soltar, ni copiar, pegar y cortar.
+
+    `<input protected type="" class="" id="" placeholder="" required>`
+
+también podemos crear un campo password con el Ojo poniéndole a la clase 'pw' de la siguiente forma
+
+    `<div class="pw">
+        <input type="password" class="" id="" placeholder="" required>
+    </div>`
+
+    ó
+
+    `<div class="pw"></div>`
+
+    
+de esta forma una vez este instanciado él mira quien tiene esa clase para agregar el ojo y los funcionamientos del mismo.
+
+
+**type="signature"**
+
+si el input tiene el type de tipo firma 'signature' se crea un campo firma en ves del input normal, perfecto para enviar firmar en Base64, pruebalo!
+
+    `<input type="signature" class="" id="" placeholder="" required>`
+
+
+
+
+
+
+
+
 
 
 -
@@ -119,11 +187,11 @@ numberPoin
 
 - Abrir archivo index para entender como implementar paises.js y ValidForm.js
 
-    `<script src="index.js" type="module"></script>`
-- Amplementar archivo paises.js para obtener los datos, manejo de los paises y ciudades segun desee
+    `<script src="index.js" type="module"></script>`
+- Implementar archivo paises.js para obtener los datos, manejo de los países y ciudades según desee
 
-    `<script src="paises.js" type="module"></script>`
+    `<script src="paises.js" type="module"></script>`
 
-- Por el momento se tiene el objeto con algunos datos vacios que mas adelante se hiran poniendo para dejar la libreria completa
-- Si depronto no hay una capital o un pais etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
-- Si se encutra algun tipo de Bug reportarlo por ese medio en algun comentario
+- Por el momento se tiene el objeto con algunos datos vacíos que más adelante se irán poniendo para dejar la librería completa
+- Si de pronto no hay una capital o un país, etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
+- Si se encuentra algún tipo de Bug reportarlo por ese medio en algún comentario, por el momento
