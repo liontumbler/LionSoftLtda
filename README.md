@@ -45,6 +45,7 @@ Para poder usar esta grandiosa librería tienes que nombrar nos en tu página, q
 
 Estas librerías no dependen una de la otra, por lo que puedes llamar la que necesitas, no siendo más empezamos ahora a describir más técnicamente cada una de las librerías.
 
+
 ## **ValidForm.js**
 
 Descarga el archivo o impórtalo desde nuestra página 
@@ -95,7 +96,6 @@ Si se pone este atributo, estamos diciendo que el  campo va a recibir solo letr
 
     `<input alfa type="" class="" id="" placeholder="" required>`
 
-    
 ### **text**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras y números, incluyendo un espacio por palabra
@@ -154,9 +154,7 @@ También podemos crear un campo **password** con el Ojo poniéndole a la clase '
 
     `<div class="pw"></div>`
 
-    
 de esta forma una vez este instanciado él mira quien tiene esa clase para agregar el ojo y los funcionamientos del mismo.
-
 
 ### **type="signature"**
 
@@ -171,6 +169,7 @@ Es un atributo que permite a los inputs de tipo color tener un color por definic
 ## **Métodos:**
 
 ### **constructor(elemt, espesificacion = {mostrarImagen: true})**
+
 inicia los métodos para el formulario que se asocie
 
 elemt: id o elemento form
@@ -190,7 +189,6 @@ espesificacion:
         number: cambia las reglas predeterminadas del teclao en los inputs
         numberP: cambia las reglas predeterminadas del teclao en los inputs
         space: cambia las reglas predeterminadas del teclao en los inputs
-
 
 ### **bloqueoInspeccionar()**
 
@@ -256,7 +254,6 @@ regex: son los tipos de archivos que se evalúan actualmente, que son las imáge
 
 return: true si es válido false si no
 
-
 ### **static validarCampoUrl(value, regex = /https:\/\/.{1,200}|http:\/\/.{1,200}/g)**
 
 value: la URL que quiere validar
@@ -273,34 +270,37 @@ regex: la regex que desea que valide el correo
 
 return: true si es válido false si no
 
+### **static validarNumCaracteres(value, maxlength, minlength)
 
-static validarNumCaracteres(value, maxlength, minlength)
 value: el valor que desea evaluar
+
 maxlength: el máximo a evaluar
+
 minlength: el mínimo a evaluar
 
 return: true si es válido false si no
 
-static validarMaxMin(value, max, min)
+### **static validarMaxMin(value, max, min)**
+
 value: el valor que desea evaluar
+
 maxlength: el máximo a evaluar
+
 minlength: el mínimo a evaluar
 
 return: true si es válido false si no
 
-static validarCamposExpert(campos = {})
+### **static validarCamposExpert(campos = {})**
 
 campos: recibe un objeto o un array donde el contenido de cada espacio es el id que quiere consultar de todo el DOM
 
 return: true si es válido si no devuelve el input asociado
 
-
-static validarCampo(id)
+### **static validarCampo(id)**
 
 id: del campo a evaluar, este id puede estar fuera del formulario instancia do
 
 return: true si es válido false si no
-
 
 ## **Variables:**
 
@@ -325,6 +325,7 @@ textWarTipoIndefinido = 'Tipo indefinido';
 validaRadio = 'input[name="$%%"]:checked';
 
 type = '[type="$%%"]';
+
 
 ## **Paises.js**
 
@@ -354,16 +355,25 @@ nombre: el nombre del país a buscar
 return: retorna un arreglo con los países encontrados, si esta vacío muestra todos los países disponibles pruébalo!
 
 ### **obtenerPaisesXcontinente(continente)**
-continente: 
+***continente: ***
+
     los continentes que sean parecidos a:
-        Asia
-        América del norte
-        América central
-        América del sur
-        África
-        Antártida
-        Europa
-        Oceanía
+
+        - Asia
+
+        - América del norte
+
+        - América central
+
+        - América del sur
+
+        - África
+
+        - Antártida
+
+        - Europa
+
+        - Oceanía
 
 return: devuelve un array de los países por continente
 
@@ -380,7 +390,9 @@ pais: país que deseca buscar
 return: retorna un objeto con los países que encuentre
 
 ### **obtenerCiudadObj(pais, ciudad)**
+
 pais: país que deseca buscar
+
 ciudad: la ciudad que sesea buscar, este valor puede ir vacío
 
 return: retorna un objeto con lo que encuentre
@@ -394,36 +406,38 @@ cadena: cadena a normalizar
 retorna cadena normalizada
 
 
+## **EjecutadorJs.js**
+
+Descarga el archivo o impórtalo desde nuestra página 
+
+### **Importar al proyecto**
+
+Una vez lo tengas descargado lo puede consumir de la siguiente manera:
+
+    `<script src="EjecutadorJs.js" type="module"></script>`
+
+También puedes hacerlo con el link sugerido
+
+    `<script src="EjecutadorJs.js" type="module"></script>`
+
+Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
+
+    import {EjecutadorJs} from './EjecutadorJs.js';
+
+    let testVal = new EjecutadorJs();
+
+## **Métodos:**
 
 
 
+#falta
 
 
 
-
--
--
--
--
--
--
--
--
--
--
--
--
--
--
-
-
-- Abrir archivo index para entender como implementar paises.js y ValidForm.js
+- Abrir archivo index para entender como implementar las librerias planteadas
 
     `<script src="index.js" type="module"></script>`
-- Implementar archivo paises.js para obtener los datos, manejo de los países y ciudades según desee
-
-    `<script src="paises.js" type="module"></script>`
 
 - Por el momento se tiene el objeto con algunos datos vacíos que más adelante se irán poniendo para dejar la librería completa
 - Si de pronto no hay una capital o un país, etc. me puedes escribir y decirme para hacer los respectivos cambios o mejoras
-- Si se encuentra algún tipo de Bug reportarlo por ese medio en algún comentario, por el momento
+- Si se encuentra algún tipo de Bug o mejora reportarlo por ese medio en algún comentario, por el momento
