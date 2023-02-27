@@ -15,7 +15,7 @@ class ValidForm {
     textTagPermitidos = 'textarea, select, input';
 
     textErrorInput = 'Input no existe';
-    textErrorMascara = 'El formulario tiene un campo inyectado o no existe la mascara';
+    textErrorMascara = 'El formulario tiene un campo inyectado o no existe la máscara';
     textWarRadio = 'El radio botón requerido no tiene un atributo "name" asociado';
     textwarInput = 'El input no tiene id';
     textWarTipoIndefinido = 'Tipo indefinido';
@@ -782,7 +782,7 @@ class ValidForm {
     static validarCamposExpert(campos = {}) {
         let valido = false;
         for (const i in campos) {
-            valido = ValidForm.validarCampo(campos[i], false);
+            valido = ValidForm.validarCampo(campos[i]);
             if(!valido)
                 return document.getElementById(campos[i]);
         }

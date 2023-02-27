@@ -1,13 +1,13 @@
-**Soluciones lionSoft**
+## **Soluciones lionSoft**
 
 Es el nombre que se le quiso dar a un conjunto de archivos en JS, cada uno con su peculiaridad, pero con un mismo objetivo  es ayudar al desarrollador a implementar más fácil esas tareas cotidianas o no tan cotidianas. Todo basado en JavaScript full.
 Una de estas grandes y sencillas herramientas es: 
 
-**Países.js** 
+### **Países.js** 
 
 este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
 
-**Validform.js**
+### **Validform.js**
 
 Esta librería de JavaScript válida los campos 'input' que hay dentro de una etiqueta, también válida los **select** y los **text área**, este validador aparte de validar campos, lo que hace es crear una copia del formulario igual a como terminó de cargar el formulario en la vista, este formulario sombra sé válida cuando se hacen la validación de los campos, ya que el formulario del cliente es alterable, gracias a esta sombra nos podemos bazar en ella y no en la que puede ser alterada por el cliente.
 Esto es muy beneficioso por qué el cliente no va a poder alterar los valores de validación.
@@ -24,19 +24,19 @@ También contamos con un input creado personalizado, para firmas, aquellos formu
 
 Al hacer la instancia del objeto, él entre muchas cosas que hace es validar los inputs permitidos para quitarle posibles etiquetas de inyección de scripts o HTML, también cuenta con un método dónde cancela todas las consolas que se carguen, para evitar que se pueda ver información desde la consola
 
-**Carrito.js**
+### **Carrito.js**
 
 es una archivo, librería que guarda mediante **localstorage** un carrito de compras para que lo puedas usar en cualquier lado para agregar al carrito, descontar del carrito y eliminar un producto, hasta un método para hacer la compra, dónde puedes ingresar el efectivo y te devuelve cuánto cambio hay que dar, también cuenta con la posibilidad de actualizar el precio de **x** producto del carrito y te va a hacer las cuentas totales que llevas del carrito actual.
 
-**Firma.js** 
+### **Firma.js** 
 
 una librería que remplaza un input por un **canvas** dónde se puede firmar con mouse o táctil, puedes borrar la firma si no te gusto, y devuelve una imagen en **base64**, muy fácil de manejar
 
-**EjecutadorJs.js**
+### **EjecutadorJs.js**
 
 Una herramienta para ejecutar una tarea en determinado momento del día, se puede ejecutar de funciones para abajo, lo que necesite ejecutar en tiempo de ejecución del cliente
 
-**posicionVar.js** 
+### **posicionVar.js** 
 
 Este detecta los click izquierdos y derechos de color azul e izquierdos de color rojo, este guarda las coordenadas más la página en que se sitúa y el click que se dio, esta librería se hace con fines de mercadeo, para que el que lo implemente pueda ver cómo se mueve su página con el tiempo. 
 
@@ -45,11 +45,11 @@ Para poder usar esta grandiosa librería tienes que nombrar nos en tu página, q
 
 Estas librerías no dependen una de la otra, por lo que puedes llamar la que necesitas, no siendo más empezamos ahora a describir más técnicamente cada una de las librerías.
 
-***ValidForm.js***
+## **ValidForm.js**
 
 Descarga el archivo o impórtalo desde nuestra página 
 
-**Importar al proyecto**
+### **Importar al proyecto**
 
 Una vez lo tengas descargado lo puede consumir de la siguiente manera:
 
@@ -71,74 +71,74 @@ Le pasamos el ID o el name del formulario HTML ya él hace el resto, que es el r
 
 ***Estos son los atributos***:
 
-**alfaNs**
+### **alfaNs**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras sin espacios ej:
 
     `<input alfaNs type="" class="" id="" placeholder="" required>`
 
-**textNs**
+### **textNs**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras y números sin espacios ej:
 
     `<input textNs type="" class="" id="" placeholder="" required>`
 
-**number**
+### **number**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo números sin espacios ej:
 
     `<input number type="" class="" id="" placeholder="" required>`
 
-**alfa**
+### **alfa**
 
 Si se pone este atributo, estamos diciendo que el  campo va a recibir solo letras, incluyendo un espacio por palabra
 
     `<input alfa type="" class="" id="" placeholder="" required>`
 
     
-**text**
+### **text**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo letras y números, incluyendo un espacio por palabra
 
     `<input text type="" class="" id="" placeholder="" required>`
 
-**textTilde**
+### **textTilde**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo números y letras, incluido un espacio por letra y las tildes: áéíóú
 
     `<input textTilde type="" class="" id="" placeholder="" required>`
 
-**numberPoin**
+### **numberPoin**
 
 Si se pone este atributo, estamos diciendo que el campo va a recibir solo números y mientras que se escribe se le van agregando los puntos de milésimas. 
 
     `<input numberPoin type="" class="" id="" placeholder="" required>`
 
-**noCopy**
+### **noCopy**
 
 Si se pone este atributo, estamos diciendo que el campo no se va a poder copiar. 
 
     `<input noCopy type="" class="" id="" placeholder="" required>`
 
-**noPaste**
+### **noPaste**
 
 Si se pone este atributo, estamos diciendo que el campo no se va a poder pegar. 
 
     `<input noPaste type="" class="" id="" placeholder="" required>`
 
-**noCut**
+### **noCut**
 
 Si se pone este atributo, estamos diciendo que el campo no se va a poder cortar. 
 
     `<input noCut type="" class="" id="" placeholder="" required>`
 
-**noDrag**
+### **noDrag**
 
 Si se pone este atributo, estamos diciendo que el campo no se va a poder arrastrar y soltar valores. 
 
     `<input noDrag type="" class="" id="" placeholder="" required>`
 
-**protected**
+### **protected**
 
 Si se pone este atributo, estamos diciendo que el campo no se va a poder arrastrar y soltar, ni copiar, pegar y cortar.
 
@@ -158,12 +158,240 @@ También podemos crear un campo **password** con el Ojo poniéndole a la clase '
 de esta forma una vez este instanciado él mira quien tiene esa clase para agregar el ojo y los funcionamientos del mismo.
 
 
-**type="signature"**
+### **type="signature"**
 
 si el input tiene el type de tipo firma 'signature' se crea un campo firma en ves del input normal, perfecto para enviar firmar en Base64, pruebalo!
 
 `<input type="signature" class="" id="" placeholder="" required>`
 
+### **different**
+
+Es un atributo que permite a los inputs de tipo color tener un color por definición, esto se hace para que no tenga el color negro por definición
+
+## **Métodos:**
+
+### **constructor(elemt, espesificacion = {mostrarImagen: true})**
+inicia los métodos para el formulario que se asocie
+
+elemt: id o elemento form
+
+espesificacion: 
+
+    el tipo de espesificaciones iniciales que quiere proporcionar:
+
+        mostrarImagen: true/false. mostrar imagen en los tipo file si es imagen
+        eye: SVG. modifica el ojo del password
+        eyeSlash: SVG. modifica el ojo del password tachada
+        alfa: cambia las reglas predeterminadas del teclao en los inputs 
+        alfaNS: cambia las reglas predeterminadas del teclao en los inputs
+        textNS: cambia las reglas predeterminadas del teclao en los inputs
+        text: cambia las reglas predeterminadas del teclao en los inputs
+        textTilde: cambia las reglas predeterminadas del teclao en los inputs
+        number: cambia las reglas predeterminadas del teclao en los inputs
+        numberP: cambia las reglas predeterminadas del teclao en los inputs
+        space: cambia las reglas predeterminadas del teclao en los inputs
+
+
+### **bloqueoInspeccionar()**
+
+¡Bloquea el click derecho y borrar console.log, pruébalo!
+
+### **bloqueoMsgConsole()**
+
+¡Borrar todos los console, ya no se podrán ver pruébalo!
+
+### **getId(id)**
+
+Devuelve el elemento del formulario usando el id
+
+### **limpiarForm()**
+
+Limpia todo el formulario
+
+### **limpiarCampoId(id)**
+
+Limpia un campo del formulario en específico por id
+
+### **limpiarCampo(input)**
+
+Limpia un campo del formulario en específico usando el input 'element'
+
+### **crearObjetoJson(conVacios = false, cabeceras = {})**
+
+conVacios: si está en true, devuelve un objeto completo de los campos, así este vacío, está predeterminado con false, si está en false solo se muestran los campos diligenciados
+
+cabeceras: recibe un objeto donde el alias es el id del input y el valor que es el valor que quiere que aparezca en los arreglos que devuelve
+
+return: devuelve un objeto **JSON** de los inputs diligenciados del formulario
+
+### **crearFormData(conVacios = false, cabeceras = {})**
+
+conVacios: si está en true, devuelve un objeto completo de los campos, así este vacío, está predeterminado con false, si esta en false solo se muestran los campos diligenciados
+
+cabeceras: recibe un objeto donde el alias es el id del input y el valor que es el valor que quiere que aparezca en los arreglos que devuelve
+
+return: devuelve un objeto **FormData** de los inputs diligenciados del formulario
+
+### **validarCamposExpert(campos = {}, conMsg = false)**
+
+campos: recibe un objeto o un array donde el contenido de cada espacio es el id que quiere consultar del formulario instanciado
+
+conMsg: si está en true muestra el mensaje como lo muestra generalmente el navegador y retorna el input, si está en false retorna solo el mensaje de error
+
+return: retorna true so los campos están bien diligenciados, si no puede devolver el input o un mensaje según lo modifique
+
+### **validarCampos(conMsg = true)**
+
+conMsg: si está en false retorna un msg de error, si está en true muestra el mensaje como lo muestra generalmente el navegador con los radio y checkbox, con el resto muestra un msg personalizado
+
+return: retorna true si los campos están bien validados, si no puede devolver un msg o un input según lo modifique
+
+### **static validarCampoFile(value, regex = /jpg|jpeg|png|gif/g)**
+
+Método estático que valida el campo de tipo file
+
+value: la extensión que tiene cada File 'cada archivo'
+
+regex: son los tipos de archivos que se evalúan actualmente, que son las imágenes
+
+return: true si es válido false si no
+
+
+### **static validarCampoUrl(value, regex = /https:\/\/.{1,200}|http:\/\/.{1,200}/g)**
+
+value: la URL que quiere validar
+
+regex: la regex de los tipos de URL permitida que son http y https
+
+return: true si es válido false si no
+
+### **static validarCampoCorreo(value, regex = /regexcorreo/g)**
+
+value: el correo a validar
+
+regex: la regex que desea que valide el correo
+
+return: true si es válido false si no
+
+
+static validarNumCaracteres(value, maxlength, minlength)
+value: el valor que desea evaluar
+maxlength: el máximo a evaluar
+minlength: el mínimo a evaluar
+
+return: true si es válido false si no
+
+static validarMaxMin(value, max, min)
+value: el valor que desea evaluar
+maxlength: el máximo a evaluar
+minlength: el mínimo a evaluar
+
+return: true si es válido false si no
+
+static validarCamposExpert(campos = {})
+
+campos: recibe un objeto o un array donde el contenido de cada espacio es el id que quiere consultar de todo el DOM
+
+return: true si es válido si no devuelve el input asociado
+
+
+static validarCampo(id)
+
+id: del campo a evaluar, este id puede estar fuera del formulario instancia do
+
+return: true si es válido false si no
+
+
+## **Variables:**
+
+textFile = 'El formato requerido es $%%';
+
+textColor = 'Definir un color diferente a $%%';
+
+textSame = 'El campo no es igual a $%%';
+
+textTagPermitidos = 'textarea, select, input';
+
+textErrorInput = 'Input no existe';
+
+textErrorMascara = 'El formulario tiene un campo inyectado o no existe la máscara';
+
+textWarRadio = 'El radio botón requerido no tiene un atributo "name" asociado';
+
+textwarInput = 'El input no tiene id';
+
+textWarTipoIndefinido = 'Tipo indefinido';
+
+validaRadio = 'input[name="$%%"]:checked';
+
+type = '[type="$%%"]';
+
+## **Paises.js**
+
+Descarga el archivo o impórtalo desde nuestra página 
+
+### **Importar al proyecto**
+
+Una vez lo tengas descargado lo puede consumir de la siguiente manera:
+
+    `<script src="Paises.js" type="module"></script>`
+
+También puedes hacerlo con el link sugerido
+
+    `<script src="Paises.js" type="module"></script>`
+
+Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
+
+    import {Paises} from './Paises.js';
+
+    let testVal = new Paises();
+
+## **Métodos:**
+
+### **obtenerPaises(nombre)**
+nombre: el nombre del país a buscar
+
+return: retorna un arreglo con los países encontrados, si esta vacío muestra todos los países disponibles pruébalo!
+
+### **obtenerPaisesXcontinente(continente)**
+continente: 
+    los continentes que sean parecidos a:
+        Asia
+        América del norte
+        América central
+        América del sur
+        África
+        Antártida
+        Europa
+        Oceanía
+
+return: devuelve un array de los países por continente
+
+### **obtenerPaisObj(pais)**
+
+pais: país que deseca buscar
+
+return: retorna un objeto con los países que encuentre
+
+### **obtenerCiudades(pais)**
+
+pais: país que deseca buscar
+
+return: retorna un objeto con los países que encuentre
+
+### **obtenerCiudadObj(pais, ciudad)**
+pais: país que deseca buscar
+ciudad: la ciudad que sesea buscar, este valor puede ir vacío
+
+return: retorna un objeto con lo que encuentre
+
+### **normalizarText(cadena)**
+
+normaliza una cadena de tal forma que se puedan comparar, normalizar es por ejemplo normalizar la palabra 'así' quedaría igual a 'asi'
+
+cadena: cadena a normalizar
+
+retorna cadena normalizada
 
 
 
