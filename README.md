@@ -481,7 +481,7 @@ Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera:
 
 ## **Métodos:**
 
-### **constructor()*
+### **constructor()**
 
 ### **addCarrito(valor, cantidad, complemento = {}, guardar = 'id')**
 
