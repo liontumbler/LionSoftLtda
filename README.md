@@ -9,7 +9,7 @@ este archivo o más para ser más exacto es un objeto en JavaScript que contiene
 
 ### **Validform.js**
 
-Esta librería de JavaScript válida los campos 'input' que hay dentro de una etiqueta, también válida los **select** y los **text área**, este validador aparte de validar campos, lo que hace es crear una copia del formulario igual a como terminó de cargar el formulario en la vista, este formulario sombra sé válida cuando se hacen la validación de los campos, ya que el formulario del cliente es alterable, gracias a esta sombra nos podemos bazar en ella y no en la que puede ser alterada por el cliente.
+Esta librería de JavaScript válida los campos 'input' que hay dentro de una etiqueta, también válida los **select** y los **textarea**, este validador aparte de validar campos, lo que hace es crear una copia del formulario igual a como terminó de cargar el formulario en la vista, este formulario sombra sé válida cuando se hacen la validación de los campos, ya que el formulario del cliente es alterable, gracias a esta sombra nos podemos bazar en ella y no en la que puede ser alterada por el cliente.
 Esto es muy beneficioso por qué el cliente no va a poder alterar los valores de validación.
 
 Otra de las ventajas es que haciendo las respectivas validaciones de HTML en los inputs, podemos validar los campos, ya que en la programación él busca estos atributos, entonces no hay que llamar atributos extra para validar los campos, solo los naturales de HTML
@@ -355,7 +355,7 @@ nombre: el nombre del país a buscar
 return: retorna un arreglo con los países encontrados, si esta vacío muestra todos los países disponibles pruébalo!
 
 ### **obtenerPaisesXcontinente(continente)**
-***continente: ***
+***continente:***
 
     los continentes que sean parecidos a:
 
@@ -430,7 +430,7 @@ Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera:
 
 
 
-#falta
+# falta
 
 
 
