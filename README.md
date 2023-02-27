@@ -46,7 +46,7 @@ Para poder usar esta grandiosa librería tienes que nombrar nos en tu página, q
 Estas librerías no dependen una de la otra, por lo que puedes llamar la que necesitas, no siendo más empezamos ahora a describir más técnicamente cada una de las librerías.
 
 
-## **ValidForm.js**
+# **ValidForm.js**
 
 Descarga el archivo o impórtalo desde nuestra página 
 
@@ -327,7 +327,7 @@ validaRadio = 'input[name="$%%"]:checked';
 type = '[type="$%%"]';
 
 
-## **Paises.js**
+# **Paises.js**
 
 Descarga el archivo o impórtalo desde nuestra página 
 
@@ -406,7 +406,7 @@ cadena: cadena a normalizar
 retorna cadena normalizada
 
 
-## **EjecutadorJs.js**
+# **EjecutadorJs.js**
 
 Descarga el archivo o impórtalo desde nuestra página 
 
@@ -428,11 +428,121 @@ Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera:
 
 ## **Métodos:**
 
+### **constructor()**
+
+Inicia el contador
+
+### **horaActual()**
+
+muestra la hora actual
+
+### **horaActualSinSeg()**
+
+muestra la hora actual sin segundos
+
+### **addTareaEjecutar(metodo, tiempo = horaActual())**
+
+agrega una tarea al ejecutador para ejecutar en cierto momento
+
+metodo: metodo que desea ejecutar
+
+tiempo: el tiempo en hora militar con segundos
+
+### **comparaTiempos(hora1 = horaActual(), hora2 = horaActual())**
+
+compara los tiempos si son iguales devuelve true si no false
+
+hora1: tiempo a comparar
+
+hora2: tiempo a comparar
+
+return: true o false si son diferentes
 
 
-# falta
+# **CarritoCompras.js**
+
+Descarga el archivo o impórtalo desde nuestra página 
+
+### **Importar al proyecto**
+
+Una vez lo tengas descargado lo puede consumir de la siguiente manera:
+
+    `<script src="CarritoCompras.js" type="module"></script>`
+
+También puedes hacerlo con el link sugerido
+
+    `<script src="CarritoCompras.js" type="module"></script>`
+
+Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera: 
+
+    import {CarritoCompras} from './CarritoCompras.js';
+
+    let testVal = new CarritoCompras();
+
+## **Métodos:**
+
+### **constructor()*
+
+### **addCarrito(valor, cantidad, complemento = {}, guardar = 'id')**
+
+### **get total()**
+
+### **getCarrito(value = null)**
+
+### **actualizarPrecioProducto(value, valor)**
+
+### **deleteCatidadProducto(value, cantidad)**
+
+### **deleteCarrito(value = null)**
+
+### **comprar(valor)**
+
+### **cantidadDproductos()**
+
+### **toStringCarrito(value = null)**
+
+## **Variables:**
+
+moneda = 'COP';
 
 
+# **positionVar.js**
+
+Descarga el archivo o impórtalo desde nuestra página 
+
+### **Importar al proyecto**
+
+Una vez lo tengas descargado lo puede consumir de la siguiente manera:
+
+    `<script src="positionVar.js" type="module"></script>`
+
+También puedes hacerlo con el link sugerido
+
+    `<script src="positionVar.js" type="module"></script>`
+
+## **Métodos:**
+
+### **crearPosicion(e, click)**
+
+### **iniciarRastreoClI()**
+
+### **crearCanvas()**
+
+### **eliminarCanvas()**
+
+### **hacerClickPocision(x, y)**
+
+### **sumarArrPosicion(arr1, arr2)**
+
+### **dibujarCruz(x, y, ancho = 25)**
+
+### **pintarPuntos()**
+
+## **Variables:**
+
+canvas
+
+# OTROS:
 
 - Abrir archivo index para entender como implementar las librerias planteadas
 
