@@ -5,7 +5,7 @@ Una de estas grandes y sencillas herramientas es:
 
 ### **Países.js** 
 
-este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
+Este archivo o más para ser más exacto es un objeto en JavaScript que contiene código para obtener los países y ciudades de cada país, esto va a facilitar el trabajo, al momento de querer obtener esta información se tiene que hacer una base de datos con toda esta información,  en este caso ya está y va a ser más fácil el acceso, tiene varios métodos para acceder a la información que necesitas.
 
 ### **Validform.js**
 
@@ -26,11 +26,11 @@ Al hacer la instancia del objeto, él entre muchas cosas que hace es validar los
 
 ### **Carrito.js**
 
-es una archivo, librería que guarda mediante **localstorage** un carrito de compras para que lo puedas usar en cualquier lado para agregar al carrito, descontar del carrito y eliminar un producto, hasta un método para hacer la compra, dónde puedes ingresar el efectivo y te devuelve cuánto cambio hay que dar, también cuenta con la posibilidad de actualizar el precio de **x** producto del carrito y te va a hacer las cuentas totales que llevas del carrito actual.
+Es una archivo, librería que guarda mediante **localstorage** un carrito de compras para que lo puedas usar en cualquier lado para agregar al carrito, descontar del carrito y eliminar un producto, hasta un método para hacer la compra, dónde puedes ingresar el efectivo y te devuelve cuánto cambio hay que dar, también cuenta con la posibilidad de actualizar el precio de **x** producto del carrito y te va a hacer las cuentas totales que llevas del carrito actual.
 
 ### **Firma.js** 
 
-una librería que remplaza un input por un **canvas** dónde se puede firmar con mouse o táctil, puedes borrar la firma si no te gusto, y devuelve una imagen en **base64**, muy fácil de manejar
+Una librería que remplaza un input por un **canvas** dónde se puede firmar con mouse o táctil, puedes borrar la firma si no te gusto, y devuelve una imagen en **base64**, muy fácil de manejar
 
 ### **EjecutadorJs.js**
 
@@ -158,7 +158,7 @@ de esta forma una vez este instanciado él mira quien tiene esa clase para agreg
 
 ### **type="signature"**
 
-si el input tiene el type de tipo firma 'signature' se crea un campo firma en ves del input normal, perfecto para enviar firmar en Base64, pruebalo!
+Si el input tiene el type de tipo firma 'signature' se crea un campo firma en ves del input normal, perfecto para enviar firmar en Base64, pruebalo!
 
 `<input type="signature" class="" id="" placeholder="" required>`
 
@@ -170,13 +170,13 @@ Es un atributo que permite a los inputs de tipo color tener un color por definic
 
 ### **constructor(elemt, espesificacion = {mostrarImagen: true})**
 
-inicia los métodos para el formulario que se asocie
+Inicia los métodos para el formulario que se asocie
 
 elemt: id o elemento form
 
 espesificacion: 
 
-    el tipo de espesificaciones iniciales que quiere proporcionar:
+    El tipo de espesificaciones iniciales que quiere proporcionar:
 
         mostrarImagen: true/false. mostrar imagen en los tipo file si es imagen
         eye: SVG. modifica el ojo del password
@@ -357,7 +357,7 @@ return: retorna un arreglo con los países encontrados, si esta vacío muestra t
 ### **obtenerPaisesXcontinente(continente)**
 ***continente:***
 
-    los continentes que sean parecidos a:
+    Los continentes que sean parecidos a:
 
         - Asia
 
@@ -399,7 +399,7 @@ return: retorna un objeto con lo que encuentre
 
 ### **normalizarText(cadena)**
 
-normaliza una cadena de tal forma que se puedan comparar, normalizar es por ejemplo normalizar la palabra 'así' quedaría igual a 'asi'
+Normaliza una cadena de tal forma que se puedan comparar, normalizar es por ejemplo normalizar la palabra 'así' quedaría igual a 'asi'
 
 cadena: cadena a normalizar
 
@@ -434,15 +434,15 @@ Inicia el contador
 
 ### **horaActual()**
 
-muestra la hora actual
+Muestra la hora actual
 
 ### **horaActualSinSeg()**
 
-muestra la hora actual sin segundos
+Muestra la hora actual sin segundos
 
 ### **addTareaEjecutar(metodo, tiempo = horaActual())**
 
-agrega una tarea al ejecutador para ejecutar en cierto momento
+Agrega una tarea al ejecutador para ejecutar en cierto momento
 
 metodo: metodo que desea ejecutar
 
@@ -450,7 +450,7 @@ tiempo: el tiempo en hora militar con segundos
 
 ### **comparaTiempos(hora1 = horaActual(), hora2 = horaActual())**
 
-compara los tiempos si son iguales devuelve true si no false
+Compara los tiempos si son iguales devuelve true si no false
 
 hora1: tiempo a comparar
 
@@ -483,23 +483,77 @@ Una vez importado a nuestro proyecto podemos instanciar de la siguiente manera:
 
 ### **constructor()**
 
+Inicia un localstorage para el objeto carrito
+
 ### **addCarrito(valor, cantidad, complemento = {}, guardar = 'id')**
+
+Agrega al carrito
+
+valor: valor del producto
+
+cantidad: la cantidad del producto
+
+complemento: es un objeto conde puedes guardar más datos
+
+guardar: es el valor a consultar en complemento para guardar el producto con el id respectivo si lo tiene en complemento
 
 ### **get total()**
 
+Obtiene el total del producto
+
 ### **getCarrito(value = null)**
+
+Obtiene el producto de un carrito o todo el carrito según el value
+
+value: el identificador del carrito
 
 ### **actualizarPrecioProducto(value, valor)**
 
+Actualiza el precio de un producto según su value
+
+value: el identificador del carrito
+
+valor: el valor que quiere actual
+
 ### **deleteCatidadProducto(value, cantidad)**
+
+Elimina la cantidad de un producto en específico haciendo los cálculos correspondientes de totales, según su value
+
+value: el identificador del carrito
+
+cantidad: cantidad a eliminar del carrito
 
 ### **deleteCarrito(value = null)**
 
+Elimina todo el carrito o uno en específico según su value
+
+value: el identificador del carrito
+
 ### **comprar(valor)**
+
+Hace la compra del producto limpiando y devolviendo el cambio
+
+valor:el valor con el que paga el cliente
+
+return: retorna un objeto con lo siguiente:
+
+    valorApagar
+
+    valor
+
+    cambio
+
+también limpia el carrito
 
 ### **cantidadDproductos()**
 
+Muestra la cantidad de productos comprados
+
 ### **toStringCarrito(value = null)**
+
+value: el identificador del carrito
+
+return: devuelve una cadena del carrito en específico o todo el carrito
 
 ## **Variables:**
 
@@ -507,6 +561,8 @@ moneda = 'COP';
 
 
 # **positionVar.js**
+
+Esta es una librería que registra los click y los pinta en pantalla
 
 Descarga el archivo o impórtalo desde nuestra página 
 
@@ -523,20 +579,28 @@ También puedes hacerlo con el link sugerido
 ## **Métodos:**
 
 ### **crearPosicion(e, click)**
+este metodo no se usa solo a nivel interno, es para añadir un click al arreglo de clicks
 
 ### **iniciarRastreoClI()**
+iniciarastreo de clicks izquierdos y derechos
 
 ### **crearCanvas()**
+despues de aver iniciado el rastreo podemos crear el canvas, este metodo lo que hace es pintar los puntos en la pantalla
 
 ### **eliminarCanvas()**
+este metodo elimina el canvas que se dibujo con crearCanvas()
 
 ### **hacerClickPocision(x, y)**
+este metodo lo que hace es intentar hacer click en una posicion determinada, digo intentar por que hace el intento, cuando es un boton deja hacer el click, cuando es otro elemento no de deja
 
 ### **sumarArrPosicion(arr1, arr2)**
+suma dos arrays del mismo estilo y los combina de tal forma que se suman y ya no se repite posiciones
 
 ### **dibujarCruz(x, y, ancho = 25)**
+este metodo no se usa solo a nivel interno,, lo que hace es dibujar una cruz en el canvas
 
 ### **pintarPuntos()**
+pinta los puntos sobre el canvas llamado con crearCanvas()
 
 ## **Variables:**
 
