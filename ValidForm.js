@@ -385,23 +385,34 @@ class ValidForm {
     }
 
     mostarOcultarMsg($this, mensaje, validacion = true, colorOK = '#ced4da', colorERROR = '#dc3545') {
+        let padre = $this.parentNode;
+        if (padre.classList.contains('pw'))
+            padre = $this.parentNode.parentNode;
+
         let msg = document.getElementById('msg_' +$this.id);
         if(!msg){
             let elementMsg = document.createElement('div')
             elementMsg.id = 'msg_' +$this.id;
-            $this.parentNode.append(elementMsg);
+            padre.append(elementMsg);
             msg = elementMsg;
         }
+        msg.style.color = colorERROR;
+
+        let label = padre.querySelector('[for="'+ $this.id +'"]');
 
         if(validacion){
-            $this.style.borderColor = colorOK;
+            $this.style.borderColor = '#ced4da';
             $this.style.color = colorOK;
             msg.style.display = 'none';
+            if(label)
+                label.style.color = colorOK;
         }else{
             $this.style.borderColor = colorERROR;
             $this.style.color = colorERROR;
             msg.textContent = mensaje;
             msg.style.display = 'block';
+            if(label)
+                label.style.color = colorERROR;
         }
     }
 
@@ -529,9 +540,10 @@ class ValidForm {
             if(this.#inputValido(input)){
                 if (input.id) {
                     valido = this.#validarCampoForm(input);
+                    let color = '#212529';
                     if (conMsg && !valido) {
                         if (input.type != this.#typeInput.radio && input.type != this.#typeInput.checkbox) {
-                            mostarOcultarMsg(input, input.validationMessage, false, input.style.color);
+                            this.mostarOcultarMsg(input, input.validationMessage, false, color);
                         } else {
                             input.reportValidity();
                         }
@@ -540,9 +552,7 @@ class ValidForm {
                     }else if(!valido){
                         return input.validationMessage;
                     }else{
-                        let alerta = document.getElementById('alertFor' + input.id);
-                        if (alerta) 
-                            alerta.remove();
+                        this.mostarOcultarMsg(input, '', true, color)
                     }
                 } else {
                     return this.textwarInput;
