@@ -408,7 +408,7 @@ class ValidForm {
             if(label)
                 label.style.color = colorOK;
         }else{
-            $this.style.boxShadow = '0 0 0 0.25rem #dc354540';
+            $this.style.boxShadow = '0 0 0 0.25rem #dc354500';
             $this.style.borderColor = colorERROR;
             $this.style.color = colorERROR;
             msg.textContent = mensaje;
