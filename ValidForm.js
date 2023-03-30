@@ -401,12 +401,14 @@ class ValidForm {
         let label = padre.querySelector('[for="'+ $this.id +'"]');
 
         if(validacion){
+            $this.style.boxShadow = '0 0 0 0.25rem #00000000';
             $this.style.borderColor = '#ced4da';
             $this.style.color = colorOK;
             msg.style.display = 'none';
             if(label)
                 label.style.color = colorOK;
         }else{
+            $this.style.boxShadow = '0 0 0 0.25rem #dc354540';
             $this.style.borderColor = colorERROR;
             $this.style.color = colorERROR;
             msg.textContent = mensaje;
