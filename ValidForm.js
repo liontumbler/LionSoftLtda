@@ -196,6 +196,14 @@ class ValidForm {
                     i.addEventListener(event[e], func, false);
                 }
             }
+
+            i.hide = function () {
+                i.style.display = 'none';
+            }
+
+            i.show = function () {
+                i.style.display = 'block';
+            }
         }
 
         for (const i of this.#form.querySelectorAll('[alfaNS]')) {
@@ -376,6 +384,27 @@ class ValidForm {
         }
     }
 
+    mostarOcultarMsg($this, mensaje, validacion = true, colorOK = '#ced4da', colorERROR = '#dc3545') {
+        let msg = document.getElementById('msg_' +$this.id);
+        if(!msg){
+            let elementMsg = document.createElement('div')
+            elementMsg.id = 'msg_' +$this.id;
+            $this.parentNode.append(elementMsg);
+            msg = elementMsg;
+        }
+
+        if(validacion){
+            $this.style.borderColor = colorOK;
+            $this.style.color = colorOK;
+            msg.style.display = 'none';
+        }else{
+            $this.style.borderColor = colorERROR;
+            $this.style.color = colorERROR;
+            msg.textContent = mensaje;
+            msg.style.display = 'block';
+        }
+    }
+
     crearObjetoJson(conVacios = false, cabeceras = {}) {
         let data = {};
         for (let input of this.#form.querySelectorAll(this.textTagPermitidos)) {
@@ -502,21 +531,7 @@ class ValidForm {
                     valido = this.#validarCampoForm(input);
                     if (conMsg && !valido) {
                         if (input.type != this.#typeInput.radio && input.type != this.#typeInput.checkbox) {
-                            let alerta = document.getElementById('alertFor' + input.id);
-                            if (alerta) {
-                                alerta.firstChild.textContent = input.validationMessage;
-                            }else{
-                                let div = document.createElement('div');
-                                let subDiv = document.createElement('div');
-
-                                div.id = 'alertFor' + input.id;//#ffadad
-                                div.style.cssText = 'background: #c2daff; border-radius: 0px 0px 10px 10px; padding-left: 10px;padding-left: 10px; padding-right: 10px; width: fit-content;';
-                                subDiv.textContent = '';
-                                subDiv.textContent = input.validationMessage;
-                                div.append(subDiv);
-
-                                input.parentNode.append(div);
-                            }
+                            mostarOcultarMsg(input, input.validationMessage, false, input.style.color);
                         } else {
                             input.reportValidity();
                         }
@@ -845,6 +860,12 @@ class TypeFirma {
     #dibujar = false;
     #imagenVacia = 'data:image/png;base64,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';
 
+    #anchoFirma = 620;
+    #altoFirma = 200;
+    #coorYGuiaGris = 60;
+    #coorYGuiaNegra = 140;
+    #margenGuias = 10;
+
     input;
     #textFirma;
     #textFirma2;
@@ -863,7 +884,6 @@ class TypeFirma {
     colorGuiaI = '#000';
 
     warFirma = 'Esta vacia la firma';
-
     msgCanvas = 'No tienes un buen navegador.';
     
     constructor(input) {
@@ -877,17 +897,31 @@ class TypeFirma {
             label.style.cssText = 'display: block';
         }
 
+        if (screen.width < this.#anchoFirma && screen.width > 320) {
+            this.#anchoFirma = screen.width -5;
+            this.#altoFirma = screen.width * 0.2258;
+            this.#coorYGuiaGris = screen.width * 0.726;
+            this.#coorYGuiaNegra = screen.width * 0.1532;
+            this.#margenGuias = 10;
+        }else if (screen.width <= 320) {
+            this.#anchoFirma = 310;
+            this.#altoFirma = 140;
+            this.#coorYGuiaGris = 45;
+            this.#coorYGuiaNegra = 95;
+            this.#margenGuias = 5;
+        }
+
         this.canvasP = document.createElement('canvas');
         this.canvasP.style.cssText = 'border: 2px dashed #CCCCCC; border-radius: 5px; cursor: crosshair; position: absolute;';
-        this.canvasP.width = 620;
-        this.canvasP.height = 200;
+        this.canvasP.width = this.#anchoFirma;
+        this.canvasP.height = this.#altoFirma;
         this.canvasP.textContent = this.msgCanvas;
         this.canvasP.id = this.input.id + 'Canvas';
         this.canvasP.setAttribute('tabindex', '0');
 
         this.fondo = document.createElement('canvas');
-        this.fondo.width = 620;
-        this.fondo.height = 200;
+        this.fondo.width = this.#anchoFirma;
+        this.fondo.height = this.#altoFirma;
         this.fondo.style.cssText = 'margin: 2px;';
 
         this.ctxP = this.canvasP.getContext("2d");
@@ -923,7 +957,9 @@ class TypeFirma {
         }, false);
 
         this.canvasP.addEventListener("touchstart", (e) => {
-            e.preventDefault();
+            if (e.cancelable) 
+                e.preventDefault();
+
             this.#empezarDibujo(e);
         }, false);
     
@@ -1062,8 +1098,8 @@ class TypeFirma {
         this.ctx2.strokeStyle = this.colorGuiaS;
         this.ctx2.lineWidth = this.anchoGuias;
         this.ctx2.setLineDash([10, 5]);//linea discontinua
-        this.ctx2.moveTo(10, 60);
-        this.ctx2.lineTo(610, 60);
+        this.ctx2.moveTo(this.#margenGuias, this.#coorYGuiaGris);
+        this.ctx2.lineTo(this.#anchoFirma -this.#margenGuias, this.#coorYGuiaGris);
         this.ctx2.stroke();
         this.ctx2.closePath();
     }
@@ -1073,8 +1109,8 @@ class TypeFirma {
         contexto.strokeStyle = this.colorGuiaI;
         contexto.lineWidth = this.anchoGuias;
         contexto.setLineDash([]);
-        contexto.moveTo(10, 140);
-        contexto.lineTo(610, 140);
+        contexto.moveTo(this.#margenGuias, this.#coorYGuiaNegra);
+        contexto.lineTo(this.#anchoFirma -this.#margenGuias, this.#coorYGuiaNegra);
         contexto.stroke();
         contexto.closePath();
     };
