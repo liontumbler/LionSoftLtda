@@ -292,13 +292,16 @@ var position = {
             data['referrerPolicy'] = datos.referrerPolicy;
         for (let i = 0; i < ciclos; i++) {
             fetch(URL, data).then(data => {
-                console.log('ejecuto');
-                if (func) 
+                console.log(data);
+
+                if(data.status == 404)
+                    resolve(false)
+                else
                     func(data);
+                //res.text();//json()
             }).catch(error => {
-                console.error('error');
-                if (funcE) 
-                    funcE(error);
+                //console.error('error traerInformacion', error);
+                resolve(false)
             });
         }
     }

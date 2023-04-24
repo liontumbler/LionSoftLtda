@@ -74,10 +74,11 @@ class ValidForm {
     #textNS = /[^0-9A-Za-zñÑ]/g;
     #text = /[^0-9A-Za-zñÑ ]/g;
     #textTilde = /[^0-9A-Za-zñÑÁáÉéÍíÓóÚú.,:; ]/g;
-    #number = /[^0-9]/g;
+    #numberNS = /[^0-9]/g;
+    #number = /[^0-9 ]/g;
     #numberP =/(\d)(?=(\d{3})+(?!\d))/g;
     #space = /\s+/g;
-    #antiInyect = /<SCRIPT>|<\/SCRIPT>|<script>|<\/script>|<\/|<|>/g;
+    #antiInyect = /^<SCRIPT>|<\/SCRIPT>|<script>|<\/script>|<\/|<|>|=/g;
 
     constructor(elemt, espesificacion = {mostrarImagen: true}){
 
@@ -218,9 +219,15 @@ class ValidForm {
             });
         }
 
+        for (const i of this.#form.querySelectorAll('[numberNS]')) {
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(this.#numberNS, '');
+            });
+        }
+
         for (const i of this.#form.querySelectorAll('[number]')) {
             i.addEventListener('input', (e) => {
-                i.value = i.value.replace(this.#number, '');
+                i.value = i.value.replace(this.#number, '').replace(this.#space, ' ');
             });
         }
 
@@ -245,6 +252,42 @@ class ValidForm {
         for (const i of this.#form.querySelectorAll('[numberPoin]')) {
             i.addEventListener('input', (e) => {
                 i.value = i.value.replace(this.#number, '').replace(this.#numberP, '$1.');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[alfaLowerCase]')) {
+            i.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[A-ZÑ]/g, this.value.toLowerCase()).replace(/[^a-zñ ]/g, '').replace(/\s+/g, ' ');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[alfaLowerCaseNS]')) {
+            i.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[A-ZÑ]/g, this.value.toLowerCase()).replace(/[^a-zñ]/g, '');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[alfaUpperCase]')) {
+            i.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[a-zñ]/g, this.value.toUpperCase()).replace(/[^A-ZÑ ]/g, '').replace(/\s+/g, ' ');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[alfaUpperCaseNS]')) {
+            i.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[a-zñ]/g, this.value.toUpperCase()).replace(/[^A-ZÑ]/g, '');
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[email]')) {
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(/[^0-9A-Za-zñÑ@\-\_.]/g, '')
+            });
+        }
+
+        for (const i of this.#form.querySelectorAll('[textArroba]')) {
+            i.addEventListener('input', (e) => {
+                i.value = i.value.replace(/[^0-9A-Za-zñÑ@]/g, '')
             });
         }
 
@@ -500,6 +543,15 @@ class ValidForm {
                     }else if(conVacios){
                         formData.append(title, null);
                     }
+                }else if(input.type == this.#typeInput.datetimeLocal){
+                    let title = input.id;
+                    if(cabeceras[input.id])
+                        title = cabeceras[input.id];
+
+                    if(input.value)
+                        formData.append(title, this.obtenerFechaHoraServer(input));
+                    else if(conVacios)
+                        formData.append(title, null);
                 }else{
                     let title = input.id;
                     if(cabeceras[input.id])
@@ -514,6 +566,19 @@ class ValidForm {
         }
 
         return formData;
+    }
+
+    obtenerFechaHoraServer(input, minDeMas = 0) {
+        const fecha = new Date(input.value);
+        const anio = fecha.getFullYear();
+        const mes = fecha.getMonth() + 1 < 10 ? `0${fecha.getMonth() + 1}` : fecha.getMonth() + 1;
+        const dia = fecha.getDate() < 10 ? `0${fecha.getDate()}` : fecha.getDate();
+        const horas = fecha.getHours() < 10 ? `0${fecha.getHours()}` : fecha.getHours();
+        const minTotal = fecha.getMinutes() + minDeMas;
+        const minutos = minTotal < 10 ? `0${minTotal}` : minTotal;
+        const segundos = fecha.getSeconds() < 10 ? `0${fecha.getSeconds()}` : fecha.getSeconds();
+
+        return `${anio}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
     }
 
     validarCamposExpert(campos = {}, conMsg = false) {
@@ -605,7 +670,7 @@ class ValidForm {
         if(value){
             switch (input.type) {
                 case this.#typeInput.email:
-                    if(!ValidForm.validarCampoCorreo(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
+                    if(!ValidForm.validarCampoEmail(value) || !ValidForm.validarNumCaracteres(value, input.getAttribute('maxlength'), input.getAttribute('minlength')))
                         valido = false;
 
                     break;
@@ -774,7 +839,7 @@ class ValidForm {
         return regex.test(value);
     }
 
-    static validarCampoCorreo(value, regex = /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g) {
+    static validarCampoEmail(value, regex = /(^(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})[@]{1,1}(([a-zA-Z0-9]{1,15}([\_\-\.]{0,1}[a-zA-Z0-9]{1,15}[\_\-\.]{0,1}){0,15}[a-zA-Z0-9]{1,15}){1,3}|[a-zA-Z0-9]{1,50})\.[a-zA-Z]{2,5}){1,1}$/g) {
         return regex.test(value);
     }
 
